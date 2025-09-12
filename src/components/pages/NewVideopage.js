@@ -2,12 +2,12 @@ import React from 'react'
 import HeroBanner from '../NewVideo/HeroBanner'
 import Testimonials from '../NewVideo/Testimonials'
 import ClientLogos from '../NewVideo/ClientLogos'
-import PortfolioCarousel from '../NewVideo/PortfolioCarousel.js'
-import CarouselSection from '../NewVideo/CarouselSection.js'
-import NewSection from '../NewVideo/NewSection.js'
-import LeftCarousel from '../NewVideo/LeftCarousel.js'
 import Navbar from '../Navbar.js'
 import HomeFooter from '../HomeFooter/HomeFooter.js'
+import WorkflowAutomation from '../NewVideo/WorkflowAutomation.js'
+import DigitalCommerce from '../NewVideo/DigitalCommerce.js'
+import AprimoDam from '../NewVideo/AprimoDam.js'
+import Salesforce from '../NewVideo/Salesforce.js'
 
 
 const NewVideopage = () => {
@@ -17,10 +17,10 @@ const NewVideopage = () => {
    <HeroBanner/>
    <ClientLogos/>
    <Testimonials/>
-   <PortfolioCarousel/>
-   <CarouselSection/>
-   <NewSection/>
-   <LeftCarousel/>
+   <WorkflowAutomation/>
+   <DigitalCommerce/>  
+   <AprimoDam/>
+    <Salesforce/>
    <HomeFooter/>
    </>
   )

@@ -408,7 +408,7 @@ const Blogs_Detail = () => {
         )}
       </div>
      
-      <FloatingContact/>
+      
     </div>
     <HomeFooter />
     </>

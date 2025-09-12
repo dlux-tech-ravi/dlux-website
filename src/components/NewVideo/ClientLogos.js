@@ -25,7 +25,7 @@ const ClientLogos = () => {
       >
         <h2 className="text-4xl font-bold">
           Our Proud {" "}
-          <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-blue-400 bg-clip-text text-transparent">
+          <span className="bg-[linear-gradient(to_right,#FE780C,#FE3908)] bg-clip-text text-transparent">
             Partners
           </span>
         </h2>

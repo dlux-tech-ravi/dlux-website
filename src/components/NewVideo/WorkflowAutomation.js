@@ -1,5 +1,7 @@
+"use client";
+
 import React, { useState, useRef, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const cards = [
@@ -53,10 +55,9 @@ const cards = [
   },
 ];
 
-export default function PortfolioCarousel() {
+export default function WorkflowAutomation() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedVideo, setSelectedVideo] = useState(null); // holds URL while modal is open or closing
-  const [isModalOpen, setIsModalOpen] = useState(false); // controls AnimatePresence visibility
+  const [selectedVideo, setSelectedVideo] = useState(null);
   const videoRef = useRef(null);
 
   const handlePrev = () => {
@@ -67,71 +68,49 @@ export default function PortfolioCarousel() {
     if (currentIndex < cards.length - 1) setCurrentIndex(currentIndex + 1);
   };
 
-  const openModal = (url) => {
-    setSelectedVideo(url);
-    setIsModalOpen(true);
-  };
-
+  const openModal = (url) => setSelectedVideo(url);
   const closeModal = () => {
-    // pause/reset video immediately so playback stops before exit animation
     if (videoRef.current) {
-      try {
-        videoRef.current.pause();
-        videoRef.current.currentTime = 0;
-      } catch (err) {
-        // ignore if browser blocks seeking
-      }
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
     }
-    setIsModalOpen(false);
-  };
-
-  // remove selectedVideo only after exit animation finishes (AnimatePresence onExitComplete)
-  const handleExitComplete = () => {
     setSelectedVideo(null);
   };
 
-  // allow Escape key to close modal
+  // Disable scroll when modal is open
+  useEffect(() => {
+    document.body.style.overflow = selectedVideo ? "hidden" : "auto";
+  }, [selectedVideo]);
+
+  // Escape key closes modal
   useEffect(() => {
     const onKey = (e) => {
-      if (e.key === "Escape" && isModalOpen) {
-        closeModal();
-      }
+      if (e.key === "Escape" && selectedVideo) closeModal();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [isModalOpen]);
-
-  // prevent body scroll when modal is open
-  useEffect(() => {
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = isModalOpen ? "hidden" : prev || "";
-    return () => {
-      document.body.style.overflow = prev || "";
-    };
-  }, [isModalOpen]);
+  }, [selectedVideo]);
 
   return (
     <div className="bg-black text-white px-8 py-12">
       {/* Top row */}
       <div className="flex justify-between items-center mb-10">
-        {/* Heading animation */}
         <motion.div
           initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <p className="text-[20px] font-medium">
-            <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-blue-400 bg-clip-text text-transparent">
-             WORKFRONT / FUSION CONTENT 
+          <h3 className="text-4xl font-bold capitalize">
+            <span className="bg-[linear-gradient(to_right,#FE780C,#FE3908)] bg-clip-text text-transparent ">
+              Workflow Automation
             </span>
-          </p>
-          <h3 className="text-[24px] font-semibold max-w-3xl">
-           Step into our Workfront video library and explore actionable insights, agile project management tips, resource planning strategies, and workflow automation guidance.
           </h3>
+          <p className="mt-3 text-gray-300 max-w-3xl">
+            Step into our Workfront video library and explore actionable insights, agile project management tips, resource planning strategies, and workflow automation guidance.
+          </p>
         </motion.div>
 
-        {/* Arrows animation */}
         <motion.div
           className="flex gap-4"
           initial={{ opacity: 0 }}
@@ -143,8 +122,8 @@ export default function PortfolioCarousel() {
             onClick={handlePrev}
             className={`w-10 h-10 flex items-center justify-center rounded-full ${
               currentIndex > 0
-                ? "bg-gradient-to-r from-purple-400 via-pink-500 to-blue-400 text-black"
-                : "border border-purple-400 text-purple-400"
+                ? "bg-[linear-gradient(to_right,#FE780C,#FE3908)] text-black"
+                : "border border-[#FE780C] text-[#FE780C]"
             }`}
           >
             <ChevronLeft />
@@ -153,8 +132,8 @@ export default function PortfolioCarousel() {
             onClick={handleNext}
             className={`w-10 h-10 flex items-center justify-center rounded-full ${
               currentIndex < cards.length - 1
-                ? "bg-gradient-to-r from-purple-400 via-pink-500 to-blue-400 text-black"
-                : "border border-purple-400 text-purple-400"
+                ? "bg-[linear-gradient(to_right,#FE780C,#FE3908)] text-black"
+                : "border border-[#FE780C] text-[#FE780C]"
             }`}
           >
             <ChevronRight />
@@ -166,9 +145,7 @@ export default function PortfolioCarousel() {
       <div className="overflow-hidden">
         <div
           className="flex gap-6 transition-transform duration-500"
-          style={{
-            transform: `translateX(-${currentIndex * 280}px)`,
-          }}
+          style={{ transform: `translateX(-${currentIndex * 280}px)` }}
         >
           {cards.map((card, i) => (
             <motion.div
@@ -193,50 +170,41 @@ export default function PortfolioCarousel() {
         </div>
       </div>
 
-      {/* Animated Modal */}
-      <AnimatePresence onExitComplete={handleExitComplete}>
-        {isModalOpen && selectedVideo && (
+      {/* Glassy Video Popup */}
+      <AnimatePresence>
+        {selectedVideo && (
           <motion.div
-            key="modal-root"
-            className="fixed inset-0 z-50 flex items-center justify-center"
+            className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[999999]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            {/* Backdrop */}
             <motion.div
-              className="absolute inset-0 bg-black bg-opacity-70"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={closeModal} // clicking outside closes
-            />
-
-            {/* Modal Content */}
-            <motion.div
-              className="relative bg-black rounded-lg overflow-hidden w-[90%] max-w-3xl z-10"
-              initial={{ scale: 0.95, opacity: 0 }}
+              className="relative rounded-xl shadow-xl p-4 
+                bg-white/10 backdrop-blur-md 
+                border border-white/20 flex flex-col items-center w-full h-full justify-center"
+              initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.6 }}
             >
+              {/* Close Button */}
               <button
-                className="absolute top-3 right-3 text-white text-2xl font-bold z-20 bg-black bg-opacity-40 rounded-full w-10 h-10 flex items-center justify-center"
+                className="absolute top-4 right-4 text-black bg-white/10 backdrop-blur-md 
+                border border-black/20 rounded-full p-2"
                 onClick={closeModal}
-                aria-label="Close video"
               >
-                ✕
+                <X size={24} />
               </button>
 
-              <div className="w-full h-auto max-h-[80vh]">
-                <video
-                  ref={videoRef}
-                  src={selectedVideo}
-                  controls
-                  autoPlay
-                  className="w-full h-full object-contain bg-black"
-                />
-              </div>
+              {/* Video */}
+              <video
+                ref={videoRef}
+                src={selectedVideo}
+                controls
+                autoPlay
+                className="w-[800px] h-[450px] object-contain rounded-lg bg-black"
+              />
             </motion.div>
           </motion.div>
         )}

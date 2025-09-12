@@ -73,23 +73,80 @@ const HeroBanner = () => {
       transition={transition}
     />
   );
-
+ const [hovered, setHovered] = useState(false);
   return (
     <>
     
-    <section className="relative w-full bg-[linear-gradient(271deg,rgb(106,0,255)_0%,rgb(44,0,62)_75%,rgb(0,0,0)_100%)] text-white overflow-hidden pb-16 lg:pt-[120px]">
+    <section className="relative w-full bg-[linear-gradient(271deg,rgb(192,82,3)_0%,rgb(44,0,62)_75%,rgb(0,0,0)_100%)] text-white overflow-hidden pb-16 lg:pt-[120px]">
       <div className="relative z-10 flex flex-col items-center justify-center py-16 ">
         <h1 className="text-4xl md:text-6xl font-bold text-center max-w-4xl leading-tight">
-          DLUX CoE Video Vault
+          DLUX - Center of Excellence
         </h1>
         <p className="max-w-xl text-center mt-6 mb-6">
           Watch real solutions unfold - with video walkthroughs across Adobe
           Workfront, Fusion, DAM, Salesforce, and more.
         </p>
+    <motion.button
+    initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
 
-        <button className="mt-6 px-6 py-2 bg-gradient-to-r from-purple-400 via-pink-500 to-blue-400 text-black rounded-full font-medium flex items-center gap-2 hover:bg-yellow-500 transition">
+      whileHover={{ scale: 1.05 }} // light zoom on hover
+      
+      className="mt-6 px-6 py-4 relative rounded-full font-medium flex items-center gap-2 overflow-hidden text-white"
+      style={{
+        backgroundImage: "linear-gradient(to right, #FE780C, #FE3908)",
+      }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      {/* Blur overlay only on hover */}
+      {hovered && (
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="absolute inset-0 rounded-full backdrop-blur-md bg-white/10 border border-white/40"
+        />
+      )}
+
+      {/* Text */}
+      <span className="relative z-10 text-white">Contact Us</span>
+
+      {/* Arrow Animation */}
+      <div className="relative w-5 h-5 overflow-hidden">
+        <AnimatePresence initial={false} mode="wait">
+          {hovered ? (
+            <motion.div
+              key="arrow-hover"
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 20, opacity: 0 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="absolute"
+            >
+              <ArrowRight size={18} />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="arrow-normal"
+              initial={{ x: 0, opacity: 1 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 20, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="absolute"
+            >
+              <ArrowRight size={18} />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </motion.button>
+
+        {/* <button className="mt-6 px-6 py-2 bg-[linear-gradient(to_right,#FE780C,#FE3908)] text-black rounded-full font-medium flex items-center gap-2 hover:bg-yellow-500 transition">
           View Portfolio <ArrowRight size={18} />
-        </button>
+        </button> */}
       </div>
       
 

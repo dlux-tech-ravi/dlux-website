@@ -1,81 +1,62 @@
-import React, { useState, useEffect } from "react";
+"use client";
 
-const FloatingContact = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [animate, setAnimate] = useState(false);
+import { motion } from "framer-motion";
+import { Facebook, Twitter, Dribbble, Plus } from "lucide-react";
 
-  // Trigger slide-in animation on mount
-  useEffect(() => {
-    setAnimate(true);
-  }, []);
-
+export default function FloatBotton() {
   return (
-    <>
-      {/* Floating Button */}
-      <div
-        className={`
-          fixed bottom-5 right-5 z-50 flex items-center gap-2 bg-blue-600 text-white px-5 py-3 rounded-full shadow-lg cursor-pointer 
-          transform transition-transform duration-300 ease-out
-          ${animate ? "translate-x-0" : "translate-x-40"}
-          hover:scale-110
-        `}
-        onClick={() => setIsOpen(!isOpen)}
-        style={{ transform: animate ? "rotate(5deg)" : "rotate(0deg)" }}
-      >
-        <span className="relative z-10">💬 Contact Us</span>
+    <div className="relative flex items-center justify-center h-screen bg-teal-500">
+      <div className="relative h-[42px] w-[100px] cursor-pointer perspective">
+        {/* Back Side with Social Icons */}
+        <motion.div
+          className="absolute inset-0 flex items-center gap-2 rounded-full bg-teal-700 px-3 shadow-inner"
+          initial={{ rotateX: -90 }}
+          whileHover={{ rotateX: 0 }}
+          transition={{ duration: 0.6, ease: [0.175, 0.885, 0.32, 1.275] }}
+        >
+          <motion.a
+            href="#"
+            className="opacity-0 text-white"
+            whileHover={{ opacity: 1, y: -5 }}
+            transition={{ delay: 0.1, duration: 0.4 }}
+          >
+            <Twitter className="w-6 h-6" />
+          </motion.a>
+          <motion.a
+            href="#"
+            className="opacity-0 text-white"
+            whileHover={{ opacity: 1, y: -5 }}
+            transition={{ delay: 0.2, duration: 0.4 }}
+          >
+            <Facebook className="w-6 h-6" />
+          </motion.a>
+          <motion.a
+            href="#"
+            className="opacity-0 text-white"
+            whileHover={{ opacity: 1, y: -5 }}
+            transition={{ delay: 0.3, duration: 0.4 }}
+          >
+            <Plus className="w-6 h-6" />
+          </motion.a>
+          <motion.a
+            href="#"
+            className="opacity-0 text-white"
+            whileHover={{ opacity: 1, y: -5 }}
+            transition={{ delay: 0.4, duration: 0.4 }}
+          >
+            <Dribbble className="w-6 h-6" />
+          </motion.a>
+        </motion.div>
 
-        {/* Wave Overlay */}
-        <span className="absolute inset-0 rounded-full bg-blue-600 opacity-60 animate-wave z-0"></span>
+        {/* Front Side */}
+        <motion.div
+          className="absolute inset-0 flex items-center justify-center rounded-full bg-white"
+          whileHover={{ rotateX: 90 }}
+          transition={{ duration: 0.6, ease: [0.175, 0.885, 0.32, 1.275] }}
+        >
+          <p className="text-gray-500 font-medium">Share</p>
+        </motion.div>
       </div>
-
-      {/* Popup Form */}
-      {isOpen && (
-        <div className="fixed bottom-20 right-5 w-72 bg-white border border-gray-300 rounded-xl p-5 shadow-lg z-50 animate-fadeIn">
-          <h3 className="text-lg font-semibold mb-3">Contact Us</h3>
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="w-full mb-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="w-full mb-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <textarea
-            rows="3"
-            placeholder="Your Message"
-            className="w-full mb-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          ></textarea>
-          <button className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-colors">
-            Send
-          </button>
-        </div>
-      )}
-
-      {/* Custom Animations */}
-      <style>
-        {`
-          @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-          .animate-fadeIn {
-            animation: fadeIn 0.4s ease forwards;
-          }
-
-          @keyframes wave {
-            0% { transform: scale(1); opacity: 0.6; }
-            50% { transform: scale(1.2); opacity: 0.3; }
-            100% { transform: scale(1); opacity: 0.6; }
-          }
-          .animate-wave {
-            animation: wave 3s infinite ease-in-out;
-          }
-        `}
-      </style>
-    </>
+    </div>
   );
-};
-
-export default FloatingContact;
+}

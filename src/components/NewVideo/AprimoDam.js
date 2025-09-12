@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Play, X } from "lucide-react";
 
 const cards = [
   {
@@ -23,10 +23,11 @@ const cards = [
   },
 ];
 
-export default function NewSection() {
+export default function AprimoDam() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [direction, setDirection] = useState("next");
   const [activeVideo, setActiveVideo] = useState(null);
+  const [hovered, setHovered] = useState(false);
 
   const handleNext = () => {
     setDirection("next");
@@ -45,6 +46,11 @@ export default function NewSection() {
     }
     return visible;
   };
+
+  // Disable scroll when video popup is open
+  useEffect(() => {
+    document.body.style.overflow = activeVideo ? "hidden" : "auto";
+  }, [activeVideo]);
 
   return (
     <div className="bg-black text-white min-h-screen flex flex-col justify-center items-center pl-[80px] pr-[120px]">
@@ -82,7 +88,6 @@ export default function NewSection() {
                     {/* Play Button with Slow Ripple Animation */}
                     <div className="absolute bottom-6 right-6">
                       <div className="relative flex items-center justify-center">
-                        {/* Ripple layers */}
                         <span className="absolute w-14 h-14 rounded-full bg-white/30 animate-slow-ping"></span>
                         <span
                           className="absolute w-14 h-14 rounded-full bg-white/20 animate-slow-ping"
@@ -93,7 +98,6 @@ export default function NewSection() {
                           style={{ animationDelay: "1.2s" }}
                         ></span>
 
-                        {/* Icon button */}
                         <div className="relative w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg">
                           <Play className="text-black w-6 h-6" />
                         </div>
@@ -106,26 +110,79 @@ export default function NewSection() {
         </div>
 
         {/* Right Side Content + Small Cards */}
-        <div className="flex flex-col gap-6 ml-6 w-full">
-          <h2 className="text-[46px] font-semibold">Aprimo DAM </h2>
-          <p>Deep driving you to the polished version of – AI Agents & Automation , Aprimo AI Suite , Video asset Management , Ecosystem Integrations , DAM trends , Recognized Leadership.</p>
-          
-          <div className="flex justify-between items-center">
-            <button className="bg-gradient-to-r from-purple-400 via-pink-500 to-blue-400 text-black px-6 py-2 rounded-full font-medium">
-              Creative Showcase
-            </button>
+        <div className="flex flex-col gap-1 ml-6 w-full">
+          <h2 className="text-4xl font-semibold">Content Supply Chain Platform</h2>
+          <p className="mt-3 text-gray-300">
+            Deep driving you to the polished version of – AI Agents & Automation,
+            Aprimo AI Suite, Video asset Management, Ecosystem Integrations, DAM
+            trends, Recognized Leadership.
+          </p>
+
+          <div className="flex justify-between items-center mt-6">
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              whileHover={{ scale: 1.05 }}
+              className="px-6 py-4 relative rounded-full font-medium flex items-center gap-2 overflow-hidden text-white"
+              style={{
+                backgroundImage: "linear-gradient(to right, #FE780C, #FE3908)",
+              }}
+              onMouseEnter={() => setHovered(true)}
+              onMouseLeave={() => setHovered(false)}
+            >
+              {hovered && (
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute inset-0 rounded-full backdrop-blur-md bg-white/10 border border-white/40"
+                />
+              )}
+
+              <span className="relative z-10 text-white">Let's Connect</span>
+
+              <div className="relative w-5 h-5 overflow-hidden">
+                <AnimatePresence initial={false} mode="wait">
+                  {hovered ? (
+                    <motion.div
+                      key="arrow-hover"
+                      initial={{ x: -20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      exit={{ x: 20, opacity: 0 }}
+                      transition={{ duration: 0.4, ease: "easeInOut" }}
+                      className="absolute"
+                    >
+                      <ArrowRight size={18} />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="arrow-normal"
+                      initial={{ x: 0, opacity: 1 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      exit={{ x: 20, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="absolute"
+                    >
+                      <ArrowRight size={18} />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </motion.button>
 
             {/* Arrows */}
             <div className="flex gap-4">
               <button
                 onClick={handlePrev}
-                className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-400 via-pink-500 to-blue-400 text-black flex items-center justify-center"
+                className="w-10 h-10 rounded-full bg-[linear-gradient(to_right,#FE780C,#FE3908)] text-white flex items-center justify-center"
               >
                 <ChevronLeft />
               </button>
               <button
                 onClick={handleNext}
-                className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-400 via-pink-500 to-blue-400 text-black flex items-center justify-center"
+                className="w-10 h-10 rounded-full bg-[linear-gradient(to_right,#FE780C,#FE3908)] text-white flex items-center justify-center"
               >
                 <ChevronRight />
               </button>
@@ -148,7 +205,7 @@ export default function NewSection() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ x: direction === "next" ? -100 : 100 }}
                     transition={{ duration: 0.6, ease: "easeInOut" }}
-                    className="rounded-2xl flex-shrink-0 w-[305px] h-[298px] bg-cover bg-center"
+                    className="rounded-2xl flex-shrink-0 w-[315px] h-[298px] bg-cover bg-center cursor-pointer"
                     style={{ backgroundImage: `url(${card.image})` }}
                     onClick={() => setActiveVideo(card.video)}
                   ></motion.div>
@@ -162,7 +219,7 @@ export default function NewSection() {
       <div className="w-full mt-8">
         <div className="w-full h-1 bg-gray-700 rounded">
           <div
-            className="h-1 bg-gradient-to-r from-purple-400 via-pink-500 to-blue-400 rounded"
+            className="h-1 bg-[linear-gradient(to_right,#FE780C,#FE3908)] rounded"
             style={{
               width: `${((activeIndex + 1) / cards.length) * 100}%`,
             }}
@@ -170,29 +227,38 @@ export default function NewSection() {
         </div>
       </div>
 
-      {/* Video Popup */}
+      {/* Video Popup Modal */}
       <AnimatePresence>
         {activeVideo && (
           <motion.div
-            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+            className="fixed inset-0 z-[99999] flex items-center justify-center bg-black bg-opacity-70"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <div className="relative w-[800px] max-w-full">
+            <motion.div
+              className="relative rounded-xl shadow-xl p-4 
+                         bg-white/10 backdrop-blur-md 
+                         border border-white/20 flex flex-col items-center w-full  h-full justify-center"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <button
+                className="absolute top-4 right-4 text-black bg-white/10 backdrop-blur-md border border-black/20 rounded-full p-2 hover:bg-white/20 transition"
+                onClick={() => setActiveVideo(null)}
+              >
+                <X size={24} />
+              </button>
+
               <video
                 src={activeVideo}
                 controls
                 autoPlay
-                className="rounded-lg w-full"
+                className="w-[800px] h-[450px] object-contain rounded-lg bg-black"
               />
-              <button
-                onClick={() => setActiveVideo(null)}
-                className="absolute -top-10 right-0 text-white text-3xl"
-              >
-                ✕
-              </button>
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

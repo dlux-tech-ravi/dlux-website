@@ -5,24 +5,24 @@ const testimonials = [
   {
     id: 1,
     title:"Clean Codebase",
-    text: "Loved how modular and clean the architecture is tested with all the benefits.",
-    name: "Carlos Rivera",
+    text: 'DLUX has been one of our most invaluable assets in the continued usage and uptake of Workfront across our business. Lux and his team have provided us with unique and customized solutions, and proactive engagement.Couldn\'t have done it without them! ',
+    name: "- Head of Campaign Operations and Delivery",
     location: "USA",
     image:"/static/media/client3.ecfbbbc870c2bcf74e5e.png"
   },
   {
     id: 2,
     title:"Great Execution!",    
-    text: "The team delivered the project on time and exceeded expectations.",
-    name: "Jane Smith",
+    text: "Our DLUX team has been superb. I really don't think we could have had better guidance an support, and the team here has been really positive about how knowledgeable they are...",
+    name: "- Senior Manager, Customer Marketing",
     location: "USA",
     image:"/static/media/client2.c49a6a673df0d7c79153.png"
   },
   {
     id: 3,
      title:"Tremendous Job Team",
-    text: "Really impressed with the UI responsiveness and code clarity application are.",
-    name: "John Doe",
+    text: "I have thoroughly enjoyed my brainstorming sessions with the DLUX team. The DLUX team often thinks two steps ahead as well. Their knowledge of the Workfront solution and professional services have always exceeded our expectations and DLUX has delivered work as per agreed schedules.",
+    name: "– Group Project Manager",
     location: "UK",
 
     image:"/static/media/client1.2c40b1f66e85d4c99d1f.png"
@@ -69,11 +69,11 @@ export default function Testimonials() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <p className="text-sm text-yellow-400 mb-2"><span className="bg-gradient-to-r from-purple-400 via-pink-500 to-blue-400 bg-clip-text text-transparent">
+          <p className="text-xl font-bold mb-2"><span className="bg-[linear-gradient(to_right,#FE780C,#FE3908)] bg-clip-text text-transparent">
           Testimonials
           </span> </p>
-          <h2 className="text-[55px] font-bold leading-snug mb-8">
-            <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-blue-400 bg-clip-text text-transparent mr-1">
+          <h2 className="text-5xl font-bold leading-snug mb-8">
+            <span className="bg-[linear-gradient(to_right,#FE780C,#FE3908)] bg-clip-text text-transparent mr-1">
           Behind 
           </span>
            Every Workflow,<br />  There's a Story!
@@ -98,14 +98,14 @@ export default function Testimonials() {
                       </div>
                     )}
                     <div className="pt-8 flex flex-col justify-between h-full">
-                      <h4 className="font-bold text-[24px] mb-4">
+                      {/* <h4 className="font-bold text-[24px] mb-4">
                         {item.title}
-                      </h4>
+                      </h4> */}
                       <p className="text-base mb-4 leading-relaxed flex-grow">
                         {item.text}
                       </p>
                       <div className="flex items-center gap-3">
-                        <div className="w-16 h-16"><img src={item.image} alt={item.name}/> </div>
+                        {/* <div className="w-16 h-16"><img src={item.image} alt={item.name}/> </div> */}
                         <div>
                           <p className="text-sm font-semibold">{item.name}</p>
                           {/* <p className="text-xs text-gray-400">{item.location}</p> */}
@@ -123,7 +123,7 @@ export default function Testimonials() {
                 <div
                   key={i}
                   className={`w-3 h-3 rounded-full ${
-                    i === index ? "bg-gradient-to-r from-purple-400 via-pink-500 to-blue-400" : "bg-gray-500"
+                    i === index ? "bg-[linear-gradient(to_right,#FE780C,#FE3908)]" : "bg-gray-500"
                   }`}
                 />
               ))}

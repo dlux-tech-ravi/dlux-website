@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight, X } from "lucide-react";
+import { ArrowRight, ChevronRight, X } from "lucide-react";
 
 const SLIDES = [
   {
@@ -43,16 +43,15 @@ const SLIDES = [
   },
 ];
 
-export default function CarouselSection() {
+export default function Salesforce() {
   const [index, setIndex] = useState(0);
   const [openVideo, setOpenVideo] = useState(null);
+  const [hovered, setHovered] = useState(false);
 
   const len = SLIDES.length;
   const nextIndex = (index + 1) % len;
 
-  const goNext = () => {
-    setIndex((i) => (i + 1) % len);
-  };
+  const goNext = () => setIndex((i) => (i + 1) % len);
 
   const activeCard = {
     initial: { opacity: 0, scale: 0.9, x: 60 },
@@ -67,6 +66,11 @@ export default function CarouselSection() {
     exit: { opacity: 0, scale: 0.85, x: -220 },
     transition: { duration: 1.2, ease: [0.25, 0.8, 0.25, 1] },
   };
+
+  // Disable scroll when popup is open
+  useEffect(() => {
+    document.body.style.overflow = openVideo ? "hidden" : "auto";
+  }, [openVideo]);
 
   return (
     <section className="bg-black text-white mt-[70px] mb-[70px]">
@@ -98,7 +102,7 @@ export default function CarouselSection() {
                     alt={SLIDES[index].title}
                     className="w-full h-full object-cover"
                   />
-                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="absolute inset-0 flex items-center justify-center">
                     <div className="relative w-16 h-16">
                       {[0, 1, 2].map((i) => (
                         <span
@@ -116,7 +120,6 @@ export default function CarouselSection() {
                       </div>
                     </div>
                   </div>
-                  
                 </motion.div>
 
                 {/* Next Preview Card */}
@@ -148,31 +151,87 @@ export default function CarouselSection() {
 
           {/* RIGHT COLUMN */}
           <div className="w-[50%] px-[50px]">
-             <h2 className="text-[52px] font-semibold "><span class="bg-gradient-to-r from-purple-400 via-pink-500 to-blue-400 bg-clip-text text-transparent">Salesforce</span>  </h2>
-            <p>Your go-to hub for Salesforce trends, tools, and tutorials—featuring AI innovations, Data Cloud, automation, and low-code solutions.</p>
-          <motion.div
-            key={SLIDES[index].id}
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 1, delay: 0.2 }}
-           className="mt-10"
-          >
-           
-            <h6 className="text-[24px] font-semibold leading-tight ">
-              {SLIDES[index].title}
-            </h6>
+            <h3 className="text-4xl font-bold ">
+              <span className="bg-[linear-gradient(to_right,#FE780C,#FE3908)] bg-clip-text text-transparent">
+                Salesforce
+              </span>{" "}
+            </h3>
+            <p className="mt-3 text-gray-300">
+              Your go-to hub for Salesforce trends, tools, and tutorials—featuring AI
+              innovations, Data Cloud, automation, and low-code solutions.
+            </p>
+            <motion.div
+              key={SLIDES[index].id}
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="mt-10"
+            >
+              <h4 className="text-3xl font-semibold leading-tight ">
+                {SLIDES[index].title}
+              </h4>
 
-            <div className="mt-8">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="rounded-full bg-gradient-to-r from-purple-400 via-pink-500 to-blue-400 px-6 py-2.5 font-semibold text-black hover:bg-yellow-300"
-              >
-                {SLIDES[index].cta}
-              </motion.button>
-            </div>
-          </motion.div>
+              <div className="mt-8">
+                <motion.button
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  whileHover={{ scale: 1.05 }}
+                  className="mt-6 px-4 py-3 relative rounded-full font-medium flex items-center gap-2 overflow-hidden text-white"
+                  style={{
+                    backgroundImage: "linear-gradient(to right, #FE780C, #FE3908)",
+                  }}
+                  onMouseEnter={() => setHovered(true)}
+                  onMouseLeave={() => setHovered(false)}
+                >
+                  {/* Blur overlay only on hover */}
+                  {hovered && (
+                    <motion.span
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute inset-0 rounded-full backdrop-blur-md bg-white/10 border border-white/40"
+                    />
+                  )}
+
+                  {/* Text */}
+                  <span className="relative z-10 text-white">
+                    {SLIDES[index].cta}
+                  </span>
+
+                  {/* Arrow Animation */}
+                  <div className="relative w-5 h-5 overflow-hidden">
+                    <AnimatePresence initial={false} mode="wait">
+                      {hovered ? (
+                        <motion.div
+                          key="arrow-hover"
+                          initial={{ x: -20, opacity: 0 }}
+                          animate={{ x: 0, opacity: 1 }}
+                          exit={{ x: 20, opacity: 0 }}
+                          transition={{ duration: 0.4, ease: "easeInOut" }}
+                          className="absolute"
+                        >
+                          <ArrowRight size={18} />
+                        </motion.div>
+                      ) : (
+                        <motion.div
+                          key="arrow-normal"
+                          initial={{ x: 0, opacity: 1 }}
+                          animate={{ x: 0, opacity: 1 }}
+                          exit={{ x: 20, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                          className="absolute"
+                        >
+                          <ArrowRight size={18} />
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </motion.button>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -181,31 +240,35 @@ export default function CarouselSection() {
       <AnimatePresence>
         {openVideo && (
           <motion.div
-            className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/80 backdrop-blur-sm"
+            className="fixed inset-0 z-[99999] flex items-center justify-center bg-black bg-opacity-70"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
             <motion.div
-              initial={{ scale: 0.8, opacity: 0, y: 50 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.8, opacity: 0, y: 50 }}
-              transition={{ duration: 0.4 }}
-              className="relative w-[90%] max-w-4xl bg-black rounded-2xl overflow-hidden shadow-xl"
+              className="relative rounded-xl shadow-xl p-4 
+                         bg-white/10 backdrop-blur-md 
+                         border border-white/20 flex flex-col items-center w-full h-full justify-center"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.6 }}
             >
               {/* Close Button */}
               <button
-                className="absolute top-4 right-4 z-50 rounded-full bg-white text-black p-2 hover:bg-gray-200"
+                className="absolute top-4 right-4 text-black bg-white/10 backdrop-blur-md 
+                           border border-black/20 rounded-full p-2 hover:bg-white/20 transition"
                 onClick={() => setOpenVideo(null)}
               >
                 <X size={24} />
               </button>
 
+              {/* Video Frame */}
               <video
                 src={openVideo}
                 controls
                 autoPlay
-                className="w-full h-[500px] object-cover"
+                className="w-[800px] h-[450px] object-contain rounded-lg bg-black"
               />
             </motion.div>
           </motion.div>
