@@ -40,6 +40,7 @@ import { Outlet } from "react-router-dom"; // Import Outlet for nested routing
 import { TrustPolicy } from "./components/contents/TrustPolicy/TrustPolicy";
 import VideoVault from "./components/pages/VideoVault";
 import NewVideopage from "./components/pages/NewVideopage";
+import { WebinarPage } from "./components/pages/WebinarPage";
 
 const App = () => {
   return (
@@ -121,6 +122,7 @@ const App = () => {
         <Route path="/resources-library" element={<ResourcesLibrary />} />
         <Route path="/video-library" element={<VideoLibrary />} />
         <Route path="/new-video" element={<NewVideopage />} />
+         <Route path="/webinar-page" element={<WebinarPage />} />
         
         {/* <Route path="/video-library1" element={<VideoVault />} /> */}
         <Route path="/video-vault" element={<VideoVault />} />

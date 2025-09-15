@@ -6,61 +6,61 @@ const cards = [
   {
     id: 1,
     image:
-      "https://images.ctfassets.net/pj0maraabon4/3iuPcGx4zASpWsWetnbdGy/14bcaa319e336ae6d759bd866742703f/02_8.png",
+      "https://images.ctfassets.net/pj0maraabon4/ZjN1O5ofZ2pQZpEFvouFG/bea0016679a641f543da8ff80077b8f7/adobe-commerce-aep.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/6QfiQGZgTOFWE31eoXKRqr/a569dfea202f1500285af3ca764027a8/ceo-videos-01.mp4",
   },
   {
     id: 2,
     image:
-      "https://images.ctfassets.net/pj0maraabon4/6iGUvJeUECXOfyxDNbSWws/24ea6fae9339c2404b4495a9ba890cbb/AI_Product_Recommentation_.png",
+      "https://images.ctfassets.net/pj0maraabon4/g6VhGB0ALUorN4PwOv3Uv/1ad7132516c95d5d86237d0a4692a6e7/Next_Gen_Martech.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/QdhwdYJDBzkBC8fryGpXE/5fcb83975c964529d5848b8fa3458bb9/ceo-videos-02.mp4",
   },
   {
     id: 3,
     image:
-      "https://images.ctfassets.net/pj0maraabon4/58OdVzsbP4CohhPdA2emLJ/09921e73acd15be4665564608106814b/Personalized_Discounts__Happier_Customers_â___Powered_by_AEP___Adobe_Commerce_1.png",
+      "https://images.ctfassets.net/pj0maraabon4/2UFmJrUnXw4LIPamQSrbzh/b29acffcd3a78ec04f6e9283961e20ff/AEP-Integration.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/GSLfChdktR6W6JnIWQnj2/9e5fd1db0c46842798223e629d1efe69/ceo-videos-03.mp4",
   },
   {
     id: 4,
     image:
-      "https://images.ctfassets.net/pj0maraabon4/58OdVzsbP4CohhPdA2emLJ/09921e73acd15be4665564608106814b/Personalized_Discounts__Happier_Customers_â___Powered_by_AEP___Adobe_Commerce_1.png",
+      "https://images.ctfassets.net/pj0maraabon4/19EOD4H2jJzaITuJ1VCYjP/6f194ef1906f179fdff257785255c5a6/Product_Recommentation.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/5QnaqhEn58fUI8EzHHFGpO/618b0ebbac3f815457bd92137bbba6e7/ceo-videos-04.mp4",
   },
   {
     id: 5,
     image:
-      "https://images.ctfassets.net/pj0maraabon4/58OdVzsbP4CohhPdA2emLJ/09921e73acd15be4665564608106814b/Personalized_Discounts__Happier_Customers_â___Powered_by_AEP___Adobe_Commerce_1.png",
+      "https://images.ctfassets.net/pj0maraabon4/3N9yqUkjutnAizDLHKX5GW/327f7618bcc6bef20443bfa20bff4604/Live_Search.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/1e3hQ6aGDV5CCh6a43UJm4/98404f19aa0f77f4e67d4cb6d15cffa3/ceo-videos-05.mp4",
   },
   {
     id: 6,
     image:
-      "https://images.ctfassets.net/pj0maraabon4/58OdVzsbP4CohhPdA2emLJ/09921e73acd15be4665564608106814b/Personalized_Discounts__Happier_Customers_â___Powered_by_AEP___Adobe_Commerce_1.png",
+      "https://images.ctfassets.net/pj0maraabon4/6xE3Qtgu00MlBoohi279ax/e45f0a93a8f458aadee38da94a50ec4a/Analytics.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/7CG3xXvh4HMW2qADioFT4l/89f27424925df9f32eb297619f55adbb/ceo-videos-06.mp4",
   },
   {
     id: 7,
     image:
-      "https://images.ctfassets.net/pj0maraabon4/58OdVzsbP4CohhPdA2emLJ/09921e73acd15be4665564608106814b/Personalized_Discounts__Happier_Customers_â___Powered_by_AEP___Adobe_Commerce_1.png",
+      "https://images.ctfassets.net/pj0maraabon4/48S6CgQXOU0XPQKFFjB4Hb/fe1bbce7a895d641b5fbc08458b6c9a9/workflow_automation.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/5eD3iSAq4i0Wlk8AtF2LYg/43297cc8d4930564d6e952fe737e525f/ceo-videos-07.mp4",
   },
     {
     id: 8,
     image:
-      "https://images.ctfassets.net/pj0maraabon4/58OdVzsbP4CohhPdA2emLJ/09921e73acd15be4665564608106814b/Personalized_Discounts__Happier_Customers_â___Powered_by_AEP___Adobe_Commerce_1.png",
+      "https://images.ctfassets.net/pj0maraabon4/6LEf7JKCfZkPCQIZL0C57v/8363311095c5d99df6cc1e7adefcc2c1/Real_Time.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/6beKvkSg8y2YKh3v7QxNiZ/08de91f870f351a1e3e3b887fd7b3bfc/ceo-videos-08.mp4",
   },
    {
     id: 9,
     image:
-      "https://images.ctfassets.net/pj0maraabon4/58OdVzsbP4CohhPdA2emLJ/09921e73acd15be4665564608106814b/Personalized_Discounts__Happier_Customers_â___Powered_by_AEP___Adobe_Commerce_1.png",
+      "https://images.ctfassets.net/pj0maraabon4/6Tlk4dVpuajwuQetwYCBuN/b7bba4afe4def6ed99753db2768f05df/aprimo-video-vault.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/58mIe4HBKxekJNWIm1axbT/1d7c4b68e451d0fc6811e77a1f0ef2ed/ceo-videos-09.mp4",
   },
    {
     id: 10,
     image:
-      "https://images.ctfassets.net/pj0maraabon4/58OdVzsbP4CohhPdA2emLJ/09921e73acd15be4665564608106814b/Personalized_Discounts__Happier_Customers_â___Powered_by_AEP___Adobe_Commerce_1.png",
+      "https://images.ctfassets.net/pj0maraabon4/1NwLkskgywCtvQoomF551t/089e2b46a8e1e08a9c9122ce78b366ed/organisation-face-video-vault.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/7CpjQ4H9VtSXkBrbsCyiM3/36410ab59792d0dd11f8a1850be14348/ceo-videos-10.mp4",
   },
 ];
