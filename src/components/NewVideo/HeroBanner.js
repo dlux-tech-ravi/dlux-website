@@ -79,6 +79,13 @@ const HeroBanner = () => {
     
     <section className="relative w-full bg-[linear-gradient(271deg,rgb(192,82,3)_0%,rgb(44,0,62)_75%,rgb(0,0,0)_100%)] text-white overflow-hidden pb-16 lg:pt-[120px]">
       <div className="relative z-10 flex flex-col items-center justify-center py-16 ">
+        <motion.div
+        className="justify-items-center"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: true, amount: 0.3 }}
+              >
         <h1 className="text-4xl md:text-6xl font-bold text-center max-w-4xl leading-tight">
           DLUX - Center of Excellence
         </h1>
@@ -86,6 +93,7 @@ const HeroBanner = () => {
           Watch real solutions unfold - with video walkthroughs across Adobe
           Workfront, Fusion, DAM, Salesforce, and more.
         </p>
+        </motion.div>
     <motion.button
     initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}

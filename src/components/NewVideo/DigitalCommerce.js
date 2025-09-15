@@ -72,6 +72,14 @@ export default function DigitalCommerce() {
       <div className="mx-auto w-full px-6 py-16 flex flex-col lg:flex-row gap-12">
         {/* LEFT COLUMN (Content) */}
         <div className="w-full lg:w-1/2 px-[50px]">
+        <motion.div
+           
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="mt-10"
+          >
           <h2 className="text-4xl font-bold">
             <span className="bg-[linear-gradient(to_right,#FE780C,#FE3908)] bg-clip-text text-transparent">
              Digital Commerce
@@ -82,7 +90,7 @@ export default function DigitalCommerce() {
             expert tutorials, proven stats, and success stories. Unlock E-Commerce
             growth and improved ROI with real strategies that work.
           </p>
-
+</motion.div>
           <motion.div
             key={SLIDES[index].id}
             initial={{ opacity: 0, x: -60 }}

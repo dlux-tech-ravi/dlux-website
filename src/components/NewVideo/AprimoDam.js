@@ -111,13 +111,21 @@ export default function AprimoDam() {
 
         {/* Right Side Content + Small Cards */}
         <div className="flex flex-col gap-1 ml-6 w-full">
+          <motion.div
+                     
+                      initial={{ opacity: 0, x: 60 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true, amount: 0.4 }}
+                      transition={{ duration: 1, delay: 0.2 }}
+                      className="mt-10"
+                    >
           <h2 className="text-4xl font-semibold">Content Supply Chain </h2>
           <p className="mt-3 text-gray-300">
             Deep driving you to the polished version of – AI Agents & Automation,
             Aprimo AI Suite, Video asset Management, Ecosystem Integrations, DAM
             trends, Recognized Leadership.
           </p>
-
+</motion.div>
           <div className="flex justify-between items-center mt-6">
             <motion.button
               initial={{ opacity: 0, y: 20 }}

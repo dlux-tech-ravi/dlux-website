@@ -154,12 +154,19 @@ export default function CEDVideo() {
 
         {/* Right Side Content + Small Cards */}
         <div className="flex flex-col gap-1 ml-6 w-full">
+           <motion.div
+                 
+                          initial={{ opacity: 0, y: 40 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.8, ease: "easeIn" }}
+                          viewport={{ once: true, amount: 0.3 }}
+                        >
           <h2 className="text-4xl font-semibold">CoE Videos</h2>
           <p className="mt-3 text-gray-300">
            Experience the next – Level of our CoE videos: Bold ideas, Breakthrough innovation, and the vision 
           </p>
-          <p className="font-bold text-gray-300"> “That Sets Us Apart To Where We Are ;  In The Today’s Landscape”</p>
-
+          <p className="font-bold text-white"> “That Sets Us Apart To Where We Are ;  In The Today’s Landscape”</p>
+         </motion.div>
           <div className="flex justify-between items-center mt-6">
             <motion.button
               initial={{ opacity: 0, y: 20 }}

@@ -151,6 +151,13 @@ export default function Salesforce() {
 
           {/* RIGHT COLUMN */}
           <div className="w-[50%] px-[50px]">
+            <motion.div
+                   
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            viewport={{ once: true, amount: 0.3 }}
+                          >
             <h3 className="text-4xl font-bold ">
               <span className="bg-[linear-gradient(to_right,#FE780C,#FE3908)] bg-clip-text text-transparent">
                 Salesforce
@@ -160,6 +167,7 @@ export default function Salesforce() {
               Your go-to hub for Salesforce trends, tools, and tutorials—featuring AI
               innovations, Data Cloud, automation, and low-code solutions.
             </p>
+            </motion.div>
             <motion.div
               key={SLIDES[index].id}
               initial={{ opacity: 0, x: 60 }}
