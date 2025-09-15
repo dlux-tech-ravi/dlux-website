@@ -154,7 +154,7 @@ export default function CEDVideo() {
 
         {/* Right Side Content + Small Cards */}
         <div className="flex flex-col gap-1 ml-6 w-full">
-          <h2 className="text-4xl font-semibold">COE Videos</h2>
+          <h2 className="text-4xl font-semibold">CoE Videos</h2>
           <p className="mt-3 text-gray-300">
            Experience the next – Level of our CoE videos: Bold ideas, Breakthrough innovation, and the vision 
           </p>

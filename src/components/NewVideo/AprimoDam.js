@@ -111,7 +111,7 @@ export default function AprimoDam() {
 
         {/* Right Side Content + Small Cards */}
         <div className="flex flex-col gap-1 ml-6 w-full">
-          <h2 className="text-4xl font-semibold">Content Supply Chain Platform</h2>
+          <h2 className="text-4xl font-semibold">Content Supply Chain </h2>
           <p className="mt-3 text-gray-300">
             Deep driving you to the polished version of – AI Agents & Automation,
             Aprimo AI Suite, Video asset Management, Ecosystem Integrations, DAM
