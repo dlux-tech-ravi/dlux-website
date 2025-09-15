@@ -45,7 +45,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="bg-black text-white py-16 px-6 md:px-20 h-[100vh] overflow-hidden">
+    <section className=" text-white py-16 px-6 md:px-20 h-[100vh] overflow-hidden">
       <div className="flex gap-10 items-start relative">
         {/* Left Column - Dummy Image */}
         <motion.div

@@ -14,7 +14,7 @@ const fleetData = [
 
 const ClientLogos = () => {
   return (
-    <section className="relative w-full bg-black text-white py-16 overflow-hidden">
+    <section className="relative w-full  text-white py-16 overflow-hidden">
       {/* Heading */}
       <motion.div
         className="text-center mb-12"
@@ -23,6 +23,7 @@ const ClientLogos = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.3 }}
       >
+        
         <h2 className="text-4xl font-bold">
           Our Proud {" "}
           <span className="bg-[linear-gradient(to_right,#FE780C,#FE3908)] bg-clip-text text-transparent">
@@ -56,7 +57,7 @@ const ClientLogos = () => {
                 visible: { opacity: 1, scale: 1 }
               }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="min-w-[250px] max-w-[250px] bg-[#111] rounded-xl p-6 border border-gray-700 flex flex-col items-center justify-center shadow-md"
+              className="min-w-[250px] max-w-[250px] bg-[#1B0A31] rounded-xl p-6 border-[2px] border-[rgba(187,124,228,0.3)] flex flex-col items-center justify-center shadow-md"
             >
               <img src={item.img} alt={item.title} className="w-32 h-20 mb-4" />
             </motion.div>

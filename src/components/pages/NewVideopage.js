@@ -14,6 +14,9 @@ import CtaBanner from '../NewVideo/CtaBanner.js'
 const NewVideopage = () => {
   return (
    <>
+   <div className='bg-[#1B0A31]'>
+
+   
    <Navbar/>
    <HeroBanner/>
    <ClientLogos/>
@@ -25,6 +28,7 @@ const NewVideopage = () => {
     <Salesforce/>
     <CtaBanner/>
    <HomeFooter/>
+   </div>
    </>
   )
 }

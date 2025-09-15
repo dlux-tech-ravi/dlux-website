@@ -53,7 +53,7 @@ export default function AprimoDam() {
   }, [activeVideo]);
 
   return (
-    <div className="bg-black text-white min-h-screen flex flex-col justify-center items-center pl-[80px] pr-[120px]">
+    <div className=" text-white min-h-screen flex flex-col justify-center items-center pl-[80px] pr-[120px]">
       <style>
         {`
           @keyframes slow-ping {

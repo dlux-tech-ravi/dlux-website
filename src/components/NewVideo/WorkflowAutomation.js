@@ -27,7 +27,7 @@ const cards = [
     height: "h-[380px]",
     width: "w-[305px]",
     imageUrl: "https://placehold.co/305x380",
-    videoUrl: "https://videos.ctfassets.net/pj0maraabon4/5dUQz34ZfbGnM8ugFVdY6F/c069f2a01bc8f2faa87c1b445e6ea6b2/5.mp4",
+    videoUrl: "https://videos.ctfassets.net/pj0maraabon4/2cTlVZwVCOQabJYyauXzy4/5a2a1826fc621cc8825d1891cef1773d/work-front-03.mp4",
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ const cards = [
     height: "h-[214px]",
     width: "w-[305px]",
     imageUrl: "https://placehold.co/305x214",
-    videoUrl: "https://videos.ctfassets.net/pj0maraabon4/2mHtueZF3dkBO2UNRvRBh/e0cfee7ca679f463d152509b7fd4d93d/9.mp4",
+    videoUrl: "https://videos.ctfassets.net/pj0maraabon4/1hQeIoRhPu1CiSWorPsB6e/e77e5662d31fa38304527df13a44555e/Work_front_04.mp4",
   },
   {
     id: 5,
@@ -43,7 +43,7 @@ const cards = [
     height: "h-[437px]",
     width: "w-[525px]",
     imageUrl: "https://placehold.co/525x437",
-    videoUrl: "https://videos.ctfassets.net/pj0maraabon4/xB1YovXm0yo8lBeKXTVVf/5d82e1ce219adbe37c6915cc8a5d036c/10.mp4",
+    videoUrl: "https://videos.ctfassets.net/pj0maraabon4/3B6wsEeK1de7x5xOwar8rn/f00591e359484dbc512226df41e46361/Workfront_Video_05.mp4",
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ const cards = [
     height: "h-[214px]",
     width: "w-[305px]",
     imageUrl: "https://placehold.co/305x214",
-    videoUrl: "https://videos.ctfassets.net/pj0maraabon4/6K0NkO4CD9whhOzp1UTDyd/f06f49e31ed5b0bf7a8f0889c2193c83/13.mp4",
+    videoUrl: "https://videos.ctfassets.net/pj0maraabon4/6zgrnljz5IWjKLvGKdJDRm/14bcb8ab6d309420c7f2ac1ac29fdd72/Workfront_Video_06.mp4",
   },
 ];
 
@@ -92,7 +92,7 @@ export default function WorkflowAutomation() {
   }, [selectedVideo]);
 
   return (
-    <div className="bg-black text-white px-8 py-12">
+    <div className="text-white px-8 py-12">
       {/* Top row */}
       <div className="flex justify-between items-center mb-10">
         <motion.div
