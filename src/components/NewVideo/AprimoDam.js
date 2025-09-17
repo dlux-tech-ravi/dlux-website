@@ -3,31 +3,41 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight, Play, X } from "lucide-react";
 
 const cards = [
-  {
+ {
     id: 1,
+    title: "Mastering Multilingual Site Management with Adobe Experience Manager MSM",
+    cta: "View Portfolio",
     image:
-      "https://images.ctfassets.net/pj0maraabon4/6xE3Qtgu00MlBoohi279ax/e45f0a93a8f458aadee38da94a50ec4a/Analytics.jpg",
-    video: "https://videos.ctfassets.net/pj0maraabon4/7CG3xXvh4HMW2qADioFT4l/89f27424925df9f32eb297619f55adbb/ceo-videos-06.mp4",
+      "https://images.ctfassets.net/pj0maraabon4/7EfPXl9ZZaHz8NjhtQOi8r/00837fb56fcd5783cb686252e2f06deb/aem-01_1.jpg",
+    video:
+      "https://videos.ctfassets.net/pj0maraabon4/7jf1qEjn6aNNHJsCCGHDkI/3b044468574c6305bee30852860c589a/2.mp4",
   },
-
   {
     id: 2,
+    title: "Say Goodbye to Content Chaos with AEM Edge Delivery!",
+    cta: "Explore Work",
     image:
-      "https://images.ctfassets.net/pj0maraabon4/19EOD4H2jJzaITuJ1VCYjP/6f194ef1906f179fdff257785255c5a6/Product_Recommentation.jpg",
-    video: "https://videos.ctfassets.net/pj0maraabon4/AWliC8HUMiEcAMXPjHff1/e1b5edaf8455fe292f375ea876c9de81/Product_recommendation.mp4",
+      "https://images.ctfassets.net/pj0maraabon4/38YY6qkHaUxL15zPsAVkCY/cdf50e80478f340216d1e26ad75241d9/AEM-image-02.jpg",
+    video:
+      "https://videos.ctfassets.net/pj0maraabon4/1lbUJKgwWFFmyroHWJtlEj/0c6888136c8950b0a656ba6ed0d1f692/4.mp4",
   },
   {
     id: 3,
+    title: "Master Content Management with AEM: Your Safety Net in the Digital High-Wire Act!",
+    cta: "See Details",
     image:
-      "https://images.ctfassets.net/pj0maraabon4/3N9yqUkjutnAizDLHKX5GW/327f7618bcc6bef20443bfa20bff4604/Live_Search.jpg",
-    video: "https://videos.ctfassets.net/pj0maraabon4/2lXuiAoYJNBOSEu7R1dn5U/3e5b6014da74ed479eff0fdc3e39cf92/Final_Out.mp4",
+      "https://images.ctfassets.net/pj0maraabon4/1Lig058lbO5iMFRoiXiqCL/964414a17c8ac01940e850f0a316a6c7/AEM-image-03.jpg",
+    video:
+      "https://videos.ctfassets.net/pj0maraabon4/3sqvkwblysuyTcUU6vyXT2/d777d4a9b8db5600a7a8ce61184dae47/Product_recommendation-002__1___1___1_.mp4",
   },
-  
   {
     id: 4,
+    title: "Unlock the Power of Seamless Content Creation with AEM",
+    cta: "See Details",
     image:
-      "https://images.ctfassets.net/pj0maraabon4/ZjN1O5ofZ2pQZpEFvouFG/bea0016679a641f543da8ff80077b8f7/adobe-commerce-aep.jpg",
-    video: "https://videos.ctfassets.net/pj0maraabon4/6rnaOM4Jsr6ZjCwLQPi8JG/2f04a0d33eb61faa376296a3cbbd22e8/Adobe_Recommentation_-_27-06-25_1__1___1_.mp4",
+      "https://images.ctfassets.net/pj0maraabon4/1suQj4cSZfdQwX2bTltDiz/3f33f984161b01813a01b8245dc128d7/AEM-Image-04.jpg",
+    video:
+      "https://videos.ctfassets.net/pj0maraabon4/1ekQavAh7Sw8xySwzNttlA/ab0d40f4bcb651e3f716f5d5fd7edd5a/15.mp4",
   },
 ];
 
@@ -93,6 +103,9 @@ export default function AprimoDam() {
                     style={{ backgroundImage: `url(${card.image})` }}
                     onClick={() => setActiveVideo(card.video)}
                   >
+                     <p className="absolute bottom-4 left-4 text-xl text-white w-[80%] font-semibold bg-black bg-opacity-50 px-3 py-1 rounded-lg">
+                {card.title}
+              </p>
                     {/* Play Button with Slow Ripple Animation */}
                     <div className="absolute bottom-6 right-6">
                       <div className="relative flex items-center justify-center">
@@ -109,6 +122,7 @@ export default function AprimoDam() {
                         <div className="relative w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg">
                           <Play className="text-black w-6 h-6" />
                         </div>
+                        
                       </div>
                     </div>
                   </motion.div>
