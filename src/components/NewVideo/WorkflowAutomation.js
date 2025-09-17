@@ -10,7 +10,7 @@ const cards = [
     title: "Mark Motion",
     height: "h-[437px]",
     width: "w-[525px]",
-    imageUrl: "https://placehold.co/525x437",
+    imageUrl: "https://images.ctfassets.net/pj0maraabon4/1urwIFx73M5FJX1NwYJqsq/f5e8c256adfc8b66a1255e4d3f3a0eec/workfront_chatgpt.jpg",
     videoUrl: "https://videos.ctfassets.net/pj0maraabon4/5m4oFnM5liDyvqh2osFtYt/3f88bcd267cad3e23802e24979702bf4/1.mp4",
   },
   {
@@ -18,7 +18,7 @@ const cards = [
     title: "Digital Grain",
     height: "h-[214px]",
     width: "w-[305px]",
-    imageUrl: "https://placehold.co/305x214",
+    imageUrl: "https://images.ctfassets.net/pj0maraabon4/29GHZ92yOsRCfoBBB1zQIz/0bc0beae56c66265901a2771cc2af51f/workfront___Fusion.jpg",
     videoUrl: "https://videos.ctfassets.net/pj0maraabon4/4nzwh8CJomPfZjdBUAbpSE/bf2142c36ccdd8956d23502a683b892b/3.mp4",
   },
   {
@@ -26,7 +26,7 @@ const cards = [
     title: "Mark Motion",
     height: "h-[380px]",
     width: "w-[305px]",
-    imageUrl: "https://placehold.co/305x380",
+    imageUrl: "https://images.ctfassets.net/pj0maraabon4/4gmC2eSWGOEwSP8wqAzboC/24b7a7b7317607984a2b4a7615be77f9/Workflow-automation.jpg",
     videoUrl: "https://videos.ctfassets.net/pj0maraabon4/2cTlVZwVCOQabJYyauXzy4/5a2a1826fc621cc8825d1891cef1773d/work-front-03.mp4",
   },
   {
@@ -34,7 +34,7 @@ const cards = [
     title: "Creative Flow",
     height: "h-[214px]",
     width: "w-[305px]",
-    imageUrl: "https://placehold.co/305x214",
+    imageUrl: "https://images.ctfassets.net/pj0maraabon4/2MkLhtRZU7WhXawbmMCtNZ/82a2aacea17f4dbc63369b6752c01c5e/worklist-image.jpg",
     videoUrl: "https://videos.ctfassets.net/pj0maraabon4/1hQeIoRhPu1CiSWorPsB6e/e77e5662d31fa38304527df13a44555e/Work_front_04.mp4",
   },
   {
@@ -42,7 +42,7 @@ const cards = [
     title: "Design Pulse",
     height: "h-[437px]",
     width: "w-[525px]",
-    imageUrl: "https://placehold.co/525x437",
+    imageUrl: "https://images.ctfassets.net/pj0maraabon4/5442ciQ6vmSy223ejIfp8t/70cc30c9c6d6f898b4dd9c7a3a570347/workfront-office-working-laptop.jpg",
     videoUrl: "https://videos.ctfassets.net/pj0maraabon4/3B6wsEeK1de7x5xOwar8rn/f00591e359484dbc512226df41e46361/Workfront_Video_05.mp4",
   },
   {
@@ -102,7 +102,7 @@ export default function WorkflowAutomation() {
           viewport={{ once: true }}
         >
           <h3 className="text-4xl font-bold capitalize">
-            <span className="bg-[linear-gradient(to_right,#FE780C,#FE3908)] bg-clip-text text-transparent ">
+            <span className="bg-[#BB7CE4] bg-clip-text text-transparent ">
               Workflow Automation
             </span>
           </h3>
@@ -122,8 +122,8 @@ export default function WorkflowAutomation() {
             onClick={handlePrev}
             className={`w-10 h-10 flex items-center justify-center rounded-full ${
               currentIndex > 0
-                ? "bg-[linear-gradient(to_right,#FE780C,#FE3908)] text-black"
-                : "border border-[#FE780C] text-[#FE780C]"
+                ? "bg-[#BB7CE4] text-black"
+                : "border border-[#BB7CE4] text-[#BB7CE4]"
             }`}
           >
             <ChevronLeft />
@@ -132,8 +132,8 @@ export default function WorkflowAutomation() {
             onClick={handleNext}
             className={`w-10 h-10 flex items-center justify-center rounded-full ${
               currentIndex < cards.length - 1
-                ? "bg-[linear-gradient(to_right,#FE780C,#FE3908)] text-black"
-                : "border border-[#FE780C] text-[#FE780C]"
+                ? "bg-[#BB7CE4] text-black"
+                : "border border-[#BB7CE4] text-[#BB7CE4]"
             }`}
           >
             <ChevronRight />

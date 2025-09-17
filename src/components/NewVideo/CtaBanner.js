@@ -27,7 +27,10 @@ const imageVariants = {
 
 export default function CtaBanner() {
   return (
-    <section className="w-full py-12 px-4 sm:px-8">
+    <section className="relative w-full py-12 px-4 sm:px-8 ">
+      <div className="absolute top-[30%] left-[10%] w-80 h-80 rounded-full 
+      bg-gradient-to-r from-[#BB7CE4] to-[#02162F] 
+      blur-[100px] opacity-80 z-0" />
       {/* Glassy Card with Content + Image */}
       <motion.div
         variants={containerVariants}
@@ -43,7 +46,7 @@ export default function CtaBanner() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Drive with{" "}
-            <span className="bg-[linear-gradient(to_right,#FE780C,#FE3908)] bg-clip-text text-transparent">
+            <span className="bg-[#BB7CE4] bg-clip-text text-transparent">
               Peace
             </span>{" "}
             of Mind

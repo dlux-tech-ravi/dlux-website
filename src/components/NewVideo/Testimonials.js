@@ -69,11 +69,14 @@ export default function Testimonials() {
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <p className="text-xl font-bold mb-2"><span className="bg-[linear-gradient(to_right,#FE780C,#FE3908)] bg-clip-text text-transparent">
+          <div className="absolute top-[30%] left-[10%] w-80 h-80 rounded-full 
+      bg-gradient-to-r from-[#BB7CE4] to-[#02162F] 
+      blur-[100px] opacity-80 z-0" />
+          <p className="text-xl font-bold mb-2"><span className="bg-[#BB7CE4] bg-clip-text text-transparent border border-[#BB7CE4] px-2 py-[3px] rounded-md">
           Testimonials
           </span> </p>
           <h2 className="text-5xl font-bold leading-snug mb-8">
-            <span className="bg-[linear-gradient(to_right,#FE780C,#FE3908)] bg-clip-text text-transparent mr-1">
+            <span className="bg-[#BB7CE4] bg-clip-text text-transparent mr-1">
           Behind 
           </span>
            Every Workflow,<br />  There's a Story!

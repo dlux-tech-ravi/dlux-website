@@ -6,20 +6,28 @@ const cards = [
   {
     id: 1,
     image:
-      "https://images.ctfassets.net/pj0maraabon4/3iuPcGx4zASpWsWetnbdGy/14bcaa319e336ae6d759bd866742703f/02_8.png",
-    video: "https://videos.ctfassets.net/pj0maraabon4/6rnaOM4Jsr6ZjCwLQPi8JG/2f04a0d33eb61faa376296a3cbbd22e8/Adobe_Recommentation_-_27-06-25_1__1___1_.mp4",
+      "https://images.ctfassets.net/pj0maraabon4/6xE3Qtgu00MlBoohi279ax/e45f0a93a8f458aadee38da94a50ec4a/Analytics.jpg",
+    video: "https://videos.ctfassets.net/pj0maraabon4/7CG3xXvh4HMW2qADioFT4l/89f27424925df9f32eb297619f55adbb/ceo-videos-06.mp4",
   },
+
   {
     id: 2,
     image:
-      "https://images.ctfassets.net/pj0maraabon4/6iGUvJeUECXOfyxDNbSWws/24ea6fae9339c2404b4495a9ba890cbb/AI_Product_Recommentation_.png",
+      "https://images.ctfassets.net/pj0maraabon4/19EOD4H2jJzaITuJ1VCYjP/6f194ef1906f179fdff257785255c5a6/Product_Recommentation.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/AWliC8HUMiEcAMXPjHff1/e1b5edaf8455fe292f375ea876c9de81/Product_recommendation.mp4",
   },
   {
     id: 3,
     image:
-      "https://images.ctfassets.net/pj0maraabon4/58OdVzsbP4CohhPdA2emLJ/09921e73acd15be4665564608106814b/Personalized_Discounts__Happier_Customers_â___Powered_by_AEP___Adobe_Commerce_1.png",
+      "https://images.ctfassets.net/pj0maraabon4/3N9yqUkjutnAizDLHKX5GW/327f7618bcc6bef20443bfa20bff4604/Live_Search.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/2lXuiAoYJNBOSEu7R1dn5U/3e5b6014da74ed479eff0fdc3e39cf92/Final_Out.mp4",
+  },
+  
+  {
+    id: 4,
+    image:
+      "https://images.ctfassets.net/pj0maraabon4/ZjN1O5ofZ2pQZpEFvouFG/bea0016679a641f543da8ff80077b8f7/adobe-commerce-aep.jpg",
+    video: "https://videos.ctfassets.net/pj0maraabon4/6rnaOM4Jsr6ZjCwLQPi8JG/2f04a0d33eb61faa376296a3cbbd22e8/Adobe_Recommentation_-_27-06-25_1__1___1_.mp4",
   },
 ];
 
@@ -132,9 +140,9 @@ export default function AprimoDam() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
               whileHover={{ scale: 1.05 }}
-              className="px-6 py-4 relative rounded-full font-medium flex items-center gap-2 overflow-hidden text-white"
+              className="px-6 py-4 relative rounded-full font-medium flex items-center gap-2 overflow-hidden text-[#1B0A31]"
               style={{
-                backgroundImage: "linear-gradient(to right, #FE780C, #FE3908)",
+                background: "#BB7CE4",
               }}
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
@@ -149,7 +157,7 @@ export default function AprimoDam() {
                 />
               )}
 
-              <span className="relative z-10 text-white">Let's Connect</span>
+              <span className="relative z-10 text-[#1B0A31]">Let's Connect</span>
 
               <div className="relative w-5 h-5 overflow-hidden">
                 <AnimatePresence initial={false} mode="wait">
@@ -184,13 +192,13 @@ export default function AprimoDam() {
             <div className="flex gap-4">
               <button
                 onClick={handlePrev}
-                className="w-10 h-10 rounded-full bg-[linear-gradient(to_right,#FE780C,#FE3908)] text-white flex items-center justify-center"
+                className="w-10 h-10 rounded-full bg-[#BB7CE4] text-[#1B0A31] flex items-center justify-center"
               >
                 <ChevronLeft />
               </button>
               <button
                 onClick={handleNext}
-                className="w-10 h-10 rounded-full bg-[linear-gradient(to_right,#FE780C,#FE3908)] text-white flex items-center justify-center"
+                className="w-10 h-10 rounded-full bg-[#BB7CE4] text-[#1B0A31] flex items-center justify-center"
               >
                 <ChevronRight />
               </button>
@@ -227,7 +235,7 @@ export default function AprimoDam() {
       <div className="w-full mt-8">
         <div className="w-full h-1 bg-gray-700 rounded">
           <div
-            className="h-1 bg-[linear-gradient(to_right,#FE780C,#FE3908)] rounded"
+            className="h-1 bg-[#BB7CE4] rounded"
             style={{
               width: `${((activeIndex + 1) / cards.length) * 100}%`,
             }}
