@@ -74,7 +74,7 @@ export default function Salesforce() {
         <div className="flex items-center gap-12 md:grid-cols-2">
           {/* LEFT COLUMN */}
           <motion.div
-            className="relative w-[50%] flex h-[28rem] items-center justify-end"
+            className="relative w-full h-auto lg:w-[50%] flex lg:h-[28rem] items-center justify-center lg:justify-end"
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}
@@ -90,7 +90,7 @@ export default function Salesforce() {
                   animate="animate"
                   exit="exit"
                   transition={activeCard.transition}
-                  className="relative z-20 h-[550px] w-[520px] rounded-3xl shadow-2xl overflow-hidden cursor-pointer"
+                  className="relative z-20 lg:h-[550px] h-auto w-full lg:w-[520px] rounded-3xl shadow-2xl overflow-hidden cursor-pointer"
                   onClick={() => setOpenVideo(SLIDES[index].videoUrl)}
                 >
                   <motion.img
@@ -126,7 +126,7 @@ export default function Salesforce() {
                   animate="animate"
                   exit="exit"
                   transition={nextCard.transition}
-                  className="absolute z-10 h-[415px] w-[372px] rounded-3xl shadow-xl overflow-hidden -left-[50%]"
+                  className="absolute z-10 w-full h-auto lg:h-[415px] lg:w-[372px] rounded-3xl shadow-xl overflow-hidden -left-[50%]"
                 >
                   <motion.img
                     src={SLIDES[nextIndex].image}
@@ -138,7 +138,7 @@ export default function Salesforce() {
 
               <button
                 onClick={goNext}
-                className="absolute z-[9999] right-[97%] top-1/2 -translate-y-1/2 rounded-full bg-white p-6 text-black shadow-lg hover:scale-105 transition"
+                className="absolute z-[9999] right-[97%] top-1/2 -translate-y-1/2 rounded-full bg-white p-3 lg:p-6 text-black shadow-lg hover:scale-105 transition"
               >
                 <ChevronRight />
               </button>
@@ -146,7 +146,7 @@ export default function Salesforce() {
           </motion.div>
 
           {/* RIGHT COLUMN */}
-          <div className="w-[50%] px-[50px]">
+          <div className="w-full lg:w-[50%] lg:px-[50px]">
             <motion.div
                    
                             initial={{ opacity: 0, y: 40 }}
@@ -159,7 +159,7 @@ export default function Salesforce() {
                 Salesforce
               </span>{" "}
             </h3>
-            <p className="mt-3 text-gray-300">
+            <p className="mt-3 text-gray-300 text-lg">
               Your go-to hub for Salesforce trends, tools, and tutorials—featuring AI
               innovations, Data Cloud, automation, and low-code solutions.
             </p>

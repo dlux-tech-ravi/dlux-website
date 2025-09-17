@@ -2,14 +2,12 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const fleetData = [
-  { title: "Luxury Sedans", img: "https://images.ctfassets.net/pj0maraabon4/Q6PwYeP5BySxbfN7iGa7J/7aed2e5efb07f0ab6dfad0343f2ffcbd/logo_gif.gif" },
-  { title: "SUVs", img:"https://images.ctfassets.net/pj0maraabon4/Q6PwYeP5BySxbfN7iGa7J/7aed2e5efb07f0ab6dfad0343f2ffcbd/logo_gif.gif"},
-  { title: "Convertibles", img: "https://images.ctfassets.net/pj0maraabon4/Q6PwYeP5BySxbfN7iGa7J/7aed2e5efb07f0ab6dfad0343f2ffcbd/logo_gif.gif" },
-  { title: "Sports Cars", img: "https://images.ctfassets.net/pj0maraabon4/Q6PwYeP5BySxbfN7iGa7J/7aed2e5efb07f0ab6dfad0343f2ffcbd/logo_gif.gif"},
-  { title: "Electric Cars", img: "https://images.ctfassets.net/pj0maraabon4/Q6PwYeP5BySxbfN7iGa7J/7aed2e5efb07f0ab6dfad0343f2ffcbd/logo_gif.gif"},
-  { title: "Limousines", img: "https://images.ctfassets.net/pj0maraabon4/Q6PwYeP5BySxbfN7iGa7J/7aed2e5efb07f0ab6dfad0343f2ffcbd/logo_gif.gif" },
-  { title: "Pickup Trucks", img: "https://images.ctfassets.net/pj0maraabon4/Q6PwYeP5BySxbfN7iGa7J/7aed2e5efb07f0ab6dfad0343f2ffcbd/logo_gif.gif" },
-  { title: "Vans", img:"https://images.ctfassets.net/pj0maraabon4/Q6PwYeP5BySxbfN7iGa7J/7aed2e5efb07f0ab6dfad0343f2ffcbd/logo_gif.gif" },
+  { title: "Luxury Sedans", img: "https://images.ctfassets.net/pj0maraabon4/7j6lmSUHeMebkEec0Pgqk/02385ebb3bcbf8c951236ae4a9d24fe7/adobe.png" },
+  { title: "SUVs", img:"https://images.ctfassets.net/pj0maraabon4/29Bg7qu2eV5aMWjUBvRB1i/7ea33ffa22915fe47cdad736f31003c6/Group_918.png"},
+  { title: "Convertibles", img: "https://images.ctfassets.net/pj0maraabon4/3cydXFqdyuWFkc2WYkyUgK/78c69f6ac0445291fa0391ac87f2f174/Mask_Group_68.png" },
+  { title: "Sports Cars", img: "https://images.ctfassets.net/pj0maraabon4/7AkGf6wr03XKdsJefQq2La/4c0c882583b8459641366382c54da5cf/image.png"},
+  { title: "Electric Cars", img: "https://images.ctfassets.net/pj0maraabon4/1v0pkcjofxyJ9IsbWGxy5v/56ef4689fc915962f2d5a1bf7d10cccd/image_16.png"},
+  { title: "Limousines", img: "https://images.ctfassets.net/pj0maraabon4/3f3gymCyBE2a57NH4DDTlL/46994506f0a3ef20f0a818308d02b11e/Group_7391.png" },
 ];
 
 const ClientLogos = () => {
@@ -30,7 +28,7 @@ const ClientLogos = () => {
             Partners
           </span>
         </h2>
-        <p className="text-gray-300 mt-3 max-w-xl text-center m-auto">
+        <p className="text-gray-300 mt-3 max-w-xl text-center m-auto text-lg">
          We are honored to collaborate with trusted partners who share our vision and contribute to our collective success.
         </p>
       </motion.div>
@@ -59,7 +57,7 @@ const ClientLogos = () => {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="min-w-[250px] max-w-[250px] bg-[#1B0A31] rounded-xl p-6 border-[2px] border-[rgba(187,124,228,0.3)] flex flex-col items-center justify-center shadow-md"
             >
-              <img src={item.img} alt={item.title} className="w-32 h-20 mb-4" />
+              <img src={item.img} alt={item.title} className="w-30 h-30 mb-4" />
             </motion.div>
           ))}
         </motion.div>

@@ -162,7 +162,7 @@ export default function CEDVideo() {
                           viewport={{ once: true, amount: 0.3 }}
                         >
           <h2 className="text-4xl font-semibold">CoE Videos</h2>
-          <p className="mt-3 text-gray-300">
+          <p className="mt-3 text-gray-300 text-lg">
            Experience the next – Level of our CoE videos: Bold ideas, Breakthrough innovation, and the vision 
           </p>
           <p className="font-bold text-white"> “That Sets Us Apart To Where We Are ;  In The Today’s Landscape”</p>

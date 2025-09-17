@@ -37,7 +37,7 @@ export default function CtaBanner() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }} // triggers earlier
-        className="max-w-6xl mx-auto bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg pt-8 flex flex-col md:flex-row items-center gap-8"
+        className="max-w-6xl mx-auto bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg flex flex-col md:flex-row items-center gap-8 pt-8"
       >
         {/* Text Content */}
         <motion.div
@@ -45,21 +45,20 @@ export default function CtaBanner() {
           className="flex-1 text-white p-8"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Drive with{" "}
+          Watched {" "}
             <span className="bg-[#BB7CE4] bg-clip-text text-transparent">
-              Peace
+             Our Videos.
             </span>{" "}
-            of Mind
+             Ready for More?
           </h2>
           <p className="text-gray-200 mb-6 max-w-md">
-            We require all guests to purchase insurance for the duration of
-            their rental. Choose the best coverage for your trip.
+           From Project Management to AI , Martech Tools our videos are just the beginning. Let’s talk about solutions that fit your enterprise needs.
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
             className="px-6 py-2 rounded-full bg-white text-black font-medium border border-transparent hover:border-white/40 transition-all"
           >
-           Contact Us
+           Connect to Expert
           </motion.button>
         </motion.div>
 
@@ -69,9 +68,9 @@ export default function CtaBanner() {
           className="flex-1 flex justify-end"
         >
           <img
-            src="https://images.ctfassets.net/pj0maraabon4/3a28AU8s1QapOml16jHS7f/0e8bfc68d1a335e63562eaf822a02ad2/cta-video-vault-banner.png"
+            src="https://images.ctfassets.net/pj0maraabon4/3a28AU8s1QapOml16jHS7f/bc4d97c8dcbd1d439085bea698afcdd5/cta-banner-image.png"
             alt="Insurance"
-            className="max-w-xs md:max-w-md drop-shadow-xl"
+            className=" drop-shadow-xl"
           />
         </motion.div>
       </motion.div>

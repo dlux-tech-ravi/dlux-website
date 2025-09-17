@@ -45,11 +45,11 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className=" text-white py-16 px-6 md:px-20 h-[100vh] overflow-hidden">
-      <div className="flex gap-10 items-start relative">
+    <section className=" text-white py-16 px-6 md:px-20 lg:h-[100vh] overflow-hidden">
+      <div className="sm:flex-col-reverse lg:flex-row  lg:flex gap-10 items-start relative">
         {/* Left Column - Dummy Image */}
         <motion.div
-          className="relative pb-[250px]"
+          className="relative lg:pb-[250px]"
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
@@ -126,7 +126,7 @@ export default function Testimonials() {
                 <div
                   key={i}
                   className={`w-3 h-3 rounded-full ${
-                    i === index ? "bg-[linear-gradient(to_right,#FE780C,#FE3908)]" : "bg-gray-500"
+                    i === index ? "bg-[#BB7CE4]" : "bg-gray-500"
                   }`}
                 />
               ))}

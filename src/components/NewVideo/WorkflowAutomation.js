@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const cards = [
   {
     id: 1,
-    title: "Mark Motion",
+    title: "Unleash the Power of ChatGPT x Adobe Workfront: A DLUX TECH Innovation",
     height: "h-[437px]",
     width: "w-[525px]",
     imageUrl: "https://images.ctfassets.net/pj0maraabon4/1urwIFx73M5FJX1NwYJqsq/f5e8c256adfc8b66a1255e4d3f3a0eec/workfront_chatgpt.jpg",
@@ -15,7 +15,7 @@ const cards = [
   },
   {
     id: 2,
-    title: "Digital Grain",
+    title: "Seamless Migration from monday.com to Adobe Workfront",
     height: "h-[214px]",
     width: "w-[305px]",
     imageUrl: "https://images.ctfassets.net/pj0maraabon4/29GHZ92yOsRCfoBBB1zQIz/0bc0beae56c66265901a2771cc2af51f/workfront___Fusion.jpg",
@@ -23,7 +23,7 @@ const cards = [
   },
   {
     id: 3,
-    title: "Mark Motion",
+    title: "Effortless Custom Form Migration: Transform Your Workfront Experience!",
     height: "h-[380px]",
     width: "w-[305px]",
     imageUrl: "https://images.ctfassets.net/pj0maraabon4/4gmC2eSWGOEwSP8wqAzboC/24b7a7b7317607984a2b4a7615be77f9/Workflow-automation.jpg",
@@ -50,7 +50,7 @@ const cards = [
     title: "Next Vision",
     height: "h-[214px]",
     width: "w-[305px]",
-    imageUrl: "https://placehold.co/305x214",
+    imageUrl: "https://images.ctfassets.net/pj0maraabon4/6RCHk3KBIIVETOGx8urKTn/341a127cb5c5b0e5e225d7c93e4a354a/workflow-bug-image.jpg",
     videoUrl: "https://videos.ctfassets.net/pj0maraabon4/6zgrnljz5IWjKLvGKdJDRm/14bcb8ab6d309420c7f2ac1ac29fdd72/Workfront_Video_06.mp4",
   },
 ];
@@ -106,7 +106,7 @@ export default function WorkflowAutomation() {
               Workflow Automation
             </span>
           </h3>
-          <p className="mt-3 text-gray-300 max-w-3xl">
+          <p className="mt-3 text-gray-300 max-w-3xl text-lg" >
             Step into our Workfront video library and explore actionable insights, agile project management tips, resource planning strategies, and workflow automation guidance.
           </p>
         </motion.div>

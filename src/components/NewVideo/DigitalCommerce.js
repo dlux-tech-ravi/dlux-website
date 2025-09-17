@@ -10,7 +10,7 @@ const SLIDES = [
     title: "Mastering Multilingual Site Management with Adobe Experience Manager MSM",
     cta: "View Portfolio",
     image:
-      "https://images.ctfassets.net/pj0maraabon4/7EfPXl9ZZaHz8NjhtQOi8r/5314dd928d7d5e153796d344e7c7509e/Mastering_Multilingual_Site_Management_with_Adobe_Experience_Manager_MSM.png",
+      "https://images.ctfassets.net/pj0maraabon4/7EfPXl9ZZaHz8NjhtQOi8r/00837fb56fcd5783cb686252e2f06deb/aem-01_1.jpg",
     videoUrl:
       "https://videos.ctfassets.net/pj0maraabon4/7jf1qEjn6aNNHJsCCGHDkI/3b044468574c6305bee30852860c589a/2.mp4",
   },
@@ -19,7 +19,7 @@ const SLIDES = [
     title: "Say Goodbye to Content Chaos with AEM Edge Delivery!",
     cta: "Explore Work",
     image:
-      "https://images.ctfassets.net/pj0maraabon4/38YY6qkHaUxL15zPsAVkCY/0a308c6a58de7d4e0750a61c0f1d6ddf/Say_Goodbye_to_Content_Chaos_with_AEM_Edge_Delivery.png",
+      "https://images.ctfassets.net/pj0maraabon4/38YY6qkHaUxL15zPsAVkCY/cdf50e80478f340216d1e26ad75241d9/AEM-image-02.jpg",
     videoUrl:
       "https://videos.ctfassets.net/pj0maraabon4/1lbUJKgwWFFmyroHWJtlEj/0c6888136c8950b0a656ba6ed0d1f692/4.mp4",
   },
@@ -28,7 +28,7 @@ const SLIDES = [
     title: "Master Content Management with AEM: Your Safety Net in the Digital High-Wire Act!",
     cta: "See Details",
     image:
-      "https://images.ctfassets.net/pj0maraabon4/1Lig058lbO5iMFRoiXiqCL/486e788efff2fff9954f18c344933801/Master_Content_Management_with_AEM-_Your_Safety_Net_in_the_Digital_High-Wire_Act_.png",
+      "https://images.ctfassets.net/pj0maraabon4/1Lig058lbO5iMFRoiXiqCL/964414a17c8ac01940e850f0a316a6c7/AEM-image-03.jpg",
     videoUrl:
       "https://videos.ctfassets.net/pj0maraabon4/3sqvkwblysuyTcUU6vyXT2/d777d4a9b8db5600a7a8ce61184dae47/Product_recommendation-002__1___1___1_.mp4",
   },
@@ -37,7 +37,7 @@ const SLIDES = [
     title: "Unlock the Power of Seamless Content Creation with AEM",
     cta: "See Details",
     image:
-      "https://images.ctfassets.net/pj0maraabon4/1suQj4cSZfdQwX2bTltDiz/220956746f044637a590b979fea68587/Unlock_the_Power_of_Seamless_Content_Creation_with_AEM.png",
+      "https://images.ctfassets.net/pj0maraabon4/1suQj4cSZfdQwX2bTltDiz/3f33f984161b01813a01b8245dc128d7/AEM-Image-04.jpg",
     videoUrl:
       "https://videos.ctfassets.net/pj0maraabon4/1ekQavAh7Sw8xySwzNttlA/ab0d40f4bcb651e3f716f5d5fd7edd5a/15.mp4",
   },
@@ -89,7 +89,7 @@ export default function DigitalCommerce() {
              Digital Commerce
             </span>
           </h2>
-          <p className="mt-3 text-gray-300">
+          <p className="mt-3 text-gray-300 text-lg">
             Watch & Learn with Adobe Commerce – From Magento to Commerce, explore
             expert tutorials, proven stats, and success stories. Unlock E-Commerce
             growth and improved ROI with real strategies that work.
