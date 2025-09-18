@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, X } from "lucide-react";
+import { ArrowRight, X, Play } from "lucide-react";
 
 const images = [
   { src: "https://images.ctfassets.net/pj0maraabon4/4D9puPq2G9Ka2tIRveI0RL/da4f774b3bffc0db78a940d83a6bda7c/workfront___Fusion.jpg", video: "https://videos.ctfassets.net/pj0maraabon4/4nzwh8CJomPfZjdBUAbpSE/bf2142c36ccdd8956d23502a683b892b/3.mp4" },
@@ -27,15 +27,17 @@ const HeroBanner = () => {
   const [cycle, setCycle] = useState(0);
   const [popupVideo, setPopupVideo] = useState(null);
 
+  // 🔴 Stopped auto shuffle
+  /*
   useEffect(() => {
-    if (popupVideo) return; // ⛔ stop shuffling if popup open
-
+    if (popupVideo) return;
     const interval = setInterval(() => {
       setCurrentImages((prev) => rotateArray(prev));
       setCycle((c) => c + 1);
-    }, 5000); // ⏳ slower shuffle
+    }, 5000);
     return () => clearInterval(interval);
   }, [popupVideo]);
+  */
 
   // Disable scroll when popup is open
   useEffect(() => {
@@ -56,218 +58,207 @@ const HeroBanner = () => {
     }),
   };
 
-  const transition = { duration: 1.5, ease: "easeInOut" }; // 🐢 slower animation
+  const transition = { duration: 1.5, ease: "easeInOut" };
 
+  // ✅ Play Icon overlay
   const ImageBox = ({ item, direction, idx }) => (
-    <motion.img
-      key={`${item.src}-${cycle}-${idx}`}
-      src={item.src}
-      alt=""
-      className="w-full h-full object-cover rounded-lg cursor-pointer"
-      onClick={() => setPopupVideo(item.video)}
-      custom={direction}
-      variants={imgVariants}
-      initial="hidden"
-      animate="visible"
-      exit="exit"
-      transition={transition}
-    />
+    <div className="relative w-full h-full">
+      <motion.img
+        key={`${item.src}-${cycle}-${idx}`}
+        src={item.src}
+        alt=""
+        className="w-full h-full object-cover rounded-lg cursor-pointer"
+        onClick={() => setPopupVideo(item.video)}
+        custom={direction}
+        variants={imgVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        transition={transition}
+      />
+      {/* Play Icon Overlay */}
+      <div
+        className="absolute inset-0 flex items-center justify-center"
+        onClick={() => setPopupVideo(item.video)}
+      >
+        <div className="bg-black/50 p-3 rounded-full">
+          <Play size={36} className="text-white" />
+        </div>
+      </div>
+    </div>
   );
- const [hovered, setHovered] = useState(false);
+
+  const [hovered, setHovered] = useState(false);
+
   return (
     <>
-    
-    <section className="relative w-full text-white overflow-hidden pb-16 lg:pt-[120px]">
-      <div className="relative z-10 flex flex-col items-center justify-center py-16 ">
-       <div className="absolute top-[20%] left-[45%] w-80 h-80 rounded-full 
-      bg-gradient-to-r from-[#BB7CE4] to-[#02162F] 
-      blur-[100px] opacity-80 -z-10" />
-        <motion.div
-        className="justify-items-center"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                viewport={{ once: true, amount: 0.3 }}
+      <section className="relative w-full text-white overflow-hidden pb-16 lg:pt-[120px]">
+        <div className="relative z-10 flex flex-col items-center justify-center py-16 ">
+          <div className="absolute top-[20%] left-[45%] w-80 h-80 rounded-full 
+          bg-gradient-to-r from-[#BB7CE4] to-[#02162F] 
+          blur-[100px] opacity-80 -z-10" />
+          <motion.div
+            className="justify-items-center"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <h1 className="text-4xl md:text-6xl font-bold text-center max-w-4xl leading-tight">
+              DLUX - Center of Excellence
+            </h1>
+            <p className="max-w-xl text-center mt-6 mb-6">
+              Watch real solutions unfold - with video walkthroughs across Adobe
+              Workfront, Fusion, DAM, Salesforce, and more.
+            </p>
+          </motion.div>
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            whileHover={{ scale: 1.05 }}
+            className="mt-6 px-6 py-4 relative rounded-full font-medium flex items-center gap-2 overflow-hidden text-[#1B0A31]"
+            style={{
+              background: "#BB7CE4",
+            }}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+          >
+            {hovered && (
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="absolute inset-0 rounded-full backdrop-blur-md bg-white/10 border border-white/40"
+              />
+            )}
+            <span className="relative z-10 text-[#1B0A31]">Contact Us</span>
+            <div className="relative w-5 h-5 overflow-hidden">
+              <AnimatePresence initial={false} mode="wait">
+                {hovered ? (
+                  <motion.div
+                    key="arrow-hover"
+                    initial={{ x: -20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: 20, opacity: 0 }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    className="absolute"
+                  >
+                    <ArrowRight size={18} />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="arrow-normal"
+                    initial={{ x: 0, opacity: 1 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: 20, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="absolute"
+                  >
+                    <ArrowRight size={18} />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </motion.button>
+        </div>
+
+        <div className="flex justify-center items-center gap-4 ">
+          <div
+            className="bg-white/10 backdrop-blur-md 
+             border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow"
+            style={{ width: "305px", height: "230px" }}
+          >
+            <ImageBox item={currentImages[0]} direction="left" idx={0} />
+          </div>
+          <div className="flex flex-col gap-4">
+            <div
+              className="bg-white/10 backdrop-blur-md 
+               border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow"
+              style={{ width: "305px", height: "230px" }}
+            >
+              <ImageBox item={currentImages[1]} direction="left" idx={1} />
+            </div>
+            <div
+              className="bg-white/10 backdrop-blur-md 
+               border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow"
+              style={{ width: "305px", height: "160px" }}
+            >
+              <ImageBox item={currentImages[2]} direction="left" idx={2} />
+            </div>
+          </div>
+          <div
+            className="bg-[#1B0A31] backdrop-blur-md 
+               border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow-2xl"
+            style={{ width: "415px", height: "460px" }}
+          >
+            <ImageBox item={currentImages[3]} direction="left" idx={3} />
+          </div>
+          <div className="flex flex-col gap-4">
+            <div
+              className="bg-white/10 backdrop-blur-md 
+               border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow"
+              style={{ width: "305px", height: "160px" }}
+            >
+              <ImageBox item={currentImages[4]} direction="right" idx={4} />
+            </div>
+            <div
+              className="bg-white/10 backdrop-blur-md 
+               border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow"
+              style={{ width: "305px", height: "230px" }}
+            >
+              <ImageBox item={currentImages[5]} direction="right" idx={5} />
+            </div>
+          </div>
+          <div
+            className="bg-white/10 backdrop-blur-md 
+               border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow"
+            style={{ width: "305px", height: "230px" }}
+          >
+            <ImageBox item={currentImages[6]} direction="right" idx={6} />
+          </div>
+        </div>
+
+        {/* Video Popup */}
+        <AnimatePresence>
+          {popupVideo && (
+            <motion.div
+              className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[999999]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <motion.div
+                className="relative rounded-xl shadow-xl p-4 
+               bg-white/10 backdrop-blur-md 
+               border-[2px] border-[rgba(187,124,228,0.3)] flex flex-col items-center w-full h-full justify-center"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.8, opacity: 0 }}
+                transition={{ duration: 0.6 }}
               >
-        <h1 className="text-4xl md:text-6xl font-bold text-center max-w-4xl leading-tight">
-          DLUX - Center of Excellence
-        </h1>
-        <p className="max-w-xl text-center mt-6 mb-6">
-          Watch real solutions unfold - with video walkthroughs across Adobe
-          Workfront, Fusion, DAM, Salesforce, and more.
-        </p>
-        </motion.div>
-    <motion.button
-    initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-
-      whileHover={{ scale: 1.05 }} // light zoom on hover
-      
-      className="mt-6 px-6 py-4 relative rounded-full font-medium flex items-center gap-2 overflow-hidden text-[#1B0A31]"
-      style={{
-        background: "#BB7CE4",
-      }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      {/* Blur overlay only on hover */}
-      {hovered && (
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
-          className="absolute inset-0 rounded-full backdrop-blur-md bg-white/10 border border-white/40"
-        />
-      )}
-
-      {/* Text */}
-      <span className="relative z-10 text-[#1B0A31]">Contact Us</span>
-
-      {/* Arrow Animation */}
-      <div className="relative w-5 h-5 overflow-hidden">
-        <AnimatePresence initial={false} mode="wait">
-          {hovered ? (
-            <motion.div
-              key="arrow-hover"
-              initial={{ x: -20, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: 20, opacity: 0 }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="absolute"
-            >
-              <ArrowRight size={18} />
-            </motion.div>
-          ) : (
-            <motion.div
-              key="arrow-normal"
-              initial={{ x: 0, opacity: 1 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: 20, opacity: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="absolute"
-            >
-              <ArrowRight size={18} />
+                <button
+                  className="absolute top-4 right-4 text-black bg-white/10 backdrop-blur-md 
+               border border-black/20  rounded-full p-2 "
+                  onClick={() => setPopupVideo(null)}
+                >
+                  <X size={24} />
+                </button>
+                <iframe
+                  width="800"
+                  height="450"
+                  src={popupVideo}
+                  title="Video Player"
+                  frameBorder="0"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  className="rounded-lg"
+                ></iframe>
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
-      </div>
-    </motion.button>
-
-        {/* <button className="mt-6 px-6 py-2 bg-[linear-gradient(to_right,#FE780C,#FE3908)] text-black rounded-full font-medium flex items-center gap-2 hover:bg-yellow-500 transition">
-          View Portfolio <ArrowRight size={18} />
-        </button> */}
-      </div>
-      
-
-      <div className="flex justify-center items-center gap-4 ">
-        {/* Left single */}
-        <div
-          className="bg-white/10 backdrop-blur-md 
-             border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow"
-          style={{ width: "305px", height: "230px" }}
-        >
-          <ImageBox item={currentImages[0]} direction="left" idx={0} />
-        </div>
-
-        {/* Left stack */}
-        <div className="flex flex-col gap-4">
-          <div
-            className="bg-white/10 backdrop-blur-md 
-             border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow"
-            style={{ width: "305px", height: "230px" }}
-          >
-            <ImageBox item={currentImages[1]} direction="left" idx={1} />
-          </div>
-          <div
-            className="bg-white/10 backdrop-blur-md 
-             border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow"
-            style={{ width: "305px", height: "160px" }}
-          >
-            <ImageBox item={currentImages[2]} direction="left" idx={2} />
-          </div>
-        </div>
-
-        {/* Center big */}
-        <div
-          className="bg-[#1B0A31] backdrop-blur-md 
-             border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow-2xl"
-          style={{ width: "415px", height: "460px" }}
-        >
-          <ImageBox item={currentImages[3]} direction="left" idx={3} />
-        </div>
-
-        {/* Right stack */}
-        <div className="flex flex-col gap-4">
-          <div
-            className="bg-white/10 backdrop-blur-md 
-             border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow"
-            style={{ width: "305px", height: "160px" }}
-          >
-            <ImageBox item={currentImages[4]} direction="right" idx={4} />
-          </div>
-          <div
-            className="bg-white/10 backdrop-blur-md 
-             border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow"
-            style={{ width: "305px", height: "230px" }}
-          >
-            <ImageBox item={currentImages[5]} direction="right" idx={5} />
-          </div>
-        </div>
-
-        {/* Right single */}
-        <div
-          className="bg-white/10 backdrop-blur-md 
-             border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow"
-          style={{ width: "305px", height: "230px" }}
-        >
-          <ImageBox item={currentImages[6]} direction="right" idx={6} />
-        </div>
-      </div>
-
-      {/* Video Popup */}
-      <AnimatePresence>
-        {popupVideo && (
-          <motion.div
-            className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[999999]"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <motion.div
-              className="relative rounded-xl shadow-xl p-4 
-             bg-white/10 backdrop-blur-md 
-             border-[2px] border-[rgba(187,124,228,0.3)] flex flex-col items-center w-full h-full justify-center"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              {/* Close Button */}
-              <button
-                className="absolute top-4 right-4 text-black bg-white/10 backdrop-blur-md 
-             border border-black/20  rounded-full p-2 "
-                onClick={() => setPopupVideo(null)}
-              >
-                <X size={24} />
-              </button>
-
-              {/* Video Frame */}
-              <iframe
-                width="800"
-                height="450"
-                src={popupVideo}
-                title="Video Player"
-                frameBorder="0"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                className="rounded-lg"
-              ></iframe>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
       </section>
     </>
   );
