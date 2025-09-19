@@ -24,7 +24,7 @@ const images = [
     video:
       "https://videos.ctfassets.net/pj0maraabon4/4nEhKbDWPRXIvLQ7FissuL/03ed545b776ec943473a2106b40c2597/1.mp4",
     title:
-      "AEM edge Delivery Services , Low to No- Code Solutions | Website development |  Track website responsiveness|devops| developers",
+      "AEM edge Delivery Services , Low to No- Code Solutions ",
   },
   {
     src: "https://images.ctfassets.net/pj0maraabon4/3Q0eCGn44WyQ7H8Qak8gOu/589494a533f07a14a991188c1f8124db/hero-aem-integration.jpg",

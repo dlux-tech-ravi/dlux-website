@@ -202,7 +202,7 @@ export default function Salesforce() {
 
                   {/* Text */}
                   <span className="relative z-10 text-[#1B0A31]">
-                    {SLIDES[index].cta}
+                  Get Started
                   </span>
 
                   {/* Arrow Animation */}
