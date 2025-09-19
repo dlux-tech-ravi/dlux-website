@@ -58,7 +58,7 @@ export default function Testimonials() {
           <img
             src="https://images.ctfassets.net/pj0maraabon4/41J54pCB5auSK01fbl2S1w/fbae03cb12070c737b18d86b09b2cf0b/90.png"
             alt="Dummy"
-            className="w-[526px] h-[413px] object-cover rounded-2xl"
+            className="w-full h-full lg:w-[526px] lg:h-[413px] object-cover rounded-2xl"
           />
         </motion.div>
 
@@ -84,7 +84,7 @@ export default function Testimonials() {
 
           <div className="relative lg:-left-[20%]">
             {/* Testimonial Carousel */}
-            <div className="flex gap-6 overflow-hidden h-auto lg:h-[280px]">
+            <div className="flex  gap-6 overflow-hidden h-auto lg:h-[280px]">
               <AnimatePresence mode="popLayout">
                 {currentSlides.map((item, i) => (
                   <motion.div
@@ -93,7 +93,7 @@ export default function Testimonials() {
                     animate={{ x: i * 500, opacity: 1 }}
                     exit={{ x: -200, opacity: 0 }}
                     transition={{ duration: 0.8, ease: "easeInOut" }}
-                    className="lg:absolute top-0 bg-neutral-900 rounded-xl p-6  lg:w-[453px] h-[296px] shadow-lg"
+                    className="lg:absolute top-0 bg-neutral-900 rounded-xl p-6 w-400px  lg:w-[453px] h-[296px] shadow-lg"
                   >
                     {i === 0 && (
                       <div className="text-3xl text-white absolute top-4 left-4">

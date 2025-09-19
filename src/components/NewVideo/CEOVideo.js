@@ -156,7 +156,7 @@ export default function CEDVideo() {
               </p>
 
   {/* Play Button with Slow Ripple Animation */}
-  <div className="absolute bottom-3 left-4 lg:bottom-6 lg:right-6">
+  <div className="absolute bottom-3 right-4 lg:bottom-6 lg:right-6">
     <div className="relative flex items-center justify-end">
       <span className="absolute w-14 h-14 rounded-full bg-white/30 animate-slow-ping"></span>
       <span
