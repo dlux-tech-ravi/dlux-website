@@ -54,19 +54,20 @@ const VideoShowcase = () => {
 }, [activeVideo]);
   return (
     <section
-      className="w-full h-[100vh] py-16 text-white bg-[#122644] bg-center"
+      className="w-full h-[100vh] px-16 py-16 text-white bg-[#122644] bg-center"
       style={{
         backgroundImage:
           "url('https://images.ctfassets.net/pj0maraabon4/191BOERTELcczZ9QlKGvAi/a473b5e73cc2b491b035ffbb227f1065/video-section-bg-img.png')",
       }}
     >
       <div className="max-w-6xl mx-auto px-4">
+        <div className="pl-10">
         {/* Heading */}
-        <h2 className="text-xl font-semibold mb-12">
-          SEE <span className="text-purple-400">THE BEST MOMENTS</span> FROM OUR
+        <h2 className="text-4xl font-semibold mb-12">
+          SEE <span className="text-purple-400">THE BEST MOMENTS</span><br/> FROM OUR
           EVENT
         </h2>
-
+        </div>
         {/* Videos Grid / Carousel */}
         <div
           className={`

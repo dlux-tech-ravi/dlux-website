@@ -5,13 +5,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronRight, X } from "lucide-react";
 
 const SLIDES = [
- {
+  {
     id: 1,
     title: "Transform Your Business Communication with Salesforce",
     cta: "View Portfolio",
     image:
       "https://images.ctfassets.net/pj0maraabon4/57xOIriVD6RHoemWz7Qt5l/38b0a79681b163306d34aaa4366f9a1a/Transform_Your_Business_Communication_with_Salesforce.png",
-    videoUrl: "https://videos.ctfassets.net/pj0maraabon4/23duxSWEGotEK7VfBz31mq/ed0abd80bdcb2b1f1d15797d80b85704/6.mp4",
+    videoUrl:
+      "https://videos.ctfassets.net/pj0maraabon4/23duxSWEGotEK7VfBz31mq/ed0abd80bdcb2b1f1d15797d80b85704/6.mp4",
   },
   {
     id: 2,
@@ -19,7 +20,8 @@ const SLIDES = [
     cta: "Explore Work",
     image:
       "https://images.ctfassets.net/pj0maraabon4/U6g7TwkJH7UI8k0dwoO1C/dc7687fe056ef8f07af423eb274bb0b9/Unlock_Salesforce_Flow_Builder-_Your_Key_to_Effortless_Automation_.png",
-    videoUrl: "https://videos.ctfassets.net/pj0maraabon4/7yllG6jYwZ5xYzBJjUsm2C/44db079246aa391311dae20dd4a121ec/8.mp4",
+    videoUrl:
+      "https://videos.ctfassets.net/pj0maraabon4/7yllG6jYwZ5xYzBJjUsm2C/44db079246aa391311dae20dd4a121ec/8.mp4",
   },
   {
     id: 3,
@@ -27,15 +29,18 @@ const SLIDES = [
     cta: "See Details",
     image:
       "https://images.ctfassets.net/pj0maraabon4/20nzbTepnkkIoYLIdiAw2T/20c680751d0c163c38530666a36779d5/Transform_Your_Media_Booking_Process_with_DLUX.png",
-    videoUrl: "https://videos.ctfassets.net/pj0maraabon4/7y7UI5QVmN5gxwqyQdsibz/3342fea640792cd45dbce90187a8352a/12.mp4",
+    videoUrl:
+      "https://videos.ctfassets.net/pj0maraabon4/7y7UI5QVmN5gxwqyQdsibz/3342fea640792cd45dbce90187a8352a/12.mp4",
   },
   {
     id: 4,
-    title: "Unlock Seamless Security with Our Authentication Governance Superbadge!",
+    title:
+      "Unlock Seamless Security with Our Authentication Governance Superbadge!",
     cta: "See Details",
     image:
       "https://images.ctfassets.net/pj0maraabon4/g1TWso5qhkM031pfTbtNK/1ecdd71b56804e705124d3212cf059b8/Unlock_Seamless_Security_with_Our_Authentication_Governance_Superbadge_.png",
-    videoUrl: "https://videos.ctfassets.net/pj0maraabon4/40YQgD24kgLKekkNE4qtFb/dc4d0753268f4cff6069206d5b911ba7/14.mp4",
+    videoUrl:
+      "https://videos.ctfassets.net/pj0maraabon4/40YQgD24kgLKekkNE4qtFb/dc4d0753268f4cff6069206d5b911ba7/14.mp4",
   },
 ];
 
@@ -98,6 +103,11 @@ export default function Salesforce() {
                     alt={SLIDES[index].title}
                     className="w-full h-full object-cover"
                   />
+                  {/* Title Overlay */}
+                  <div className="absolute bottom-0 left-0 w-full bg-black/40 backdrop-blur-md text-white p-3 text-lg">
+                    {SLIDES[index].title}
+                  </div>
+
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="relative w-16 h-16">
                       {[0, 1, 2].map((i) => (
@@ -133,6 +143,10 @@ export default function Salesforce() {
                     alt={SLIDES[nextIndex].title}
                     className="w-full h-full object-cover"
                   />
+                  {/* Title Overlay */}
+                  <div className="absolute bottom-0 left-0 w-full bg-black/40 backdrop-blur-md text-white p-2 text-xs">
+                    {SLIDES[nextIndex].title}
+                  </div>
                 </motion.div>
               </AnimatePresence>
 
@@ -148,42 +162,27 @@ export default function Salesforce() {
           {/* RIGHT COLUMN */}
           <div className="w-full lg:w-[50%] lg:px-[50px]">
             <motion.div
-                   
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
-                            viewport={{ once: true, amount: 0.3 }}
-                          >
-            <h3 className="text-4xl font-bold ">
-              <span className="bg-[#BB7CE4] bg-clip-text text-transparent">
-                Salesforce
-              </span>{" "}
-            </h3>
-            <p className="mt-3 text-gray-300 text-lg">
-              Your go-to hub for Salesforce trends, tools, and tutorials—featuring AI
-              innovations, Data Cloud, automation, and low-code solutions.
-            </p>
-            </motion.div>
-            <motion.div
-              key={SLIDES[index].id}
-              initial={{ opacity: 0, x: 60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="mt-10"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.3 }}
             >
-              <h4 className="text-3xl font-semibold leading-tight ">
-                {SLIDES[index].title}
-              </h4>
-
-              <div className="mt-8">
-                <motion.button
+              <h3 className="text-5xl font-bold ">
+                <span className="bg-[#BB7CE4] bg-clip-text text-transparent">
+                  Salesforce
+                </span>{" "}
+              </h3>
+              <p className="mt-3 text-gray-300 text-xl">
+                Your go-to hub for Salesforce trends, tools, and
+                tutorials—featuring AI innovations, Data Cloud, automation, and
+                low-code solutions.
+              </p>
+               <motion.button
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
                   whileHover={{ scale: 1.05 }}
-                  className="mt-6 px-4 py-3 relative rounded-full font-medium flex items-center gap-2 overflow-hidden text-[#1B0A31]
-"
+                  className="mt-6 px-4 py-3 relative rounded-full font-medium flex items-center gap-2 overflow-hidden text-[#1B0A31]"
                   style={{
                     background: "#BB7CE4",
                   }}
@@ -235,8 +234,23 @@ export default function Salesforce() {
                     </AnimatePresence>
                   </div>
                 </motion.button>
-              </div>
             </motion.div>
+            {/* <motion.div
+              key={SLIDES[index].id}
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="mt-10"
+            >
+              <h4 className="text-3xl font-semibold leading-tight ">
+                {SLIDES[index].title}
+              </h4>
+
+              <div className="mt-8">
+               
+              </div>
+            </motion.div> */}
           </div>
         </div>
       </div>

@@ -5,39 +5,53 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, X, Play } from "lucide-react";
 
 const images = [
-  { src: "https://images.ctfassets.net/pj0maraabon4/4D9puPq2G9Ka2tIRveI0RL/da4f774b3bffc0db78a940d83a6bda7c/workfront___Fusion.jpg", video: "https://videos.ctfassets.net/pj0maraabon4/4nzwh8CJomPfZjdBUAbpSE/bf2142c36ccdd8956d23502a683b892b/3.mp4" },
-  { src: "https://images.ctfassets.net/pj0maraabon4/7tOyIigqOru1Hl4ipGXjJy/485b1b91f34b21b4e24cee879a5952f8/Product_Recommentation.jpg", video: "https://videos.ctfassets.net/pj0maraabon4/4SadDV6KH3l3HxHtwQmOVt/cda0e499b9f75693c98c66e73a23b6ad/Product_recommendation.mp4" },
-  { src: "https://images.ctfassets.net/pj0maraabon4/TcciqXaBG41DwA7MqVGCH/843264f254a68d9043243ab12ab7b73c/workfront_chatgpt.jpg", video: "https://videos.ctfassets.net/pj0maraabon4/4nEhKbDWPRXIvLQ7FissuL/03ed545b776ec943473a2106b40c2597/1.mp4" },
-  { src: "https://images.ctfassets.net/pj0maraabon4/3Q0eCGn44WyQ7H8Qak8gOu/589494a533f07a14a991188c1f8124db/hero-aem-integration.jpg", video: "https://videos.ctfassets.net/pj0maraabon4/3sqvkwblysuyTcUU6vyXT2/d777d4a9b8db5600a7a8ce61184dae47/Product_recommendation-002__1___1___1_.mp4" },
-  { src: "https://images.ctfassets.net/pj0maraabon4/3H6gS0GTd3qBH63xDWdXBI/7b9af0a3c39a7d6cbc7851e42861e368/sales_force.jpg", video: "https://videos.ctfassets.net/pj0maraabon4/T8FgmjIH1PT1siGKC1XZN/1e4e2a36bc0fb11856103848ccd6dc26/6.mp4" },
-  { src: "https://images.ctfassets.net/pj0maraabon4/7EfPXl9ZZaHz8NjhtQOi8r/5314dd928d7d5e153796d344e7c7509e/Mastering_Multilingual_Site_Management_with_Adobe_Experience_Manager_MSM.png", video: "https://videos.ctfassets.net/pj0maraabon4/1vSlJBQN0oVuXUPWwmIkJF/c98da52d45b2cf48529b630d09051207/1731567568212.mp4" },
-  { src: "https://images.ctfassets.net/pj0maraabon4/6LEf7JKCfZkPCQIZL0C57v/8363311095c5d99df6cc1e7adefcc2c1/Real_Time.jpg", video: "https://videos.ctfassets.net/pj0maraabon4/6beKvkSg8y2YKh3v7QxNiZ/08de91f870f351a1e3e3b887fd7b3bfc/ceo-videos-08.mp4" },
+  {
+    src: "https://images.ctfassets.net/pj0maraabon4/4D9puPq2G9Ka2tIRveI0RL/da4f774b3bffc0db78a940d83a6bda7c/workfront___Fusion.jpg",
+    video:
+      "https://videos.ctfassets.net/pj0maraabon4/4nzwh8CJomPfZjdBUAbpSE/bf2142c36ccdd8956d23502a683b892b/3.mp4",
+    title: "Workfront + Fusion",
+  },
+  {
+    src: "https://images.ctfassets.net/pj0maraabon4/7tOyIigqOru1Hl4ipGXjJy/485b1b91f34b21b4e24cee879a5952f8/Product_Recommentation.jpg",
+    video:
+      "https://videos.ctfassets.net/pj0maraabon4/4SadDV6KH3l3HxHtwQmOVt/cda0e499b9f75693c98c66e73a23b6ad/Product_recommendation.mp4",
+    title: "Product Recommendation",
+  },
+  {
+    src: "https://images.ctfassets.net/pj0maraabon4/TcciqXaBG41DwA7MqVGCH/843264f254a68d9043243ab12ab7b73c/workfront_chatgpt.jpg",
+    video:
+      "https://videos.ctfassets.net/pj0maraabon4/4nEhKbDWPRXIvLQ7FissuL/03ed545b776ec943473a2106b40c2597/1.mp4",
+    title: "ChatGPT Integration",
+  },
+  {
+    src: "https://images.ctfassets.net/pj0maraabon4/3Q0eCGn44WyQ7H8Qak8gOu/589494a533f07a14a991188c1f8124db/hero-aem-integration.jpg",
+    video:
+      "https://videos.ctfassets.net/pj0maraabon4/3sqvkwblysuyTcUU6vyXT2/d777d4a9b8db5600a7a8ce61184dae47/Product_recommendation-002__1___1___1_.mp4",
+    title: "AEM Integration",
+  },
+  {
+    src: "https://images.ctfassets.net/pj0maraabon4/3H6gS0GTd3qBH63xDWdXBI/7b9af0a3c39a7d6cbc7851e42861e368/sales_force.jpg",
+    video:
+      "https://videos.ctfassets.net/pj0maraabon4/T8FgmjIH1PT1siGKC1XZN/1e4e2a36bc0fb11856103848ccd6dc26/6.mp4",
+    title: "Salesforce",
+  },
+  {
+    src: "https://images.ctfassets.net/pj0maraabon4/7EfPXl9ZZaHz8NjhtQOi8r/5314dd928d7d5e153796d344e7c7509e/Mastering_Multilingual_Site_Management_with_Adobe_Experience_Manager_MSM.png",
+    video:
+      "https://videos.ctfassets.net/pj0maraabon4/1vSlJBQN0oVuXUPWwmIkJF/c98da52d45b2cf48529b630d09051207/1731567568212.mp4",
+    title: "Multilingual Site Management",
+  },
+  {
+    src: "https://images.ctfassets.net/pj0maraabon4/6LEf7JKCfZkPCQIZL0C57v/8363311095c5d99df6cc1e7adefcc2c1/Real_Time.jpg",
+    video:
+      "https://videos.ctfassets.net/pj0maraabon4/6beKvkSg8y2YKh3v7QxNiZ/08de91f870f351a1e3e3b887fd7b3bfc/ceo-videos-08.mp4",
+    title: "Real Time Dashboard",
+  },
 ];
 
-// Rotate images in order
-const rotateArray = (arr) => {
-  const copy = [...arr];
-  const first = copy.shift();
-  copy.push(first);
-  return copy;
-};
-
 const HeroBanner = () => {
-  const [currentImages, setCurrentImages] = useState(images);
-  const [cycle, setCycle] = useState(0);
+  const [currentImages] = useState(images);
   const [popupVideo, setPopupVideo] = useState(null);
-
-  // 🔴 Stopped auto shuffle
-  /*
-  useEffect(() => {
-    if (popupVideo) return;
-    const interval = setInterval(() => {
-      setCurrentImages((prev) => rotateArray(prev));
-      setCycle((c) => c + 1);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [popupVideo]);
-  */
 
   // Disable scroll when popup is open
   useEffect(() => {
@@ -45,37 +59,29 @@ const HeroBanner = () => {
   }, [popupVideo]);
 
   const imgVariants = {
-    hidden: (direction) => ({
-      opacity: 0,
-      x: direction === "left" ? -50 : 50,
-      scale: 0.9,
-    }),
-    visible: { opacity: 1, x: 0, scale: 1 },
-    exit: (direction) => ({
-      opacity: 0,
-      x: direction === "left" ? 50 : -50,
-      scale: 0.9,
-    }),
+    hidden: { opacity: 0, y: 40, scale: 0.95 },
+    visible: { opacity: 1, y: 0, scale: 1 },
   };
 
   const transition = { duration: 1.5, ease: "easeInOut" };
 
-  // ✅ Play Icon overlay
+  // ✅ Image Box with Play + Title
   const ImageBox = ({ item, direction, idx }) => (
     <div className="relative w-full h-full">
       <motion.img
-        key={`${item.src}-${cycle}-${idx}`}
+        key={`${item.src}-${idx}`}
         src={item.src}
-        alt=""
+        alt={item.title}
         className="w-full h-full object-cover rounded-lg cursor-pointer"
         onClick={() => setPopupVideo(item.video)}
         custom={direction}
         variants={imgVariants}
         initial="hidden"
-        animate="visible"
-        exit="exit"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
         transition={transition}
       />
+
       {/* Play Icon Overlay */}
       <div
         className="absolute inset-0 flex items-center justify-center"
@@ -85,6 +91,13 @@ const HeroBanner = () => {
           <Play size={36} className="text-white" />
         </div>
       </div>
+
+      {/* Title Overlay */}
+      <div className="absolute bottom-0 left-0 w-full px-3 py-2 
+                      bg-black/40 backdrop-blur-md 
+                      rounded-b-lg text-white text-sm font-medium">
+        {item.title}
+      </div>
     </div>
   );
 
@@ -93,10 +106,13 @@ const HeroBanner = () => {
   return (
     <>
       <section className="relative w-full text-white overflow-hidden pb-16 lg:pt-[120px]">
+        {/* Heading + CTA */}
         <div className="relative z-10 flex flex-col items-center justify-center py-16 ">
-          <div className="absolute top-[20%] left-[45%] w-80 h-80 rounded-full 
+          <div
+            className="absolute top-[20%] left-[45%] w-80 h-80 rounded-full 
           bg-gradient-to-r from-[#BB7CE4] to-[#02162F] 
-          blur-[100px] opacity-80 -z-10" />
+          blur-[100px] opacity-80 -z-10"
+          />
           <motion.div
             className="justify-items-center"
             initial={{ opacity: 0, y: 40 }}
@@ -107,7 +123,7 @@ const HeroBanner = () => {
             <h1 className="text-4xl md:text-6xl font-bold text-center max-w-4xl leading-tight">
               DLUX - Center of Excellence
             </h1>
-            <p className="max-w-xl text-center mt-6 mb-6">
+            <p className="max-w-xl text-center mt-6 mb-6 text-xl">
               Watch real solutions unfold - with video walkthroughs across Adobe
               Workfront, Fusion, DAM, Salesforce, and more.
             </p>
@@ -164,6 +180,7 @@ const HeroBanner = () => {
           </motion.button>
         </div>
 
+        {/* Image Grid */}
         <div className="flex justify-center items-center gap-4 ">
           <div
             className="bg-white/10 backdrop-blur-md 

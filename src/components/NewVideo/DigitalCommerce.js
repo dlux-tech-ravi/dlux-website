@@ -5,39 +5,56 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronRight, X } from "lucide-react";
 
 const SLIDES = [
-    {
+  {
     id: 1,
-     title: "Mastering Multilingual Site Management with Adobe Experience Manager MSM",
+    title:
+      "Mastering Multilingual Site Management with Adobe Experience Manager MSM",
     cta: "View Portfolio",
     image:
       "https://images.ctfassets.net/pj0maraabon4/6xE3Qtgu00MlBoohi279ax/e45f0a93a8f458aadee38da94a50ec4a/Analytics.jpg",
-    videoUrl: "https://videos.ctfassets.net/pj0maraabon4/7CG3xXvh4HMW2qADioFT4l/89f27424925df9f32eb297619f55adbb/ceo-videos-06.mp4",
+    videoUrl:
+      "https://videos.ctfassets.net/pj0maraabon4/7CG3xXvh4HMW2qADioFT4l/89f27424925df9f32eb297619f55adbb/ceo-videos-06.mp4",
   },
 
   {
     id: 2,
-    title: "Say Goodbye to Content Chaos with AEM Edge Delivery!",
+    title:
+      "Product Recommendation(Adobe Sensei in Action: Real-Time Product Recommendations That Convert)",
     cta: "Explore Work",
     image:
       "https://images.ctfassets.net/pj0maraabon4/19EOD4H2jJzaITuJ1VCYjP/6f194ef1906f179fdff257785255c5a6/Product_Recommentation.jpg",
-    videoUrl: "https://videos.ctfassets.net/pj0maraabon4/AWliC8HUMiEcAMXPjHff1/e1b5edaf8455fe292f375ea876c9de81/Product_recommendation.mp4",
+    videoUrl:
+      "https://videos.ctfassets.net/pj0maraabon4/AWliC8HUMiEcAMXPjHff1/e1b5edaf8455fe292f375ea876c9de81/Product_recommendation.mp4",
   },
   {
     id: 3,
-     title: "Master Content Management with AEM: Your Safety Net in the Digital High-Wire Act!",
+    title:
+      "Livesearch ( Smarter ECommerce with Adobe Commerce + AEP | The Future of Shopping)",
     cta: "See Details",
     image:
       "https://images.ctfassets.net/pj0maraabon4/3N9yqUkjutnAizDLHKX5GW/327f7618bcc6bef20443bfa20bff4604/Live_Search.jpg",
-    videoUrl: "https://videos.ctfassets.net/pj0maraabon4/2lXuiAoYJNBOSEu7R1dn5U/3e5b6014da74ed479eff0fdc3e39cf92/Final_Out.mp4",
+    videoUrl:
+      "https://videos.ctfassets.net/pj0maraabon4/2lXuiAoYJNBOSEu7R1dn5U/3e5b6014da74ed479eff0fdc3e39cf92/Final_Out.mp4",
   },
-  
+
   {
     id: 4,
-    title: "Unlock the Power of Seamless Content Creation with AEM",
+    title:
+      "AEP(Shop Smarter : Adobe Commerce + AEP Delivers Personalized Shopping)",
     cta: "See Details",
     image:
       "https://images.ctfassets.net/pj0maraabon4/ZjN1O5ofZ2pQZpEFvouFG/bea0016679a641f543da8ff80077b8f7/adobe-commerce-aep.jpg",
-    videoUrl: "https://videos.ctfassets.net/pj0maraabon4/6rnaOM4Jsr6ZjCwLQPi8JG/2f04a0d33eb61faa376296a3cbbd22e8/Adobe_Recommentation_-_27-06-25_1__1___1_.mp4",
+    videoUrl:
+      "https://videos.ctfassets.net/pj0maraabon4/6rnaOM4Jsr6ZjCwLQPi8JG/2f04a0d33eb61faa376296a3cbbd22e8/Adobe_Recommentation_-_27-06-25_1__1___1_.mp4",
+  },
+  {
+    id: 5,
+    title:
+      "AEP coupon video - Personalized Discounts, Happier Customers — Powered by AEP + Adobe Commerce",
+    cta: "See Details",
+    image:
+      "https://images.ctfassets.net/pj0maraabon4/ZjN1O5ofZ2pQZpEFvouFG/bea0016679a641f543da8ff80077b8f7/adobe-commerce-aep.jpg",
+    videoUrl: "https://youtu.be/M1FncAIVAB0",
   },
 ];
 
@@ -70,97 +87,90 @@ export default function DigitalCommerce() {
   }, [videoOpen]);
 
   return (
-    <section className=" text-white mt-[70px] mb-[70px] lg:pb-[70px] relative overflow-hidden">
+    <section className=" text-white mt-[70px]   relative overflow-hidden">
       <div className="mx-auto w-full px-6 py-16 flex flex-col lg:flex-row gap-12">
         {/* LEFT COLUMN (Content) */}
-        <div className="w-full lg:w-1/2 px-[50px]">
-        <motion.div
-           
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="mt-10"
-          >
-          <h2 className="text-4xl font-bold">
-            <span className="bg-[#BB7CE4] bg-clip-text text-transparent">
-             Digital Commerce
-            </span>
-          </h2>
-          <p className="mt-3 text-gray-300 text-lg">
-            Watch & Learn with Adobe Commerce – From Magento to Commerce, explore
-            expert tutorials, proven stats, and success stories. Unlock E-Commerce
-            growth and improved ROI with real strategies that work.
-          </p>
-</motion.div>
+        <div className="w-full lg:w-1/2 px-[50px] content-center">
           <motion.div
-            key={SLIDES[index].id}
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="mt-10"
           >
-            <h4 className="text-3xl font-semibold leading-tight">{SLIDES[index].title}</h4>
+            <h2 className="text-5xl font-bold mb-8">
+              <span className="bg-[#BB7CE4] bg-clip-text text-transparent">
+                Digital Commerce
+              </span>
+            </h2>
+            <p className="mt-3 text-gray-300 text-xl">
+              Watch & Learn with Adobe Commerce – From the early days of Magento
+              to the full power of Adobe Commerce today, explore a wide library
+              of expert-led tutorials, data-backed insights, and real-world
+              success stories. Gain access to proven strategies that help
+              businesses of all sizes scale faster, streamline operations, and
+              deliver seamless customer experiences. Discover actionable tips
+              for improving store performance, optimizing ROI, and driving
+              sustainable growth in the competitive world of digital commerce.
+            </p>
 
-            <div className="mt-8">
-              <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                whileHover={{ scale: 1.05 }}
-                className="mt-6 px-4 py-3 relative rounded-full font-medium flex items-center gap-2 overflow-hidden text-[#1B0A31]"
-                style={{
-                  background: "#BB7CE4",
-                }}
-                onMouseEnter={() => setHovered(true)}
-                onMouseLeave={() => setHovered(false)}
-              >
-                {hovered && (
-                  <motion.span
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="absolute inset-0 rounded-full backdrop-blur-md bg-white/10 border border-white/40"
-                  />
-                )}
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              whileHover={{ scale: 1.05 }}
+              className="mt-6 px-4 py-3 relative rounded-full font-medium flex items-center gap-2 overflow-hidden text-[#1B0A31]"
+              style={{
+                background: "#BB7CE4",
+              }}
+              onMouseEnter={() => setHovered(true)}
+              onMouseLeave={() => setHovered(false)}
+            >
+              {hovered && (
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute inset-0 rounded-full backdrop-blur-md bg-white/10 border border-white/40"
+                />
+              )}
 
-                <span className="relative z-10 text-[#1B0A31]">{SLIDES[index].cta}</span>
-                <div className="relative w-5 h-5 overflow-hidden">
-                  <AnimatePresence initial={false} mode="wait">
-                    {hovered ? (
-                      <motion.div
-                        key="arrow-hover"
-                        initial={{ x: -20, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        exit={{ x: 20, opacity: 0 }}
-                        transition={{ duration: 0.4, ease: "easeInOut" }}
-                        className="absolute"
-                      >
-                        <ArrowRight size={18} />
-                      </motion.div>
-                    ) : (
-                      <motion.div
-                        key="arrow-normal"
-                        initial={{ x: 0, opacity: 1 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        exit={{ x: 20, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="absolute"
-                      >
-                        <ArrowRight size={18} />
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              </motion.button>
-            </div>
+              <span className="relative z-10 text-[#1B0A31]">
+                Discover More
+              </span>
+              <div className="relative w-5 h-5 overflow-hidden">
+                <AnimatePresence initial={false} mode="wait">
+                  {hovered ? (
+                    <motion.div
+                      key="arrow-hover"
+                      initial={{ x: -20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      exit={{ x: 20, opacity: 0 }}
+                      transition={{ duration: 0.4, ease: "easeInOut" }}
+                      className="absolute"
+                    >
+                      <ArrowRight size={18} />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="arrow-normal"
+                      initial={{ x: 0, opacity: 1 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      exit={{ x: 20, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="absolute"
+                    >
+                      <ArrowRight size={18} />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </motion.button>
           </motion.div>
         </div>
 
         {/* RIGHT COLUMN (Cards) */}
-        <motion.div className="relative w-full lg:w-1/2 flex h-[28rem] items-center justify-start">
+        <motion.div className="relative w-full lg:w-1/2 flex  items-center justify-start">
           <div className="relative h-full flex items-center justify-center">
             <AnimatePresence mode="popLayout">
               {/* Active Card */}
@@ -197,6 +207,13 @@ export default function DigitalCommerce() {
                     </div>
                   </div>
                 </div>
+
+                {/* Title Overlay */}
+                <div className="absolute bottom-0 left-0 w-full bg-black/30 backdrop-blur-md p-4">
+                  <p className="text-white text-lg font-semibold">
+                    {SLIDES[index].title}
+                  </p>
+                </div>
               </motion.div>
 
               {/* Next Preview Card */}
@@ -214,6 +231,13 @@ export default function DigitalCommerce() {
                   alt={SLIDES[nextIndex].title}
                   className="w-full h-full object-cover"
                 />
+
+                {/* Title Overlay */}
+                <div className="absolute bottom-0 left-0 w-full bg-black/30 backdrop-blur-md p-3">
+                  <p className="text-white text-sm font-medium">
+                    {SLIDES[nextIndex].title}
+                  </p>
+                </div>
               </motion.div>
             </AnimatePresence>
 
@@ -252,12 +276,31 @@ export default function DigitalCommerce() {
                 <X size={24} />
               </button>
 
-              <video
-                src={SLIDES[index].videoUrl}
-                controls
-                autoPlay
-                className="w-[800px] h-[450px] object-contain rounded-lg bg-black"
-              />
+              {SLIDES[index].videoUrl.includes("youtube") ||
+              SLIDES[index].videoUrl.includes("youtu.be") ? (
+                <iframe
+                  src={
+                    SLIDES[index].videoUrl.includes("watch?v=")
+                      ? SLIDES[index].videoUrl.replace("watch?v=", "embed/")
+                      : SLIDES[index].videoUrl.replace(
+                          "youtu.be/",
+                          "www.youtube.com/embed/"
+                        )
+                  }
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-[800px] h-[450px] rounded-lg"
+                ></iframe>
+              ) : (
+                <video
+                  src={SLIDES[index].videoUrl}
+                  controls
+                  autoPlay
+                  className="w-[800px] h-[450px] object-contain rounded-lg bg-black"
+                />
+              )}
             </motion.div>
           </motion.div>
         )}

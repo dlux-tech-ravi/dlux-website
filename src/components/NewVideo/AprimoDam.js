@@ -5,7 +5,7 @@ import { ArrowRight, ChevronLeft, ChevronRight, Play, X } from "lucide-react";
 const cards = [
  {
     id: 1,
-    title: "Mastering Multilingual Site Management with Adobe Experience Manager MSM",
+    title: "Adobe Experience Manager | Ultimate Solution for your Content Safety and Recovery | DAM | Aprimo | Project management tools",
     cta: "View Portfolio",
     image:
       "https://images.ctfassets.net/pj0maraabon4/7EfPXl9ZZaHz8NjhtQOi8r/00837fb56fcd5783cb686252e2f06deb/aem-01_1.jpg",
@@ -14,7 +14,7 @@ const cards = [
   },
   {
     id: 2,
-    title: "Say Goodbye to Content Chaos with AEM Edge Delivery!",
+    title: "Muti- Site Manager to streamline workflows using Adobe Experience Manager| adobe|Handling Multi-lingual sites",
     cta: "Explore Work",
     image:
       "https://images.ctfassets.net/pj0maraabon4/38YY6qkHaUxL15zPsAVkCY/cdf50e80478f340216d1e26ad75241d9/AEM-image-02.jpg",
@@ -23,7 +23,7 @@ const cards = [
   },
   {
     id: 3,
-    title: "Master Content Management with AEM: Your Safety Net in the Digital High-Wire Act!",
+    title: "AEM edge Delivery Services , Low to No- Code Solutions | Website development |  Track website responsiveness|devops| developers",
     cta: "See Details",
     image:
       "https://images.ctfassets.net/pj0maraabon4/1Lig058lbO5iMFRoiXiqCL/964414a17c8ac01940e850f0a316a6c7/AEM-image-03.jpg",
@@ -103,7 +103,7 @@ export default function AprimoDam() {
                     style={{ backgroundImage: `url(${card.image})` }}
                     onClick={() => setActiveVideo(card.video)}
                   >
-                     <p className="absolute bottom-4 left-4 text-xl text-white w-[80%] font-semibold bg-black bg-opacity-50 px-3 py-1 rounded-lg">
+                     <p className="absolute bottom-4 left-4 text-lg text-white w-[80%] font-semibold bg-black bg-opacity-50 px-3 py-1 rounded-lg">
                 {card.title}
               </p>
                     {/* Play Button with Slow Ripple Animation */}
@@ -141,8 +141,8 @@ export default function AprimoDam() {
                       transition={{ duration: 1, delay: 0.2 }}
                       className="mt-10"
                     >
-          <h2 className="text-4xl font-semibold">Content Supply Chain </h2>
-          <p className="mt-3 text-gray-300">
+          <h2 className="text-5xl font-semibold">Content Supply Chain </h2>
+          <p className="mt-3 text-gray-300 text-xl">
             Deep driving you to the polished version of – AI Agents & Automation,
             Aprimo AI Suite, Video asset Management, Ecosystem Integrations, DAM
             trends, Recognized Leadership.
@@ -171,7 +171,7 @@ export default function AprimoDam() {
                 />
               )}
 
-              <span className="relative z-10 text-[#1B0A31]">Let's Connect</span>
+              <span className="relative z-10 text-[#1B0A31]">Get Started</span>
 
               <div className="relative w-5 h-5 overflow-hidden">
                 <AnimatePresence initial={false} mode="wait">

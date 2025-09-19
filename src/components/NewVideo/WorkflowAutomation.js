@@ -15,15 +15,15 @@ const cards = [
   },
   {
     id: 2,
-    title: "Seamless Migration from monday.com to Adobe Workfront",
-    height: "h-[214px]",
-    width: "w-[305px]",
+    title: "Effortless Custom Form Migration with Workfront : Transform Your Workfront Experience!",
+    height: "h-[280px]",
+    width: "w-[405px]",
     imageUrl: "https://images.ctfassets.net/pj0maraabon4/29GHZ92yOsRCfoBBB1zQIz/0bc0beae56c66265901a2771cc2af51f/workfront___Fusion.jpg",
     videoUrl: "https://videos.ctfassets.net/pj0maraabon4/4nzwh8CJomPfZjdBUAbpSE/bf2142c36ccdd8956d23502a683b892b/3.mp4",
   },
   {
     id: 3,
-    title: "Effortless Custom Form Migration: Transform Your Workfront Experience!",
+    title: "Workfront's Environment Promotion to streamline your workflows that improves Accuracy in Sandbox Environment",
     height: "h-[380px]",
     width: "w-[305px]",
     imageUrl: "https://images.ctfassets.net/pj0maraabon4/4gmC2eSWGOEwSP8wqAzboC/24b7a7b7317607984a2b4a7615be77f9/Workflow-automation.jpg",
@@ -31,15 +31,15 @@ const cards = [
   },
   {
     id: 4,
-    title: "Creative Flow",
-    height: "h-[214px]",
-    width: "w-[305px]",
+    title: "Migration from designated Production to Sandbox Environment with object Synchronization Tool | Workfront | Workfront Fusion",
+    height: "h-[340px]",
+    width: "w-[400px]",
     imageUrl: "https://images.ctfassets.net/pj0maraabon4/2MkLhtRZU7WhXawbmMCtNZ/82a2aacea17f4dbc63369b6752c01c5e/worklist-image.jpg",
     videoUrl: "https://videos.ctfassets.net/pj0maraabon4/1hQeIoRhPu1CiSWorPsB6e/e77e5662d31fa38304527df13a44555e/Work_front_04.mp4",
   },
   {
     id: 5,
-    title: "Design Pulse",
+    title: "Migrating data from Monday.com to Workfront | Workfront mapped to Monday.com | Workflow automation | Project Management Software ",
     height: "h-[437px]",
     width: "w-[525px]",
     imageUrl: "https://images.ctfassets.net/pj0maraabon4/5442ciQ6vmSy223ejIfp8t/70cc30c9c6d6f898b4dd9c7a3a570347/workfront-office-working-laptop.jpg",
@@ -47,28 +47,13 @@ const cards = [
   },
   {
     id: 6,
-    title: "Next Vision",
-    height: "h-[214px]",
-    width: "w-[305px]",
+    title: "Workfront in now  tracking the Financial management (billable , non-billable ) | Project Launching Sequences , Tasks | Adobe Workfront | Fusion",
+    height: "h-[320px]",
+    width: "w-[370px]",
     imageUrl: "https://images.ctfassets.net/pj0maraabon4/6RCHk3KBIIVETOGx8urKTn/341a127cb5c5b0e5e225d7c93e4a354a/workflow-bug-image.jpg",
     videoUrl: "https://videos.ctfassets.net/pj0maraabon4/6zgrnljz5IWjKLvGKdJDRm/14bcb8ab6d309420c7f2ac1ac29fdd72/Workfront_Video_06.mp4",
   },
-  {
-    id: 7,
-    title: "Next Vision",
-    height: "h-[214px]",
-    width: "w-[305px]",
-    imageUrl: "https://images.ctfassets.net/pj0maraabon4/6RCHk3KBIIVETOGx8urKTn/341a127cb5c5b0e5e225d7c93e4a354a/workflow-bug-image.jpg",
-    videoUrl: "https://videos.ctfassets.net/pj0maraabon4/73ehLYtPyY5CZYtJIXV8L8/c061ada632e2d32fadda720a4d533850/workfront-new-01.mp4",
-  },
-  {
-    id: 8,
-    title: "Next Vision",
-    height: "h-[214px]",
-    width: "w-[305px]",
-    imageUrl: "https://images.ctfassets.net/pj0maraabon4/6RCHk3KBIIVETOGx8urKTn/341a127cb5c5b0e5e225d7c93e4a354a/workflow-bug-image.jpg",
-    videoUrl: "https://videos.ctfassets.net/pj0maraabon4/1P9Ib5uHf4JbHMsnPPOPRp/01f65ebf34094e1cdaca95e037ccdde8/workfront-new-02.mp4",
-  },
+  
 ];
 
 export default function WorkflowAutomation() {
@@ -117,12 +102,12 @@ export default function WorkflowAutomation() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <h3 className="text-4xl font-bold capitalize">
+          <h3 className="text-5xl font-bold capitalize">
             <span className="bg-[#BB7CE4] bg-clip-text text-transparent ">
               Workflow Automation
             </span>
           </h3>
-          <p className="mt-3 text-gray-300 max-w-3xl text-lg" >
+          <p className="mt-3 text-gray-300 max-w-3xl text-xl" >
             Step into our Workfront video library and explore actionable insights, agile project management tips, resource planning strategies, and workflow automation guidance.
           </p>
         </motion.div>

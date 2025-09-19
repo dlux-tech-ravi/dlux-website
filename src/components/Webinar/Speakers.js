@@ -43,10 +43,11 @@ export default function Speakers() {
       }}
     >
       {/* Background Overlay Pattern */}
-      <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1920&q=80')] bg-cover"></div>
+      <div className="absolute inset-0 opacity-20 bg-[url('https://images.ctfassets.net/pj0maraabon4/4fHeknVDit0tuXeRmqsfk4/3a2b7ebd0c75b7a2f9e835186449f714/bg-image-speaker-section.png')] bg-contain bg-no-repeat"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full">
-        <h2 className="text-2xl md:text-3xl font-bold mb-10">SPEAKERS</h2>
+      <div className="relative w-full h-full items-center">
+        
+<h2 className="text-2xl md:text-3xl font-bold mb-10 text-white">SPEAKERS</h2>
 
         {/* Desktop Grid */}
         <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-8">

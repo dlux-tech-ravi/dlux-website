@@ -13,8 +13,8 @@ const testimonials = [
   {
     id: 2,
     title:"Great Execution!",    
-    text: "Our DLUX team has been superb. I really don't think we could have had better guidance an support, and the team here has been really positive about how knowledgeable they are...",
-    name: "- Senior Manager, Customer Marketing",
+    text: 'DLUX\'s seamless integration with Adobe Workfront has been a game-changer for our project management efforts. The fully customizable and flexible workflow has saved time and boosted productivity. The adaptability of the platform empowered us to efficiently handle tasks, budgets, and resources, even for the most complex  projects.',
+    name: "- Marketing Head",
     location: "USA",
     image:"/static/media/client2.c49a6a673df0d7c79153.png"
   },
@@ -45,8 +45,8 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className=" text-white py-16 px-6 md:px-20 lg:h-[100vh] overflow-hidden">
-      <div className="sm:flex-col-reverse lg:flex-row  lg:flex gap-10 items-start relative">
+    <section className="relative m-auto  w-full text-white py-16 px-6 md:px-20 h-auto lg:h-[100vh] overflow-hidden">
+      <div className="flex flex-col-reverse md:flex-row gap-10 justify-center items-center relative">
         {/* Left Column - Dummy Image */}
         <motion.div
           className="relative lg:pb-[250px]"
@@ -75,16 +75,16 @@ export default function Testimonials() {
           <p className="text-xl font-bold mb-2"><span className="bg-[#BB7CE4] bg-clip-text text-transparent border border-[#BB7CE4] px-2 py-[3px] rounded-md">
           Testimonials
           </span> </p>
-          <h2 className="text-5xl font-bold leading-snug mb-8">
+          <h2 className="text-3xl lg:text-5xl font-bold leading-snug mb-8">
             <span className="bg-[#BB7CE4] bg-clip-text text-transparent mr-1">
           Behind 
           </span>
            Every Workflow,<br />  There's a Story!
           </h2>
 
-          <div className="relative -left-[20%]">
+          <div className="relative lg:-left-[20%]">
             {/* Testimonial Carousel */}
-            <div className="flex gap-6 overflow-hidden h-[280px]">
+            <div className="flex gap-6 overflow-hidden h-auto lg:h-[280px]">
               <AnimatePresence mode="popLayout">
                 {currentSlides.map((item, i) => (
                   <motion.div
@@ -93,18 +93,18 @@ export default function Testimonials() {
                     animate={{ x: i * 500, opacity: 1 }}
                     exit={{ x: -200, opacity: 0 }}
                     transition={{ duration: 0.8, ease: "easeInOut" }}
-                    className="absolute top-0 bg-neutral-900 rounded-xl p-6 w-[453px] h-[296px] shadow-lg"
+                    className="lg:absolute top-0 bg-neutral-900 rounded-xl p-6  lg:w-[453px] h-[296px] shadow-lg"
                   >
                     {i === 0 && (
-                      <div className="text-6xl text-white absolute top-4 left-4">
-                        &quot;
+                      <div className="text-3xl text-white absolute top-4 left-4">
+                        <i class="fa-solid fa-quote-left w-5 h-5"></i>
                       </div>
                     )}
                     <div className="pt-8 flex flex-col justify-between h-full">
                       {/* <h4 className="font-bold text-[24px] mb-4">
                         {item.title}
                       </h4> */}
-                      <p className="text-base mb-4 leading-relaxed flex-grow">
+                      <p className="text-sm lg:text-base mb-4 leading-relaxed flex-grow">
                         {item.text}
                       </p>
                       <div className="flex items-center gap-3">

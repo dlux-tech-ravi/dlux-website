@@ -63,6 +63,16 @@ const cards = [
       "https://images.ctfassets.net/pj0maraabon4/1NwLkskgywCtvQoomF551t/089e2b46a8e1e08a9c9122ce78b366ed/organisation-face-video-vault.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/7CpjQ4H9VtSXkBrbsCyiM3/36410ab59792d0dd11f8a1850be14348/ceo-videos-10.mp4",
   },
+  {
+      id: 11,
+      image: "https://images.ctfassets.net/pj0maraabon4/6RCHk3KBIIVETOGx8urKTn/341a127cb5c5b0e5e225d7c93e4a354a/workflow-bug-image.jpg",
+      video: "https://videos.ctfassets.net/pj0maraabon4/73ehLYtPyY5CZYtJIXV8L8/c061ada632e2d32fadda720a4d533850/workfront-new-01.mp4",
+    },
+    {
+      id: 12,     
+      image: "https://images.ctfassets.net/pj0maraabon4/6RCHk3KBIIVETOGx8urKTn/341a127cb5c5b0e5e225d7c93e4a354a/workflow-bug-image.jpg",
+      video: "https://videos.ctfassets.net/pj0maraabon4/1P9Ib5uHf4JbHMsnPPOPRp/01f65ebf34094e1cdaca95e037ccdde8/workfront-new-02.mp4",
+    },
 ];
 
 
@@ -96,7 +106,7 @@ export default function CEDVideo() {
   }, [activeVideo]);
 
   return (
-    <div className="text-white min-h-screen flex flex-col justify-center items-center pl-[80px] pr-[120px]">
+    <section className="w-full m-auto text-white lg:min-h-screen flex flex-col lg:justify-center items-center py-2 px-4 lg:pl-[80px] lg:pr-[120px]">
       <style>
         {`
           @keyframes slow-ping {
@@ -109,8 +119,8 @@ export default function CEDVideo() {
           }
         `}
       </style>
-
-      <div className="flex items-start justify-between w-full">
+ <div>
+      <div className="flex flex-col-reverse lg:flex-row items-start justify-between w-full">
         {/* Left column - Big Card */}
         <div className="flex items-end overflow-hidden w-full relative">
           <AnimatePresence mode="wait" custom={direction}>
@@ -124,13 +134,13 @@ export default function CEDVideo() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.6, ease: "easeInOut" }}
-                    className="relative rounded-2xl flex-shrink-0 w-[629px] h-[558px] bg-cover bg-center cursor-pointer"
+                    className="relative rounded-2xl flex-shrink-0 w-[100%] h-[400px] lg:w-[629px] lg:h-[558px] bg-cover bg-center cursor-pointer"
                     style={{ backgroundImage: `url(${card.image})` }}
                     onClick={() => setActiveVideo(card.video)}
                   >
                     {/* Play Button with Slow Ripple Animation */}
-                    <div className="absolute bottom-6 right-6">
-                      <div className="relative flex items-center justify-center">
+                    <div className="absolute bottom-3 left-4 lg:bottom-6 lg:right-6">
+                      <div className="relative flex items-center justify-end">
                         <span className="absolute w-14 h-14 rounded-full bg-white/30 animate-slow-ping"></span>
                         <span
                           className="absolute w-14 h-14 rounded-full bg-white/20 animate-slow-ping"
@@ -153,7 +163,7 @@ export default function CEDVideo() {
         </div>
 
         {/* Right Side Content + Small Cards */}
-        <div className="flex flex-col gap-1 ml-6 w-full">
+        <div className="relative flex flex-col gap-1 lg:ml-6 w-full mb-10 lg:mb-0">
            <motion.div
                  
                           initial={{ opacity: 0, y: 40 }}
@@ -161,7 +171,7 @@ export default function CEDVideo() {
                           transition={{ duration: 0.8, ease: "easeIn" }}
                           viewport={{ once: true, amount: 0.3 }}
                         >
-          <h2 className="text-4xl font-semibold">CoE Videos</h2>
+          <h2 className="text-3xl lg:text-5xl font-semibold">CoE Videos</h2>
           <p className="mt-3 text-gray-300 text-lg">
            Experience the next – Level of our CoE videos: Bold ideas, Breakthrough innovation, and the vision 
           </p>
@@ -192,7 +202,7 @@ export default function CEDVideo() {
 
               <span className="relative z-10 text-[#1B0A31]">Let's Connect</span>
 
-              <div className="relative w-5 h-5 overflow-hidden">
+              <div className="relative w-5 h-5 overflow-hidden ">
                 <AnimatePresence initial={false} mode="wait">
                   {hovered ? (
                     <motion.div
@@ -239,7 +249,7 @@ export default function CEDVideo() {
           </div>
 
           {/* Small Cards */}
-          <div className="flex gap-4 mt-6 overflow-hidden">
+          <div className="hidden lg:flex  gap-4  mt-6 overflow-hidden ">
             <AnimatePresence mode="wait" custom={direction}>
               {getVisibleCards()
                 .slice(1)
@@ -311,6 +321,7 @@ export default function CEDVideo() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+      </div>
+    </section>
   );
 }
