@@ -8,48 +8,48 @@ const cards = [
   {
     id: 1,
     title: "Unleash the Power of ChatGPT x Adobe Workfront: A DLUX TECH Innovation",
-    height: "h-[437px]",
-    width: "w-[525px]",
+    height: "lg:h-[437px]",
+    width: "lg:lg:w-[525px]",
     imageUrl: "https://images.ctfassets.net/pj0maraabon4/1urwIFx73M5FJX1NwYJqsq/f5e8c256adfc8b66a1255e4d3f3a0eec/workfront_chatgpt.jpg",
     videoUrl: "https://videos.ctfassets.net/pj0maraabon4/5m4oFnM5liDyvqh2osFtYt/3f88bcd267cad3e23802e24979702bf4/1.mp4",
   },
   {
     id: 2,
     title: "Effortless Custom Form Migration with Workfront : Transform Your Workfront Experience!",
-    height: "h-[280px]",
-    width: "w-[405px]",
+    height: "lg:h-[280px]",
+    width: "lg:w-[405px]",
     imageUrl: "https://images.ctfassets.net/pj0maraabon4/29GHZ92yOsRCfoBBB1zQIz/0bc0beae56c66265901a2771cc2af51f/workfront___Fusion.jpg",
     videoUrl: "https://videos.ctfassets.net/pj0maraabon4/4nzwh8CJomPfZjdBUAbpSE/bf2142c36ccdd8956d23502a683b892b/3.mp4",
   },
   {
     id: 3,
     title: "Workfront's Environment Promotion to streamline your workflows that improves Accuracy in Sandbox Environment",
-    height: "h-[380px]",
-    width: "w-[305px]",
+    height: "lg:h-[380px]",
+    width: "lg:w-[305px]",
     imageUrl: "https://images.ctfassets.net/pj0maraabon4/4gmC2eSWGOEwSP8wqAzboC/24b7a7b7317607984a2b4a7615be77f9/Workflow-automation.jpg",
     videoUrl: "https://videos.ctfassets.net/pj0maraabon4/2cTlVZwVCOQabJYyauXzy4/5a2a1826fc621cc8825d1891cef1773d/work-front-03.mp4",
   },
   {
     id: 4,
     title: "Migration from designated Production to Sandbox Environment with object Synchronization Tool | Workfront | Workfront Fusion",
-    height: "h-[340px]",
-    width: "w-[400px]",
+    height: "lg:h-[340px]",
+    width: "lg:w-[400px]",
     imageUrl: "https://images.ctfassets.net/pj0maraabon4/2MkLhtRZU7WhXawbmMCtNZ/82a2aacea17f4dbc63369b6752c01c5e/worklist-image.jpg",
     videoUrl: "https://videos.ctfassets.net/pj0maraabon4/1hQeIoRhPu1CiSWorPsB6e/e77e5662d31fa38304527df13a44555e/Work_front_04.mp4",
   },
   {
     id: 5,
     title: "Migrating data from Monday.com to Workfront | Workfront mapped to Monday.com | Workflow automation | Project Management Software ",
-    height: "h-[437px]",
-    width: "w-[525px]",
+    height: "lg:h-[437px]",
+    width: "lg:w-[525px]",
     imageUrl: "https://images.ctfassets.net/pj0maraabon4/5442ciQ6vmSy223ejIfp8t/70cc30c9c6d6f898b4dd9c7a3a570347/workfront-office-working-laptop.jpg",
     videoUrl: "https://videos.ctfassets.net/pj0maraabon4/3B6wsEeK1de7x5xOwar8rn/f00591e359484dbc512226df41e46361/Workfront_Video_05.mp4",
   },
   {
     id: 6,
     title: "Workfront in now  tracking the Financial management (billable , non-billable ) | Project Launching Sequences , Tasks | Adobe Workfront | Fusion",
-    height: "h-[320px]",
-    width: "w-[370px]",
+    height: "lg:h-[320px]",
+    width: "lg:w-[370px]",
     imageUrl: "https://images.ctfassets.net/pj0maraabon4/6RCHk3KBIIVETOGx8urKTn/341a127cb5c5b0e5e225d7c93e4a354a/workflow-bug-image.jpg",
     videoUrl: "https://videos.ctfassets.net/pj0maraabon4/6zgrnljz5IWjKLvGKdJDRm/14bcb8ab6d309420c7f2ac1ac29fdd72/Workfront_Video_06.mp4",
   },
@@ -93,27 +93,27 @@ export default function WorkflowAutomation() {
   }, [selectedVideo]);
 
   return (
-    <div className="text-white px-8 py-12">
+    <section className="relative  w-full m-auto  text-white px-6 py-12">
       {/* Top row */}
-      <div className="flex justify-between items-center mb-10">
+      <div className="lg:flex justify-between items-center mb-10">
         <motion.div
           initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <h3 className="text-5xl font-bold capitalize">
+          <h3 className="text-4xl lg:text-5xl font-bold capitalize">
             <span className="bg-[#BB7CE4] bg-clip-text text-transparent ">
               Workflow Automation
             </span>
           </h3>
-          <p className="mt-3 text-gray-300 max-w-3xl text-xl" >
+          <p className="mt-3 text-gray-300 max-w-3xl text-lg lg:text-xl" >
             Step into our Workfront video library and explore actionable insights, agile project management tips, resource planning strategies, and workflow automation guidance.
           </p>
         </motion.div>
 
         <motion.div
-          className="flex gap-4"
+          className="flex gap-4 mt-10"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
@@ -151,7 +151,7 @@ export default function WorkflowAutomation() {
           {cards.map((card, i) => (
             <motion.div
               key={card.id}
-              className={`relative ${card.width} ${card.height} rounded-2xl flex-shrink-0 cursor-pointer overflow-hidden`}
+              className={`relative w-full h-full ${card.width} ${card.height} rounded-2xl flex-shrink-0 cursor-pointer overflow-hidden`}
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
@@ -210,6 +210,6 @@ export default function WorkflowAutomation() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </section>
   );
 }

@@ -12,7 +12,7 @@ const fleetData = [
 
 const ClientLogos = () => {
   return (
-    <section className="relative w-full m-auto justify-center text-white py-16 overflow-hidden">
+    <section className="relative  w-full m-auto  justify-center text-white py-16 overflow-hidden">
       {/* Heading */}
       <motion.div
         className="text-center mb-12"
@@ -22,13 +22,13 @@ const ClientLogos = () => {
         viewport={{ once: true, amount: 0.3 }}
       >
         
-        <h2 className="text-5xl font-bold">
+        <h2 className="text-4xl lg:text-5xl font-bold">
           Our Proud {" "}
           <span className="bg-[#BB7CE4] bg-clip-text text-transparent">
             Partners
           </span>
         </h2>
-        <p className="text-gray-300 mt-6 max-w-xl text-center m-auto text-xl">
+        <p className="text-gray-300 mt-6 max-w-xl text-center m-auto text-lg lg:text-xl">
          We are honored to collaborate with trusted partners who share our vision and contribute to our collective success.
         </p>
       </motion.div>

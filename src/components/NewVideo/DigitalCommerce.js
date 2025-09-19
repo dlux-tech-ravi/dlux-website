@@ -8,7 +8,7 @@ const SLIDES = [
   {
     id: 1,
     title:
-      "Mastering Multilingual Site Management with Adobe Experience Manager MSM",
+      "Improved Online Shopping Experience :Integrating Adobe Commerce with Adobe Analytics ",
     cta: "View Portfolio",
     image:
       "https://images.ctfassets.net/pj0maraabon4/6xE3Qtgu00MlBoohi279ax/e45f0a93a8f458aadee38da94a50ec4a/Analytics.jpg",
@@ -87,22 +87,22 @@ export default function DigitalCommerce() {
   }, [videoOpen]);
 
   return (
-    <section className=" text-white mt-[70px]   relative overflow-hidden">
+    <section className="relative w-full text-white lg:mt-[70px] m-auto overflow-hidden">
       <div className="mx-auto w-full px-6 py-16 flex flex-col lg:flex-row gap-12">
         {/* LEFT COLUMN (Content) */}
-        <div className="w-full lg:w-1/2 px-[50px] content-center">
+        <div className="w-full lg:w-1/2 lg:px-[50px] content-center">
           <motion.div
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            <h2 className="text-5xl font-bold mb-8">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4 lg:mb-8">
               <span className="bg-[#BB7CE4] bg-clip-text text-transparent">
                 Digital Commerce
               </span>
             </h2>
-            <p className="mt-3 text-gray-300 text-xl">
+            <p className="mt-3 text-gray-300 text-lg lg:text-xl">
               Watch & Learn with Adobe Commerce – From the early days of Magento
               to the full power of Adobe Commerce today, explore a wide library
               of expert-led tutorials, data-backed insights, and real-world
@@ -181,7 +181,7 @@ export default function DigitalCommerce() {
                 animate="animate"
                 exit="exit"
                 transition={activeCard.transition}
-                className="relative z-20 h-[550px] w-[520px] rounded-3xl shadow-2xl overflow-hidden cursor-pointer"
+                className="relative z-20 w-[300px] h-[350px] lg:h-[550px] lg:w-[520px] rounded-3xl shadow-2xl overflow-hidden cursor-pointer"
                 onClick={() => setVideoOpen(true)}
               >
                 <motion.img
@@ -224,7 +224,7 @@ export default function DigitalCommerce() {
                 animate="animate"
                 exit="exit"
                 transition={nextCard.transition}
-                className="absolute z-10 h-[415px] w-[372px] rounded-3xl shadow-xl overflow-hidden -right-[95%]"
+                className="absolute z-10 w-[270px] h-[300px] lg:h-[415px] lg:w-[372px] rounded-3xl shadow-xl overflow-hidden -right-[95%]"
               >
                 <motion.img
                   src={SLIDES[nextIndex].image}
@@ -244,7 +244,7 @@ export default function DigitalCommerce() {
             {/* Next Button */}
             <button
               onClick={goNext}
-              className="absolute z-[9999] left-[97%] top-1/2 -translate-y-1/2 rounded-full bg-white p-6 text-black shadow-lg hover:scale-105 transition"
+              className="absolute z-[9999] left-[90%] lg:left-[97%] top-1/2 -translate-y-1/2 rounded-full bg-white p-4 lg:p-6 text-black shadow-lg hover:scale-105 transition"
             >
               <ChevronRight />
             </button>

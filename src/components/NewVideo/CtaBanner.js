@@ -27,7 +27,7 @@ const imageVariants = {
 
 export default function CtaBanner() {
   return (
-    <section className="relative w-full py-12 px-4 sm:px-8 ">
+    <section className="relative w-full lg:w-[1400px] m-auto  py-12 px-4 sm:px-8 ">
       <div className="absolute top-[30%] left-[10%] w-80 h-80 rounded-full 
       bg-gradient-to-r from-[#BB7CE4] to-[#02162F] 
       blur-[100px] opacity-80 z-0" />
@@ -42,7 +42,7 @@ export default function CtaBanner() {
         {/* Text Content */}
         <motion.div
           variants={contentVariants}
-          className="block  text-white p-8 w-[40%]"
+          className="block text-center lg:text-left text-white p-8 lg:w-[40%]"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
           Watched {" "}
@@ -65,7 +65,7 @@ export default function CtaBanner() {
         {/* Image Inside Glassy Box */}
         <motion.div
           variants={imageVariants}
-          className=" justify-end w-[60%]"
+          className=" justify-end w-full lg:w-[60%]"
         >
           <img
             src="https://images.ctfassets.net/pj0maraabon4/3a28AU8s1QapOml16jHS7f/bc4d97c8dcbd1d439085bea698afcdd5/cta-banner-image.png"

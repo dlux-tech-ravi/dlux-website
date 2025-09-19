@@ -74,12 +74,12 @@ export default function Salesforce() {
   }, [openVideo]);
 
   return (
-    <section className=" text-white mt-[70px] mb-[70px]">
+    <section className="relative w-full text-white mt-[70px] m-auto overflow-hidden">
       <div className="mx-auto w-full px-6 py-16">
-        <div className="flex items-center gap-12 md:grid-cols-2">
+        <div className="flex flex-col lg:flex-row items-center gap-12 md:grid-cols-2">
           {/* LEFT COLUMN */}
           <motion.div
-            className="relative w-full h-auto lg:w-[50%] flex lg:h-[28rem] items-center justify-center lg:justify-end"
+            className="relative w-full lg:w-1/2 flex  items-center justify-center lg:justify-end"
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}
@@ -95,7 +95,7 @@ export default function Salesforce() {
                   animate="animate"
                   exit="exit"
                   transition={activeCard.transition}
-                  className="relative z-20 lg:h-[550px] h-auto w-full lg:w-[520px] rounded-3xl shadow-2xl overflow-hidden cursor-pointer"
+                  className="relative z-20 w-[300px] h-[350px] lg:h-[550px] lg:w-[520px] rounded-3xl shadow-2xl overflow-hidden cursor-pointer"
                   onClick={() => setOpenVideo(SLIDES[index].videoUrl)}
                 >
                   <motion.img
@@ -136,7 +136,7 @@ export default function Salesforce() {
                   animate="animate"
                   exit="exit"
                   transition={nextCard.transition}
-                  className="absolute z-10 w-full h-auto lg:h-[415px] lg:w-[372px] rounded-3xl shadow-xl overflow-hidden -left-[50%]"
+                  className="absolute z-10 w-[270px] h-[300px] lg:h-[415px] lg:w-[372px] rounded-3xl shadow-xl overflow-hidden -left-[50%]"
                 >
                   <motion.img
                     src={SLIDES[nextIndex].image}
@@ -167,12 +167,12 @@ export default function Salesforce() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <h3 className="text-5xl font-bold ">
+              <h3 className="text-4xl lg:text-5xl font-bold ">
                 <span className="bg-[#BB7CE4] bg-clip-text text-transparent">
                   Salesforce
                 </span>{" "}
               </h3>
-              <p className="mt-3 text-gray-300 text-xl">
+              <p className="mt-3 text-gray-300 text-lg lg:text-xl">
                 Your go-to hub for Salesforce trends, tools, and
                 tutorials—featuring AI innovations, Data Cloud, automation, and
                 low-code solutions.

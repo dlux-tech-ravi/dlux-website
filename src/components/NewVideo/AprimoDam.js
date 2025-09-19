@@ -5,7 +5,7 @@ import { ArrowRight, ChevronLeft, ChevronRight, Play, X } from "lucide-react";
 const cards = [
  {
     id: 1,
-    title: "Adobe Experience Manager | Ultimate Solution for your Content Safety and Recovery | DAM | Aprimo | Project management tools",
+    title: "Muti- Site Manager to streamline workflows using Adobe Experience Manager| adobe|Handling Multi-lingual sites",
     cta: "View Portfolio",
     image:
       "https://images.ctfassets.net/pj0maraabon4/7EfPXl9ZZaHz8NjhtQOi8r/00837fb56fcd5783cb686252e2f06deb/aem-01_1.jpg",
@@ -14,25 +14,17 @@ const cards = [
   },
   {
     id: 2,
-    title: "Muti- Site Manager to streamline workflows using Adobe Experience Manager| adobe|Handling Multi-lingual sites",
+    title: "AEM edge Delivery Services , Low to No- Code Solutions | Website development |  Track website responsiveness|devops| developers",
     cta: "Explore Work",
     image:
       "https://images.ctfassets.net/pj0maraabon4/38YY6qkHaUxL15zPsAVkCY/cdf50e80478f340216d1e26ad75241d9/AEM-image-02.jpg",
     video:
       "https://videos.ctfassets.net/pj0maraabon4/1lbUJKgwWFFmyroHWJtlEj/0c6888136c8950b0a656ba6ed0d1f692/4.mp4",
   },
+  
   {
     id: 3,
-    title: "AEM edge Delivery Services , Low to No- Code Solutions | Website development |  Track website responsiveness|devops| developers",
-    cta: "See Details",
-    image:
-      "https://images.ctfassets.net/pj0maraabon4/1Lig058lbO5iMFRoiXiqCL/964414a17c8ac01940e850f0a316a6c7/AEM-image-03.jpg",
-    video:
-      "https://videos.ctfassets.net/pj0maraabon4/3sqvkwblysuyTcUU6vyXT2/d777d4a9b8db5600a7a8ce61184dae47/Product_recommendation-002__1___1___1_.mp4",
-  },
-  {
-    id: 4,
-    title: "Unlock the Power of Seamless Content Creation with AEM",
+    title: "Adobe Experience Manager | Ultimate Solution for your Content Safety and Recovery | DAM | Aprimo | Project management tools",
     cta: "See Details",
     image:
       "https://images.ctfassets.net/pj0maraabon4/1suQj4cSZfdQwX2bTltDiz/3f33f984161b01813a01b8245dc128d7/AEM-Image-04.jpg",
@@ -71,7 +63,7 @@ export default function AprimoDam() {
   }, [activeVideo]);
 
   return (
-    <div className=" text-white min-h-screen flex flex-col justify-center items-center pl-[80px] pr-[120px]">
+    <section className="text-white w-full m-auto flex flex-col justify-center items-center py-2 px-4 lg:pl-[80px] lg:pr-[120px]">
       <style>
         {`
           @keyframes slow-ping {
@@ -85,7 +77,7 @@ export default function AprimoDam() {
         `}
       </style>
 
-      <div className="flex items-start justify-between w-full">
+      <div className="flex flex-col-reverse lg:flex-row items-start justify-between w-full">
         {/* Left column - Big Card */}
         <div className="flex items-end overflow-hidden w-full relative">
           <AnimatePresence mode="wait" custom={direction}>
@@ -99,7 +91,7 @@ export default function AprimoDam() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.6, ease: "easeInOut" }}
-                    className="relative rounded-2xl flex-shrink-0 w-[629px] h-[558px] bg-cover bg-center cursor-pointer"
+                    className="relative rounded-2xl flex-shrink-0 w-[100%] h-[400px] lg:w-[629px] lg:h-[558px] bg-cover bg-center cursor-pointer"
                     style={{ backgroundImage: `url(${card.image})` }}
                     onClick={() => setActiveVideo(card.video)}
                   >
@@ -132,7 +124,7 @@ export default function AprimoDam() {
         </div>
 
         {/* Right Side Content + Small Cards */}
-        <div className="flex flex-col gap-1 ml-6 w-full">
+        <div className="relative flex flex-col gap-1 lg:ml-6 w-full mb-10 lg:mb-0">
           <motion.div
                      
                       initial={{ opacity: 0, x: 60 }}
@@ -141,8 +133,8 @@ export default function AprimoDam() {
                       transition={{ duration: 1, delay: 0.2 }}
                       className="mt-10"
                     >
-          <h2 className="text-5xl font-semibold">Content Supply Chain </h2>
-          <p className="mt-3 text-gray-300 text-xl">
+          <h2 className="text-3xl lg:text-5xl font-semibold">Content Supply Chain </h2>
+          <p className="mt-3 text-gray-300 text-lg lg:text-xl">
             Deep driving you to the polished version of – AI Agents & Automation,
             Aprimo AI Suite, Video asset Management, Ecosystem Integrations, DAM
             trends, Recognized Leadership.
@@ -220,7 +212,7 @@ export default function AprimoDam() {
           </div>
 
           {/* Small Cards */}
-          <div className="flex gap-4 mt-6 overflow-hidden">
+          <div className="hidden lg:flex  gap-4  mt-6 overflow-hidden  ">
             <AnimatePresence mode="wait" custom={direction}>
               {getVisibleCards()
                 .slice(1)
@@ -292,6 +284,6 @@ export default function AprimoDam() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </section>
   );
 }
