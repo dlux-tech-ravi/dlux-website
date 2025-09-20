@@ -1,72 +1,61 @@
-"use client";
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { FiChevronDown, FiChevronsDown } from "react-icons/fi";
 
-import React from "react";
 
 export default function HeroSection() {
   return (
     <section
-      className="relative w-full min-h-screen flex items-center bg-cover bg-center"
+      className="relative h-screen w-full bg-cover bg-center"
       style={{
         backgroundImage:
-          "url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1920&q=80')", // replace with your background image
+          "url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1920&q=80')",
       }}
     >
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1c] via-[#1b2130]/80 to-transparent"></div>
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#122644] via-[#0a1631]/70 to-transparent"></div>
 
-      {/* Decorative Images */}
-      <img
-        src="/images/decor-top-left.png" // replace with your PNG
-        alt="decor top left"
-        className="absolute top-0 left-0 w-40 md:w-56 opacity-80 pointer-events-none"
-      />
-      <img
-        src="/images/decor-bottom-right.png" // replace with your PNG
-        alt="decor bottom right"
-        className="absolute bottom-0 right-0 w-48 md:w-64 opacity-80 pointer-events-none"
-      />
+      {/* Content Wrapper */}
+      <div className="relative h-full flex flex-col md:flex-row items-center justify-between px-6 md:px-16">
+        {/* Empty Column */}
+        <div className="flex-1 hidden md:block"></div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-12">
-        {/* Left Column */}
-        <div className="flex flex-col justify-center text-white">
-          <p className="uppercase tracking-widest text-sm mb-2">
-            9 June 2023 · Limited Seat
-          </p>
-          <h2 className="text-2xl font-bold mb-6">
-            Get Inside in The Philosopher’s Mind
-          </h2>
-          <button className="px-6 py-2 border border-white rounded-full hover:bg-white hover:text-black transition">
-            Buy Tickets
-          </button>
-        </div>
-
-        {/* Right Column */}
-        <div className="flex flex-col justify-center text-white lg:pl-10">
-          <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
-            The Ultimate Platform for Planning and Promoting Successful Events
+        {/* Right Column Content */}
+        <div className="flex-1 text-center md:text-left text-white max-w-xl">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4">
+           MarTech Secrets, Straight from the Frontlines 
           </h1>
-          <p className="text-gray-300 mb-8">
-            Eventify is a leading event and conference website that brings
-            together industry experts, thought leaders, and enthusiasts from
-            around the world to share knowledge, network, and make lasting
-            connections.
+          <p className="text-base md:text-lg mb-6">
+            Join DLUX experts, certified consultants, and industry leaders as they unpack real-world use cases, seamless integrations, and future-ready strategies across Martech, AI, and enterprise innovation.  
           </p>
           <a
-            href="#about"
-            className="inline-flex items-center gap-2 text-white hover:underline"
-          >
-            See more about us ↓
-          </a>
+  href="#about"
+  className="inline-flex items-center text-sm font-medium text-white no-underline hover:underline transition"
+>
+  Missed it live? Catch the insights anytime
+  <FiChevronsDown className="ml-2 w-4 h-4" />
+</a>
         </div>
       </div>
 
-      {/* Social icons bottom right */}
-      <div className="absolute bottom-6 left-6 flex gap-4 text-white">
-        <a href="#" className="hover:text-gray-400">f</a>
-        <a href="#" className="hover:text-gray-400">t</a>
-        <a href="#" className="hover:text-gray-400">in</a>
-        <a href="#" className="hover:text-gray-400">ig</a>
+      {/* Left Side Bottom Card */}
+      <div className="absolute bottom-8 left-6 md:left-16 bg-[#0a1631]/60 backdrop-blur-md border border-white/20 p-6 rounded-lg text-white max-w-xs">
+        <p className="text-xs uppercase tracking-widest mb-1">
+          9 June 2023 <span className="mx-2">|</span> Limited Seat
+        </p>
+        <h3 className="text-lg md:text-xl font-semibold mb-3">
+          LIVE. ON-DEMAND  
+        </h3>
+        <button className="px-4 py-2 border border-white rounded-full text-sm font-medium hover:bg-white hover:text-[#0a1631] transition">
+          START DIGGING DEEPER 
+        </button>
+      </div>
+
+      {/* Social Media Links */}
+      <div className="absolute bottom-8 right-6 md:right-16 flex gap-4 text-white text-lg">
+        <a href="#"><FaFacebookF className="hover:text-blue-500 transition" /></a>
+        <a href="#"><FaTwitter className="hover:text-sky-400 transition" /></a>
+        <a href="#"><FaLinkedinIn className="hover:text-blue-700 transition" /></a>
+        <a href="#"><FaInstagram className="hover:text-pink-500 transition" /></a>
       </div>
     </section>
   );

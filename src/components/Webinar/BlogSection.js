@@ -33,23 +33,23 @@ const BlogSection = () => {
   ];
 
   return (
-    <section className="bg-[#122644] mx-auto px-6 md:px-12 lg:px-20 py-20 w-full h-full lg:h-[100vh] ">
-     
-       {/* CTA Button */}
+    <section
+      className="bg-[#122644] bg-[url('https://images.ctfassets.net/pj0maraabon4/460BvYglILJP3CQpLh0QLh/7b2648fa189b605a87ca11c8ab66b93c/blog-background-banner.png')] bg-cover bg-center bg-no-repeat bg-blend-multiply
+             mx-auto px-6 md:px-12 lg:px-20 py-[80px]  w-full h-full text-white"
+    >
+      {/* CTA Button */}
       <div className="flex justify-between items-center mb-10">
-         <h2 className="text-3xl font-bold text-center ">BLOG</h2>
+        <h2 className="text-3xl font-bold text-center ">BLOG</h2>
         <a href="" className=" text-white">
           View All Blogs
         </a>
       </div>
       {/* Single row layout on desktop */}
-      <div className="flex flex-col md:flex-row gap-8">
+      <div className="flex flex-col md:flex-row gap-8 pl-[50px] pt-12">
         {blogPosts.map((post, index) => (
           <div
             key={index}
-            className="relative overflow-hidden  transition-all duration-500 ease-in-out transform hover:scale-105 flex-1"
-            onMouseEnter={() => setHoveredCard(index)}
-            onMouseLeave={() => setHoveredCard(null)}
+            className="relative overflow-hidden transition-all duration-500 ease-in-out transform hover:scale-105 flex-1 group"
           >
             {/* Blog Image */}
             <img
@@ -59,28 +59,23 @@ const BlogSection = () => {
             />
 
             {/* Blog Content */}
-            <div className="p-6">
+            <div className="pt-7">
               <div className="flex gap-3">
-              <p className="text-sm text-[#FFFFFF] mb-2">{post.date}</p>
-              <p className="text-sm text-[#D3A0E6] mb-4">by {post.author}</p>
+                <p className="text-sm text-white mb-2">{post.date}</p>
+                <p className="text-sm text-[#D3A0E6] mb-4">by {post.author}</p>
               </div>
-              <h3 className="text-xl font-semibold mb-4">{post.title}</h3>
+              <h3 className="text-3xl font-semibold mb-2 text-white">
+                {post.title}
+              </h3>
 
-              <div
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  hoveredCard === index
-                    ? "max-h-96 opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
-              >
-                <p className="text-gray-600">{post.description}</p>
-              </div>
+              {/* Description (fades in on hover, no height collapse) */}
+              <p className="text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                {post.description}
+              </p>
             </div>
           </div>
         ))}
       </div>
-
-     
     </section>
   );
 };

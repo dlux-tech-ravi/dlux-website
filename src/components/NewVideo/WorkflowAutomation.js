@@ -93,7 +93,7 @@ export default function WorkflowAutomation() {
   }, [selectedVideo]);
 
   return (
-    <section className="relative  w-full m-auto  text-white px-6 py-12">
+    <section className="relative w-full m-auto  text-white px-6 py-12 md:px-16">
       {/* Top row */}
       <div className="lg:flex justify-between items-center mb-10">
         <motion.div

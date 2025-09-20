@@ -87,7 +87,7 @@ export default function DigitalCommerce() {
   }, [videoOpen]);
 
   return (
-    <section className="relative w-full text-white lg:mt-[70px] m-auto overflow-hidden">
+    <section className="relative w-full text-white lg:mt-[70px] m-auto overflow-hidden md:px-16">
       <div className="mx-auto w-full px-6 py-16 flex flex-col lg:flex-row gap-12">
         {/* LEFT COLUMN (Content) */}
         <div className="w-full lg:w-1/2 lg:px-[50px] content-center">

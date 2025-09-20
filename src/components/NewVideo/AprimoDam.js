@@ -63,7 +63,7 @@ export default function AprimoDam() {
   }, [activeVideo]);
 
   return (
-    <section className="text-white w-full m-auto flex flex-col justify-center items-center py-2 px-4 lg:pl-[80px] lg:pr-[120px]">
+    <section className="text-white w-full m-auto flex flex-col justify-center items-center md:px-16 py-2 px-4 lg:pl-[80px] lg:pr-[120px]">
       <style>
         {`
           @keyframes slow-ping {

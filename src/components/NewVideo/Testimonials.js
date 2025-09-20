@@ -44,8 +44,8 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="relative w-full text-white py-16 px-6 md:px-20 overflow-hidden">
-      <div className="flex flex-col-reverse md:flex-row gap-10 justify-start items-center relative">
+    <section className="relative w-full text-white py-16 px-6 md:px-16 overflow-hidden">
+      <div className="flex flex-col-reverse lg:flex-row gap-10 justify-start items-center relative">
         {/* Left Column - Dummy Image */}
         <motion.div
           className="relative lg:pb-[250px]"
@@ -89,7 +89,7 @@ export default function Testimonials() {
 
           <div className="relative lg:-left-[20%]">
             {/* --- Mobile (horizontal scrollable) --- */}
-            <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide md:hidden">
+            <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide lg:hidden">
               {testimonials.map((item) => (
                 <div
                   key={item.id}
@@ -107,7 +107,7 @@ export default function Testimonials() {
             </div>
 
             {/* --- Tablet & Desktop (existing animation) --- */}
-            <div className="hidden md:flex gap-6 overflow-hidden h-auto lg:h-[280px]">
+            <div className="hidden lg:flex gap-6 overflow-hidden h-auto lg:h-[280px]">
               <AnimatePresence mode="popLayout">
                 {currentSlides.map((item, i) => (
                   <motion.div

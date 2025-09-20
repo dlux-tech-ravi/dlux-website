@@ -9,38 +9,36 @@ import "swiper/css/navigation";
 const speakers = [
   {
     id: 1,
-    name: "JENNA SMITH",
-    role: "Business Strategy and Innovation, Business and Leadership",
+    name: "LUXMAN PAI",
+    role: "President & CEO",
+    description:"Martech | Gen AI Advisory Strategy, Innovation & Enterprise Leadership",
+    company:"DLUX TECH",
     image: "https://picsum.photos/400/400?random=1",
   },
   {
     id: 2,
-    name: "ROBERT P. STONES",
-    role: "Film and Television Production, Entertainment and Culture",
+    name: "SEAN CAMPBELL",
+    role: "Principal Solutions Consultant",
+    description:"Transformational Leader | AI Strategist | Architect of Memorable Customer Experiences ",
+    company:"DLUX TECH",
     image: "https://picsum.photos/400/400?random=2",
   },
   {
     id: 3,
-    name: "PETER JONES",
-    role: "Sustainable Development and Corporate Social Responsibility, Social Impact and Sustainability",
+    name: "NIC MESKER ",
+    role: "Sr. Martech Consultant",
+    description:"Martech Visionary | AI Growth Strategist & Agile Transformation Leader ",
+    company:"DLUX TECH",
     image: "https://picsum.photos/400/400?random=3",
   },
-  {
-    id: 4,
-    name: "MARY LOU",
-    role: "Circular Economy and Sustainable Business Models, Social Impact and Sustainability",
-    image: "https://picsum.photos/400/400?random=4",
-  },
+  
 ];
 
 export default function Speakers() {
   return (
     <section
-      className="relative h-screen flex items-center justify-center px-6 md:px-12 lg:px-20 text-white"
-      style={{
-        background:
-          "linear-gradient(135deg, #081c3c 0%, #0a2540 100%), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat",
-      }}
+      className="relative flex items-center justify-center px-6 md:px-12 lg:px-20 py-[120px] text-white bg-[#122644]"
+      
     >
       {/* Background Overlay Pattern */}
       <div className="absolute inset-0 opacity-20 bg-[url('https://images.ctfassets.net/pj0maraabon4/4fHeknVDit0tuXeRmqsfk4/3a2b7ebd0c75b7a2f9e835186449f714/bg-image-speaker-section.png')] bg-contain bg-no-repeat"></div>
@@ -50,7 +48,7 @@ export default function Speakers() {
 <h2 className="text-2xl md:text-3xl font-bold mb-10 text-white">SPEAKERS</h2>
 
         {/* Desktop Grid */}
-        <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-8 lg:pl-[50px]">
           {speakers.map((speaker) => (
             <div key={speaker.id} className="text-left">
               <div className="bg-gray-300 rounded-tl-3xl overflow-hidden">
@@ -60,10 +58,14 @@ export default function Speakers() {
                   className="w-full h-60 object-cover"
                 />
               </div>
+              <div className="lg:w-[90%]">
               <h3 className="mt-4 font-bold text-lg tracking-wide">
                 {speaker.name}
               </h3>
-              <p className="text-gray-300 text-sm mt-2">{speaker.role}</p>
+              <h5 className="text-gray-300 text-lg font-semibold mt-2">{speaker.role}</h5>
+               <p className="text-gray-300 text-sm mt-2">{speaker.description}</p>
+                <p className="text-gray-300 text-sm mt-2">{speaker.company}</p>
+                </div>
             </div>
           ))}
         </div>

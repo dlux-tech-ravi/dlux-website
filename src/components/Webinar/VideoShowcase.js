@@ -5,7 +5,7 @@ import { Play, X } from "lucide-react";
 const videos = [
   {
     id: 1,
-    title: "Video One",
+    title: "Chillin’ with Lux: How Martech is Changing the Game",
     date: "4 April 2025",
     time: "12:45",
     url: "https://www.w3schools.com/html/mov_bbb.mp4",
@@ -13,7 +13,7 @@ const videos = [
   },
   {
     id: 2,
-    title: "Get Inside in The Philosopher’s Mind",
+    title: " Building a Scalable Content Supply Chain for Growing Businesses ",
     date: "4 April 2025",
     time: "12:45",
     url: "https://www.w3schools.com/html/movie.mp4",
@@ -21,7 +21,7 @@ const videos = [
   },
   {
     id: 3,
-    title: "Video Three",
+    title: "Hack the Stack: Smarter Martech for Content Ops That Work",
     date: "4 April 2025",
     time: "12:45",
     url: "https://www.w3schools.com/html/mov_bbb.mp4",
@@ -54,18 +54,21 @@ const VideoShowcase = () => {
 }, [activeVideo]);
   return (
     <section
-      className="w-full h-[100vh] px-16 py-16 text-white bg-[#122644] bg-center"
+      className="w-full px-16 py-16 text-white bg-[#122644] "
       style={{
         backgroundImage:
           "url('https://images.ctfassets.net/pj0maraabon4/191BOERTELcczZ9QlKGvAi/a473b5e73cc2b491b035ffbb227f1065/video-section-bg-img.png')",
+           backgroundRepeat: "no-repeat",
+        backgroundPosition: " bottom",
+       
+       
       }}
     >
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="pl-10">
+      <div className="mx-auto px-4">
+        <div >
         {/* Heading */}
         <h2 className="text-4xl font-semibold mb-12">
-          SEE <span className="text-purple-400">THE BEST MOMENTS</span><br/> FROM OUR
-          EVENT
+        Watch Past    <span className="text-purple-400">Webinars</span><br/> On-Demand 
         </h2>
         </div>
         {/* Videos Grid / Carousel */}
@@ -94,7 +97,7 @@ const VideoShowcase = () => {
                     ? {
                         scale: isActive ? 1.05 : 1,
                         zIndex: isActive ? 20 : 10,
-                        width: isActive ? 600 : 410,
+                        width: isActive ? 540 : 400,
                         height: isActive ? 459 : 300,
                       }
                     : {}
@@ -170,6 +173,7 @@ const VideoShowcase = () => {
         )}
       </AnimatePresence>
     </section>
+    
   );
 };
 

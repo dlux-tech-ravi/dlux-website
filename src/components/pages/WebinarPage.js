@@ -13,11 +13,12 @@ export const WebinarPage = () => {
   <>
   <Navbar/>
   <HeroSection/>
-  {/* <VideoShowcase/> */}
+  <VideoShowcase/>
   <WhoWeAreSection/>
   <Speakers/>
-  <BlogSection/>
   <CommunityCTA/>
+  <BlogSection/>
+  
   <FAQSection/>
   </>
   )

@@ -118,7 +118,7 @@ export default function CEDVideo() {
   }, [activeVideo]);
 
   return (
-    <section className=" w-full m-auto  text-white  flex flex-col lg:justify-center items-center py-2 px-4 lg:pl-[80px] lg:pr-[120px]">
+    <section className=" w-full m-auto  text-white  flex flex-col lg:justify-center items-center md:px-16 px-4 lg:pl-[80px] lg:pr-[120px]">
       <style>
         {`
           @keyframes slow-ping {

@@ -74,7 +74,7 @@ export default function Salesforce() {
   }, [openVideo]);
 
   return (
-    <section className="relative w-full text-white mt-[70px] m-auto overflow-hidden">
+    <section className="relative w-full text-white mt-[70px] md:px-16 m-auto overflow-hidden">
       <div className="mx-auto w-full px-6 py-16">
         <div className="flex flex-col lg:flex-row items-center gap-12 md:grid-cols-2">
           {/* LEFT COLUMN */}
