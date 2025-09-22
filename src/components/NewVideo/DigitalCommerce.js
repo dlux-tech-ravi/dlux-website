@@ -98,7 +98,7 @@ export default function DigitalCommerce() {
             transition={{ duration: 1, delay: 0.2 }}
           >
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 lg:mb-8">
-              <span className="bg-[#BB7CE4] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#ff3901] to-[#F07800] bg-clip-text text-transparent">
                 Digital Commerce
               </span>
             </h2>
@@ -118,10 +118,8 @@ export default function DigitalCommerce() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
               whileHover={{ scale: 1.05 }}
-              className="mt-6 px-4 py-3 relative rounded-full font-medium flex items-center gap-2 overflow-hidden text-[#1B0A31]"
-              style={{
-                background: "#BB7CE4",
-              }}
+              className="mt-6 bg-gradient-to-r from-[#ff3901] to-[#F07800] px-4 py-3 relative rounded-full font-medium flex items-center gap-2 overflow-hidden text-white"
+             
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
             >
@@ -135,7 +133,7 @@ export default function DigitalCommerce() {
                 />
               )}
 
-              <span className="relative z-10 text-[#1B0A31]">
+              <span className="relative z-10 text-white">
                 Discover More
               </span>
               <div className="relative w-5 h-5 overflow-hidden">

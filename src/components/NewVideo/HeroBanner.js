@@ -109,11 +109,12 @@ const HeroBanner = () => {
       <section className="relative w-full text-white overflow-hidden pb-16 pt-[80px] lg:pt-[120px]">
         {/* Heading */}
         <div className="relative z-10 flex flex-col items-center justify-center py-16 ">
-          <div
-            className="absolute top-[20%] left-[45%] w-80 h-80 rounded-full 
-          bg-gradient-to-r from-[#BB7CE4] to-[#02162F] 
-          blur-[100px] opacity-80 -z-10"
-          />
+         <div
+  className="absolute top-[20%] left-[40%] w-80 h-80 rounded-full 
+    bg-gradient-to-r from-[#F12D06] to-[#F17C06] 
+    blur-[100px] opacity-70 -z-10"
+/>
+
           <motion.div
             className="justify-items-center"
             initial={{ opacity: 0, y: 40 }}
@@ -134,8 +135,8 @@ const HeroBanner = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             whileHover={{ scale: 1.05 }}
-            className="mt-6 px-6 py-4 relative rounded-full font-medium flex items-center gap-2 overflow-hidden text-[#1B0A31]"
-            style={{ background: "#BB7CE4" }}
+            className="mt-6 px-6 py-4 relative rounded-full bg-gradient-to-r from-[#ff3901] to-[#F07800] font-medium flex items-center gap-2 overflow-hidden text-white"
+           
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
           >
@@ -148,7 +149,7 @@ const HeroBanner = () => {
                 className="absolute inset-0 rounded-full backdrop-blur-md bg-white/10 border border-white/40"
               />
             )}
-            <span className="relative z-10 text-[#1B0A31]">Contact Us</span>
+            <span className="relative z-10 text-white">Contact Us</span>
             <div className="relative w-5 h-5 overflow-hidden">
               <AnimatePresence initial={false} mode="wait">
                 {hovered ? (

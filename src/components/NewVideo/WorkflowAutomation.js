@@ -103,7 +103,7 @@ export default function WorkflowAutomation() {
           viewport={{ once: true }}
         >
           <h3 className="text-4xl lg:text-5xl font-bold capitalize">
-            <span className="bg-[#BB7CE4] bg-clip-text text-transparent ">
+            <span className="bg-gradient-to-r from-[#ff3901] to-[#F07800] bg-clip-text text-transparent ">
               Workflow Automation
             </span>
           </h3>
@@ -123,8 +123,8 @@ export default function WorkflowAutomation() {
             onClick={handlePrev}
             className={`w-10 h-10 flex items-center justify-center rounded-full ${
               currentIndex > 0
-                ? "bg-[#BB7CE4] text-black"
-                : "border border-[#BB7CE4] text-[#BB7CE4]"
+                ? "bg-gradient-to-r from-[#ff3901] to-[#F07800] text-white"
+                : "border border-[#ff3901] text-[#F07800]"
             }`}
           >
             <ChevronLeft />
@@ -133,8 +133,8 @@ export default function WorkflowAutomation() {
             onClick={handleNext}
             className={`w-10 h-10 flex items-center justify-center rounded-full ${
               currentIndex < cards.length - 1
-                ? "bg-[#BB7CE4] text-black"
-                : "border border-[#BB7CE4] text-[#BB7CE4]"
+                ? "bg-gradient-to-r from-[#ff3901] to-[#F07800] text-white"
+                : "border border-[#ff3901] text-[#F07800]"
             }`}
           >
             <ChevronRight />

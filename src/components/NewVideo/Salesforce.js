@@ -168,7 +168,7 @@ export default function Salesforce() {
               viewport={{ once: true, amount: 0.3 }}
             >
               <h3 className="text-4xl lg:text-5xl font-bold ">
-                <span className="bg-[#BB7CE4] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#ff3901] to-[#F07800] bg-clip-text text-transparent">
                   Salesforce
                 </span>{" "}
               </h3>
@@ -182,11 +182,8 @@ export default function Salesforce() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
                   whileHover={{ scale: 1.05 }}
-                  className="mt-6 px-4 py-3 relative rounded-full font-medium flex items-center gap-2 overflow-hidden text-[#1B0A31]"
-                  style={{
-                    background: "#BB7CE4",
-                  }}
-                  onMouseEnter={() => setHovered(true)}
+                  className="mt-6 bg-gradient-to-r from-[#ff3901] to-[#F07800] px-4 py-3 relative rounded-full font-medium flex items-center gap-2 overflow-hidden text-white"
+                   onMouseEnter={() => setHovered(true)}
                   onMouseLeave={() => setHovered(false)}
                 >
                   {/* Blur overlay only on hover */}
@@ -201,7 +198,7 @@ export default function Salesforce() {
                   )}
 
                   {/* Text */}
-                  <span className="relative z-10 text-[#1B0A31]">
+                  <span className="relative z-10 text-white">
                   Get Started
                   </span>
 

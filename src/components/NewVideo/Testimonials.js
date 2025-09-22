@@ -76,12 +76,12 @@ export default function Testimonials() {
               blur-[100px] opacity-80 z-0"
           />
           <p className="text-xl font-bold mb-2">
-            <span className="bg-[#BB7CE4] bg-clip-text text-transparent border border-[#BB7CE4] px-2 py-[3px] rounded-md">
+            <span className="border-2 border-[#ff3901] bg-clip-text text-[#ff3901] px-2 py-[3px] rounded-md">
               Testimonials
             </span>
           </p>
           <h2 className="text-3xl lg:text-5xl font-bold leading-snug mb-8">
-            <span className="bg-[#BB7CE4] bg-clip-text text-transparent mr-1">
+            <span className="bg-gradient-to-r from-[#ff3901] to-[#F07800] bg-clip-text text-transparent mr-1">
               Behind
             </span>
             Every Workflow,<br /> There's a Story!
@@ -144,7 +144,7 @@ export default function Testimonials() {
                 <div
                   key={i}
                   className={`w-3 h-3 rounded-full ${
-                    i === index ? "bg-[#BB7CE4]" : "bg-gray-500"
+                    i === index ? "bg-gradient-to-r from-[#EA7F60] to-[#F07800]" : "bg-gray-500"
                   }`}
                 />
               ))}

@@ -24,7 +24,7 @@ const ClientLogos = () => {
         
         <h2 className="text-4xl lg:text-5xl font-bold">
           Our Proud {" "}
-          <span className="bg-[#BB7CE4] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[#ff3901] to-[#F07800] bg-clip-text text-transparent">
             Partners
           </span>
         </h2>
@@ -55,7 +55,8 @@ const ClientLogos = () => {
                 visible: { opacity: 1, scale: 1 }
               }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="min-w-[150px] lg:min-w-[250px] lg:max-w-[250px] bg-[#1B0A31] rounded-xl p-6 border-[2px] border-[rgba(187,124,228,0.3)] flex flex-col items-center justify-center shadow-md"
+              className="min-w-[150px] lg:min-w-[250px] lg:max-w-[250px] bg-[rgba(234, 127, 96, 1)] rounded-xl p-6 border-[2px]
+               border-[#F07800] flex flex-col items-center justify-center shadow-md"
             >
               <img src={item.img} alt={item.title} className="w-30 h-30 lg:mb-4" />
             </motion.div>

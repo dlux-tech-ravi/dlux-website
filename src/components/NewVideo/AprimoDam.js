@@ -146,11 +146,8 @@ export default function AprimoDam() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
               whileHover={{ scale: 1.05 }}
-              className="px-6 py-4 relative rounded-full font-medium flex items-center gap-2 overflow-hidden text-[#1B0A31]"
-              style={{
-                background: "#BB7CE4",
-              }}
-              onMouseEnter={() => setHovered(true)}
+              className="px-6 py-4 bg-gradient-to-r from-[#ff3901] to-[#F07800] relative rounded-full font-medium flex items-center gap-2 overflow-hidden text-white"
+               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
             >
               {hovered && (
@@ -163,7 +160,7 @@ export default function AprimoDam() {
                 />
               )}
 
-              <span className="relative z-10 text-[#1B0A31]">Get Started</span>
+              <span className="relative z-10 text-white">Get Started</span>
 
               <div className="relative w-5 h-5 overflow-hidden">
                 <AnimatePresence initial={false} mode="wait">
@@ -198,13 +195,13 @@ export default function AprimoDam() {
             <div className="flex gap-4">
               <button
                 onClick={handlePrev}
-                className="w-10 h-10 rounded-full bg-[#BB7CE4] text-[#1B0A31] flex items-center justify-center"
+                className="w-10 h-10 rounded-full bg-gradient-to-r from-[#ff3901] to-[#F07800] text-white flex items-center justify-center"
               >
                 <ChevronLeft />
               </button>
               <button
                 onClick={handleNext}
-                className="w-10 h-10 rounded-full bg-[#BB7CE4] text-[#1B0A31] flex items-center justify-center"
+                className="w-10 h-10 rounded-full bg-gradient-to-r from-[#ff3901] to-[#F07800] text-white flex items-center justify-center"
               >
                 <ChevronRight />
               </button>
@@ -241,7 +238,7 @@ export default function AprimoDam() {
       <div className="w-full mt-8">
         <div className="w-full h-1 bg-gray-700 rounded">
           <div
-            className="h-1 bg-[#BB7CE4] rounded"
+            className="h-1 bg-gradient-to-r from-[#ff3901] to-[#F07800] rounded"
             style={{
               width: `${((activeIndex + 1) / cards.length) * 100}%`,
             }}

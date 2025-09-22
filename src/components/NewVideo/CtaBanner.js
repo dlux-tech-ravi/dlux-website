@@ -29,8 +29,8 @@ export default function CtaBanner() {
   return (
     <section className="relative w-full lg:w-[1400px] m-auto  py-12 px-4 sm:px-8 ">
       <div className="absolute top-[30%] left-[10%] w-80 h-80 rounded-full 
-      bg-gradient-to-r from-[#BB7CE4] to-[#02162F] 
-      blur-[100px] opacity-80 z-0" />
+      bg-gradient-to-r from-[#ff3901] to-[#F07800] 
+      blur-[100px] opacity-70 z-0" />
       {/* Glassy Card with Content + Image */}
       <motion.div
         variants={containerVariants}
@@ -46,7 +46,7 @@ export default function CtaBanner() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
           Watched {" "}
-            <span className="bg-[#BB7CE4] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#ff3901] to-[#F07800] bg-clip-text text-transparent">
             Our Videos ?
             </span>{" "}
            Talk to Our Experts 
