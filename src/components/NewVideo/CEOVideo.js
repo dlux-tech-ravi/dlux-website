@@ -5,42 +5,42 @@ import { ArrowRight, ChevronLeft, ChevronRight, Play, X } from "lucide-react";
 const cards = [
   {
     id: 1,
-     title: "Unleash the Power of ChatGPT x Adobe Workfront: A DLUX TECH Innovation | Centre of Excellence|", 
+     title: "Improved Online Shopping Experience :Integrating Adobe Commerce with Adobe Analytics ", 
     image:
       "https://images.ctfassets.net/pj0maraabon4/ZjN1O5ofZ2pQZpEFvouFG/bea0016679a641f543da8ff80077b8f7/adobe-commerce-aep.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/6QfiQGZgTOFWE31eoXKRqr/a569dfea202f1500285af3ca764027a8/ceo-videos-01.mp4",
   },
   {
     id: 2,
-    title: "Integrating Adobe Workfront & Tableau's visualisation Tool | Snowflake Workfront | Adobe| Improved Performance | Proven ROI| Workfront Project Management Data ", 
+    title: "Connected Martech Ecosystem | Disconnected tools | Adobe Ecosystem", 
     image:
       "https://images.ctfassets.net/pj0maraabon4/g6VhGB0ALUorN4PwOv3Uv/1ad7132516c95d5d86237d0a4692a6e7/Next_Gen_Martech.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/QdhwdYJDBzkBC8fryGpXE/5fcb83975c964529d5848b8fa3458bb9/ceo-videos-02.mp4",
   },
   {
     id: 3,
-    title: "AEP coupon video - Personalized Discounts, Happier Customers — Powered by AEP + Adobe Commerce", 
+    title: "AEP(Shop Smarter : Adobe Commerce + AEP Delivers Personalized Shopping)", 
     image:
       "https://images.ctfassets.net/pj0maraabon4/2UFmJrUnXw4LIPamQSrbzh/b29acffcd3a78ec04f6e9283961e20ff/AEP-Integration.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/GSLfChdktR6W6JnIWQnj2/9e5fd1db0c46842798223e629d1efe69/ceo-videos-03.mp4",
   },
   {
     id: 4,
-    title: "Product Recommendation(Adobe Sensei in Action: Real-Time Product Recommendations That Convert)", 
+    title: "Adobe Sensei in Action: Real-Time Product Recommendations That Convert", 
     image:
       "https://images.ctfassets.net/pj0maraabon4/19EOD4H2jJzaITuJ1VCYjP/6f194ef1906f179fdff257785255c5a6/Product_Recommentation.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/5QnaqhEn58fUI8EzHHFGpO/618b0ebbac3f815457bd92137bbba6e7/ceo-videos-04.mp4",
   },
   {
     id: 5,
-    title: "Effortless Custom Form Migration with Workfront : Transform Your Workfront Experience| DLUX COE | Improved Efficiency | DLUX Innovation", 
+    title: "Adobe Commerce Livesearch | Smarter shopping way | Better Customer Experience", 
     image:
       "https://images.ctfassets.net/pj0maraabon4/3N9yqUkjutnAizDLHKX5GW/327f7618bcc6bef20443bfa20bff4604/Live_Search.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/1e3hQ6aGDV5CCh6a43UJm4/98404f19aa0f77f4e67d4cb6d15cffa3/ceo-videos-05.mp4",
   },
   {
     id: 6,
-    title: "Muti- Site Manager to streamline workflows using Adobe Experience Manager| adobe|Handling Multi-lingual sites", 
+    title: "Online shopping made Smarter | Commerce", 
     image:
       "https://images.ctfassets.net/pj0maraabon4/6xE3Qtgu00MlBoohi279ax/e45f0a93a8f458aadee38da94a50ec4a/Analytics.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/7CG3xXvh4HMW2qADioFT4l/89f27424925df9f32eb297619f55adbb/ceo-videos-06.mp4",
@@ -54,37 +54,37 @@ const cards = [
   },
     {
     id: 8,
-    title: "Product Recommendation(Adobe Sensei in Action: Real-Time Product Recommendations That Convert)", 
+    title: "Integrating Adobe Workfront & Tableau's visualisation Tool | Snowflake ", 
     image:
       "https://images.ctfassets.net/pj0maraabon4/6LEf7JKCfZkPCQIZL0C57v/8363311095c5d99df6cc1e7adefcc2c1/Real_Time.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/6beKvkSg8y2YKh3v7QxNiZ/08de91f870f351a1e3e3b887fd7b3bfc/ceo-videos-08.mp4",
   },
    {
     id: 9,
-    title: "Livesearch ( Smarter ECommerce with Adobe Commerce + AEP | The Future of Shopping)Experience smarter shopping with Adobe Commerce + AEP —AI personalization, and improved customer journeys", 
+    title: "Integrating Microsoft 365 with Aprimo | Project Management Software Tool", 
     image:
       "https://images.ctfassets.net/pj0maraabon4/6Tlk4dVpuajwuQetwYCBuN/b7bba4afe4def6ed99753db2768f05df/aprimo-video-vault.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/58mIe4HBKxekJNWIm1axbT/1d7c4b68e451d0fc6811e77a1f0ef2ed/ceo-videos-09.mp4",
   },
    {
     id: 10,
-    title: "AEP(Shop Smarter : Adobe Commerce + AEP Delivers Personalized Shopping)", 
+    title: "Muti- Site Manager to streamline workflows using Adobe Experience Manager| adobe|Handling Multi-lingual sites", 
     image:
       "https://images.ctfassets.net/pj0maraabon4/1NwLkskgywCtvQoomF551t/089e2b46a8e1e08a9c9122ce78b366ed/organisation-face-video-vault.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/7CpjQ4H9VtSXkBrbsCyiM3/36410ab59792d0dd11f8a1850be14348/ceo-videos-10.mp4",
   },
-  {
-      id: 11,
-      title: "Improved Online Shopping Experience :Integrating Adobe Commerce with Adobe Analytics ", 
-      image: "https://images.ctfassets.net/pj0maraabon4/6RCHk3KBIIVETOGx8urKTn/341a127cb5c5b0e5e225d7c93e4a354a/workflow-bug-image.jpg",
-      video: "https://videos.ctfassets.net/pj0maraabon4/73ehLYtPyY5CZYtJIXV8L8/c061ada632e2d32fadda720a4d533850/workfront-new-01.mp4",
-    },
-    {
-      id: 12, 
-      title: "Adobe Recommendation( Smarter ECommerce with Adobe Commerce + AEP | The Future of Shopping)",     
-      image: "https://images.ctfassets.net/pj0maraabon4/6RCHk3KBIIVETOGx8urKTn/341a127cb5c5b0e5e225d7c93e4a354a/workflow-bug-image.jpg",
-      video: "https://videos.ctfassets.net/pj0maraabon4/1P9Ib5uHf4JbHMsnPPOPRp/01f65ebf34094e1cdaca95e037ccdde8/workfront-new-02.mp4",
-    },
+  // {
+  //     id: 11,
+  //     title: "Improved Online Shopping Experience :Integrating Adobe Commerce with Adobe Analytics ", 
+  //     image: "https://images.ctfassets.net/pj0maraabon4/6RCHk3KBIIVETOGx8urKTn/341a127cb5c5b0e5e225d7c93e4a354a/workflow-bug-image.jpg",
+  //     video: "https://videos.ctfassets.net/pj0maraabon4/73ehLYtPyY5CZYtJIXV8L8/c061ada632e2d32fadda720a4d533850/workfront-new-01.mp4",
+  //   },
+  //   {
+  //     id: 12, 
+  //     title: "Adobe Recommendation( Smarter ECommerce with Adobe Commerce + AEP | The Future of Shopping)",     
+  //     image: "https://images.ctfassets.net/pj0maraabon4/6RCHk3KBIIVETOGx8urKTn/341a127cb5c5b0e5e225d7c93e4a354a/workflow-bug-image.jpg",
+  //     video: "https://videos.ctfassets.net/pj0maraabon4/1P9Ib5uHf4JbHMsnPPOPRp/01f65ebf34094e1cdaca95e037ccdde8/workfront-new-02.mp4",
+  //   },
 ];
 
 
@@ -118,7 +118,7 @@ export default function CEDVideo() {
   }, [activeVideo]);
 
   return (
-    <section className=" w-full m-auto  text-white  flex flex-col lg:justify-center items-center md:px-16 px-4 lg:pl-[80px] lg:pr-[120px]">
+    <section className=" w-full m-auto  text-white  flex flex-col lg:justify-center items-center md:px-16 px-4 lg:pl-[80px] lg:pr-[120px] lg:pb-20">
       <style>
         {`
           @keyframes slow-ping {

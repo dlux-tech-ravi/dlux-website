@@ -24,7 +24,7 @@ const images = [
     video:
       "https://videos.ctfassets.net/pj0maraabon4/3sqvkwblysuyTcUU6vyXT2/d777d4a9b8db5600a7a8ce61184dae47/Product_recommendation-002__1___1___1_.mp4",
     title:
-      "Your Shopping Experience Made Better | Commerce |Adobe sensei | Personalized Shopping ",
+      "Your Shopping Experience Made Better ",
   },
   {
     src: "https://images.ctfassets.net/pj0maraabon4/TcciqXaBG41DwA7MqVGCH/843264f254a68d9043243ab12ab7b73c/workfront_chatgpt.jpg",
@@ -184,50 +184,50 @@ const HeroBanner = () => {
         {/* ✅ Image Grid */}
         {/* Desktop 7-card */}
         <div className="hidden lg:flex justify-center items-center gap-4">
-          <div className="bg-white/10 backdrop-blur-md border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow" style={{ width: "305px", height: "230px" }}>
+          <div className="bg-[#ff390140] backdrop-blur-md border-[2px] border-[#ff39014d] rounded-xl overflow-hidden shadow" style={{ width: "305px", height: "230px" }}>
             <ImageBox item={currentImages[0]} direction="left" idx={0} />
           </div>
           <div className="flex flex-col gap-4">
-            <div className="bg-white/10 backdrop-blur-md border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow" style={{ width: "305px", height: "230px" }}>
+            <div className="bg-[#ff390140] backdrop-blur-md border-[2px] border-[#ff39014d] rounded-xl overflow-hidden shadow" style={{ width: "305px", height: "230px" }}>
               <ImageBox item={currentImages[1]} direction="left" idx={1} />
             </div>
-            <div className="bg-white/10 backdrop-blur-md border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow" style={{ width: "305px", height: "160px" }}>
+            <div className="bg-[#ff390140] backdrop-blur-md border-[2px] border-[#ff39014d] rounded-xl overflow-hidden shadow" style={{ width: "305px", height: "160px" }}>
               <ImageBox item={currentImages[2]} direction="left" idx={2} />
             </div>
           </div>
-          <div className="bg-[#1B0A31] backdrop-blur-md border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow-2xl" style={{ width: "415px", height: "460px" }}>
+          <div className="bg-[#ff390140] backdrop-blur-md border-[2px] border-[#ff39014d] rounded-xl overflow-hidden shadow-2xl" style={{ width: "415px", height: "460px" }}>
             <ImageBox item={currentImages[3]} direction="left" idx={3} />
           </div>
           <div className="flex flex-col gap-4">
-            <div className="bg-white/10 backdrop-blur-md border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow" style={{ width: "305px", height: "160px" }}>
+            <div className="bg-[#ff390140] backdrop-blur-md border-[2px] border-[#ff39014d] rounded-xl overflow-hidden shadow" style={{ width: "305px", height: "160px" }}>
               <ImageBox item={currentImages[4]} direction="right" idx={4} />
             </div>
-            <div className="bg-white/10 backdrop-blur-md border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow" style={{ width: "305px", height: "230px" }}>
+            <div className="bg-[#ff390140] backdrop-blur-md border-[2px] border-[#ff39014d] rounded-xl overflow-hidden shadow" style={{ width: "305px", height: "230px" }}>
               <ImageBox item={currentImages[5]} direction="right" idx={5} />
             </div>
           </div>
-          <div className="bg-white/10 backdrop-blur-md border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow" style={{ width: "305px", height: "230px" }}>
+          <div className="bg-[#ff390140] backdrop-blur-md border-[2px] border-[#ff39014d] rounded-xl overflow-hidden shadow" style={{ width: "305px", height: "230px" }}>
             <ImageBox item={currentImages[6]} direction="right" idx={6} />
           </div>
         </div>
 
         {/* Mobile/Tablet 3-card */}
         <div className="hidden md:flex lg:hidden justify-center items-center gap-2 px-2 overflow-hidden">
-          <div className="bg-white/10 backdrop-blur-md border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow flex-shrink-0" style={{ width: "100%", height: "200px" }}>
+          <div className="bg-[#ff390140] backdrop-blur-md border-[2px] border-[#ff39014d] rounded-xl overflow-hidden shadow flex-shrink-0" style={{ width: "100%", height: "200px" }}>
             <ImageBox item={currentImages[2]} direction="left" idx={2} />
           </div>
-          <div className="bg-[#1B0A31] backdrop-blur-md border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow-2xl flex-shrink-0" style={{ width: "350px", height: "320px" }}>
+          <div className="bg-[#ff390140] backdrop-blur-md border-[2px] border-[#ff39014d] rounded-xl overflow-hidden shadow-2xl flex-shrink-0" style={{ width: "350px", height: "320px" }}>
             <ImageBox item={currentImages[3]} direction="center" idx={3} />
           </div>
-          <div className="bg-white/10 backdrop-blur-md border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow flex-shrink-0" style={{ width: "100%", height: "200px" }}>
+          <div className="bg-[#ff390140] backdrop-blur-md border-[2px] border-[#ff39014d] rounded-xl overflow-hidden shadow flex-shrink-0" style={{ width: "100%", height: "200px" }}>
             <ImageBox item={currentImages[4]} direction="right" idx={4} />
           </div>
         </div>
          {/* ✅ Mobile: only the big center card */}
       <div className="flex md:hidden justify-center items-center px-2">
         <div
-          className="bg-[#1B0A31] backdrop-blur-md 
-           border-[2px] border-[rgba(187,124,228,0.3)] rounded-xl overflow-hidden shadow-2xl"
+          className="bg-[#ff390140] backdrop-blur-md 
+           border-[2px] border-[#ff39014d] rounded-xl overflow-hidden shadow-2xl"
           style={{ width: "100%", height: "100%" }}
         >
           <ImageBox item={currentImages[3]} direction="center" idx={3} />

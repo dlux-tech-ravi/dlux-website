@@ -103,14 +103,7 @@ export default function DigitalCommerce() {
               </span>
             </h2>
             <p className="mt-3 text-gray-300 text-lg lg:text-xl">
-              Watch & Learn with Adobe Commerce – From the early days of Magento
-              to the full power of Adobe Commerce today, explore a wide library
-              of expert-led tutorials, data-backed insights, and real-world
-              success stories. Gain access to proven strategies that help
-              businesses of all sizes scale faster, streamline operations, and
-              deliver seamless customer experiences. Discover actionable tips
-              for improving store performance, optimizing ROI, and driving
-              sustainable growth in the competitive world of digital commerce.
+              Watch & Learn with Adobe Commerce – From the early days of Magento to the full power of Adobe Commerce today, explore a wide library of expert-led tutorials, data-backed insights, and real-world success stories.
             </p>
 
             <motion.button

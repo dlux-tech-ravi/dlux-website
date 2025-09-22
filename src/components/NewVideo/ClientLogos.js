@@ -55,10 +55,10 @@ const ClientLogos = () => {
                 visible: { opacity: 1, scale: 1 }
               }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="min-w-[150px] lg:min-w-[250px] lg:max-w-[250px] bg-[rgba(234, 127, 96, 1)] rounded-xl p-6 border-[2px]
+              className="min-w-[150px] lg:min-w-[250px] lg:max-w-[250px] bg-[#ff390140] rounded-xl p-6 border-[2px]
                border-[#F07800] flex flex-col items-center justify-center shadow-md"
             >
-              <img src={item.img} alt={item.title} className="w-30 h-30 lg:mb-4" />
+              <img src={item.img} alt={item.title} className="w-30 h-30" />
             </motion.div>
           ))}
         </motion.div>

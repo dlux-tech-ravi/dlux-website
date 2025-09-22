@@ -45,6 +45,11 @@ export default function Testimonials() {
 
   return (
     <section className="relative w-full text-white py-16 px-6 md:px-16 overflow-hidden">
+       <div
+  className="absolute top-[15%] left-[40%] w-80 h-80 rounded-full 
+    bg-gradient-to-r from-[#F12D06] to-[#F17C06] 
+    blur-[100px] opacity-70 -z-10"
+/>
       <div className="flex flex-col-reverse lg:flex-row gap-10 justify-start items-center relative">
         {/* Left Column - Dummy Image */}
         <motion.div
