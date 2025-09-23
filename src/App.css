@@ -112,7 +112,8 @@ body {
   }
   
   .home-img-section {
-    height: 65vh;
+    height: 100vh;
+    padding-top: 150px;
     width: 100%;
     position: relative;
   }

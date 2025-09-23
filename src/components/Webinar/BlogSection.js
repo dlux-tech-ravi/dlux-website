@@ -34,7 +34,7 @@ const BlogSection = () => {
 
   return (
     <section
-      className="bg-[#122644] bg-[url('https://images.ctfassets.net/pj0maraabon4/460BvYglILJP3CQpLh0QLh/7b2648fa189b605a87ca11c8ab66b93c/blog-background-banner.png')] bg-cover bg-center bg-no-repeat bg-blend-multiply
+      className="bg-black bg-[url('https://images.ctfassets.net/pj0maraabon4/460BvYglILJP3CQpLh0QLh/7b2648fa189b605a87ca11c8ab66b93c/blog-background-banner.png')] bg-cover bg-center bg-no-repeat bg-blend-multiply
              mx-auto px-6 md:px-12 lg:px-20 py-[80px]  w-full h-full text-white"
     >
       {/* CTA Button */}

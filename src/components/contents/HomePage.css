@@ -213,6 +213,24 @@
     align-items: center;
     margin-top: 6rem;
 }
+@media (max-width: 768px) {
+   .what-we-do__bottom {
+ padding: 10px 15px;
+}
+.what-we-do__media-wrapper {
+    
+    display: flex; 
+    justify-content: right !important;
+}
+.what-we-do__media-wrapper img {
+    width: 50% !important;
+    height: 100px;
+    object-fit: contain;
+}
+.what-we-do-main{
+  width: 100%;
+}
+}
 
 .what-we-do__head {
   font-weight: bold;

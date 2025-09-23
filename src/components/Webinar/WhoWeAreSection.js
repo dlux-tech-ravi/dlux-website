@@ -3,34 +3,35 @@ import { Globe, Puzzle, SlidersHorizontal, Megaphone } from "lucide-react";
 const benefits = [
   {
     id: 1,
-    icon: <Globe className="w-10 h-10" />,
+    icon: "https://images.ctfassets.net/pj0maraabon4/3ZALbYrFUyfd79jmP338zw/0705372f0ef3973b91c3205de0e6c458/Certified___Industry_Expertise.png",
     title: "Certified & Industry Expertise  ",
   },
   {
     id: 2,
-    icon: <Puzzle className="w-10 h-10" />,
+    icon: "https://images.ctfassets.net/pj0maraabon4/l2AbpSmHDR0A38AmpG1jW/eea06b1b63c4b5ca3c26d90fa63f9d91/Center_of_Excellence_Approachâ____New.png",
     title: "Center of Excellence Approach ",
   },
   {
     id: 3,
-    icon: <SlidersHorizontal className="w-10 h-10" />,
+    icon: "https://images.ctfassets.net/pj0maraabon4/6EXom6NVRFIbjMLVYtwUvY/33db6391f6f82b6e9bdf22ca8dde5427/End-to-End_Solution.png",
     title: "End-to-End Solution  ",
   },
   {
     id: 4,
-    icon: <Megaphone className="w-10 h-10" />,
+    icon:"https://images.ctfassets.net/pj0maraabon4/1bPWgVpQL3nbFGXR8Az5nj/3b427b9301a087f241c3608e7376b72a/Trusted_by_Global_Enterprisesâ__.png",
     title: "Trusted by Global Enterprises",
   },
 ];
 
 export default function WhoWeAreSection() {
   return (
-    <section className="relative w-full  bg-[#122644] text-white pb-[80px] px-6 md:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
-      <div
-        className="absolute top-[20%] left-[45%] w-80 h-80 rounded-full 
-          bg-gradient-to-r from-[#BB7CE4] to-[#02162F] 
-          blur-[100px] opacity-80 z-1"
-      />
+    <section className="relative w-full  bg-black text-white pb-[80px] px-6 md:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
+     
+       <div
+  className="absolute top-[20%] left-[40%] w-80 h-80 rounded-full 
+    bg-gradient-to-r from-[#F12D06] to-[#F17C06] 
+    blur-[120px] opacity-70 z-10"
+/>
       {/* Left Column */}
       <div className="relative md:w-2/5 py-20 space-y-6 z-[100]">
         <h2 className="text-5xl font-bold">WHY ATTEND DLUX WEBINAR  </h2>
@@ -63,13 +64,13 @@ export default function WhoWeAreSection() {
             </li>
         
         </ul>
-        <button className="bg-gradient-to-r from-[#122644] to-[#D3A0E6] px-6 py-2 rounded-full font-semibold shadow hover:opacity-90 transition">
+        <button className="bg-gradient-to-r from-[#ff3901] to-[#F07800] px-6 py-2 rounded-full font-semibold shadow hover:opacity-90 transition">
           CONTACT
         </button>
       </div>
 
       {/* Right Column */}
-      <div className="md:w-2/5 gap-6 ">
+      <div className="md:w-2/5 gap-6 z-[10]">
         <h3 className="text-2xl font-semibold mb-4">
           BENEFITS OF CHOOSING US 
         </h3>
@@ -77,10 +78,11 @@ export default function WhoWeAreSection() {
           {benefits.map((benefit) => (
             <div
               key={benefit.id}
-              className="flex flex-col w-[240px] h-[222px] items-center justify-center border border-white-600  p-6 text-center cursor-pointer transition duration-300 hover:bg-gradient-to-r hover:from-[#122644] hover:to-[#D3A0E6]    hover:border-transparent"
+              className="flex flex-col w-[240px] h-[222px] items-center justify-center border
+               border-[#F07800] bg-white  p-6 text-center cursor-pointer transition duration-300 hover:bg-gradient-to-r hover:from-[#122644] hover:to-[#D3A0E6]    hover:border-transparent"
             >
-              <div className="mb-3">{benefit.icon}</div>
-              <h4 className="text-sm font-medium">{benefit.title}</h4>
+              <div className="mb-3"><img src={benefit.icon} alt={benefit.title}/></div>
+              <h4 className="text-sm font-medium text-black">{benefit.title}</h4>
             </div>
           ))}
         </div>

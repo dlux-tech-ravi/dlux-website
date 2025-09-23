@@ -37,11 +37,21 @@ const speakers = [
 export default function Speakers() {
   return (
     <section
-      className="relative flex items-center justify-center px-6 md:px-12 lg:px-20 py-[120px] text-white bg-[#122644]"
+      className="relative flex items-center justify-center px-6 md:px-12 lg:px-20 py-[120px] text-white bg-black"
       
     >
+      <div
+  className="absolute top-[20%] -left-[10%] w-80 h-80 rounded-full 
+    bg-gradient-to-r from-[#F12D06] to-[#F17C06] 
+    blur-[130px] opacity-70 z-1"
+/>
+ <div
+  className="absolute top-[70%] right-[0%] w-80 h-80 rounded-full 
+    bg-gradient-to-r from-[#F12D06] to-[#F17C06] 
+    blur-[130px] opacity-70 z-1"
+/>
       {/* Background Overlay Pattern */}
-      <div className="absolute inset-0 opacity-20 bg-[url('https://images.ctfassets.net/pj0maraabon4/4fHeknVDit0tuXeRmqsfk4/3a2b7ebd0c75b7a2f9e835186449f714/bg-image-speaker-section.png')] bg-contain bg-no-repeat"></div>
+      <div className="absolute inset-0 opacity-80 bg-[url('https://images.ctfassets.net/pj0maraabon4/4fHeknVDit0tuXeRmqsfk4/b0dfcc317946d1afbb6540b7426ec47e/bg-image-speaker-section.png')] bg-contain bg-no-repeat"></div>
 
       <div className="relative w-full h-full items-center">
         

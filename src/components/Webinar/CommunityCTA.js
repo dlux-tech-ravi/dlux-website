@@ -2,11 +2,11 @@ import React from "react";
 
 const CommunityCTA = () => {
   return (
-    <section className="relative flex items-center justify-center overflow-hidden py-[130px]">
+    <section className="relative flex items-center justify-center overflow-hidden py-[130px] bg-[#ff3901]">
       {/* Background Shapes */}
       <div className="absolute inset-0">
         <img
-          src="https://images.ctfassets.net/pj0maraabon4/296XnXzXCaUOJFkVDQY0eS/c5548aaf1a99aef21fa0b1a43e36246a/CTA-Banner-image-01.png"
+          src="https://images.ctfassets.net/pj0maraabon4/296XnXzXCaUOJFkVDQY0eS/3fbba29e3134d07ecc8aeeb048f12968/community-bg-shape.png"
           alt="background pattern"
           className="w-full h-full "
         />

@@ -12,7 +12,7 @@ export default function HeroSection() {
       }}
     >
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#122644] via-[#0a1631]/70 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#ff3901] via-[#F07800]/60 to-transparent"></div>
 
       {/* Content Wrapper */}
       <div className="relative h-full flex flex-col md:flex-row items-center justify-between px-6 md:px-16">

@@ -44,7 +44,7 @@ export default function FAQSection() {
       }}
     >
       <div className="max-w-3xl w-full">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-10 text-purple-800">
+        <h2 className="text-3xl md:text-5xl font-bold text-center lg:mb-20 bg-gradient-to-r from-[#ff3901] to-[#F07800] bg-clip-text text-transparent">
           Get Answers to Your Eventify Questions with Our FAQs
         </h2>
 
