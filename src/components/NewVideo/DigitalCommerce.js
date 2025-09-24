@@ -53,7 +53,7 @@ const SLIDES = [
       "AEP coupon video - Personalized Discounts, Happier Customers — Powered by AEP + Adobe Commerce",
     cta: "See Details",
     image:
-      "https://images.ctfassets.net/pj0maraabon4/6ZuZtHzgQ7dzpsc0kNEsUi/98bdeec08f9f58725cbbbf0295254b98/Digital-commerce-image.jpg",
+      "https://images.ctfassets.net/pj0maraabon4/1Mpc1nDMEI5GxEEazVYIZX/216549b0b5fc83e994a1fb09b2c72715/AEP_Video_Thumbnail_01.png",
     videoUrl: "https://youtu.be/M1FncAIVAB0",
   },
   {
@@ -62,7 +62,7 @@ const SLIDES = [
       "See how Adobe Commerce transforms retail!",
     cta: "See Details",
     image:
-      "https://images.ctfassets.net/pj0maraabon4/1Mpc1nDMEI5GxEEazVYIZX/216549b0b5fc83e994a1fb09b2c72715/AEP_Video_Thumbnail_01.png",
+      "https://images.ctfassets.net/pj0maraabon4/6ZuZtHzgQ7dzpsc0kNEsUi/98bdeec08f9f58725cbbbf0295254b98/Digital-commerce-image.jpg",
     videoUrl: "https://videos.ctfassets.net/pj0maraabon4/4GhoFakw76K1pKZHiB7GRO/560bceb257f44decb9f37d2b4ec75632/Adobe-commerce-new-01.mp4",
   },
 ];
