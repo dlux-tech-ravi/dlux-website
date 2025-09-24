@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight, Play, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const cards = [
  {
@@ -14,7 +15,7 @@ const cards = [
   },
   {
     id: 2,
-    title: "Ultimate Solution for your Content Safety and Recovery |Adobe Experience Manager",
+    title: "AEM edge Delivery Services , Low to No- Code Solutions",
     image:
       "https://images.ctfassets.net/pj0maraabon4/38YY6qkHaUxL15zPsAVkCY/cdf50e80478f340216d1e26ad75241d9/AEM-image-02.jpg",
     video:
@@ -23,7 +24,7 @@ const cards = [
   
   {
     id: 3,
-    title: "AEM edge Delivery Services , Low to No- Code Solutions ",
+    title: " Ultimate Solution for your Content Safety and Recovery |Adobe Experience Manager",
     cta: "See Details",
     image:
       "https://images.ctfassets.net/pj0maraabon4/1suQj4cSZfdQwX2bTltDiz/3f33f984161b01813a01b8245dc128d7/AEM-Image-04.jpg",
@@ -140,6 +141,7 @@ export default function AprimoDam() {
           </p>
 </motion.div>
           <div className="flex justify-between items-center mt-6">
+            <Link to="/aprimo">
             <motion.button
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -189,6 +191,7 @@ export default function AprimoDam() {
                 </AnimatePresence>
               </div>
             </motion.button>
+            </Link>
 
             {/* Arrows */}
             <div className="flex gap-4">

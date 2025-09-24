@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-
+import { Link } from "react-router-dom";
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -54,12 +54,14 @@ export default function CtaBanner() {
           <p className="text-gray-200 mb-6 max-w-md">
            From Project Management to AI , Martech Tools our videos are just the beginning. Let’s talk about solutions that fit your enterprise needs.
           </p>
+          <Link to="/contact-us">
           <motion.button
             whileHover={{ scale: 1.05 }}
             className="px-6 py-2 rounded-full bg-white text-black font-medium border border-transparent hover:border-white/40 transition-all"
           >
           Connect to Us
           </motion.button>
+          </Link>
         </motion.div>
 
         {/* Image Inside Glassy Box */}

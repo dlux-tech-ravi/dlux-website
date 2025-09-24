@@ -1,5 +1,5 @@
 "use client";
-
+import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronRight, X } from "lucide-react";
@@ -114,6 +114,10 @@ export default function DigitalCommerce() {
             <p className="mt-3 text-gray-300 text-lg lg:text-xl">
               Watch & Learn with Adobe Commerce – From the early days of Magento to the full power of Adobe Commerce today, explore a wide library of expert-led tutorials, data-backed insights, and real-world success stories.
             </p>
+            
+            
+
+<Link to="/adobe-commerce">
 
             <motion.button
               initial={{ opacity: 0, y: 20 }}
@@ -166,6 +170,7 @@ export default function DigitalCommerce() {
                 </AnimatePresence>
               </div>
             </motion.button>
+            </Link>
           </motion.div>
         </div>
 

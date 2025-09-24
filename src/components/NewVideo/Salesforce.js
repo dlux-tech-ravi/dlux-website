@@ -1,5 +1,5 @@
 "use client";
-
+import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronRight, X } from "lucide-react";
@@ -177,6 +177,7 @@ export default function Salesforce() {
                 tutorials—featuring AI innovations, Data Cloud, automation, and
                 low-code solutions.
               </p>
+              <Link to="/salesforce">
                <motion.button
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -231,6 +232,7 @@ export default function Salesforce() {
                     </AnimatePresence>
                   </div>
                 </motion.button>
+                </Link>
             </motion.div>
             {/* <motion.div
               key={SLIDES[index].id}

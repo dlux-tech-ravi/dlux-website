@@ -1,5 +1,5 @@
 "use client";
-
+import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, X, Play } from "lucide-react";
@@ -131,13 +131,16 @@ const HeroBanner = () => {
               Workfront, Fusion, DAM, Salesforce, and more.
             </p>
           </motion.div>
+         
+<Link to="/contact-us">
+
           <motion.button
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             whileHover={{ scale: 1.05 }}
             className="mt-6 px-6 py-4 relative rounded-full bg-gradient-to-r from-[#ff3901] to-[#F07800] font-medium flex items-center gap-2 overflow-hidden text-white"
-           
+          
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
           >
@@ -179,6 +182,7 @@ const HeroBanner = () => {
               </AnimatePresence>
             </div>
           </motion.button>
+          </Link>
         </div>
 
         {/* ✅ Image Grid */}
