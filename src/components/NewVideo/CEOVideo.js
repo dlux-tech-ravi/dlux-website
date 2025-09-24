@@ -5,21 +5,21 @@ import { ArrowRight, ChevronLeft, ChevronRight, Play, X } from "lucide-react";
 const cards = [
   {
     id: 1,
-     title: "Improved Online Shopping Experience :Integrating Adobe Commerce with Adobe Analytics ", 
+     title: "Improved Online Shopping Experience: Integrating Adobe Commerce with Adobe Analytics", 
     image:
       "https://images.ctfassets.net/pj0maraabon4/ZjN1O5ofZ2pQZpEFvouFG/bea0016679a641f543da8ff80077b8f7/adobe-commerce-aep.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/6QfiQGZgTOFWE31eoXKRqr/a569dfea202f1500285af3ca764027a8/ceo-videos-01.mp4",
   },
   {
     id: 2,
-    title: "AEM + DLUX Content Creation Made Easy", 
+    title: "AEM+DLUX Content Creation Made Easy", 
     image:
       "https://images.ctfassets.net/pj0maraabon4/g6VhGB0ALUorN4PwOv3Uv/1ad7132516c95d5d86237d0a4692a6e7/Next_Gen_Martech.jpg",
     video: "https://www.youtube.com/watch?v=A_W3cORSBDc",
   },
   {
     id: 3,
-    title: "AEP(Shop Smarter : Adobe Commerce + AEP Delivers Personalized Shopping)", 
+    title: "AEP(Shop Smarter: Adobe Commerce+AEP Delivers Personalized Shopping)", 
     image:
       "https://images.ctfassets.net/pj0maraabon4/2UFmJrUnXw4LIPamQSrbzh/b29acffcd3a78ec04f6e9283961e20ff/AEP-Integration.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/GSLfChdktR6W6JnIWQnj2/9e5fd1db0c46842798223e629d1efe69/ceo-videos-03.mp4",
@@ -33,55 +33,55 @@ const cards = [
   },
   {
     id: 5,
-    title: "Adobe Commerce Livesearch | Smarter shopping way | Better Customer Experience", 
+    title: "Adobe Commerce Livesearch|Smarter shopping way|Better Customer Experience", 
     image:
       "https://images.ctfassets.net/pj0maraabon4/3N9yqUkjutnAizDLHKX5GW/327f7618bcc6bef20443bfa20bff4604/Live_Search.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/1e3hQ6aGDV5CCh6a43UJm4/98404f19aa0f77f4e67d4cb6d15cffa3/ceo-videos-05.mp4",
   },
   {
     id: 6,
-    title: "Online shopping made Smarter | Commerce", 
+    title: "Online shopping made smarter|Digital Commerce", 
     image:
       "https://images.ctfassets.net/pj0maraabon4/6xE3Qtgu00MlBoohi279ax/e45f0a93a8f458aadee38da94a50ec4a/Analytics.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/7CG3xXvh4HMW2qADioFT4l/89f27424925df9f32eb297619f55adbb/ceo-videos-06.mp4",
   },
   {
     id: 7,
-    title: "Transforming Campaign Workflows with AI AI workfront Fusion | workfront | Fusion | Adobe", 
+    title: "Integrating Creative Assets+ChatGPT+Adobe Workfront Fusion to create a smarter, consistent workflow.", 
     image:
       "https://images.ctfassets.net/pj0maraabon4/48S6CgQXOU0XPQKFFjB4Hb/fe1bbce7a895d641b5fbc08458b6c9a9/workflow_automation.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/5eD3iSAq4i0Wlk8AtF2LYg/43297cc8d4930564d6e952fe737e525f/ceo-videos-07.mp4",
   },
     {
     id: 8,
-    title: "Integrating Adobe Workfront & Tableau's visualisation Tool | Snowflake ", 
+    title: "Integrating Adobe Workfront&Tableau's visualisation Tool|Snowflake ", 
     image:
       "https://images.ctfassets.net/pj0maraabon4/6LEf7JKCfZkPCQIZL0C57v/8363311095c5d99df6cc1e7adefcc2c1/Real_Time.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/6beKvkSg8y2YKh3v7QxNiZ/08de91f870f351a1e3e3b887fd7b3bfc/ceo-videos-08.mp4",
   },
    {
     id: 9,
-    title: "Integrating Microsoft 365 with Aprimo | Project Management Software Tool", 
+    title: "Integrating Microsoft 365 with Aprimo|Project Management Software Tool", 
     image:
       "https://images.ctfassets.net/pj0maraabon4/6Tlk4dVpuajwuQetwYCBuN/b7bba4afe4def6ed99753db2768f05df/aprimo-video-vault.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/58mIe4HBKxekJNWIm1axbT/1d7c4b68e451d0fc6811e77a1f0ef2ed/ceo-videos-09.mp4",
   },
    {
     id: 10,
-    title: "Muti- Site Manager to streamline workflows using Adobe Experience Manager| adobe|Handling Multi-lingual sites", 
+    title: "Muti-Site Manager to streamline workflows using Adobe Experience Manager", 
     image:
       "https://images.ctfassets.net/pj0maraabon4/1NwLkskgywCtvQoomF551t/089e2b46a8e1e08a9c9122ce78b366ed/organisation-face-video-vault.jpg",
     video: "https://videos.ctfassets.net/pj0maraabon4/7CpjQ4H9VtSXkBrbsCyiM3/36410ab59792d0dd11f8a1850be14348/ceo-videos-10.mp4",
   },
   // {
   //     id: 11,
-  //     title: "Improved Online Shopping Experience :Integrating Adobe Commerce with Adobe Analytics ", 
+  //     title: "Improved Online Shopping Experience: Integrating Adobe Commerce with Adobe Analytics ", 
   //     image: "https://images.ctfassets.net/pj0maraabon4/6RCHk3KBIIVETOGx8urKTn/341a127cb5c5b0e5e225d7c93e4a354a/workflow-bug-image.jpg",
   //     video: "https://videos.ctfassets.net/pj0maraabon4/73ehLYtPyY5CZYtJIXV8L8/c061ada632e2d32fadda720a4d533850/workfront-new-01.mp4",
   //   },
   //   {
   //     id: 12, 
-  //     title: "Adobe Recommendation( Smarter ECommerce with Adobe Commerce + AEP | The Future of Shopping)",     
+  //     title: "Adobe Recommendation(Smarter Ecommerce with Adobe Commerce + AEP|The Future of Shopping)",     
   //     image: "https://images.ctfassets.net/pj0maraabon4/6RCHk3KBIIVETOGx8urKTn/341a127cb5c5b0e5e225d7c93e4a354a/workflow-bug-image.jpg",
   //     video: "https://videos.ctfassets.net/pj0maraabon4/1P9Ib5uHf4JbHMsnPPOPRp/01f65ebf34094e1cdaca95e037ccdde8/workfront-new-02.mp4",
   //   },
@@ -151,9 +151,11 @@ export default function CEDVideo() {
   onClick={() => setActiveVideo(card.video)}
 >
   
-  <p className="absolute bottom-4 left-4 text-lg text-white w-[80%] font-semibold bg-black bg-opacity-50 px-3 py-1 rounded-lg">
-              {card.title}
-              </p>
+  <p className="absolute bottom-0 left-0 w-full  h-[35%] content-end pr-[60px] text-sm lg:text-lg text-white font-semibold px-4 py-2 
+    bg-gradient-to-t from-black/100 via-black/80 to-transparent ">
+  {card.title}
+</p>
+
 
   {/* Play Button with Slow Ripple Animation */}
   <div className="absolute bottom-3 right-4 lg:bottom-6 lg:right-6">
@@ -190,62 +192,14 @@ export default function CEDVideo() {
                           viewport={{ once: true, amount: 0.3 }}
                         >
           <h2 className="text-3xl lg:text-5xl font-semibold">CoE Videos</h2>
-          <p className="mt-3 text-gray-300 text-lg lg:text-xl">
+          <p className="mt-3 text-gray-300 text-sm lg:text-[16px]">
            Experience the next – Level of our CoE videos: Bold ideas, Breakthrough innovation, and the vision 
+           <i className="ml-2">“That Sets Us Apart To Where We Are ;  In The Today’s Landscape”</i> 
           </p>
-          <p className="font-bold text-white"> “That Sets Us Apart To Where We Are ;  In The Today’s Landscape”</p>
+          <p className="font-bold text-white"> </p>
          </motion.div>
-          <div className="flex justify-between items-center mt-6">
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              whileHover={{ scale: 1.05 }}
-              className="px-6 py-4 bg-gradient-to-r from-[#ff3901] to-[#F07800] relative rounded-full font-medium flex items-center gap-2 overflow-hidden text-white"
-              
-              onMouseEnter={() => setHovered(true)}
-              onMouseLeave={() => setHovered(false)}
-            >
-              {hovered && (
-                <motion.span
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute inset-0 rounded-full backdrop-blur-md bg-white/10 border border-white/40"
-                />
-              )}
-
-              <span className="relative z-10 text-white">Let's Connect</span>
-
-              <div className="relative w-5 h-5 overflow-hidden ">
-                <AnimatePresence initial={false} mode="wait">
-                  {hovered ? (
-                    <motion.div
-                      key="arrow-hover"
-                      initial={{ x: -20, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      exit={{ x: 20, opacity: 0 }}
-                      transition={{ duration: 0.4, ease: "easeInOut" }}
-                      className="absolute"
-                    >
-                      <ArrowRight size={18} />
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      key="arrow-normal"
-                      initial={{ x: 0, opacity: 1 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      exit={{ x: 20, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="absolute"
-                    >
-                      <ArrowRight size={18} />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            </motion.button>
+          <div className="flex justify-end items-center mt-6">
+           
 
             {/* Arrows */}
             <div className="flex gap-4">

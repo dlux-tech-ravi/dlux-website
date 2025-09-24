@@ -51,7 +51,7 @@ export default function CtaBanner() {
             </span>{" "}
            Talk to Our Experts 
           </h2>
-          <p className="text-gray-200 mb-6 max-w-md">
+          <p className="text-gray-200 mb-6 max-w-md text-sm lg:text-[16px]">
            From Project Management to AI , Martech Tools our videos are just the beginning. Let’s talk about solutions that fit your enterprise needs.
           </p>
           <Link to="/contact-us">

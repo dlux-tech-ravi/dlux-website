@@ -8,7 +8,7 @@ const SLIDES = [
   {
     id: 1,
     title:
-      "Improved Online Shopping Experience :Integrating Adobe Commerce with Adobe Analytics ",
+      "Improved Online Shopping Experience(Integrating Adobe Commerce with Adobe Analytics) ",
     cta: "View Portfolio",
     image:
       "https://images.ctfassets.net/pj0maraabon4/6xE3Qtgu00MlBoohi279ax/e45f0a93a8f458aadee38da94a50ec4a/Analytics.jpg",
@@ -29,7 +29,7 @@ const SLIDES = [
   {
     id: 3,
     title:
-      "Livesearch ( Smarter ECommerce with Adobe Commerce + AEP | The Future of Shopping)",
+      "Livesearch(Smarter Ecommerce with Adobe Commerce+AEP|The Future of Shopping)",
     cta: "See Details",
     image:
       "https://images.ctfassets.net/pj0maraabon4/3N9yqUkjutnAizDLHKX5GW/327f7618bcc6bef20443bfa20bff4604/Live_Search.jpg",
@@ -40,7 +40,7 @@ const SLIDES = [
   {
     id: 4,
     title:
-      "AEP(Shop Smarter : Adobe Commerce + AEP Delivers Personalized Shopping)",
+      "AEP(Shop Smarter: Adobe Commerce+AEP Delivers Personalized Shopping)",
     cta: "See Details",
     image:
       "https://images.ctfassets.net/pj0maraabon4/ZjN1O5ofZ2pQZpEFvouFG/bea0016679a641f543da8ff80077b8f7/adobe-commerce-aep.jpg",
@@ -50,7 +50,7 @@ const SLIDES = [
   {
     id: 5,
     title:
-      "AEP coupon video - Personalized Discounts, Happier Customers — Powered by AEP + Adobe Commerce",
+      "AEP coupon video(Personalized Discounts,Happier Customers —Powered by AEP+Adobe Commerce)",
     cta: "See Details",
     image:
       "https://images.ctfassets.net/pj0maraabon4/1Mpc1nDMEI5GxEEazVYIZX/216549b0b5fc83e994a1fb09b2c72715/AEP_Video_Thumbnail_01.png",
@@ -59,7 +59,7 @@ const SLIDES = [
   {
     id: 6,
     title:
-      "See how Adobe Commerce transforms retail!",
+      "See How Adobe Commerce transforms retail!",
     cta: "See Details",
     image:
       "https://images.ctfassets.net/pj0maraabon4/6ZuZtHzgQ7dzpsc0kNEsUi/98bdeec08f9f58725cbbbf0295254b98/Digital-commerce-image.jpg",
@@ -111,7 +111,7 @@ export default function DigitalCommerce() {
                 Digital Commerce
               </span>
             </h2>
-            <p className="mt-3 text-gray-300 text-lg lg:text-xl">
+            <p className="mt-3 text-gray-300 text-sm text-[16px]">
               Watch & Learn with Adobe Commerce – From the early days of Magento to the full power of Adobe Commerce today, explore a wide library of expert-led tutorials, data-backed insights, and real-world success stories.
             </p>
             
@@ -214,7 +214,10 @@ export default function DigitalCommerce() {
                 </div>
 
                 {/* Title Overlay */}
-                <div className="absolute bottom-0 left-0 w-full bg-black/30 backdrop-blur-md p-4">
+                <div className="absolute bottom-0 left-0 w-full  h-[35%] content-end pr-[60px] text-sm lg:text-lg text-white font-semibold px-4 py-2 
+    bg-gradient-to-t from-black/100 via-black/80 to-transparent 
+     rounded-b-lg">
+                
                   <p className="text-white text-lg font-semibold">
                     {SLIDES[index].title}
                   </p>
@@ -238,7 +241,9 @@ export default function DigitalCommerce() {
                 />
 
                 {/* Title Overlay */}
-                <div className="absolute bottom-0 left-0 w-full bg-black/30 backdrop-blur-md p-3">
+                <div className="absolute bottom-0 left-0 w-full  h-[35%] content-end pr-[60px] text-sm lg:text-lg text-white font-semibold px-4 py-2 
+    bg-gradient-to-t from-black/100 via-black/80 to-transparent 
+     rounded-b-lg">
                   <p className="text-white text-sm font-medium">
                     {SLIDES[nextIndex].title}
                   </p>

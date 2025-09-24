@@ -104,7 +104,9 @@ export default function Salesforce() {
                     className="w-full h-full object-cover"
                   />
                   {/* Title Overlay */}
-                  <div className="absolute bottom-0 left-0 w-full bg-black/40 backdrop-blur-md text-white p-3 text-lg">
+                  
+                  <div className="absolute bottom-0 left-0 w-full  h-[35%] content-end pr-[60px] text-sm lg:text-lg text-white font-semibold px-4 py-2 
+    bg-gradient-to-t from-black/100 via-black/80 to-transparent ">
                     {SLIDES[index].title}
                   </div>
 
@@ -172,7 +174,7 @@ export default function Salesforce() {
                   Salesforce
                 </span>{" "}
               </h3>
-              <p className="mt-3 text-gray-300 text-lg lg:text-xl">
+              <p className="mt-3 text-gray-300 text-sm lg:text-[16px]">
                 Your go-to hub for Salesforce trends, tools, and
                 tutorials—featuring AI innovations, Data Cloud, automation, and
                 low-code solutions.

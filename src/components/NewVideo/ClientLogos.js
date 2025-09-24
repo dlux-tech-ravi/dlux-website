@@ -28,7 +28,7 @@ const ClientLogos = () => {
             Partners
           </span>
         </h2>
-        <p className="text-gray-300 mt-6 max-w-xl text-center m-auto text-lg lg:text-xl">
+        <p className="text-gray-300 mt-6 max-w-xl text-center m-auto text-sm lg:text-[16px]">
          We are honored to collaborate with trusted partners who share our vision and contribute to our collective success.
         </p>
       </motion.div>
@@ -55,8 +55,8 @@ const ClientLogos = () => {
                 visible: { opacity: 1, scale: 1 }
               }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="min-w-[150px] lg:min-w-[250px] lg:max-w-[250px] bg-[#ff390140] rounded-xl p-6 border-[2px]
-               border-[#F07800] flex flex-col items-center justify-center shadow-md"
+              className="min-w-[150px] lg:min-w-[250px] lg:max-w-[250px] bg-[#1A1A1A] rounded-xl p-6 border-[0.5px]
+               border-white flex flex-col items-center justify-center shadow-md"
             >
               <img src={item.img} alt={item.title} className="w-30 h-30" />
             </motion.div>

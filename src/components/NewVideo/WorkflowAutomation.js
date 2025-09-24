@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const cards = [
   {
@@ -60,6 +61,7 @@ export default function WorkflowAutomation() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const videoRef = useRef(null);
+  const [hovered, setHovered] = useState(false);
 
   const handlePrev = () => {
     if (currentIndex > 0) setCurrentIndex(currentIndex - 1);
@@ -107,9 +109,60 @@ export default function WorkflowAutomation() {
               Workflow Automation
             </span>
           </h3>
-          <p className="mt-3 text-gray-300 max-w-3xl text-lg lg:text-xl" >
+          <p className="mt-3 text-gray-300 max-w-3xl text-sm lg:text-[16px] mb-6" >
             Step into our Workfront video library and explore actionable insights, agile project management tips, resource planning strategies, and workflow automation guidance.
           </p>
+           <Link to="/adobe-workfront-managed-services">
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              whileHover={{ scale: 1.05 }}
+              className="px-6 py-4 bg-gradient-to-r from-[#ff3901] to-[#F07800] relative rounded-full font-medium flex items-center gap-2 overflow-hidden text-white"
+               onMouseEnter={() => setHovered(true)}
+              onMouseLeave={() => setHovered(false)}
+            >
+              {hovered && (
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute inset-0 rounded-full backdrop-blur-md bg-white/10 border border-white/40"
+                />
+              )}
+
+              <span className="relative z-10 text-white">Explore More</span>
+
+              <div className="relative w-5 h-5 overflow-hidden">
+                <AnimatePresence initial={false} mode="wait">
+                  {hovered ? (
+                    <motion.div
+                      key="arrow-hover"
+                      initial={{ x: -20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      exit={{ x: 20, opacity: 0 }}
+                      transition={{ duration: 0.4, ease: "easeInOut" }}
+                      className="absolute"
+                    >
+                      <ArrowRight size={18} />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="arrow-normal"
+                      initial={{ x: 0, opacity: 1 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      exit={{ x: 20, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="absolute"
+                    >
+                      <ArrowRight size={18} />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </motion.button>
+            </Link>
         </motion.div>
 
         <motion.div
@@ -163,7 +216,9 @@ export default function WorkflowAutomation() {
                 alt={card.title}
                 className="w-full h-full object-cover rounded-xl"
               />
-              <p className="absolute bottom-4 left-4 text-white font-semibold bg-black bg-opacity-50 px-3 py-1 rounded-lg">
+              <p className="absolute bottom-0 left-0 w-full  h-[35%] content-end pr-[60px] text-sm lg:text-lg text-white font-semibold px-4 py-2 
+    bg-gradient-to-t from-black/100 via-black/80 to-transparent 
+     rounded-b-lg">
                 {card.title}
               </p>
             </motion.div>

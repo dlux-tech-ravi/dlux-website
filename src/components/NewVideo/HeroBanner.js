@@ -96,10 +96,11 @@ const HeroBanner = () => {
           <Play size={36} className="text-white" />
         </div>
       </div>
+      <p className="absolute bottom-0 left-0 w-full  h-[35%] content-end pr-[60px] text-sm lg:text-lg text-white font-semibold px-4 py-2 
+    bg-gradient-to-t from-black/100 via-black/80 to-transparent "></p>
       {/* Title */}
-      <div className="absolute bottom-0 left-0 w-full px-3 py-2 
-                      bg-black/40 backdrop-blur-md 
-                      rounded-b-lg text-white text-sm font-medium">
+      <div className="absolute bottom-0 left-0 w-full  h-[35%] content-end text-sm  text-white font-semibold px-4 py-2 
+    bg-gradient-to-t from-black/100 via-black/80 to-transparent ">
         {item.title}
       </div>
     </div>
@@ -126,7 +127,7 @@ const HeroBanner = () => {
             <h1 className="text-4xl md:text-6xl font-bold text-center max-w-4xl leading-tight">
               DLUX - Center of Excellence
             </h1>
-            <p className="max-w-xl text-center mt-6 mb-6 text-xl">
+            <p className="max-w-xl text-center mt-6 mb-6 text-[16px]">
               Watch real solutions unfold - with video walkthroughs across Adobe
               Workfront, Fusion, DAM, Salesforce, and more.
             </p>

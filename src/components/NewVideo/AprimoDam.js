@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const cards = [
  {
     id: 1,
-    title: "Muti- Site Manager to streamline workflows using Adobe Experience Manager",
+    title: "Muti-Site Manager to streamline workflows using Adobe Experience Manager",
     cta: "View Portfolio",
     image:
       "https://images.ctfassets.net/pj0maraabon4/7EfPXl9ZZaHz8NjhtQOi8r/00837fb56fcd5783cb686252e2f06deb/aem-01_1.jpg",
@@ -15,7 +15,7 @@ const cards = [
   },
   {
     id: 2,
-    title: "AEM edge Delivery Services , Low to No- Code Solutions",
+    title: "AEM edge Delivery Services,Low to No-Code Solutions",
     image:
       "https://images.ctfassets.net/pj0maraabon4/38YY6qkHaUxL15zPsAVkCY/cdf50e80478f340216d1e26ad75241d9/AEM-image-02.jpg",
     video:
@@ -24,7 +24,7 @@ const cards = [
   
   {
     id: 3,
-    title: " Ultimate Solution for your Content Safety and Recovery |Adobe Experience Manager",
+    title: "Ultimate Solution for your Content Safety and Recovery|Adobe Experience Manager",
     cta: "See Details",
     image:
       "https://images.ctfassets.net/pj0maraabon4/1suQj4cSZfdQwX2bTltDiz/3f33f984161b01813a01b8245dc128d7/AEM-Image-04.jpg",
@@ -95,7 +95,8 @@ export default function AprimoDam() {
                     style={{ backgroundImage: `url(${card.image})` }}
                     onClick={() => setActiveVideo(card.video)}
                   >
-                     <p className="absolute bottom-4 left-4 text-lg text-white w-[80%] font-semibold bg-black bg-opacity-50 px-3 py-1 rounded-lg">
+                      <p className="absolute bottom-0 left-0 w-full  h-[35%] content-end pr-[60px] text-sm lg:text-lg text-white font-semibold px-4 py-2 
+    bg-gradient-to-t from-black/100 via-black/80 to-transparent ">
                 {card.title}
               </p>
                     {/* Play Button with Slow Ripple Animation */}
@@ -134,7 +135,7 @@ export default function AprimoDam() {
                       className="mt-10"
                     >
           <h2 className="text-3xl lg:text-5xl font-semibold">Content Supply Chain </h2>
-          <p className="mt-3 text-gray-300 text-lg lg:text-xl">
+          <p className="mt-3 text-gray-300 text-sm lg:text-[16px]">
             Deep driving you to the polished version of – AI Agents & Automation,
             Aprimo AI Suite, Video asset Management, Ecosystem Integrations, DAM
             trends, Recognized Leadership.
