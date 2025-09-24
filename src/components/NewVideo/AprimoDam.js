@@ -5,7 +5,7 @@ import { ArrowRight, ChevronLeft, ChevronRight, Play, X } from "lucide-react";
 const cards = [
  {
     id: 1,
-    title: "Muti- Site Manager to streamline workflows using Adobe Experience Manager| adobe|Handling Multi-lingual sites",
+    title: "Muti- Site Manager to streamline workflows using Adobe Experience Manager",
     cta: "View Portfolio",
     image:
       "https://images.ctfassets.net/pj0maraabon4/7EfPXl9ZZaHz8NjhtQOi8r/00837fb56fcd5783cb686252e2f06deb/aem-01_1.jpg",
@@ -14,8 +14,7 @@ const cards = [
   },
   {
     id: 2,
-    title: "AEM edge Delivery Services , Low to No- Code Solutions | Website development |  Track website responsiveness|devops| developers",
-    cta: "Explore Work",
+    title: "Ultimate Solution for your Content Safety and Recovery |Adobe Experience Manager",
     image:
       "https://images.ctfassets.net/pj0maraabon4/38YY6qkHaUxL15zPsAVkCY/cdf50e80478f340216d1e26ad75241d9/AEM-image-02.jpg",
     video:
@@ -24,7 +23,7 @@ const cards = [
   
   {
     id: 3,
-    title: "Adobe Experience Manager | Ultimate Solution for your Content Safety and Recovery | DAM | Aprimo | Project management tools",
+    title: "AEM edge Delivery Services , Low to No- Code Solutions ",
     cta: "See Details",
     image:
       "https://images.ctfassets.net/pj0maraabon4/1suQj4cSZfdQwX2bTltDiz/3f33f984161b01813a01b8245dc128d7/AEM-Image-04.jpg",

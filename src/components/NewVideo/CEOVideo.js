@@ -12,10 +12,10 @@ const cards = [
   },
   {
     id: 2,
-    title: "Connected Martech Ecosystem | Disconnected tools | Adobe Ecosystem", 
+    title: "AEM + DLUX Content Creation Made Easy", 
     image:
       "https://images.ctfassets.net/pj0maraabon4/g6VhGB0ALUorN4PwOv3Uv/1ad7132516c95d5d86237d0a4692a6e7/Next_Gen_Martech.jpg",
-    video: "https://videos.ctfassets.net/pj0maraabon4/QdhwdYJDBzkBC8fryGpXE/5fcb83975c964529d5848b8fa3458bb9/ceo-videos-02.mp4",
+    video: "https://www.youtube.com/watch?v=A_W3cORSBDc",
   },
   {
     id: 3,
@@ -303,40 +303,53 @@ export default function CEDVideo() {
       </div>
 
       {/* Video Popup Modal */}
-      <AnimatePresence>
-        {activeVideo && (
-          <motion.div
-            className="fixed inset-0 z-[99999] flex items-center justify-center bg-black bg-opacity-70"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <motion.div
-              className="relative rounded-xl shadow-xl p-4 
-                         bg-white/10 backdrop-blur-md 
-                         border border-white/20 flex flex-col items-center w-full  h-full justify-center"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <button
-                className="absolute top-4 right-4 text-black bg-white/10 backdrop-blur-md border border-black/20 rounded-full p-2 hover:bg-white/20 transition"
-                onClick={() => setActiveVideo(null)}
-              >
-                <X size={24} />
-              </button>
+     {/* Video Popup Modal */}
+<AnimatePresence>
+  {activeVideo && (
+    <motion.div
+      className="fixed inset-0 z-[99999] flex items-center justify-center bg-black bg-opacity-70"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <motion.div
+        className="relative rounded-xl shadow-xl p-4 
+                   bg-white/10 backdrop-blur-md 
+                   border border-white/20 flex flex-col items-center w-full h-full justify-center"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.8, opacity: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <button
+          className="absolute top-4 right-4 text-black bg-white/10 backdrop-blur-md border border-black/20 rounded-full p-2 hover:bg-white/20 transition"
+          onClick={() => setActiveVideo(null)}
+        >
+          <X size={24} />
+        </button>
 
-              <video
-                src={activeVideo}
-                controls
-                autoPlay
-                className="w-[800px] h-[450px] object-contain rounded-lg bg-black"
-              />
-            </motion.div>
-          </motion.div>
+        {activeVideo.includes("youtube.com") || activeVideo.includes("youtu.be") ? (
+          <iframe
+            src={activeVideo.replace("watch?v=", "embed/")}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="w-[800px] h-[450px] rounded-lg"
+          ></iframe>
+        ) : (
+          <video
+            src={activeVideo}
+            controls
+            autoPlay
+            className="w-[800px] h-[450px] object-contain rounded-lg bg-black"
+          />
         )}
-      </AnimatePresence>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
       </div>
     </section>
   );

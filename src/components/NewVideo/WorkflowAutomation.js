@@ -15,7 +15,7 @@ const cards = [
   },
   {
     id: 2,
-    title: "Effortless Custom Form Migration with Workfront : Transform Your Workfront Experience!",
+    title: "Effortless Custom Form Migration with Workfront ",
     height: "lg:h-[280px]",
     width: "lg:w-[405px]",
     imageUrl: "https://images.ctfassets.net/pj0maraabon4/29GHZ92yOsRCfoBBB1zQIz/0bc0beae56c66265901a2771cc2af51f/workfront___Fusion.jpg",
@@ -23,7 +23,7 @@ const cards = [
   },
   {
     id: 3,
-    title: "Workfront's Environment Promotion to streamline your workflows that improves Accuracy in Sandbox Environment",
+    title: "Environmental promotion in Adobe Workfront",
     height: "lg:h-[380px]",
     width: "lg:w-[305px]",
     imageUrl: "https://images.ctfassets.net/pj0maraabon4/4gmC2eSWGOEwSP8wqAzboC/24b7a7b7317607984a2b4a7615be77f9/Workflow-automation.jpg",
@@ -31,7 +31,7 @@ const cards = [
   },
   {
     id: 4,
-    title: "Migration from designated Production to Sandbox Environment with object Synchronization Tool | Workfront | Workfront Fusion",
+    title: "Sandbox Environment with object Synchronization Tool | Workfront Fusion",
     height: "lg:h-[340px]",
     width: "lg:w-[400px]",
     imageUrl: "https://images.ctfassets.net/pj0maraabon4/2MkLhtRZU7WhXawbmMCtNZ/82a2aacea17f4dbc63369b6752c01c5e/worklist-image.jpg",
@@ -39,7 +39,7 @@ const cards = [
   },
   {
     id: 5,
-    title: "Migrating data from Monday.com to Workfront | Workfront mapped to Monday.com | Workflow automation | Project Management Software ",
+    title: "Improved Data Migration using Workfront",
     height: "lg:h-[437px]",
     width: "lg:w-[525px]",
     imageUrl: "https://images.ctfassets.net/pj0maraabon4/5442ciQ6vmSy223ejIfp8t/70cc30c9c6d6f898b4dd9c7a3a570347/workfront-office-working-laptop.jpg",
@@ -47,7 +47,7 @@ const cards = [
   },
   {
     id: 6,
-    title: "Workfront in now  tracking the Financial management (billable , non-billable ) | Project Launching Sequences , Tasks | Adobe Workfront | Fusion",
+    title: "Workfront in now  tracking the Financial management (billable , non-billable ) | Workfront fusion",
     height: "lg:h-[320px]",
     width: "lg:w-[370px]",
     imageUrl: "https://images.ctfassets.net/pj0maraabon4/6RCHk3KBIIVETOGx8urKTn/341a127cb5c5b0e5e225d7c93e4a354a/workflow-bug-image.jpg",
