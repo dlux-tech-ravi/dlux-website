@@ -8,7 +8,7 @@ const CommunityCTA = () => {
         <img
           src="https://images.ctfassets.net/pj0maraabon4/296XnXzXCaUOJFkVDQY0eS/3fbba29e3134d07ecc8aeeb048f12968/community-bg-shape.png"
           alt="background pattern"
-          className="w-full h-full "
+          className="w-full h-full object-cover"
         />
        
       </div>

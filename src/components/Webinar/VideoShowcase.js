@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, X } from "lucide-react";
@@ -13,7 +15,7 @@ const videos = [
   },
   {
     id: 2,
-    title: " Building a Scalable Content Supply Chain for Growing Businesses ",
+    title: "Building a Scalable Content Supply Chain for Growing Businesses",
     date: "4 April 2025",
     time: "12:45",
     url: "https://www.w3schools.com/html/movie.mp4",
@@ -34,7 +36,7 @@ const VideoShowcase = () => {
   const [activeVideo, setActiveVideo] = useState(null);
   const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
 
-  // 🔥 Detect screen size (mobile/tablet < 1024px)
+  // Detect screen size
   useEffect(() => {
     const checkScreen = () => setIsMobileOrTablet(window.innerWidth < 1024);
     checkScreen();
@@ -42,60 +44,52 @@ const VideoShowcase = () => {
     return () => window.removeEventListener("resize", checkScreen);
   }, []);
 
-  // 🔥 Disable scroll when popup is open
- useEffect(() => {
-  if (activeVideo) {
-    document.body.style.overflow = "hidden";
-    document.documentElement.style.overflow = "hidden"; // also lock <html>
-  } else {
-    document.body.style.overflow = "auto";
-    document.documentElement.style.overflow = "auto";
-  }
-}, [activeVideo]);
+  // Disable scroll when popup is open
+  useEffect(() => {
+    if (activeVideo) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+    }
+  }, [activeVideo]);
+
   return (
     <section
-      className="w-full px-16 py-16 text-white bg-black "
+      className="w-full px-4 md:px-16 py-16 text-white bg-black"
       style={{
         backgroundImage:
           "url('https://images.ctfassets.net/pj0maraabon4/191BOERTELcczZ9QlKGvAi/a473b5e73cc2b491b035ffbb227f1065/video-section-bg-img.png')",
-           backgroundRepeat: "no-repeat",
-        backgroundPosition: " bottom",
-       
-       
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "bottom",
       }}
     >
-      <div className="mx-auto px-4">
-        <div >
+      <div className="mx-auto">
         {/* Heading */}
-        <h2 className="text-4xl font-semibold mb-12">
-        Watch Past    
-        <span className="bg-gradient-to-r from-[#ff3901] to-[#F07800] bg-clip-text text-transparent ml-2">
+        <h2 className="text-3xl md:text-4xl font-semibold mb-12">
+          Watch Past{" "}
+          <span className="bg-gradient-to-r from-[#ff3901] to-[#F07800] bg-clip-text text-transparent ml-2">
             Webinars
           </span>
-      <br/> On-Demand 
+          <br /> On-Demand
         </h2>
-        </div>
+
         {/* Videos Grid / Carousel */}
         <div
-          className={`
-            flex md:flex-row items-end 
-            ${isMobileOrTablet ? "justify-end" : "justify-center"}
-            overflow-x-auto md:overflow-visible
-            snap-x snap-mandatory scrollbar-hide
-          `}
+          className={`flex ${
+            isMobileOrTablet ? "flex-col items-center gap-6" : "md:flex-row items-end justify-center gap-6"
+          } overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-hide`}
         >
           {videos.map((video, index) => {
-            // Desktop keeps hover/active, mobile/tablet disables it
-            const isActive =
-              !isMobileOrTablet &&
-              (hovered === video.id || (hovered === null && index === 1)); // desktop: 2nd active
+            const isActive = !isMobileOrTablet && (hovered === video.id || (hovered === null && index === 1));
 
             return (
               <motion.div
                 key={video.id}
                 onHoverStart={() => !isMobileOrTablet && setHovered(video.id)}
                 onHoverEnd={() => !isMobileOrTablet && setHovered(null)}
-                onClick={() => setActiveVideo(video)} // 🔥 open video popup
+                onClick={() => setActiveVideo(video)}
                 animate={
                   !isMobileOrTablet
                     ? {
@@ -107,18 +101,11 @@ const VideoShowcase = () => {
                     : {}
                 }
                 transition={{ type: "spring", stiffness: 200, damping: 20 }}
-                className={`
-                  relative flex items-center justify-center cursor-pointer shadow-lg
-                  snap-start shrink-0 rounded-lg overflow-hidden bg-gray-300
-                  ${isMobileOrTablet ? "w-[85%] sm:w-[45%] h-[250px] sm:h-[300px]" : ""}
-                `}
+                className={`relative flex items-center justify-center cursor-pointer shadow-lg snap-start shrink-0 rounded-lg overflow-hidden bg-gray-300
+                  ${isMobileOrTablet ? "w-full sm:w-[90%] h-[220px] sm:h-[300px]" : ""}`}
               >
                 {/* Thumbnail */}
-                <img
-                  src={video.thumbnail}
-                  alt={video.title}
-                  className="w-full h-full object-cover"
-                />
+                <img src={video.thumbnail} alt={video.title} className="w-full h-full object-cover" />
 
                 {/* Overlay Play Icon */}
                 <div className="absolute inset-0 flex items-center justify-center bg-black/30">
@@ -127,11 +114,11 @@ const VideoShowcase = () => {
                   </div>
                 </div>
 
-                {/* Title + Date (always visible on mobile/tablet, only for active on desktop) */}
+                {/* Title + Date */}
                 {(isMobileOrTablet || isActive) && (
-                  <div className="absolute bottom-3 left-3 right-3 flex justify-between items-center bg-black/50 p-2 rounded">
+                  <div className="absolute bottom-3 left-3 right-3 flex flex-col md:flex-row justify-between items-center bg-black/60 p-2 rounded">
                     <p className="text-sm font-medium">{video.title}</p>
-                    <span className="text-xs px-3 py-1 bg-gradient-to-r from-purple-500 to-indigo-500 rounded">
+                    <span className="text-xs px-3 py-1 bg-gradient-to-r from-purple-500 to-indigo-500 rounded mt-2 md:mt-0">
                       {video.date} {video.time}
                     </span>
                   </div>
@@ -149,11 +136,12 @@ const VideoShowcase = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/70 backdrop-blur-md w-full h-screen flex items-center justify-center z-50 overflow-hidden"
+            className="fixed inset-0 bg-black/80 backdrop-blur-md w-full h-screen flex items-center justify-center z-[9999] overflow-hidden"
           >
+            {/* Close Button */}
             <button
               onClick={() => setActiveVideo(null)}
-              className="absolute top-3 right-3 bg-white/20 hover:bg-white/30 p-2 rounded-full"
+              className="absolute top-5 right-5 bg-white/20 hover:bg-white/40 p-2 rounded-full z-[10000]"
             >
               <X className="w-6 h-6 text-white" />
             </button>
@@ -166,18 +154,12 @@ const VideoShowcase = () => {
               transition={{ type: "spring", stiffness: 200, damping: 20 }}
               className="relative w-[90%] md:w-[70%] lg:w-[60%] aspect-video bg-black rounded-xl overflow-hidden shadow-2xl"
             >
-              <video
-                src={activeVideo.url}
-                controls
-                autoPlay
-                className="w-full h-full object-cover"
-              />
+              <video src={activeVideo.url} controls autoPlay className="w-full h-full object-cover" />
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
     </section>
-    
   );
 };
 

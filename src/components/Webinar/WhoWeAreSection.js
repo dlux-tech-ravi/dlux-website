@@ -25,7 +25,7 @@ const benefits = [
 
 export default function WhoWeAreSection() {
   return (
-    <section className="relative w-full  bg-black text-white pb-[80px] px-6 md:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
+    <section className="relative w-full  bg-black text-white lg:pb-[80px] px-6 md:px-20 lg:flex flex-col md:flex-row items-center justify-between gap-10">
      
        <div
   className="absolute top-[20%] left-[40%] w-80 h-80 rounded-full 
@@ -33,9 +33,9 @@ export default function WhoWeAreSection() {
     blur-[120px] opacity-70 z-10"
 />
       {/* Left Column */}
-      <div className="relative md:w-2/5 py-20 space-y-6 z-[100]">
+      <div className="relative lg:w-2/5 py-20 space-y-6 z-[100]">
         <h2 className="text-5xl font-bold">WHY ATTEND DLUX WEBINAR  </h2>
-        <p className="text-gray-300 leading-relaxed max-w-2xl">
+        <p className=" leading-relaxed max-w-2xl">
           As a Top leading Martech business consulting firm in Sydney,
           Australia, DLUX brings together strategy and technology to help you
           master complex projects, scale your marketing and technology
@@ -70,19 +70,19 @@ export default function WhoWeAreSection() {
       </div>
 
       {/* Right Column */}
-      <div className="md:w-2/5 gap-6 z-[10]">
+      <div className="lg:w-2/5 gap-6 z-[10] relative">
         <h3 className="text-2xl font-semibold mb-4">
           BENEFITS OF CHOOSING US 
         </h3>
-        <div className="flex">
+        <div className="md:flex">
           {benefits.map((benefit) => (
             <div
               key={benefit.id}
-              className="flex flex-col w-[240px] h-[222px] items-center justify-center border
-               border-[#F07800] bg-white  p-6 text-center cursor-pointer transition duration-300 hover:bg-gradient-to-r hover:from-[#122644] hover:to-[#D3A0E6]    hover:border-transparent"
+              className="flex flex-col  md:w-[240px] md:h-[222px] items-center justify-center border
+               border-[#F07800] bg-white  p-6 text-center cursor-pointer transition duration-300 hover:bg-gradient-to-r hover:from-[#de8f69] hover:to-[#de8f69]    hover:border-transparent"
             >
-              <div className="mb-3"><img src={benefit.icon} alt={benefit.title}/></div>
-              <h4 className="text-sm font-medium text-black">{benefit.title}</h4>
+              <div className="mb-3"><img src={benefit.icon} alt={benefit.title} className="w-20 h-20 md:w-full"/></div>
+              <h4 className="text-lg font-medium text-black">{benefit.title}</h4>
             </div>
           ))}
         </div>

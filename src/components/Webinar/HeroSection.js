@@ -12,7 +12,7 @@ export default function HeroSection() {
       }}
     >
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#ff3901]/60  to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#000000]  to-transparent"></div>
 
       {/* Content Wrapper */}
       <div className="relative h-full flex flex-col md:flex-row items-center justify-between px-6 md:px-16">
@@ -24,12 +24,12 @@ export default function HeroSection() {
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
            MarTech Secrets, Straight from the Frontlines 
           </h1>
-          <p className="text-base md:text-lg mb-6">
+          <p className="text-base md:text-[16px] mb-6">
             Join DLUX experts, certified consultants, and industry leaders as they unpack real-world use cases, seamless integrations, and future-ready strategies across Martech, AI, and enterprise innovation.  
           </p>
           <a
   href="#about"
-  className="inline-flex items-center text-sm font-medium text-white no-underline hover:underline transition"
+  className="inline-flex items-center text-[16px] font-medium text-white no-underline hover:underline transition"
 >
   Missed it live? Catch the insights anytime
   <FiChevronsDown className="ml-2 w-4 h-4" />

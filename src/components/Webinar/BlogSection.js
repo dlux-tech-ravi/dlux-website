@@ -45,11 +45,11 @@ const BlogSection = () => {
         </a>
       </div>
       {/* Single row layout on desktop */}
-      <div className="flex flex-col md:flex-row gap-8 pl-[50px] pt-12">
+      <div className="flex flex-col md:flex-row gap-8 lg:pl-[50px] pt-12">
         {blogPosts.map((post, index) => (
           <div
             key={index}
-            className="relative overflow-hidden transition-all duration-500 ease-in-out transform hover:scale-105 flex-1 group"
+            className="relative overflow-hidden transition-all duration-500 ease-in-out transform hover:scale-105 flex-1 group pb-6"
           >
             {/* Blog Image */}
             <img
@@ -69,8 +69,8 @@ const BlogSection = () => {
               </h3>
 
               {/* Description (fades in on hover, no height collapse) */}
-              <p className="text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                {post.description}
+              <p className="text-gray-300  opacity-100 md:opacity-0  md:group-hover:opacity-100  transition-opacity duration-500">
+                {post.description}  
               </p>
             </div>
           </div>

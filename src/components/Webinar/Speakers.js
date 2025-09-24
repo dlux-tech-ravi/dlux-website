@@ -58,7 +58,7 @@ export default function Speakers() {
 <h2 className="text-2xl md:text-3xl font-bold mb-10 text-white">SPEAKERS</h2>
 
         {/* Desktop Grid */}
-        <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-8 lg:pl-[50px]">
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-8 lg:pl-[50px]">
           {speakers.map((speaker) => (
             <div key={speaker.id} className="text-left">
               <div className="bg-gray-300 rounded-tl-3xl overflow-hidden">
@@ -84,14 +84,15 @@ export default function Speakers() {
         <div className="md:hidden">
           <Swiper
             modules={[Navigation]}
-            navigation
+           
             spaceBetween={20}
             slidesPerView={1}
             className="pb-10"
           >
             {speakers.map((speaker) => (
-              <SwiperSlide key={speaker.id}>
-                <div className="text-left">
+              
+              <div key={speaker.id}>
+                <div className="text-left mb-6">
                   <div className="bg-gray-300 rounded-tl-3xl overflow-hidden">
                     <img
                       src={speaker.image}
@@ -103,8 +104,10 @@ export default function Speakers() {
                     {speaker.name}
                   </h3>
                   <p className="text-gray-300 text-sm mt-2">{speaker.role}</p>
+                  <p className="text-gray-300 text-sm mt-2">{speaker.description}</p>
+                <p className="text-gray-300 text-sm mt-2">{speaker.company}</p>
                 </div>
-              </SwiperSlide>
+              </div>
             ))}
           </Swiper>
         </div>

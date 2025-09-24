@@ -188,7 +188,7 @@ const HeroBanner = () => {
 
         {/* ✅ Image Grid */}
         {/* Desktop 7-card */}
-        <div className="hidden lg:flex justify-center items-center gap-4">
+        <div className="hidden desktop:flex justify-center items-center gap-4">
           <div className="bg-[#ff390140] backdrop-blur-md border-[2px] border-[#ff39014d] rounded-xl overflow-hidden shadow" style={{ width: "305px", height: "230px" }}>
             <ImageBox item={currentImages[0]} direction="left" idx={0} />
           </div>
@@ -216,8 +216,8 @@ const HeroBanner = () => {
           </div>
         </div>
 
-        {/* Mobile/Tablet 3-card */}
-        <div className="hidden md:flex lg:hidden justify-center items-center gap-2 px-2 overflow-hidden">
+        {/* Tablet 3-card */}
+        <div className="hidden tablet:flex lg:hidden justify-center items-center gap-2 px-2 overflow-hidden">
           <div className="bg-[#ff390140] backdrop-blur-md border-[2px] border-[#ff39014d] rounded-xl overflow-hidden shadow flex-shrink-0" style={{ width: "100%", height: "200px" }}>
             <ImageBox item={currentImages[2]} direction="left" idx={2} />
           </div>

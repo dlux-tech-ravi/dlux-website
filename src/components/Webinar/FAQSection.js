@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
@@ -7,6 +8,11 @@ const faqs = [
     question: "Are DLUX webinars free to attend? ",
     answer:
       "Yes — all our webinars are free. Simply register to save your spot, and you’ll receive a confirmation email with details.",
+  },
+   {
+    question: " How experienced are the speakers in real-world martech challenges? ",
+    answer:
+      "Our speakers aren’t just theorists—they’re enterprise practitioners who have rolled out martech ecosystems at scale for global businesses ",
   },
   {
     question: "What if I miss the live session?",
@@ -23,6 +29,16 @@ const faqs = [
     answer:
       "Our sessions are tailored for Martech leaders, Adobe platform users, operations teams, and IT professionals who want practical strategies, integrations, and innovation insights",
   },
+  {
+    question: " Can I ask questions during the webinar? ",
+    answer:
+      "Absolutely. Each session includes a live Q&A where our experts and Adobe-certified consultants answer your specific challenges. ",
+  },
+  {
+    question: " What makes this session different from reading a whitepaper or blog? ",
+    answer:
+      "Unlike static content, this webinar delivers live, practical insights with tool-specific hacks and frameworks—plus the opportunity to ask your own questions.  ",
+  },
   
 ];
 
@@ -32,6 +48,22 @@ export default function FAQSection() {
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+  const [bgSize, setBgSize] = useState("400px, 400px");
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setBgSize("200px, 200px"); // mobile
+      } else {
+        setBgSize("400px, 400px"); // tablet & desktop
+      }
+    };
+
+    handleResize(); // set on load
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div
@@ -40,7 +72,7 @@ export default function FAQSection() {
         backgroundImage: `url('https://images.ctfassets.net/pj0maraabon4/7mmx8EST5ppZKP3Us3aRUg/960a91dc5c56ac7f0cd144cc950fd65d/faq_left-image.png'), url('https://images.ctfassets.net/pj0maraabon4/7fNdf2uGO4hRKIfTEWSOxJ/aaa27d75ea02cd3a31005bc8f269f8cc/faq_right_image.png')`,
         backgroundRepeat: "no-repeat, no-repeat",
         backgroundPosition: "top left, bottom right",
-        backgroundSize: "400px, 400px",
+        backgroundSize: bgSize,
       }}
     >
       <div className="max-w-3xl w-full">
@@ -55,11 +87,13 @@ export default function FAQSection() {
               className=" pb-4 cursor-pointer"
               onClick={() => toggleFAQ(index)}
             >
-              <div className="flex justify-between items-center">
+              <div className="flex items-center">
+                <div className="w-full">
                 <h3 className="text-2xl font-semibold text-gray-800">
                   {faq.question}
                 </h3>
-                <div className="w-8 h-8 flex items-center justify-center border rounded-full border-gray-400">
+                </div>
+                <div className="w-10 h-10 flex items-center justify-center border rounded-full border-gray-400">
                   <motion.div
                     animate={{ rotate: openIndex === index ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
