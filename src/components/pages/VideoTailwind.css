@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.body-video-library{
+    /* height: 100%; */
+    overflow: hidden;
+}

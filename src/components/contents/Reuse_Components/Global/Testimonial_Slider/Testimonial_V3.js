@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { request } from "graphql-request";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 import "./Testimonial_V3.css";
 
 const endpoint =
@@ -30,11 +34,8 @@ const Testimonial_V3 = () => {
           endpoint,
           query,
           {},
-          {
-            Authorization: `Bearer ${accessToken}`,
-          }
+          { Authorization: `Bearer ${accessToken}` }
         );
-
         const items =
           data.platformAdobeCommerces.dluxClientsSayCollection.items;
         setTestimonials(items);
@@ -46,20 +47,34 @@ const Testimonial_V3 = () => {
     fetchTestimonials();
   }, []);
 
+  const handleMouseMove = (e) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty("--x", `${x}px`);
+    card.style.setProperty("--y", `${y}px`);
+  };
+
   return (
-    <section className="testimonials-v3-section">
-      <h2 className="testimonials-v3-title">What Our Clients Say</h2>
-      <div className="testimonials-v3-container">
+    <section className="testimonials-v3">
+      <h2 className="testimonials-v3__title">What Our Clients Say</h2>
+
+      {/* Desktop & Tablet Grid */}
+      <div className="testimonials-v3__list">
         {testimonials.map((item, index) => (
-          <div className="testimonial-v3-card" key={index}>
-            <div className="testimonial-v3-avatar">
+          <div
+            className="testimonial-v3"
+            key={index}
+            onMouseMove={handleMouseMove}
+          >
+            <div className="testimonial-v3__avatar">
               {item.url && <img src={item.url} alt="Client" />}
             </div>
-            <div className="testimonial-v3-content">
-              <p className="testimonial-v3-title">{item.title}</p>
-              <p className="testimonial-v3-subtitle"> </p>
-              <p className="testimonial-v3-quote">{item.description}</p>
-              <div className="testimonial-v3-stars">
+            <div className="testimonial-v3__content">
+              <p className="testimonial-v3__name">{item.title}</p>
+              <p className="testimonial-v3__quote">{item.description}</p>
+              <div className="testimonial-v3__stars">
                 {[...Array(5)].map((_, i) => (
                   <i className="fa-solid fa-star" key={i}></i>
                 ))}
@@ -67,6 +82,38 @@ const Testimonial_V3 = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Mobile Swiper Slider */}
+      <div className="testimonials-v3__slider">
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={20}
+          pagination={{ clickable: true }}
+          modules={[Pagination]}
+        >
+          {testimonials.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div
+                className="testimonial-v3"
+                onMouseMove={handleMouseMove}
+              >
+                <div className="testimonial-v3__avatar">
+                  {item.url && <img src={item.url} alt="Client" />}
+                </div>
+                <div className="testimonial-v3__content">
+                  <p className="testimonial-v3__name">{item.title}</p>
+                  <p className="testimonial-v3__quote">{item.description}</p>
+                  <div className="testimonial-v3__stars">
+                    {[...Array(5)].map((_, i) => (
+                      <i className="fa-solid fa-star" key={i}></i>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
   );

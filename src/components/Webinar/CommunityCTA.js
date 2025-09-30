@@ -1,8 +1,16 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
 
 const CommunityCTA = () => {
   return (
-    <section className="relative flex items-center justify-center overflow-hidden py-[130px] bg-[#ff3901]">
+    <section className="relative flex items-center justify-center overflow-hidden py-[130px] bg-[#973316]">
       {/* Background Shapes */}
       <div className="absolute inset-0">
         <img
@@ -10,24 +18,43 @@ const CommunityCTA = () => {
           alt="background pattern"
           className="w-full h-full object-cover"
         />
-       
       </div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 sm:px-10">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white max-w-6xl">
-         Join our AI & Martech Innovation Center community
-        </h2>
-        <p className="mt-4 text-base sm:text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
-         The Place where Experts and Enthusiasts connect to shape the future of Technology and Marketing!
-        </p>
-        <button className="mt-6 px-6 py-3 bg-white text-indigo-700 font-semibold rounded-full shadow-md hover:bg-gray-200 transition">
-          JOIN NOW
-        </button>
-      </div>
+        <motion.h2
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-white max-w-6xl"
+        >
+          Join our AI & Martech Innovation Center community
+        </motion.h2>
 
-      {/* Abstract Wave Shape Overlay */}
-      
+        <motion.p
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ delay: 0.2 }}
+          className="mt-4 text-base sm:text-lg md:text-xl text-gray-200 max-w-2xl mx-auto"
+        >
+          The Place where Experts and Enthusiasts connect to shape the future of
+          Technology and Marketing!
+        </motion.p>
+
+        <motion.button
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ delay: 0.4 }}
+          className="mt-6 px-6 py-3 bg-white text-indigo-700 font-semibold rounded-full shadow-md hover:bg-gray-200 transition"
+        >
+          JOIN NOW
+        </motion.button>
+      </div>
     </section>
   );
 };

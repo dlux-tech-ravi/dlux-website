@@ -111,13 +111,13 @@ export default function DigitalCommerce() {
                 Digital Commerce
               </span>
             </h2>
-            <p className="mt-3 text-gray-300 text-sm text-[16px]">
+            <p className="mt-3 text-gray-300 text-sm lg:text-[16px]">
               Watch & Learn with Adobe Commerce – From the early days of Magento to the full power of Adobe Commerce today, explore a wide library of expert-led tutorials, data-backed insights, and real-world success stories.
             </p>
             
             
 
-<Link to="/adobe-commerce">
+<Link target="_blank" rel="noopener noreferrer" to="/adobe-commerce">
 
             <motion.button
               initial={{ opacity: 0, y: 20 }}

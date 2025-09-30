@@ -278,6 +278,7 @@ function Navbar() {
                       <Link to="/adobe-workfront">Workfront</Link>
                       <Link to="/adobe-workfront-fusion">Workfront Fusion</Link>
                       <Link to="/adobe-aem">AEM</Link>
+                      {/* <Link to="/adobe-commerce">Adobe Commerce</Link> */}
                       <Link to="/adobe-commerce">Adobe Commerce</Link>
                       <Link to="/adobe-analytics">Adobe Analytics</Link>
                     </div>
@@ -369,7 +370,7 @@ function Navbar() {
                   <Link to="/success-stories">Success Stories</Link>
                   <Link to="/resources-library">Resources Library</Link>
                   <Link to="/video-library">Video Library</Link>
-                  <Link to="/video-vault">Video Vault</Link>
+                  {/* <Link to="/video-vault">Video Vault</Link> */}
 
                 </div>
               </div>

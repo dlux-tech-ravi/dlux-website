@@ -1,0 +1,267 @@
+.coe-videos_ay {
+  padding: 40px;
+  color: #fff;
+  text-align: center;
+}
+
+.coe-videos_ay__title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.coe-videos_ay__carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.coe-videos_ay__row {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 20px 50px;
+  scroll-behavior: smooth;
+}
+
+.coe-videos_ay__row::-webkit-scrollbar {
+  display: none;
+}
+
+/* Outer card with running border */
+.coe-videos_ay__card {
+  position: relative;
+  flex: 0 0 180px;
+  height: 260px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #111;
+  cursor: pointer;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-origin: center center;
+}
+
+.coe-videos_ay__card:first-child:hover {
+  transform-origin: left center;
+}
+
+.coe-videos_ay__card:last-child:hover {
+  transform-origin: right center;
+}
+
+.coe-videos_ay__card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(90deg, #ff00ff, #00ffff, #ff00ff);
+  background-size: 200% 200%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: borderMove 3s linear infinite;
+}
+
+@keyframes borderMove {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+.coe-videos_ay__card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.coe-videos_ay__inner-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 8px;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.coe-videos_ay__inner-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  padding: 2px;
+  background: linear-gradient(90deg, #ff00ff, #00ffff, #ff00ff);
+  background-size: 200% 200%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: borderMove 3s linear infinite;
+  z-index: 2;
+}
+
+.coe-videos_ay__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.coe-videos_ay__thumb {
+  position: relative;
+  cursor: pointer;
+}
+
+.coe-videos_ay__play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coe-videos_ay__rank {
+  position: absolute;
+  left: 12px;
+  bottom: 50px;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #000;
+  -webkit-text-stroke: 2px #fff;
+  z-index: 10;
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 0.8;
+}
+
+.coe-videos_ay__desc {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  font-size: 12px;
+  padding: 5px 10px;
+  color: #fff;
+  background: linear-gradient(to top, rgb(171 0 255), transparent);
+  text-align: left;
+}
+
+.coe-videos_ay__iframe-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.coe-videos_ay__close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.coe-videos_ay__close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.2);
+}
+
+.coe-videos_ay__iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+
+/* Glassy arrows */
+.coe-videos_ay__scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 12px 18px;
+  border-radius: 50%;
+  z-index: 20;
+  transition: all 0.3s ease;
+}
+
+.coe-videos_ay__scroll-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.15);
+}
+
+.coe-videos_ay__scroll-btn--left {
+  left: -45px;
+}
+
+.coe-videos_ay__scroll-btn--right {
+  right: -45px;
+}
+
+@media (max-width: 768px) {
+  /* Keep cards small */
+  .coe-videos_ay__card {
+    flex: 0 0 140px;
+    height: 200px;
+  }
+
+  .coe-videos_ay__rank {
+    font-size: 3rem;
+  }
+
+  /* ✅ Show arrows on mobile */
+  .coe-videos_ay__scroll-btn {
+    display: flex !important;  /* force visible */
+    padding: 8px 12px;         /* smaller size for mobile */
+    font-size: 1.5rem;
+  }
+
+  .coe-videos_ay__scroll-btn--left {
+    left: -20px;
+  }
+
+  .coe-videos_ay__scroll-btn--right {
+    right: -20px;
+  }
+}
+

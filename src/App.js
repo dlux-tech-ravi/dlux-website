@@ -28,8 +28,8 @@ import AdobeWorkfrontManagedServices from "./components/contents/Campaign_Pages/
 import AdobeWorkfrontManagedServices_US from "./components/contents/Campaign_Pages/Adobe_Workfront_Managed_Services/AdobeWorkfrontManagedServices_US";
 import { SuccessStories } from "./components/contents/Resources/Success_Stories/SuccessStories";
 import { ResourcesLibrary } from "./components/contents/Resources/ResourcesLibrary/ResourcesLibrary";
-import VideoLibrary from "./components/contents/Resources/VideoLibrary/VideoLibrary";
-import AdobeCommerce from "./components/pages/AdobeCommerce";
+// import VideoLibrary from "./components/contents/Resources/VideoLibrary/VideoLibrary";
+// import AdobeCommerce from "./components/pages/AdobeCommerce";
 import AdobeAnalytics from "./components/pages/AdobeAnalytics";
 import CommerceCloud from "./components/pages/CommerceCloud";
 import OurTeam from "./components/contents/Careers/OurTeam/OurTeam";
@@ -39,8 +39,10 @@ import Adobecommerces from "./components/pages/Adobecommerces";
 import { Outlet } from "react-router-dom"; // Import Outlet for nested routing
 import { TrustPolicy } from "./components/contents/TrustPolicy/TrustPolicy";
 import VideoVault from "./components/pages/VideoVault";
-import NewVideopage from "./components/pages/NewVideopage";
-import { WebinarPage } from "./components/pages/WebinarPage";
+import Testimonial_V2 from "./components/contents/Reuse_Components/Global/Testimonial_Slider/Testimonial_V2";
+import CaseStudyDetails from "./components/contents/Reuse_Components/Global/Testimonial_Slider/CaseStudyDetails";
+import VideoLibrary from "./components/pages/VideoLibrary";
+import WebinarPage from "./components/pages/WebinarPage";
 
 const App = () => {
   return (
@@ -97,8 +99,8 @@ const App = () => {
         <Route path="/adobe-workfront" element={<Platform_Adobe_Workfront />} />
         <Route path="/adobe-workfront-fusion" element={<WorkfrontFusion />} />
         <Route path="/adobe-aem" element={<Platform_Adobe_AEM />} />
-        {/* <Route path="/adobe-commerce" element={<AdobeCommerce />} /> */}
-        <Route path="/adobe-commerces" element={<Adobecommerces />} />
+        <Route path="/adobe-commerce" element={<Adobecommerces />} />
+        {/* <Route path="/adobe-commerces" element={<Adobecommerces />} /> */}
         <Route path="/adobe-analytics" element={<AdobeAnalytics />} />
 
         {/* Policy Pages */}
@@ -116,16 +118,19 @@ const App = () => {
         />
 
         {/* Resources */}
+         {/* Nested Routes for Adobe Commerce */}
+        <Route path="/case-study" element={<Testimonial_V2 />} />
+
+        <Route path="/case-study/:slug" element={<CaseStudyDetails />} />
+
         <Route path="/blogs" element={<Blogs_Lisitng />} />
         <Route path="/blog/:detailUrlName" element={<Blogs_Detail />} />
         <Route path="/success-stories" element={<SuccessStories />} />
         <Route path="/resources-library" element={<ResourcesLibrary />} />
         <Route path="/video-library" element={<VideoLibrary />} />
-        <Route path="/new-video" element={<NewVideopage />} />
-         <Route path="/webinar-page" element={<WebinarPage />} />
-        
         {/* <Route path="/video-library1" element={<VideoVault />} /> */}
-        <Route path="/video-vault" element={<VideoVault />} />
+        {/* <Route path="/video-vault" element={<VideoVault />} /> */}
+        <Route path="/webinar-page" element={<WebinarPage />} />
 
       </Routes>
     </Router>

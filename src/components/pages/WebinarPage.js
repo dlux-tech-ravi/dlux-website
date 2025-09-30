@@ -8,18 +8,22 @@ import CommunityCTA from '../Webinar/CommunityCTA.js'
 import BlogSection from '../Webinar/BlogSection.js'
 import Navbar from '../Navbar.js'
 
-export const WebinarPage = () => {
+
+ const WebinarPage = () => {
   return (
   <>
   <Navbar/>
   <HeroSection/>
   <VideoShowcase/>
+  
   <WhoWeAreSection/>
   <Speakers/>
   <CommunityCTA/>
-  <BlogSection/>
-  
+  <BlogSection/>  
   <FAQSection/>
+ 
   </>
   )
 }
+
+export default WebinarPage;

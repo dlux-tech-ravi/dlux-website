@@ -13,7 +13,8 @@ const Image_LeftV5 = () => {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              Authorization: "Bearer 6t-wgSsZnD80bBuG3_VNcGKE0lF-LAE7EPa5NE286HU",
+              Authorization:
+                "Bearer 6t-wgSsZnD80bBuG3_VNcGKE0lF-LAE7EPa5NE286HU",
             },
             body: JSON.stringify({
               query: `
@@ -41,60 +42,65 @@ const Image_LeftV5 = () => {
     fetchContent();
   }, []);
 
- const renderWithLineBreaks = (text) => {
-  return text?.split("_").map((line, index) => {
-    const parts = [];
-    const regex = /"([^"]+)"/g;
-    let lastIndex = 0;
-    let match;
+  const renderWithLineBreaks = (text) => {
+    if (!text) return null;
 
-    while ((match = regex.exec(line)) !== null) {
-      // Push text before the quote
-      if (match.index > lastIndex) {
-        parts.push(line.slice(lastIndex, match.index));
+    // Split by "-" and add <br/><br/> in between
+    return text.split("_").map((segment, segIndex, arr) => {
+      const parts = [];
+      const regex = /"([^"]+)"/g;
+      let lastIndex = 0;
+      let match;
+
+      while ((match = regex.exec(segment)) !== null) {
+        if (match.index > lastIndex) {
+          parts.push(segment.slice(lastIndex, match.index));
+        }
+
+        parts.push(
+          <span
+            key={`bold-${segIndex}-${match.index}`}
+            className="image-left_ay__bold-text"
+          >
+            {match[1]}
+          </span>
+        );
+
+        lastIndex = regex.lastIndex;
       }
 
-      // Push bold + large quoted text
-      parts.push(
-        <span key={`bold-${index}-${match.index}`} style={{ fontWeight: "bold", fontSize: "1.2em" }}>
-          {match[1]}
-        </span>
+      parts.push(segment.slice(lastIndex));
+
+      return (
+        <React.Fragment key={segIndex}>
+          {parts}
+          {segIndex < arr.length - 1 && (
+            <>
+              <br />
+              <br />
+            </>
+          )}
+        </React.Fragment>
       );
-
-      lastIndex = regex.lastIndex;
-    }
-
-    // Push remaining text after last quote
-    parts.push(line.slice(lastIndex));
-
-    return (
-      <React.Fragment key={index}>
-        {parts}
-        <br />
-      </React.Fragment>
-    );
-  });
-};
-
+    });
+  };
 
   return (
-    <div className="adobe-commerce-section">
-      <div className="adobe-commerce-container">
-        <div className="adobe-commerce-content">
+    <section className="image-left_ay">
+      <div className="image-left_ay__container">
+        <div className="image-left_ay__content">
           <img
             src={contentData?.url || "https://via.placeholder.com/320x400"}
             alt="Adobe Commerce Banner"
-            height="400px"
-            width="320px"
-            style={{ borderRadius: "20px" }}
+            className="image-left_ay__img"
           />
-          <div className="adobe-commerce-text-box">
+          <div className="image-left_ay__text-box">
             <h2>{renderWithLineBreaks(contentData?.title)}</h2>
             <p>{renderWithLineBreaks(contentData?.description)}</p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

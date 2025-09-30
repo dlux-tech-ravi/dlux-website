@@ -9,10 +9,32 @@
   backdrop-filter: blur(6px); /* Reduced blur for sharper glassy feel */
   -webkit-backdrop-filter: blur(6px);
 
-  border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(255, 255, 255, 0.05);
 
   /* border-radius: 16px;
   padding: 2rem; */
   color: #ffffff;
 }
+
+
+/* Toast container override */
+.custom-toast {
+  background: linear-gradient(
+    120deg,
+    rgba(0, 0, 0, 0.95),
+    rgba(15, 7, 30, 0.9),
+    rgba(38, 20, 60, 0.92),
+    rgba(0, 0, 0, 0.95)
+  ) !important;
+  color: #fff !important;
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 12px 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* progress bar color */
+.custom-toast .Toastify__progress-bar {
+  background: #a855f7 !important; /* purple shade */
+}
+

@@ -291,7 +291,7 @@ const OurTeam = () => {
                     onMouseLeave={() => setIsHovered(true)}
                   />
   
-                  <div className="hidden">
+                  <div className="hidden-1">
                     {!isPlaying ? (
                       <div
                         className="plays-button-overlay"

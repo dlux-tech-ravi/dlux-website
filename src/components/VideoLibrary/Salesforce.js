@@ -179,7 +179,7 @@ export default function Salesforce() {
                 tutorials—featuring AI innovations, Data Cloud, automation, and
                 low-code solutions.
               </p>
-              <Link to="/salesforce">
+              <Link target="_blank" rel="noopener noreferrer" to="/salesforce">
                <motion.button
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}

@@ -133,7 +133,7 @@ const HeroBanner = () => {
             </p>
           </motion.div>
          
-<Link to="/contact-us">
+<Link target="_blank" rel="noopener noreferrer" to="/contact-us">
 
           <motion.button
             initial={{ opacity: 0, y: 20 }}

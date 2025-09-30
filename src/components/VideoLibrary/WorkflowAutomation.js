@@ -112,7 +112,7 @@ export default function WorkflowAutomation() {
           <p className="mt-3 text-gray-300 max-w-3xl text-sm lg:text-[16px] mb-6" >
             Step into our Workfront video library and explore actionable insights, agile project management tips, resource planning strategies, and workflow automation guidance.
           </p>
-           <Link to="/adobe-workfront-managed-services">
+           <Link target="_blank" rel="noopener noreferrer" to="/adobe-workfront-managed-services">
             <motion.button
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

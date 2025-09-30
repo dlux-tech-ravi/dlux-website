@@ -261,11 +261,8 @@ query ($preview: Boolean) {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    
     <div>
-     
         <Navbar />
-        
         <VideoSection title={mediaTitle} stitle={subTitle} videos={videoUrl} thumbnails={videoThumbnails} />
         <VideoImageSection title={secTitle} stitle={secSubTitle} images={secimg} />
 

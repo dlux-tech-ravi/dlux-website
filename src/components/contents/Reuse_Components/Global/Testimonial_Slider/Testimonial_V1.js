@@ -1,111 +1,224 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Testimonial_V1.css";
-import images1 from "./Testimonial_Asset/thumbmail.jpg";
 
-const Testimonial_V1 = () => {
-  const [showPopup, setShowPopup] = useState(false);
-  const [closing, setClosing] = useState(false);
-  const [activeVideo, setActiveVideo] = useState(null);
+const Testimonial_V1 = ({ onOpenModal }) => {
+  const [slides, setSlides] = useState([]);
+  const [current, setCurrent] = useState(0);
+  const [playingIndex, setPlayingIndex] = useState(null);
+  const [playKey, setPlayKey] = useState(Date.now());
+  const [isHovering, setIsHovering] = useState(false);
+  const intervalRef = useRef(null);
 
-  const openPopup = (videoUrl) => {
-    setActiveVideo(videoUrl);
-    setShowPopup(true);
+  // Fetch from Contentful
+  useEffect(() => {
+    const fetchSlides = async () => {
+      const query = `
+        query {
+          commerceVideosCollection {
+            items {
+              sys { id }
+              title
+              description
+              video
+              image {
+                url
+              }
+            }
+          }
+        }
+      `;
+
+      try {
+        const res = await fetch(
+          "https://graphql.contentful.com/content/v1/spaces/pj0maraabon4/environments/production",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer 6t-wgSsZnD80bBuG3_VNcGKE0lF-LAE7EPa5NE286HU`,
+            },
+            body: JSON.stringify({ query }),
+          }
+        );
+
+        const { data } = await res.json();
+        // inside fetchSlides
+        if (data?.commerceVideosCollection?.items) {
+          // get last 3 data instead of first 3
+          const items = data.commerceVideosCollection.items;
+          const mappedSlides = items
+            .slice(-3) // ✅ last 3
+            .map((item) => ({
+              id: item.sys.id,
+              title: item.title,
+              description: item.description,
+              video: item.video,
+              image: item.image?.url,
+            }));
+          setSlides(mappedSlides);
+        }
+
+      } catch (err) {
+        console.error("Error fetching slides:", err);
+      }
+    };
+
+    fetchSlides();
+  }, []);
+
+  // Auto slider logic
+  const startSlider = () => {
+    if (intervalRef.current) return;
+    intervalRef.current = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 3000);
   };
 
-  const handleClose = () => {
-    setClosing(true);
-    const video = document.getElementById("testimonial-v1-video-player");
-    if (video) video.pause();
-
-    setTimeout(() => {
-      setShowPopup(false);
-      setClosing(false);
-      setActiveVideo(null);
-    }, 400);
+  const stopSlider = () => {
+    clearInterval(intervalRef.current);
+    intervalRef.current = null;
   };
 
   useEffect(() => {
-    const handleEscape = (e) => {
-      if (e.key === "Escape") handleClose();
-    };
-    if (showPopup) {
-      window.addEventListener("keydown", handleEscape);
-    }
-    return () => window.removeEventListener("keydown", handleEscape);
-  }, [showPopup]);
+    if (slides.length > 0) startSlider();
+    return () => stopSlider();
+  }, [slides]);
 
-  const testimonialData = [
-    { name: "John Doe", desc: "DLUX Tech transformed our ecommerce platform..." },
-    { name: "Jane Smith", desc: "Exceptional service and scalability!" },
-    { name: "Sam Wilson", desc: "Reliable and professional team!" },
-  ];
+  useEffect(() => {
+    if (isHovering || playingIndex !== null) stopSlider();
+    else startSlider();
+  }, [isHovering, playingIndex]);
+
+  const handlePlay = (index) => {
+    setCurrent(index);
+    setPlayingIndex(index);
+    setPlayKey(Date.now());
+  };
+
+  const handleClose = () => setPlayingIndex(null);
+
+  const prevSlide = () => {
+    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % slides.length);
+  };
+
+  if (slides.length === 0) {
+    return <p>Loading videos...</p>;
+  }
 
   return (
-    <section className="testimonial-v1-section">
-      <div className="testimonial-v1-wrapper">
-        {testimonialData.map((item, index) => (
-          <div
-            className="testimonial-v1-card"
-            key={index}
-            onClick={() =>
-              openPopup("https://www.w3schools.com/html/mov_bbb.mp4")
-            }
+    <section className="testimonial_ay">
+      {/* Left Section */}
+      <div className="testimonial_ay__left">
+        <h1 className="testimonial_ay__heading">
+          Turn Browsers into Buyers <br /> — Intelligently
+        </h1>
+        <p className="testimonial_ay__text">
+          DLUX turns Adobe Commerce into your personalization and performance
+          engine. We combine strategy, implementation, and AI-driven insights to
+          create data-powered shopping journeys that connect with customers at
+          every touchpoint.
+        </p>
+        <div className="testimonial_ay__button-group">
+          <button
+            className="testimonial_ay__btn testimonial_ay__btn--primary"
+            onClick={onOpenModal}
           >
-            <div className="testimonial-v1-thumbnail-box">
-              <img
-                src={images1}
-                alt={item.name}
-                className="testimonial-v1-thumbnail"
-              />
-
-              <button className="testimonial-v1-play-button">
-                <svg
-                  className="play-button"
-                  viewBox="0 0 200 200"
-                  aria-label="Play video"
-                >
-                  <circle
-                    cx="100"
-                    cy="100"
-                    r="90"
-                    fill="#333"
-                    fillOpacity="0.6"
-                  />
-                  <polygon points="70,55 70,145 145,100" fill="white" />
-                </svg>
-              </button>
-
-              <div className="testimonial-v1-content">
-                <h3>{item.name}</h3>
-                <p>{item.desc}</p>
-              </div>
-            </div>
-          </div>
-        ))}
+            Get In Touch
+          </button>
+        </div>
       </div>
 
-      {showPopup && (
-        <div
-          className={`testimonial-v1-modal ${closing ? "slide-close" : ""}`}
-          onClick={handleClose}
-        >
-          <div
-            className="testimonial-v1-modal-inner"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button className="testimonial-v1-close" onClick={handleClose}>
-              ×
-            </button>
-            <video
-              id="testimonial-v1-video-player"
-              className="testimonial-v1-video"
-              controls
-              autoPlay
-              src={activeVideo}
-            />
-          </div>
-        </div>
-      )}
+      {/* Middle Slider */}
+      <div className="testimonial_ay__slider">
+        {slides.map((slide, index) => {
+          let position =
+            index === current
+              ? "testimonial_ay__slide--active"
+              : index === (current - 1 + slides.length) % slides.length
+                ? "testimonial_ay__slide--prev"
+                : index === (current + 1) % slides.length
+                  ? "testimonial_ay__slide--next"
+                  : "testimonial_ay__slide--next";
+
+          return (
+            <div
+              key={slide.id}
+              className={`testimonial_ay__slide ${position} ${index === current ? "is-current" : ""
+                }`}
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
+            >
+              <div className="testimonial_ay__card">
+                <div className="testimonial_ay__thumbnail-wrapper">
+                  {playingIndex === index ? (
+                    <iframe
+                      key={`${slide.video}-${playKey}`}
+                      className="testimonial_ay__video"
+                      src={`${slide.video}${slide.video.includes("?") ? "&" : "?"
+                        }autoplay=1`}
+                      title={slide.title}
+                      frameBorder="0"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                    />
+                  ) : (
+                    <>
+                      <img
+                        src={slide.image}
+                        alt={slide.title}
+                        className="testimonial_ay__thumbnail"
+                      />
+                      <button
+                        className="testimonial_ay__play-btn"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handlePlay(index);
+                        }}
+                      >
+                        ▶
+                      </button>
+                    </>
+                  )}
+                </div>
+
+                {playingIndex === index && (
+                  <button
+                    className="testimonial_ay__video-close"
+                    onClick={handleClose}
+                  >
+                    ✖
+                  </button>
+                )}
+
+                <p className="testimonial_ay__title">{slide.title}</p>
+                <p className="testimonial_ay__category">{slide.description}</p>
+              </div>
+            </div>
+          );
+        })}
+
+        {/* Mobile Arrows */}
+        <button className="testimonial_ay__arrow left" onClick={prevSlide}>
+          ◀
+        </button>
+        <button className="testimonial_ay__arrow right" onClick={nextSlide}>
+          ▶
+        </button>
+      </div>
+
+      {/* Right Section (Pager) */}
+      <div className="testimonial_ay__pager">
+        <span className="testimonial_ay__pager-number">
+          {String(current + 1).padStart(2, "0")}
+        </span>
+        <span className="testimonial_ay__pager-total">
+          /{String(slides.length).padStart(2, "0")}
+        </span>
+      </div>
     </section>
   );
 };

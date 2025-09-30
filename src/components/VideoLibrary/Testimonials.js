@@ -50,7 +50,7 @@ export default function Testimonials() {
     bg-gradient-to-r from-[#F12D06] to-[#F17C06] 
     blur-[100px] opacity-70 -z-10"
 />
-      <div className="flex flex-col-reverse lg:flex-row gap-10 justify-start items-center relative">
+      <div className="flex flex-col-reverse lg:flex-row gap-10 2xl:justify-center justify-start items-center relative">
         {/* Left Column - Dummy Image */}
         <motion.div
           className="relative lg:pb-[250px]"

@@ -1,36 +1,80 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.3, // delay between each blog card
+    },
+  },
+};
 
 const BlogSection = () => {
-  const [hoveredCard, setHoveredCard] = useState(null);
+  const [blogs, setBlogs] = useState([]);
 
-  const blogPosts = [
-    {
-      date: "March 1, 2025",
-      author: "Paul Anderson",
-      title: "10 TIPS FOR SUCCESSFUL EVENT PLANNING",
-      description:
-        "Successful event planning requires careful consideration of various factors, such as venue selection, budgeting, and marketing strategies.",
-      image: "https://picsum.photos/600/400?random=1",
-    },
-    {
-      date: "February 15, 2025",
-      author: "Mary Vital",
-      title: "Why Events Matter: The Power of Face-to-Face Interaction",
-      description:
-        "Discover the importance of in-person connections and how they impact business relationships and networking opportunities.",
-      image: "https://picsum.photos/600/400?random=2",
-    },
-    {
-      date: "January 31, 2025",
-      author: "Anthony Huges",
-      title: "The Future of Event Technology: What to Expect in 2023",
-      description:
-        "Explore the latest technological advancements that are shaping the future of events and conferences.",
-      image: "https://picsum.photos/600/400?random=3",
-    },
-  ];
+  const accessToken = process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN;
+
+  // Fetch latest 3 blogs from Contentful
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const query = `
+          query ($preview: Boolean) {
+            resourcesBlogsCollection(
+              preview: $preview
+              order: detailPublishDate_DESC
+              limit: 3
+            ) {
+              items {
+                detailUrlName
+                detailTitle
+                detailImageCollection {
+                  items {
+                    url
+                  }
+                }
+                detailPublishDate
+                listingTileDescription
+              }
+            }
+          }
+        `;
+
+        const response = await fetch(
+          `https://graphql.contentful.com/content/v1/spaces/pj0maraabon4/environments/production`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${accessToken}`,
+            },
+            body: JSON.stringify({
+              query,
+              variables: { preview: false },
+            }),
+          }
+        );
+
+        const { data } = await response.json();
+
+        if (data?.resourcesBlogsCollection?.items) {
+          setBlogs(data.resourcesBlogsCollection.items);
+        }
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
 
   return (
     <section
@@ -38,44 +82,71 @@ const BlogSection = () => {
              mx-auto px-6 md:px-12 lg:px-20 py-[80px]  w-full h-full text-white"
     >
       {/* CTA Button */}
-      <div className="flex justify-between items-center mb-10">
-        <h2 className="text-3xl font-bold text-center ">BLOG</h2>
-        <a href="" className=" text-white">
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        className="flex justify-between items-center mb-10"
+      >
+        <h2 className="text-3xl font-bold text-center">BLOG</h2>
+        <a href="/blogs" target="__blank" className="text-white">
           View All Blogs
         </a>
-      </div>
-      {/* Single row layout on desktop */}
-      <div className="flex flex-col md:flex-row gap-8 lg:pl-[50px] pt-12">
-        {blogPosts.map((post, index) => (
-          <div
+      </motion.div>
+
+      {/* Blog Cards with Staggered Animation */}
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="flex flex-col md:flex-row gap-8 lg:pl-[50px] pt-12"
+      >
+        {blogs.map((post, index) => (
+          <motion.div
             key={index}
-            className="relative overflow-hidden transition-all duration-500 ease-in-out transform hover:scale-105 flex-1 group pb-6"
+            variants={fadeUp}
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300, damping: 15 }}
+            className="relative overflow-hidden rounded-lg shadow-lg flex-1 group pb-6 cursor-pointer"
           >
             {/* Blog Image */}
-            <img
-              src={post.image}
-              alt={post.title}
-              className="w-full h-[280px] object-cover"
-            />
+            {post.detailImageCollection?.items[0]?.url && (
+              <motion.img
+                src={post.detailImageCollection.items[0].url}
+                alt={post.detailTitle}
+                className="w-full h-[280px] object-cover"
+              />
+            )}
 
             {/* Blog Content */}
             <div className="pt-7">
-              <div className="flex gap-3">
-                <p className="text-sm text-white mb-2">{post.date}</p>
-                <p className="text-sm text-[#D3A0E6] mb-4">by {post.author}</p>
-              </div>
-              <h3 className="text-3xl font-semibold mb-2 text-white">
-                {post.title}
+              <p className="text-sm text-white mb-2">
+                {new Date(post.detailPublishDate).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </p>
+
+              <h3 className="text-2xl font-semibold mb-2 text-white">
+                <a
+                  href={`/blog/${post.detailUrlName}`}
+                  className="hover:underline transition"
+                >
+                  {post.detailTitle}
+                </a>
               </h3>
 
-              {/* Description (fades in on hover, no height collapse) */}
-              <p className="text-gray-300  opacity-100 md:opacity-0  md:group-hover:opacity-100  transition-opacity duration-500">
-                {post.description}  
+              {/* Description */}
+              <p className="line-clamp-4 text-gray-300 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
+                {post.listingTileDescription}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

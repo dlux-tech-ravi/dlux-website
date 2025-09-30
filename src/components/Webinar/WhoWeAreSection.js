@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
-import { Globe, Puzzle, SlidersHorizontal, Megaphone } from "lucide-react";
+import { motion } from "framer-motion";
+
 const benefits = [
   {
     id: 1,
@@ -25,52 +28,63 @@ const benefits = [
 
 export default function WhoWeAreSection() {
   return (
-    <section className="relative w-full  bg-black text-white lg:pb-[80px] px-6 md:px-20 lg:flex flex-col md:flex-row items-center justify-between gap-10">
-     
-       <div
-  className="absolute top-[20%] left-[40%] w-80 h-80 rounded-full 
-    bg-gradient-to-r from-[#F12D06] to-[#F17C06] 
-    blur-[120px] opacity-70 z-10"
-/>
+    <section className="relative w-full overflow-hidden bg-black text-white lg:pb-[20px] px-6 md:px-10 lg:flex flex-col md:flex-row items-center justify-between gap-10">
+      <div
+        className="absolute top-[20%] left-[40%] w-80 h-80 rounded-full 
+        bg-gradient-to-r from-[#F12D06] to-[#F17C06] 
+        blur-[120px] opacity-70 z-10"
+      />
+      
       {/* Left Column */}
-      <div className="relative lg:w-2/5 py-20 space-y-6 z-[100]">
-        <h2 className="text-5xl font-bold">WHY ATTEND DLUX WEBINAR  </h2>
-        <p className=" leading-relaxed max-w-2xl">
+      <motion.div
+        className="relative lg:w-2/5 py-8 lg:py-20 space-y-6 z-[100]"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 1 }}
+      >
+        <h2 className="text-3xl lg:text-5xl font-bold">WHY ATTEND DLUX WEBINAR  </h2>
+        <p className="leading-relaxed max-w-2xl">
           As a Top leading Martech business consulting firm in Sydney,
           Australia, DLUX brings together strategy and technology to help you
           master complex projects, scale your marketing and technology
           operations, and stay ahead in the fast-changing AI & Martech. 
         </p>
-        <ul className="space-y-3 text-white text-base md:text-lg leading-relaxed ">          
-            <li className="flex items-start gap-2">              
-              <span className="mt-2 h-2 w-2 rounded-full bg-white flex-shrink-0"></span>
-              <span className="text-white">Deep Dives – Learn the why and the how, not just the features</span>
-            </li>
-             <li className="flex items-start gap-2">              
-              <span className="mt-2 h-2 w-2 rounded-full bg-white flex-shrink-0"></span>
-              <span className="text-white">Case Studies – Real client success in action</span>
-            </li>
-             <li className="flex items-start gap-2">              
-              <span className="mt-2 h-2 w-2 rounded-full bg-white flex-shrink-0"></span>
-              <span className="text-white">Expert Insights – Tech certified pros & DLUX CoE leaders</span>
-            </li>
-             <li className="flex items-start gap-2">              
-              <span className="mt-2 h-2 w-2 rounded-full bg-white flex-shrink-0"></span>
-              <span className="text-white">Live Q&A – Ask, interact, get instant answers</span>
-            </li>
-            <li className="flex items-start gap-2">              
-              <span className="mt-2 h-2 w-2 rounded-full bg-white flex-shrink-0"></span>
-              <span className="text-white">On-Demand – Replay anytime, anywhere</span>
-            </li>
-        
+        <ul className="space-y-3 text-white text-base md:text-lg leading-relaxed ">
+          <li className="flex items-start gap-2">
+            <span className="mt-2 h-2 w-2 rounded-full bg-white flex-shrink-0"></span>
+            <span className="text-white">Deep Dives – Learn the why and the how, not just the features</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-2 h-2 w-2 rounded-full bg-white flex-shrink-0"></span>
+            <span className="text-white">Case Studies – Real client success in action</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-2 h-2 w-2 rounded-full bg-white flex-shrink-0"></span>
+            <span className="text-white">Expert Insights – Tech certified pros & DLUX CoE leaders</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-2 h-2 w-2 rounded-full bg-white flex-shrink-0"></span>
+            <span className="text-white">Live Q&A – Ask, interact, get instant answers</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="mt-2 h-2 w-2 rounded-full bg-white flex-shrink-0"></span>
+            <span className="text-white">On-Demand – Replay anytime, anywhere</span>
+          </li>
         </ul>
         <button className="bg-gradient-to-r from-[#ff3901] to-[#F07800] px-6 py-2 rounded-full font-semibold shadow hover:opacity-90 transition">
           CONTACT
         </button>
-      </div>
+      </motion.div>
 
       {/* Right Column */}
-      <div className="lg:w-2/5 gap-6 z-[10] relative">
+      <motion.div
+        className="lg:w-2/5 gap-6 z-[10] relative"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 1, delay: 0.3 }}
+      >
         <h3 className="text-2xl font-semibold mb-4">
           BENEFITS OF CHOOSING US 
         </h3>
@@ -78,15 +92,17 @@ export default function WhoWeAreSection() {
           {benefits.map((benefit) => (
             <div
               key={benefit.id}
-              className="flex flex-col  md:w-[240px] md:h-[222px] items-center justify-center border
-               border-[#F07800] bg-white  p-6 text-center cursor-pointer transition duration-300 hover:bg-gradient-to-r hover:from-[#de8f69] hover:to-[#de8f69]    hover:border-transparent"
+              className="flex flex-col md:w-[240px] md:h-[222px] items-center justify-center border
+               border-[#F07800] bg-white p-6 text-center cursor-pointer transition duration-300 hover:bg-gradient-to-r hover:from-[#de8f69] hover:to-[#de8f69] hover:border-transparent"
             >
-              <div className="mb-3"><img src={benefit.icon} alt={benefit.title} className="w-20 h-20 md:w-full"/></div>
+              <div className="mb-3">
+                <img src={benefit.icon} alt={benefit.title} className="w-20 h-20 md:w-full"/>
+              </div>
               <h4 className="text-lg font-medium text-black">{benefit.title}</h4>
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

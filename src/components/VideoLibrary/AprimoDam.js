@@ -142,7 +142,7 @@ export default function AprimoDam() {
           </p>
 </motion.div>
           <div className="flex justify-between items-center mt-6">
-            <Link to="/aprimo">
+            <Link target="_blank" rel="noopener noreferrer" to="/aprimo">
             <motion.button
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

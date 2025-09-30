@@ -1,0 +1,170 @@
+.feature_ay {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  perspective: 1500px; /* for 3D flip */
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.feature_ay__container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.feature_ay__title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+/* Grid layout */
+.feature_ay__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 🔥 exactly 4 per row */
+  gap: 25px;
+  justify-items: center;
+}
+
+/* Card column */
+.feature_ay__col {
+  width: 100%;
+  height: 260px;
+  perspective: 1200px;
+}
+
+.feature_ay__card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease-in-out, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35),
+              0 0 15px rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+  position: relative;
+}
+
+/* Hover shadow effect + flip */
+.feature_ay__col:hover .feature_ay__card {
+  transform: rotateY(180deg);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45),
+              0 0 25px rgba(255, 255, 255, 0.08);
+}
+
+/* Card faces */
+.feature_ay__card-front,
+.feature_ay__card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.3),
+    0 0 15px rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  transition: transform 0.6s, box-shadow 0.3s, background 0.3s;
+  overflow: hidden;
+}
+
+/* Neon running border on both sides */
+.feature_ay__card-front::before,
+.feature_ay__card-back::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 2px;
+  background: linear-gradient(90deg, #ff00ff, #00ffff, #ff00ff);
+  background-size: 300% 300%;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  animation: featureBorderRun 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes featureBorderRun {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hover effect */
+.feature_ay__col:hover .feature_ay__card-front,
+.feature_ay__col:hover .feature_ay__card-back {
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Card front */
+.feature_ay__card-front {
+  transform: rotateY(0deg);
+}
+
+/* Card back */
+.feature_ay__card-back {
+  transform: rotateY(180deg);
+  padding: 20px;
+  font-size: 16px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Icon with subtle floating animation */
+.feature_ay__icon img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  transition: transform 0.4s ease;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(10deg); }
+}
+
+.feature_ay__col:hover .feature_ay__icon img {
+  transform: rotate(15deg) scale(1.1);
+}
+
+/* Title */
+.feature_ay__col-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.feature_ay__col:hover .feature_ay__col-title {
+  transform: translateY(-5px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .feature_ay__grid {
+    grid-template-columns: repeat(2, 1fr); /* tablet → 2 per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .feature_ay__grid {
+    grid-template-columns: 1fr; /* mobile → 1 per row */
+  }
+}

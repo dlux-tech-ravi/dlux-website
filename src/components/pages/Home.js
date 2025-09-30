@@ -75,7 +75,7 @@ export default function Home() {
         <Navbar />
 
         <div className="main-content-home">
-          <div className="home-img-section md:pt-[100px]">
+          <div className="home-img-section">
             <video className="home-background" autoPlay loop muted>
               <source
                 src={page.dluxHomePage[0].dluxHomeVideo.url}

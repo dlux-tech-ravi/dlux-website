@@ -9,7 +9,8 @@
   gap: 40px;
   padding: 0px 80px;
 }
-.container h1{
+
+.container h1 {
   font-size: 45px;
   font-family: "Open Sans", "Regular";
   text-align: center;
@@ -44,25 +45,23 @@
   background-color: black;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
-  text-align: left; 
+  align-items: flex-start;
+  text-align: left;
   padding: 2%;
   border: 1px solid #666363;
-  border-radius: 10px; 
+  border-radius: 10px;
   transition: background-color 0.3s ease;
   transition: transform 0.2s;
   height: 100%;
 }
 
 .service-box:hover {
-  background: linear-gradient(
-    rgba(51, 51, 51, 0.6),
-    rgba(13, 13, 13, 0.6)
-  ); 
+  background: linear-gradient(rgba(51, 51, 51, 0.6),
+      rgba(13, 13, 13, 0.6));
   box-shadow: 8px 8px 20px #fe3908;
 
-  .service-box:hover .icon{
-    transform: scale(1.2); 
+  .service-box:hover .icon {
+    transform: scale(1.2);
   }
 }
 
@@ -70,7 +69,7 @@
   margin: 10px;
   font-size: 14px;
   white-space: pre-line;
-} 
+}
 
 .service-text h2 {
   font-weight: 900;
@@ -101,37 +100,45 @@
 .icon {
   width: 50px;
   height: 50px;
-  transition: transform 0.2s; 
+  transition: transform 0.2s;
 }
+
 .service-box:hover .icon {
-  transform: scale(1.2); 
+  transform: scale(1.2);
 }
+
 a {
   color: inherit;
   text-decoration: none;
 }
+
 @media screen and (max-width: 768px) {
   .service-row {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(1, 1fr);
     width: 100%;
   }
+
   .container {
     padding: 0 50px;
     width: 100%;
   }
-  .container h1{
-   font-size: 32px;
+
+  .container h1 {
+    font-size: 32px;
   }
-  .container p{
+
+  .container p {
     font-size: 12px;
   }
-  .service-text .para{
+
+  .service-text .para {
     font-size: 12px;
-    text-align:left;
+    text-align: left;
     line-height: 22px;
   }
-  .service-text h2{
+
+  .service-text h2 {
     font-size: 16px;
   }
 }
@@ -144,10 +151,10 @@ a {
   justify-content: space-between;
 }
 
-.home-head{
-display: flex;
-justify-content: center;
-align-items: center;
+.home-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Home page */
@@ -158,20 +165,20 @@ align-items: center;
   gap: 5%;
   gap: 5%;
   display: flex;
-  flex-direction: column ;
+  flex-direction: column;
   position: relative;
   box-sizing: border-box;
   background: linear-gradient(to right, #302f2f, #0d0d0d);
 }
 
-.home-container-head{
+.home-container-head {
   font-size: 35px;
   font-family: "Open Sans", "Regular";
   text-align: center;
   font-weight: bold;
-  width:55%;
-  margin-bottom: 45px; 
-  margin-top:40px;
+  width: 55%;
+  margin-bottom: 45px;
+  margin-top: 40px;
 }
 
 .home-container-texts {
@@ -186,9 +193,9 @@ align-items: center;
 }
 
 .home-container-text1,
-.home-container-text2{
-  width:86%;
-  text-align:start;
+.home-container-text2 {
+  width: 86%;
+  text-align: start;
   font-size: 16px;
   font-family: "Open Sans", "Regular";
   margin-bottom: 25px;
@@ -198,37 +205,37 @@ align-items: center;
   font-size: 24px;
 }
 
-.home-content{
-  display: flex;
-  justify-content: space-between;
+.home-content {
+  display: grid;
+  grid-template-columns: auto auto;
   gap: 17%;
   padding-bottom: 50px;
 }
 
-.homeimage{
+.homeimage {
   width: 430px;
   height: 400px;
   margin-bottom: 70px;
   margin-left: 30%;
 }
 
-span{
-  color:#FE780C;
+span {
+  color: #FE780C;
 }
 
-.btn-div{
+.btn-div {
   margin: 0;
   text-align: start;
   padding-top: 0px;
-  margin-bottom:0px;
-  width:200px;
+  margin-bottom: 0px;
+  width: 200px;
 }
 
-.btn-eqiq{
+.btn-eqiq {
   margin-top: 40px;
   padding: 5px 60px;
-  border-radius: 40px; 
-  background: linear-gradient(to right,#FE780C, #FE3908);
+  border-radius: 40px;
+  background: linear-gradient(to right, #FE780C, #FE3908);
   color: white;
   font-weight: 600;
   border: none;
@@ -237,12 +244,12 @@ span{
   height: 50px;
 }
 
-.btn-eqiq:hover{
-  cursor: pointer;  
+.btn-eqiq:hover {
+  cursor: pointer;
   box-shadow: 0 0 15px #FE780C, 0 0 20px #FE3908;
 }
 
-.btn-eqiq:hover::after{
+.btn-eqiq:hover::after {
   content: url('./OurServices_Assests/carrow2.png');
   position: absolute;
   margin-top: 3px;
@@ -251,13 +258,14 @@ span{
 
 /* Mobile responsive */
 @media screen and (min-width: 300px) and (max-width: 767px) {
-  
-  .home-content{
+
+  .home-content {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
   }
+
   .home-container-head {
-    font-size:24px;
+    font-size: 24px;
     width: 75%;
     margin-left: auto;
     margin-right: auto;
@@ -275,7 +283,7 @@ span{
   }
 
   .home-content {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     width: 95%;
   }
 
@@ -284,21 +292,23 @@ span{
     height: 250px;
     margin: 0px 20px 25px 35px;
   }
-  .btn-eqiq{
-  width:184px;
-  border-radius: 40px;
-  font-size: 12px;
+
+  .btn-eqiq {
+    width: 184px;
+    border-radius: 40px;
+    font-size: 12px;
   }
 }
 
 /* Tablet responsive */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .home-content{
+  .home-content {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
   }
+
   .home-container-head {
-    font-size:45px;
+    font-size: 45px;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -315,7 +325,7 @@ span{
   }
 
   .home-content {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     width: 95%;
   }
 
@@ -324,8 +334,9 @@ span{
     height: 350px;
     margin: 20px 20px 25px 45px;
   }
-  .btn-eqiq{
-    width:205px;
+
+  .btn-eqiq {
+    width: 205px;
     border-radius: 40px;
   }
 }

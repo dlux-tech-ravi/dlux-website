@@ -1,0 +1,651 @@
+/* BBC-inspired: clean typography, red accent, modular layout, subtle animation */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap'); */
+
+:root {
+  --bbc-red: #c70000;
+  --ink: #0b0c0c;
+  --ink-2: #1f2937;
+  --ink-3: #4b5563;
+  --paper: #ffffff;
+  --paper-2: #f5f6f7;
+  --line: #e5e7eb;
+  --link: #1d4ed8;
+}
+
+* {
+  box-sizing: border-box
+}
+
+.case_bbc {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper-2);
+  padding-bottom: 100px;
+}
+
+/* Generic containers */
+.bbc-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- HERO ---------- */
+.bbc-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* full screen */
+  overflow: hidden;
+}
+
+.bbc-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.06);
+  /* filter: blur(6px) brightness(60%);  */
+  position: relative;
+  top: 30px;
+
+}
+
+.bbc-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  /* black overlay */
+  pointer-events: none;
+}
+
+.bbc-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.15) 55%, rgba(0, 0, 0, 0.65));
+}
+
+.bbc-hero__content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 24px 24px 36px;
+  color: #fff;
+}
+
+.bbc-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  opacity: 0.9;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+.bbc-link {
+  color: #e5e7eb;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.bbc-link:hover {
+  border-color: #e5e7eb;
+}
+
+.bbc-crumb-current {
+  opacity: 0.85;
+}
+
+.bbc-title {
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+.bbc-standfirst {
+  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  opacity: 0.9;
+  z-index: 1;
+}
+
+/* ---------- GRID ---------- */
+.bbc-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(260px, 1fr);
+  gap: 28px;
+  margin-top: 28px;
+  align-items: start;
+}
+
+/* ---------- ARTICLE ---------- */
+.bbc-article {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.bbc-section+.bbc-section {
+  border-top: 1px solid var(--line);
+  margin-top: 22px;
+  padding-top: 22px;
+}
+
+.bbc-h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin: 0 0 12px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.bbc-h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 72px;
+  height: 3px;
+  background: var(--bbc-red);
+  border-radius: 2px;
+}
+
+.bbc-h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--ink-2);
+}
+
+.bbc-h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+
+.bbc-body {
+  font-size: 1.03rem;
+  line-height: 1.78;
+  color: var(--ink-2);
+  text-align: left;
+}
+
+/* Checklist (BBC style ticks) */
+.bbc-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bbc-checklist .tick {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: #16a34a;
+  color: #fff;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.bbc-checklist li {
+  display: flex;
+  align-items: flex-start;
+  color: var(--ink-2);
+}
+
+/* Highlight box (Turning point) */
+.bbc-highlight {
+  background: #eef6ff;
+  border: 1px dashed #93c5fd;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+/* Solutions (cards) */
+.bbc-solutions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bbc-solution-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  align-items: center;
+  padding: 16px;
+  transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+
+.bbc-solution-card:hover {
+  border-color: #9ca3af;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+.bbc-point{
+  font-weight: 300;
+}
+
+.bbc-solution-number {
+  min-width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bbc-red);
+  color: #fff;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+}
+
+.bbc-bullets {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--ink-2);
+  text-align: left;
+}
+
+/* Styled Box */
+.bbc-quote {
+  margin: 20px 0;
+  background: linear-gradient(145deg, #ffffff, #f5f7fa);
+  color: #222;
+  padding: 22px 26px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  font-size: 1rem;
+  line-height: 1.6;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Decorative top bar */
+.bbc-quote::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  border-radius: 14px 14px 0 0;
+  background: linear-gradient(90deg, var(--ink-2), #001076ac);
+}
+
+/* Hover effect */
+.bbc-quote:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+
+/* CTA */
+.bbc-cta {
+  text-align: center;
+  margin: 32px 0 8px;
+}
+
+.bbc-btn {
+  display: inline-block;
+  padding: 14px 26px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, var(--ink-2), #001076ac);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.4px;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  border: none;
+
+}
+
+/* Shine effect on hover */
+.bbc-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.35);
+  transform: skewX(-25deg);
+  transition: left 0.5s;
+}
+
+.bbc-btn:hover::after {
+  left: 130%;
+}
+
+.bbc-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(3, 10, 138, 0.2);
+}
+
+/* ---------- ASIDE ---------- */
+.bbc-aside {
+  position: relative;
+}
+
+.bbc-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 16px;
+  position: sticky;
+  top: 110px;
+}
+
+.bbc-card-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin: 0 0 12px;
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 8px;
+}
+
+.bbc-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bbc-meta-label {
+  display: block;
+  font-size: .8rem;
+  color: #6b7280;
+}
+
+.bbc-meta-value {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.bbc-stats {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bbc-stats li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px dashed var(--line);
+  padding: 8px 0;
+}
+
+.bbc-stat-label {
+  color: var(--ink-3);
+}
+
+.bbc-stat-value {
+  font-weight: 800;
+  color: var(--ink);
+}
+
+/* ---------- NOT FOUND ---------- */
+.notfound {
+  margin-top: 120px;
+  text-align: center;
+}
+
+.notfound .bbc-link {
+  color: var(--link);
+}
+
+.li-bbc {
+  color: var(--ink);
+}
+
+.cs-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+}
+
+.cs-modal-content {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 30px;
+  border-radius: 14px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cs-modal-title {
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.cs-modal-form .cs-modal-label {
+  display: block;
+  margin-bottom: 10px;
+  color: #ddd;
+  font-size: 0.95rem;
+}
+
+.cs-modal-input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.cs-modal-input::placeholder {
+  color: #bbb;
+}
+
+.cs-modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cs-modal-btn {
+  background: #6a00ff;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cs-modal-btn:hover {
+  background: #7e1bff;
+  box-shadow: 0 0 8px #7e1bff;
+}
+
+.cs-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.cs-modal-close:hover {
+  transform: rotate(90deg);
+  color: #6a00ff;
+}
+
+.cs-modal-btn-secondary {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cs-modal-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+  .bbc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bbc-aside .bbc-card {
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .bbc-hero {
+    height: 360px;
+  }
+
+  .bbc-hero__content {
+    padding: 18px 16px 28px;
+  }
+}
+
+/* ---------- ANIMATIONS ---------- */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(18px);
+  will-change: transform, opacity;
+}
+
+[data-animate].in-view {
+  opacity: 1;
+  transform: none;
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+[data-animate="fade-down"] {
+  transform: translateY(-24px);
+}
+
+[data-animate="fade-left"] {
+  transform: translateX(24px);
+}
+
+[data-animate="fade-up"] {
+  transform: translateY(24px);
+}
+
+/* extra polish on hero when in-view */
+.bbc-hero.in-view .bbc-hero__img {
+  animation: heroZoom 1.2s ease both;
+}
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1.08);
+  }
+
+  to {
+    transform: scale(1.03);
+  }
+}
+
+/* Floating Social Bar */
+.social-bar {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+.social-bar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* center icons only */
+  width: 50px;
+  height: 50px;
+  margin: 2px 0;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px 0 0 4px;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Social Colors */
+.facebook {
+  background: #3b5998;
+}
+
+.twitter {
+  background: #1da1f2;
+}
+
+.instagram {
+  background: #e1306c;
+}
+
+.linkedin {
+  background: #0077b5;
+}
+
+.github {
+  background: #24292e;
+}
+
+.youtube {
+  background: #ff0000;
+}
+
+.social-bar a i {
+  width: 100%;
+  text-align: center;
+}

@@ -54,7 +54,7 @@ export default function CtaBanner() {
           <p className="text-gray-200 mb-6 max-w-md text-sm lg:text-[16px]">
            From Project Management to AI , Martech Tools our videos are just the beginning. Let’s talk about solutions that fit your enterprise needs.
           </p>
-          <Link to="/contact-us">
+          <Link target="_blank" rel="noopener noreferrer" to="/contact-us">
           <motion.button
             whileHover={{ scale: 1.05 }}
             className="px-6 py-2 rounded-full bg-white text-black font-medium border border-transparent hover:border-white/40 transition-all"

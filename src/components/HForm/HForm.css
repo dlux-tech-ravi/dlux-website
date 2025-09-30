@@ -128,7 +128,8 @@ input:not(:placeholder-shown) + label {
   border: 3px solid grey;
   display: block !important;
   cursor: pointer;
-  
+  color: black;
+  font-weight: 400;
 }
 
 .hformButton:hover {
