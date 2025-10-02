@@ -3,6 +3,10 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
 const faqs = [
   {
     question: "Are DLUX webinars free to attend? ",
@@ -76,11 +80,21 @@ export default function FAQSection() {
       }}
     >
       <div className="max-w-3xl w-full">
-        <h2 className="text-3xl md:text-5xl font-bold text-center lg:mb-20 bg-gradient-to-r from-[#ff3901] to-[#F07800] bg-clip-text text-transparent">
-          Get Answers to Your Eventify Questions with Our FAQs
-        </h2>
+        <motion.h2
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                className="text-3xl md:text-5xl font-bold text-center lg:mb-20 bg-gradient-to-r from-[#ff3901] to-[#F07800] bg-clip-text text-transparent"
+                >Get Answers to Your Eventify Questions with Our FAQs</motion.h2>
+    
 
-        <div className="space-y-6 pt-5">
+        <motion.div 
+        variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+        className="space-y-6 pt-5">
           {faqs.map((faq, index) => (
             <div
               key={index}
@@ -122,8 +136,11 @@ export default function FAQSection() {
               </AnimatePresence>
             </div>
           ))}
+          </motion.div>
         </div>
-      </div>
+      
+       
+     
     </div>
   );
 }

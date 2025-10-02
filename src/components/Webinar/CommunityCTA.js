@@ -10,13 +10,13 @@ const fadeUp = {
 
 const CommunityCTA = () => {
   return (
-    <section className="relative flex items-center justify-center overflow-hidden py-[130px] bg-white">
+    <section className="relative flex items-center justify-center overflow-hidden py-[130px] bg-black">
       {/* Background Shapes */}
       <div className="absolute inset-0">
         <img
-          src="https://images.ctfassets.net/pj0maraabon4/296XnXzXCaUOJFkVDQY0eS/3fbba29e3134d07ecc8aeeb048f12968/community-bg-shape.png"
+          src="https://images.ctfassets.net/pj0maraabon4/296XnXzXCaUOJFkVDQY0eS/7fcc11cba6a8ae90885cdecd70c9ba46/community-image-01..png"
           alt="background pattern"
-          className="w-full h-full object-cover opacity-25"
+          className="w-full h-full object-cover opacity-80"
         />
       </div>
 
@@ -27,7 +27,7 @@ const CommunityCTA = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-black max-w-6xl"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-white max-w-6xl"
         >
           Join our AI & Martech Innovation Center community
         </motion.h2>
@@ -38,7 +38,7 @@ const CommunityCTA = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           transition={{ delay: 0.2 }}
-          className="mt-4 text-base sm:text-lg md:text-xl text-black max-w-2xl mx-auto"
+          className="mt-4 text-base sm:text-lg md:text-xl text-white max-w-2xl mx-auto"
         >
           The Place where Experts and Enthusiasts connect to shape the future of
           Technology and Marketing!
@@ -50,7 +50,7 @@ const CommunityCTA = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           transition={{ delay: 0.4 }}
-          className="mt-6 px-6 py-3 bg-black text-white font-semibold rounded-full shadow-md hover:bg-gray-200 hover:text-black transition"
+          className="mt-6 px-6 py-3 bg-white text-[#ff3901] font-semibold rounded-full shadow-md hover:bg-gray-200 hover:text-black transition"
         >
           JOIN NOW
         </motion.button>

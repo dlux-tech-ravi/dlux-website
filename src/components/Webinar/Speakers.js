@@ -14,7 +14,7 @@ const speakers = [
     role: "President & CEO",
     description:"Martech | Gen AI Advisory Strategy, Innovation & Enterprise Leadership",
     company:"DLUX TECH",
-    image: "https://picsum.photos/400/400?random=1",
+    image: "https://images.ctfassets.net/pj0maraabon4/4XHOwXn2rVjuzI70MFqXIJ/ecac53d6220b37703ad88b86258c17e4/lux.png",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const speakers = [
     role: "Principal Solutions Consultant",
     description:"Transformational Leader | AI Strategist | Architect of Memorable Customer Experiences ",
     company:"DLUX TECH",
-    image: "https://picsum.photos/400/400?random=2",
+    image: "https://images.ctfassets.net/pj0maraabon4/6zcanEn3hppAEzniWa6P7a/1457305c2d13767d26313055ed785c15/SEAN.png",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const speakers = [
     role: "Sr. Martech Consultant",
     description:"Martech Visionary | AI Growth Strategist & Agile Transformation Leader ",
     company:"DLUX TECH",
-    image: "https://picsum.photos/400/400?random=3",
+    image: "https://images.ctfassets.net/pj0maraabon4/jX3ZezUkaoABpsXJKi8Ze/7e8fabd65d06766b2bc0f37ab7a0939e/nic.png",
   },
 ];
 
@@ -64,7 +64,7 @@ export default function Speakers() {
         blur-[130px] opacity-70 z-1"
       />
       {/* Background Overlay Pattern */}
-      <div className="absolute inset-0 opacity-80 bg-[url('https://images.ctfassets.net/pj0maraabon4/4fHeknVDit0tuXeRmqsfk4/b0dfcc317946d1afbb6540b7426ec47e/bg-image-speaker-section.png')] bg-contain bg-no-repeat"></div>
+      <div className="absolute inset-0 opacity-80 "></div>
 
       <motion.div
         className="relative w-full h-full items-center"
@@ -92,14 +92,14 @@ export default function Speakers() {
               className="text-left"
               variants={cardVariants}
             >
-              <div className="bg-gray-300 rounded-tl-3xl overflow-hidden">
+              <div className=" overflow-hidden">
                 <img
                   src={speaker.image}
                   alt={speaker.name}
-                  className="w-full h-60 object-cover"
+                  className="w-full h-[450px] object-contain"
                 />
               </div>
-              <div className="lg:w-[90%]">
+              <div className="lg:w-[70%] ml-20">
                 <h3 className="mt-4 font-bold text-lg tracking-wide">
                   {speaker.name}
                 </h3>
