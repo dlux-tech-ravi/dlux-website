@@ -51,7 +51,7 @@ const cardVariants = {
 export default function Speakers() {
   return (
     <section
-      className="relative flex items-center justify-center px-6 md:px-12 lg:px-20 py-[120px] text-white bg-black"
+      className="relative flex items-center justify-center px-6 md:px-12 lg:px-20 py-[60px] text-white bg-black"
     >
       <div
         className="absolute top-[20%] -left-[10%] w-80 h-80 rounded-full 

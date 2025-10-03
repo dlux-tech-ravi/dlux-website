@@ -30,7 +30,7 @@ const benefits = [
 export default function WhoWeAreSection() {
   const [hovered, setHovered] = useState(false);
   return (
-    <section className="relative w-full overflow-hidden bg-black text-white lg:pb-[20px] px-6 md:px-10 lg:flex flex-col md:flex-row items-center justify-evenly gap-10 font-sans">
+    <section className="relative w-full overflow-hidden bg-black text-white lg:pb-[20px] px-6 md:px-10 lg:py-[60px] lg:flex flex-col md:flex-row items-center justify-evenly gap-10 font-sans">
       <div
         className="absolute top-[20%] left-[40%] w-80 h-80 rounded-full 
         bg-gradient-to-r from-[#F12D06] to-[#F17C06] 
@@ -39,7 +39,7 @@ export default function WhoWeAreSection() {
       
       {/* Left Column */}
       <motion.div
-        className="relative lg:w-1/2 py-8 lg:py-20 space-y-6 z-[100]"
+        className="relative lg:w-1/2 py-8  space-y-6 z-[100]"
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.3 }}
