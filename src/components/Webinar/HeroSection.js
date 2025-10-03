@@ -59,12 +59,12 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#000000]  to-transparent"></div>
 
       {/* Content Wrapper */}
-      <div className="relative h-full flex flex-col md:flex-row items-center justify-between px-6 md:px-16">
+      <div className="relative h-full flex flex-col md:flex-row items-center justify-between px-6 md:px-24">
         {/* Empty Column */}
         <div className="flex-1 hidden md:block"></div>
 
         {/* Right Column Content */}
-        <div className="flex-1 text-center md:text-left text-white max-w-xl content-center">
+        <div className="flex-1 text-center md:text-left text-white max-w-2xl content-center pr-6">
           <motion.h1
             variants={fadeUpVariant}
             initial="hidden"
@@ -108,17 +108,17 @@ export default function HeroSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="inline-block relative md:absolute mt-6 md:bottom-8  md:left-16 lg:w-[30%] justify-items-center"
+        className="inline-block relative md:absolute mt-6 md:bottom-8  md:left-[10%] lg:w-[30%] justify-items-center"
       >
         <img
           src="/webinar-assets/webinar-hero-section-02.png"
           className="relative lg:absolute w-[95%] lg:left-[3%] lg:bottom-[100%]"
         />
-        <div className="bg-[#0a1631]/60 backdrop-blur-md border border-white/20 p-6 rounded-lg text-white w-[60%] justify-items-center text-center">
-          <p className="text-xs uppercase tracking-widest mb-1">
+        <div className="bg-[#0a1631]/60 backdrop-blur-md border border-white/20 p-6 rounded-lg text-white w-[70%] justify-items-center text-center">
+          <p className="text-sm uppercase tracking-widest mb-1 font-semibold">
             9 June 2023 <span className="mx-2">|</span> Limited Seat
           </p>
-          <h3 className="text-lg md:text-xl font-semibold mb-3">LIVE. ON-DEMAND  </h3>
+          <h3 className="text-lg md:text-2xl font-semibold mb-3">LIVE. ON-DEMAND  </h3>
           <button className="px-4 py-2 border border-white rounded-full text-sm font-medium hover:bg-white hover:text-[#0a1631] transition">
             START DIGGING DEEPER
           </button>

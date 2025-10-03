@@ -1,7 +1,8 @@
 "use client";
-
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 const benefits = [
   {
@@ -27,8 +28,9 @@ const benefits = [
 ];
 
 export default function WhoWeAreSection() {
+  const [hovered, setHovered] = useState(false);
   return (
-    <section className="relative w-full overflow-hidden bg-black text-white lg:pb-[20px] px-6 md:px-10 lg:flex flex-col md:flex-row items-center justify-between gap-10">
+    <section className="relative w-full overflow-hidden bg-black text-white lg:pb-[20px] px-6 md:px-10 lg:flex flex-col md:flex-row items-center justify-evenly gap-10 font-sans">
       <div
         className="absolute top-[20%] left-[40%] w-80 h-80 rounded-full 
         bg-gradient-to-r from-[#F12D06] to-[#F17C06] 
@@ -37,7 +39,7 @@ export default function WhoWeAreSection() {
       
       {/* Left Column */}
       <motion.div
-        className="relative lg:w-2/5 py-8 lg:py-20 space-y-6 z-[100]"
+        className="relative lg:w-1/2 py-8 lg:py-20 space-y-6 z-[100]"
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.3 }}
@@ -72,9 +74,63 @@ export default function WhoWeAreSection() {
             <span className="text-white">On-Demand – Replay anytime, anywhere</span>
           </li>
         </ul>
-        <button className="bg-gradient-to-r from-[#ff3901] to-[#F07800] px-6 py-2 rounded-full font-semibold shadow hover:opacity-90 transition">
-          CONTACT
-        </button>
+        
+          <Link target="_blank" rel="noopener noreferrer" to="/contact-us">
+               <motion.button
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  whileHover={{ scale: 1.05 }}
+                  className="mt-6 bg-gradient-to-r from-[#ff3901] to-[#F07800] px-4 py-3 relative rounded-full font-medium flex items-center gap-2 overflow-hidden text-white"
+                   onMouseEnter={() => setHovered(true)}
+                  onMouseLeave={() => setHovered(false)}
+                >
+                  {/* Blur overlay only on hover */}
+                  {hovered && (
+                    <motion.span
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute inset-0 rounded-full backdrop-blur-md bg-white/10 border border-white/40"
+                    />
+                  )}
+
+                  {/* Text */}
+                  <span className="relative z-10 text-white">
+                 Contact Us
+                  </span>
+
+                  {/* Arrow Animation */}
+                  <div className="relative w-5 h-5 overflow-hidden">
+                    <AnimatePresence initial={false} mode="wait">
+                      {hovered ? (
+                        <motion.div
+                          key="arrow-hover"
+                          initial={{ x: -20, opacity: 0 }}
+                          animate={{ x: 0, opacity: 1 }}
+                          exit={{ x: 20, opacity: 0 }}
+                          transition={{ duration: 0.4, ease: "easeInOut" }}
+                          className="absolute"
+                        >
+                          <ArrowRight size={18} />
+                        </motion.div>
+                      ) : (
+                        <motion.div
+                          key="arrow-normal"
+                          initial={{ x: 0, opacity: 1 }}
+                          animate={{ x: 0, opacity: 1 }}
+                          exit={{ x: 20, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                          className="absolute"
+                        >
+                          <ArrowRight size={18} />
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </motion.button>
+                </Link>
       </motion.div>
 
       {/* Right Column */}

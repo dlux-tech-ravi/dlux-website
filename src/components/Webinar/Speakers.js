@@ -89,7 +89,7 @@ export default function Speakers() {
           {speakers.map((speaker) => (
             <motion.div
               key={speaker.id}
-              className="text-left"
+              className="text-center font-sans"
               variants={cardVariants}
             >
               <div className=" overflow-hidden">
@@ -99,13 +99,13 @@ export default function Speakers() {
                   className="w-full h-[450px] object-contain"
                 />
               </div>
-              <div className="lg:w-[70%] ml-20">
+              <div className="lg:px-16">
                 <h3 className="mt-4 font-bold text-lg tracking-wide">
                   {speaker.name}
                 </h3>
                 <h5 className="text-gray-300 text-lg font-semibold mt-2">{speaker.role}</h5>
-                <p className="text-gray-300 text-sm mt-2">{speaker.description}</p>
-                <p className="text-gray-300 text-sm mt-2">{speaker.company}</p>
+                <p className="text-gray-300 text-md mt-2">{speaker.description}</p>
+                <p className="text-gray-300 text-lg mt-2">{speaker.company}</p>
               </div>
             </motion.div>
           ))}

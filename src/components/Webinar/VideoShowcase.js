@@ -101,7 +101,7 @@ const VideoShowcase = () => {
       <div className="mx-auto">
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-semibold mb-12">
-          Watch Past{" "}
+          Watch Our Past{" "}
           <span className="bg-gradient-to-r from-[#ff3901] to-[#F07800] bg-clip-text text-transparent ml-2">
             Webinars
           </span>
