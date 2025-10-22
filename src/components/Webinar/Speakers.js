@@ -87,43 +87,42 @@ export default function Speakers() {
           {speakers.map((speaker) => (
             <motion.div
               key={speaker.id}
-              className="text-center font-sans group"
+              className="relative w-full group rounded-[15px] overflow-hidden shadow-lg"
               variants={cardVariants}
             >
-              {/* Image */}
-              <div className="overflow-hidden rounded-2xl">
-                <img
-                  src={speaker.image}
-                  alt={speaker.name}
-                  className="w-full h-[450px] object-contain transition-transform duration-500 group-hover:scale-105"
-                />
-                <h3 className="font-bold text-lg tracking-wide ">{speaker.name}</h3>
+              {/* Background Image */}
+              <img
+                src={speaker.image}
+                alt={speaker.name}
+                className="w-full h-[450px] object-cover rounded-[15px] transition-transform duration-500 group-hover:scale-105"
+              />
+
+              {/* Always visible speaker name */}
+              <div className="absolute bottom-4 left-4 z-20">
+                <h3 className="text-white text-xl font-bold drop-shadow-lg">
+                  {speaker.name}
+                </h3>
               </div>
 
-              {/* Speaker Info */}
-              <div className="lg:px-10 mt-4 transition-all duration-500">
-                
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[15px]" />
 
-                {/* Hidden details - visible on hover */}
-                <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-[500px] transition-all duration-700 ease-in-out overflow-hidden">
-                  <h5 className="text-gray-300 text-md font-semibold mt-2">
-                    {speaker.role}
-                  </h5>
-                  <p className="text-gray-300 text-sm mt-2">{speaker.description}</p>
-                  <p className="text-gray-400 text-sm mt-2">{speaker.company}</p>
+              {/* Info on hover */}
+              <div className="absolute inset-0 flex flex-col justify-end p-6 z-10 opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                <h5 className="text-gray-300 font-semibold">{speaker.role}</h5>
+                <p className="text-gray-300 text-sm mt-2">{speaker.description}</p>
+                <p className="text-gray-400 text-sm mt-1">{speaker.company}</p>
 
-                  {/* LinkedIn */}
+                <div className="mt-4 flex items-center gap-3">
                   {speaker.linkedin && (
-                    <div className="mt-3 flex justify-center">
-                      <a
-                        href={speaker.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#0A66C2] hover:text-white transition-colors"
-                      >
-                        <FaLinkedin size={22} />
-                      </a>
-                    </div>
+                    <a
+                      href={speaker.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-white text-black font-semibold rounded hover:bg-blue-500 hover:text-white transition duration-300 flex items-center gap-2"
+                    >
+                      Read More <FaLinkedin size={18} />
+                    </a>
                   )}
                 </div>
               </div>
@@ -137,40 +136,42 @@ export default function Speakers() {
             {speakers.map((speaker) => (
               <SwiperSlide key={speaker.id}>
                 <motion.div
-                  className="text-center font-sans group mb-8"
+                  className="relative group rounded-[15px] overflow-hidden"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                  <div className="overflow-hidden rounded-xl">
-                    <img
-                      src={speaker.image}
-                      alt={speaker.name}
-                      className="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+                  <img
+                    src={speaker.image}
+                    alt={speaker.name}
+                    className="w-full h-60 object-cover rounded-[15px] transition-transform duration-500 group-hover:scale-105"
+                  />
+
+                  {/* Always visible speaker name */}
+                  <div className="absolute bottom-3 left-3 z-20">
+                    <h3 className="text-white text-lg font-bold drop-shadow-lg">
+                      {speaker.name}
+                    </h3>
                   </div>
 
-                  <h3 className="mt-4 font-bold text-lg tracking-wide">
-                    {speaker.name}
-                  </h3>
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[15px]" />
 
-                  {/* Hidden details on hover */}
-                  <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-[500px] transition-all duration-700 ease-in-out overflow-hidden">
-                    <p className="text-gray-300 text-sm mt-2">{speaker.role}</p>
+                  {/* Info on hover */}
+                  <div className="absolute inset-0 flex flex-col justify-end p-4 z-10 opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                    <h5 className="text-gray-300 font-semibold">{speaker.role}</h5>
                     <p className="text-gray-300 text-sm mt-2">{speaker.description}</p>
-                    <p className="text-gray-400 text-sm mt-2">{speaker.company}</p>
+                    <p className="text-gray-400 text-sm">{speaker.company}</p>
 
                     {speaker.linkedin && (
-                      <div className="mt-3">
-                        <a
-                          href={speaker.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[#0A66C2] hover:text-white transition-colors inline-block"
-                        >
-                          <FaLinkedin size={20} />
-                        </a>
-                      </div>
+                      <a
+                        href={speaker.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-3 px-4 py-2 bg-white text-black font-semibold rounded hover:bg-blue-500 hover:text-white transition duration-300 flex items-center gap-2"
+                      >
+                        Read More <FaLinkedin size={16} />
+                      </a>
                     )}
                   </div>
                 </motion.div>

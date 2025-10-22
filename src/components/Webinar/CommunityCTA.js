@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -43,7 +44,7 @@ const CommunityCTA = () => {
           The Place where Experts and Enthusiasts connect to shape the future of
           Technology and Marketing!
         </motion.p>
-
+<Link target="_blank" rel="noopener noreferrer" to="https://www.linkedin.com/groups/15366010/ ">
         <motion.button
           variants={fadeUp}
           initial="hidden"
@@ -54,6 +55,7 @@ const CommunityCTA = () => {
         >
           JOIN NOW
         </motion.button>
+        </Link>
       </div>
     </section>
   );

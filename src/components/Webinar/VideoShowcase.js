@@ -10,7 +10,7 @@ const videos = [
     title: "Chillin’ with Lux: How Martech is Changing the Game",
     date: "4 April 2025",
     time: "12:45",
-    url: "https://www.w3schools.com/html/mov_bbb.mp4",
+    url: "https://dluxtech.com/webinar-page-video-01.mp4",
     thumbnail: "https://img.youtube.com/vi/YE7VzlLtp-4/maxresdefault.jpg",
   },
   {
@@ -18,7 +18,7 @@ const videos = [
     title: "Building a Scalable Content Supply Chain for Growing Businesses",
     date: "4 April 2025",
     time: "12:45",
-    url: "https://www.w3schools.com/html/movie.mp4",
+    url: "https://dluxtech.com/webinar-page-video-02.mp4",
     thumbnail: "https://img.youtube.com/vi/aqz-KE-bpKQ/maxresdefault.jpg",
   },
   {
@@ -26,7 +26,7 @@ const videos = [
     title: "Hack the Stack: Smarter Martech for Content Ops That Work",
     date: "4 April 2025",
     time: "12:45",
-    url: "https://www.w3schools.com/html/mov_bbb.mp4",
+    url: "https://dluxtech.com/webinar-page-video-03.mp4",
     thumbnail: "https://img.youtube.com/vi/ScMzIvxBSi4/maxresdefault.jpg",
   },
 ];
