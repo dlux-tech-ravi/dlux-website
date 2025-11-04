@@ -2,7 +2,7 @@ import React from "react";
 
 const cards = [
   {
-    img: "https://images.unsplash.com/photo-1477666250292-1419fac4c25c?auto=format&fit=crop&w=667&q=80",
+    img: "https://images.ctfassets.net/pj0maraabon4/4XHOwXn2rVjuzI70MFqXIJ/90650ef0eb6962f3c908cb49c3931cc3/lux.webp",
     title: "Mountain",
     desc: "Lorem Ipsum is simply dummy text from the printing and typesetting industry.",
   },
@@ -25,7 +25,7 @@ const Cardstest = () => {
         {cards.map((card, index) => (
           <div
             key={index}
-            className="relative w-[280px] h-[360px] bg-white rounded-[15px] p-6 flex items-end shadow-[0px_7px_10px_rgba(0,0,0,0.5)] transition-transform duration-500 ease-out hover:-translate-y-5 group overflow-hidden"
+            className="relative w-[341px] h-[534px] bg-white rounded-[15px] p-6 flex items-end shadow-[0px_7px_10px_rgba(0,0,0,0.5)] transition-transform duration-500 ease-out hover:-translate-y-5 group overflow-hidden"
           >
             {/* Background Image */}
             <img

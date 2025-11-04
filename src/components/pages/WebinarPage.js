@@ -16,8 +16,6 @@ import Cardstest from '../Webinar/Cardstest.js'
   <Navbar/>
   <HeroSection/>
   <VideoShowcase/>
-  <Cardstest/>
-  
   <WhoWeAreSection/>
   <Speakers/>
   <CommunityCTA/>

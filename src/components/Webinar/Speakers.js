@@ -17,7 +17,7 @@ const speakers = [
       "Martech | Gen AI Advisory Strategy, Innovation & Enterprise Leadership",
     company: "DLUX TECH",
     image:
-      "https://images.ctfassets.net/pj0maraabon4/4XHOwXn2rVjuzI70MFqXIJ/ecac53d6220b37703ad88b86258c17e4/lux.png",
+      "https://images.ctfassets.net/pj0maraabon4/4XHOwXn2rVjuzI70MFqXIJ/90650ef0eb6962f3c908cb49c3931cc3/lux.webp",
     linkedin: "https://www.linkedin.com/in/luxmanpai/",
   },
   {
@@ -28,7 +28,7 @@ const speakers = [
       "Transformational Leader | AI Strategist | Architect of Memorable Customer Experiences",
     company: "DLUX TECH",
     image:
-      "https://images.ctfassets.net/pj0maraabon4/6zcanEn3hppAEzniWa6P7a/1457305c2d13767d26313055ed785c15/SEAN.png",
+      "https://images.ctfassets.net/pj0maraabon4/6zcanEn3hppAEzniWa6P7a/d9170c15580e56cfdddc86261c172beb/SEAN.webp",
     linkedin: "https://www.linkedin.com/in/seancampbell/",
   },
   {
@@ -39,24 +39,10 @@ const speakers = [
       "Martech Visionary | AI Growth Strategist & Agile Transformation Leader",
     company: "DLUX TECH",
     image:
-      "https://images.ctfassets.net/pj0maraabon4/jX3ZezUkaoABpsXJKi8Ze/7e8fabd65d06766b2bc0f37ab7a0939e/nic.png",
+      "https://images.ctfassets.net/pj0maraabon4/jX3ZezUkaoABpsXJKi8Ze/1dc4c2acbc10ecd4392734190e8df739/nic.webp",
     linkedin: "https://www.linkedin.com/in/nicmesker/",
   },
 ];
-
-const containerVariants = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-};
 
 export default function Speakers() {
   return (
@@ -70,11 +56,10 @@ export default function Speakers() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
-        variants={containerVariants}
       >
         {/* Heading */}
         <motion.h2
-          className="text-2xl md:text-3xl font-bold mb-10 text-white"
+          className="text-2xl md:text-3xl font-bold mb-10 text-white text-left"
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -83,98 +68,124 @@ export default function Speakers() {
         </motion.h2>
 
         {/* Desktop Grid */}
-        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-8 lg:pl-[50px]">
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
           {speakers.map((speaker) => (
-            <motion.div
+            <div
               key={speaker.id}
-              className="relative w-full group rounded-[15px] overflow-hidden shadow-lg"
-              variants={cardVariants}
+              className="relative w-[340px] h-[440px] group rounded-[15px] overflow-hidden shadow-lg bg-[#111]"
             >
               {/* Background Image */}
               <img
                 src={speaker.image}
                 alt={speaker.name}
-                className="w-full h-[450px] object-cover rounded-[15px] transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-cover object-top rounded-[15px] transition-transform duration-500 group-hover:scale-105"
               />
-
-              {/* Always visible speaker name */}
-              <div className="absolute bottom-4 left-4 z-20">
-                <h3 className="text-white text-xl font-bold drop-shadow-lg">
-                  {speaker.name}
-                </h3>
-              </div>
 
               {/* Overlay */}
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[15px]" />
 
-              {/* Info on hover */}
-              <div className="absolute inset-0 flex flex-col justify-end p-6 z-10 opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+              {/* Speaker Name */}
+              <h3
+                className="
+                  absolute left-4 bottom-4 text-white text-xl font-bold z-20
+                  transform transition-all duration-600 ease-out
+                  group-hover:bottom-[180px]
+                "
+              >
+                {speaker.name}
+              </h3>
+
+              {/* Details (appear after short delay) */}
+              <div
+                className="
+                  absolute inset-x-0 bottom-0 p-4 z-10
+                  opacity-0 translate-y-8
+                  group-hover:opacity-100 group-hover:translate-y-0
+                  transition-all duration-500 ease-out delay-400
+                "
+              >
                 <h5 className="text-gray-300 font-semibold">{speaker.role}</h5>
-                <p className="text-gray-300 text-sm mt-2">{speaker.description}</p>
+                <p className="text-gray-300 text-sm mt-2">
+                  {speaker.description}
+                </p>
                 <p className="text-gray-400 text-sm mt-1">{speaker.company}</p>
 
-                <div className="mt-4 flex items-center gap-3">
-                  {speaker.linkedin && (
-                    <a
-                      href={speaker.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 bg-white text-black font-semibold rounded hover:bg-blue-500 hover:text-white transition duration-300 flex items-center gap-2"
-                    >
-                      Read More <FaLinkedin size={18} />
-                    </a>
-                  )}
-                </div>
+                {speaker.linkedin && (
+                  <a
+                    href={speaker.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-2 px-2 py-2 bg-white text-black font-semibold rounded hover:bg-blue-500 hover:text-white transition duration-300"
+                  >
+                 <FaLinkedin size={18} />
+                  </a>
+                )}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Mobile/Tablet Slider */}
         <div className="md:hidden">
-          <Swiper modules={[Navigation]} spaceBetween={20} slidesPerView={1} className="pb-10">
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={20}
+            slidesPerView={1}
+            className="pb-10"
+          >
             {speakers.map((speaker) => (
               <SwiperSlide key={speaker.id}>
-                <motion.div
-                  className="relative group rounded-[15px] overflow-hidden"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                >
+                <div className="relative group rounded-[15px] overflow-hidden h-[480px] bg-[#111]">
                   <img
                     src={speaker.image}
                     alt={speaker.name}
-                    className="w-full h-60 object-cover rounded-[15px] transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover rounded-[15px] transition-transform duration-500 group-hover:scale-105"
                   />
 
-                  {/* Always visible speaker name */}
-                  <div className="absolute bottom-3 left-3 z-20">
-                    <h3 className="text-white text-lg font-bold drop-shadow-lg">
-                      {speaker.name}
-                    </h3>
-                  </div>
-
-                  {/* Overlay */}
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[15px]" />
 
-                  {/* Info on hover */}
-                  <div className="absolute inset-0 flex flex-col justify-end p-4 z-10 opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-                    <h5 className="text-gray-300 font-semibold">{speaker.role}</h5>
-                    <p className="text-gray-300 text-sm mt-2">{speaker.description}</p>
-                    <p className="text-gray-400 text-sm">{speaker.company}</p>
+                  {/* Name */}
+                  <h3
+                    className="
+                      absolute left-3 bottom-3 text-white text-lg font-bold z-20
+                      transform transition-all duration-700 ease-out
+                      group-hover:bottom-[160px]
+                    "
+                  >
+                    {speaker.name}
+                  </h3>
+
+                  {/* Details */}
+                  <div
+                    className="
+                      absolute inset-x-0 bottom-0 p-4 z-10
+                      opacity-0 translate-y-8
+                      group-hover:opacity-100 group-hover:translate-y-0
+                      transition-all duration-500 ease-out delay-200
+                    "
+                  >
+                    <h5 className="text-gray-300 font-semibold">
+                      {speaker.role}
+                    </h5>
+                    <p className="text-gray-300 text-sm mt-2">
+                      {speaker.description}
+                    </p>
+                    <p className="text-gray-400 text-sm mt-1">
+                      {speaker.company}
+                    </p>
 
                     {speaker.linkedin && (
                       <a
                         href={speaker.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-3 px-4 py-2 bg-white text-black font-semibold rounded hover:bg-blue-500 hover:text-white transition duration-300 flex items-center gap-2"
+                        className="mt-3 px-4 py-2 bg-white text-black font-semibold rounded hover:bg-blue-500 hover:text-white transition duration-300 inline-block items-center gap-2"
                       >
-                        Read More <FaLinkedin size={16} />
+                      <FaLinkedin size={16} />
                       </a>
                     )}
                   </div>
-                </motion.div>
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
