@@ -6,6 +6,7 @@ export default {
     "./src/components/VideoLibrary/*.{html,js}",
      "./src/components/pages/WebinarPage.css",
     "./src/components/Webinar/*.{html,js}",
+    "./src/components/SuccessStories/*.{html,js}",
     "./src/components/contents/Resources/Blogs/Blogs_Detail/Blogs_Detail.js"
 
   ],

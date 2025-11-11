@@ -7,7 +7,7 @@ import FAQSection from '../Webinar/FAQSection.js'
 import CommunityCTA from '../Webinar/CommunityCTA.js'
 import BlogSection from '../Webinar/BlogSection.js'
 import Navbar from '../Navbar.js'
-import Cardstest from '../Webinar/Cardstest.js'
+
 
 
  const WebinarPage = () => {

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { FaLinkedin } from "react-icons/fa";
 import "swiper/css";
@@ -89,7 +89,7 @@ export default function Speakers() {
                 className="
                   absolute left-4 bottom-4 text-white text-xl font-bold z-20
                   transform transition-all duration-600 ease-out
-                  group-hover:bottom-[180px]
+                  group-hover:bottom-[160px]
                 "
               >
                 {speaker.name}
@@ -134,7 +134,7 @@ export default function Speakers() {
             className="pb-10"
           >
             {speakers.map((speaker) => (
-              <SwiperSlide key={speaker.id}>
+              <div key={speaker.id} className="mb-8">
                 <div className="relative group rounded-[15px] overflow-hidden h-[480px] bg-[#111]">
                   <img
                     src={speaker.image}
@@ -149,7 +149,7 @@ export default function Speakers() {
                     className="
                       absolute left-3 bottom-3 text-white text-lg font-bold z-20
                       transform transition-all duration-700 ease-out
-                      group-hover:bottom-[160px]
+                      group-hover:bottom-[160px] 
                     "
                   >
                     {speaker.name}
@@ -186,7 +186,7 @@ export default function Speakers() {
                     )}
                   </div>
                 </div>
-              </SwiperSlide>
+              </div>
             ))}
           </Swiper>
         </div>
