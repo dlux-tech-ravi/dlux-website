@@ -28,9 +28,9 @@ const IconCards = () => {
             className="w-full h-48 object-cover"
           />
           <div className="p-6">
-            <h3 className="text-xl font-semibold mb-2 font-opensans">Proven Outcomes</h3>
-            <p className="text-gray-400 text-sm">
-              Efficiency gains, cost savings, and revenue growth.
+            <h3 className="text-2xl font-semibold mb-2 font-opensans">Proven <br /> Outcomes</h3>
+            <p className="text-gray-400 text-lg">
+              Efficiency gains, cost savings, <br /> and revenue growth.
             </p>
           </div>
         </div>
@@ -42,11 +42,11 @@ const IconCards = () => {
         >
           <div className="w-full">
             {/* Icon */}
-            <div className="bg-gray-800 w-12 h-12 flex items-center justify-center rounded-lg mb-4">
+            <div className="bg-gray-800 w-[55px] h-[55px] bg-[#FFFFFF14] flex items-center justify-center rounded-lg mb-4">
               <img
-                src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png"
+                src="https://images.ctfassets.net/pj0maraabon4/4wIvWbhXfcYa4NXw1CtjB8/635b6de2319a0e7b34fe22c6ac6cefe9/freepik__adjust__35762_2.svg"
                 alt="icon"
-                className="w-6 h-6"
+                className="w-[35px] h-[35px]"
               />
             </div>
 
@@ -54,15 +54,15 @@ const IconCards = () => {
             <div className="flex px-6 py-4 rounded-xl text-center mt-6 md:mt-0 justify-items-center items-center justify-center">
               <div className="bg-[#1a1a1a]/80 backdrop-blur-lg rounded-2xl shadow-lg w-full max-w-[300px] text-center p-6 transition-transform hover:scale-[1.02]">
                 <p className="mb-2">What is Lorem Ipsum?</p>
-                <button className="border border-gray-400 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition">
+                <button className="text-[12px] rounded-[12px] border border-[#ffffff14] px-[24px] py-[7.5px] text-white hover:bg-gray-700 transition">
                   DOWNLOAD
                 </button>
               </div>
             </div>
 
-            <h3 className="text-xl font-semibold mb-2 font-opensans">Heading</h3>
-            <p className="text-gray-400 text-sm">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
+            <h3 className="text-2xl font-semibold mb-2 font-opensans">Heading</h3>
+            <p className="text-gray-400 text-lg">
+              Lorem Ipsum is simply dummy text <br /> of the printing and typesetting <br />
               industry.
             </p>
           </div>
@@ -72,47 +72,46 @@ const IconCards = () => {
       {/* Second Row */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-[290px] mr-0">
         {/* Card 1 */}
-        <div className="bg-[#101010] w-full h-full rounded-2xl p-8 hover:scale-[1.02] transition-transform">
-          <div className="bg-gray-800 w-12 h-12 flex items-center justify-center rounded-lg mb-4">
+        <div className="bg-[#101010] w-full h-full rounded-2xl hover:scale-[1.02] transition-transform p-[44px]">
+          <div className="w-[55px] h-[55px] bg-[#FFFFFF14] flex items-center justify-center rounded-lg mb-4">
             <img
-              src="https://cdn-icons-png.flaticon.com/512/992/992651.png"
+              src="https://images.ctfassets.net/pj0maraabon4/1M0hVVkPdoQGdFo3ePn9Y7/e4b7e99bb5c2996bba904369f8c82ec7/healthcare__1__1.svg"
               alt="Cross Industry Wins"
-              className="w-6 h-6"
             />
           </div>
-          <h3 className="text-xl font-semibold mb-2 font-opensans">Cross Industry Wins</h3>
-          <p className="text-gray-400 text-sm">
-            Retail, healthcare, finance, media, and beyond.
+          <h3 className="text-2xl font-semibold mb-2 font-opensans">Cross <br /> Industry Wins</h3>
+          <p className="text-gray-400 text-lg">
+            Retail, healthcare, finance, media, <br /> and beyond.
           </p>
         </div>
 
         {/* Card 2 */}
-        <div className="bg-[#101010] w-full h-full rounded-2xl p-8 hover:scale-[1.02] transition-transform">
-          <div className="bg-gray-800 w-12 h-12 flex items-center justify-center rounded-lg mb-4">
+        <div className="bg-[#101010] w-full h-full rounded-2xl p-8 hover:scale-[1.02] transition-transform p-[44px]">
+          <div className="w-[55px] h-[55px] bg-[#FFFFFF14] flex items-center justify-center rounded-lg mb-4">
             <img
-              src="https://cdn-icons-png.flaticon.com/512/3524/3524388.png"
+              src="https://images.ctfassets.net/pj0maraabon4/4wIvWbhXfcYa4NXw1CtjB8/635b6de2319a0e7b34fe22c6ac6cefe9/freepik__adjust__35762_2.svg"
               alt="Future Ready Tech"
-              className="w-6 h-6"
+              
             />
           </div>
-          <h3 className="text-xl font-semibold mb-2 font-opensans">Future Ready Tech</h3>
-          <p className="text-gray-400 text-sm">
-            AI, automation, and integrations that scale.
+          <h3 className="text-2xl font-semibold mb-2 font-opensans">Future <br /> Ready Tech</h3>
+          <p className="text-gray-400 text-lg">
+            AI, automation, and integrations that <br /> scale.
           </p>
         </div>
 
         {/* Card 3 */}
-        <div className="bg-[#101010] w-full h-full rounded-2xl p-8 hover:scale-[1.02] transition-transform">
-          <div className="bg-gray-800 w-12 h-12 flex items-center justify-center rounded-lg mb-4">
+        <div className="bg-[#101010] w-full h-full rounded-2xl p-8 hover:scale-[1.02] transition-transform p-[44px]">
+          <div className="w-[55px] h-[55px] bg-[#FFFFFF14] flex items-center justify-center rounded-lg mb-4">
             <img
-              src="https://cdn-icons-png.flaticon.com/512/8143/8143251.png"
+              src="https://images.ctfassets.net/pj0maraabon4/4twrLfRzRAK901DAO6HHx/c50878a597cb87b494cd1fe15db807aa/dlux-dark-logo__2__1.svg"
               alt="DLUX CoE Advantage"
-              className="w-6 h-6"
+              
             />
           </div>
-          <h3 className="text-xl font-semibold mb-2 font-opensans">DLUX CoE Advantage</h3>
-          <p className="text-gray-400 text-sm">
-            Strategies built on playbooks, not guesswork.
+          <h3 className="text-2xl font-semibold mb-2 font-opensans">DLUX CoE <br /> Advantage</h3>
+          <p className="text-gray-400 text-lg">
+            Strategies built on playbooks, not <br /> guesswork.
           </p>
         </div>
       </div>
