@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { GraphQLClient, gql } from "graphql-request";
+import { Search } from "lucide-react";
 
 // ======================
 // 🔹 Contentful Config
@@ -71,8 +72,8 @@ export default function FeaturedStories() {
               Array.isArray(i.tags)
                 ? i.tags.filter(Boolean)
                 : i.tags
-                ? [i.tags]
-                : []
+                  ? [i.tags]
+                  : []
             )
           ),
         ];
@@ -109,7 +110,7 @@ export default function FeaturedStories() {
   return (
     <section className="min-h-screen bg-black text-white py-20 px-6 md:px-16">
       <div className="text-center mb-10">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 font-opensans">
           Featured Success Stories
         </h2>
         <p className="text-gray-400 max-w-xl mx-auto">
@@ -119,13 +120,17 @@ export default function FeaturedStories() {
 
       {/* Search Bar */}
       <div className="flex justify-center mb-8">
-        <input
-          type="text"
-          placeholder="Search article..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full md:w-1/2 px-5 py-3 rounded-xl bg-[#121212] text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-600"
-        />
+        <div className="relative w-full md:w-[440px]">
+          <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5" />
+          <input
+            type="text"
+            placeholder="Search article..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full p-[10px] md:pl-10 box-border border border-[#ccc] rounded-[12px] text-left h-[42px] bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-600"
+          />
+        </div>
+
       </div>
 
       {/* Tag Filters */}
@@ -134,11 +139,10 @@ export default function FeaturedStories() {
           <button
             key={tag}
             onClick={() => setSelectedTag(tag)}
-            className={`px-5 py-2 rounded-full border text-sm transition ${
-              selectedTag === tag
-                ? "bg-white text-black border-white"
-                : "border-gray-600 text-gray-300 hover:border-white"
-            }`}
+            className={`px-5 py-2 rounded-full border text-sm transition ${selectedTag === tag
+              ? "bg-white text-black border-white"
+              : "border-gray-600 text-gray-300 hover:border-white"
+              }`}
           >
             {tag}
           </button>
@@ -146,7 +150,7 @@ export default function FeaturedStories() {
       </div>
 
       {/* Case Study Cards */}
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-3 gap-8 mr-0 flex-col md:flex-row">
         {filteredStories.length > 0 ? (
           filteredStories.map((story, idx) => (
             <div
@@ -162,14 +166,14 @@ export default function FeaturedStories() {
                 className="h-56 w-full object-cover"
               />
               <div className="p-5 space-y-2">
-                {story.tags && (
+                {/* {story.tags && (
                   <p className="text-gray-400 text-sm">
                     {Array.isArray(story.tags)
                       ? story.tags.join(", ")
                       : story.tags}
                   </p>
-                )}
-                <h3 className="text-lg font-semibold">{story.title}</h3>
+                )} */}
+                <h3 className="text-lg font-semibold font-opensans">{story.title}</h3>
                 <p className="text-gray-400 text-sm">
                   {story.shortDescription || story.summary || "Read more..."}
                 </p>

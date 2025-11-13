@@ -5,7 +5,7 @@ const IconCards = () => {
     <section className="bg-black text-white max-w-7xl mx-auto px-6 py-20">
       {/* Top Heading */}
       <div className="text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 font-opensans">
           What is Lorem Ipsum?
         </h2>
         <p className="text-gray-400 max-w-3xl mx-auto leading-relaxed">
@@ -19,7 +19,7 @@ const IconCards = () => {
       </div>
 
       {/* First Row */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 md:h-[400px]">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 mr-0 md:h-[400px]">
         {/* Card 1 (33%) */}
         <div className="md:col-span-1 bg-[#101010] rounded-2xl w-full h-full overflow-hidden hover:scale-[1.02] transition-transform">
           <img
@@ -28,7 +28,7 @@ const IconCards = () => {
             className="w-full h-48 object-cover"
           />
           <div className="p-6">
-            <h3 className="text-xl font-semibold mb-2">Proven Outcomes</h3>
+            <h3 className="text-xl font-semibold mb-2 font-opensans">Proven Outcomes</h3>
             <p className="text-gray-400 text-sm">
               Efficiency gains, cost savings, and revenue growth.
             </p>
@@ -60,7 +60,7 @@ const IconCards = () => {
               </div>
             </div>
 
-            <h3 className="text-xl font-semibold mb-2">Heading</h3>
+            <h3 className="text-xl font-semibold mb-2 font-opensans">Heading</h3>
             <p className="text-gray-400 text-sm">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry.
@@ -70,7 +70,7 @@ const IconCards = () => {
       </div>
 
       {/* Second Row */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-[290px]">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-[290px] mr-0">
         {/* Card 1 */}
         <div className="bg-[#101010] w-full h-full rounded-2xl p-8 hover:scale-[1.02] transition-transform">
           <div className="bg-gray-800 w-12 h-12 flex items-center justify-center rounded-lg mb-4">
@@ -80,7 +80,7 @@ const IconCards = () => {
               className="w-6 h-6"
             />
           </div>
-          <h3 className="text-xl font-semibold mb-2">Cross Industry Wins</h3>
+          <h3 className="text-xl font-semibold mb-2 font-opensans">Cross Industry Wins</h3>
           <p className="text-gray-400 text-sm">
             Retail, healthcare, finance, media, and beyond.
           </p>
@@ -95,7 +95,7 @@ const IconCards = () => {
               className="w-6 h-6"
             />
           </div>
-          <h3 className="text-xl font-semibold mb-2">Future Ready Tech</h3>
+          <h3 className="text-xl font-semibold mb-2 font-opensans">Future Ready Tech</h3>
           <p className="text-gray-400 text-sm">
             AI, automation, and integrations that scale.
           </p>
@@ -110,7 +110,7 @@ const IconCards = () => {
               className="w-6 h-6"
             />
           </div>
-          <h3 className="text-xl font-semibold mb-2">DLUX CoE Advantage</h3>
+          <h3 className="text-xl font-semibold mb-2 font-opensans">DLUX CoE Advantage</h3>
           <p className="text-gray-400 text-sm">
             Strategies built on playbooks, not guesswork.
           </p>
