@@ -1,0 +1,295 @@
+/* ====== Newsletter Section Wrapper ====== */
+.protip-newsletter {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 100px 20px;
+    background-color: #000000;
+    /* lighter background for white theme */
+}
+
+/* ====== Newsletter Container ====== */
+.protip-newsletter__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 10px 40px;
+    font-family: "Open Sans", sans-serif;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+    min-height: 275px;
+}
+
+/* ====== Content Section ====== */
+.protip-newsletter__content {
+    flex: 1;
+    z-index: 1;
+}
+
+.protip-newsletter__subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.protip-newsletter__title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.protip-newsletter__text {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    max-width: 400px;
+}
+
+/* ====== Actions ====== */
+.protip-newsletter__actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.protip-newsletter__button {
+    padding: 10px 22px;
+    border: 1px solid #111;
+    border-radius: 50px;
+    background-color: #fff;
+    color: #111;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 12px;
+    position: relative;
+    left: 340px;
+    top: -120px;
+}
+
+.protip-newsletter__button:hover {
+    background-color: #111;
+    color: #fff;
+}
+
+.protip-newsletter__stay-button {
+    padding: 10px 22px;
+    border: 1px solid #111;
+    border-radius: 50px;
+    background-color: #fff;
+    color: #111;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 12px;
+}
+
+.protip-newsletter__stay-button:hover {
+    background-color: #111;
+    color: #fff;
+}
+
+/* ====== Toggle Switch ====== */
+.protip-newsletter__switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 28px;
+}
+
+.protip-newsletter__switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.protip-newsletter__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 28px;
+}
+
+.protip-newsletter__slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+.protip-newsletter__switch input:checked+.protip-newsletter__slider {
+    background-color: #111;
+}
+
+.protip-newsletter__switch input:checked+.protip-newsletter__slider:before {
+    transform: translateX(32px);
+}
+
+/* ====== Progress Dots ====== */
+.protip-newsletter__progress {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    position: relative;
+    top: 39px;
+    justify-content: space-between;
+    align-items: center;
+    top: 32px;
+}
+
+/* Connecting line */
+.protip-newsletter__progress::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    /* vertically center the line relative to dots */
+    left: 5px;
+    /* start a bit inside first dot */
+    right: 5px;
+    /* end a bit before last dot */
+    height: 2px;
+    /* thickness of line */
+    background-color: #ccc;
+    /* same as inactive dot */
+    z-index: 0;
+    /* behind dots */
+}
+
+.protip-newsletter__dot {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    z-index: 1;
+    /* above the line */
+}
+
+.protip-newsletter__dot--active {
+    background-color: #111;
+}
+
+
+/* ====== Image Section ====== */
+.protip-newsletter__image {
+    position: absolute;
+    right: 0;
+    top: -50px;
+    z-index: 0;
+}
+
+.protip-newsletter__image img {
+    height: 320px;
+    width: auto;
+    border-radius: 20px;
+    display: block;
+    left: -25px;
+    top: -10px;
+    position: relative;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 1024px) {
+    .protip-newsletter__container {
+        flex-direction: column;
+        padding: 20px;
+        min-height: auto;
+        gap: 15px;
+    }
+
+    .protip-newsletter__content {
+        text-align: center;
+    }
+
+    .protip-newsletter__actions {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .protip-newsletter__button {
+        position: static;
+        top: 0;
+        left: 0;
+    }
+
+    .protip-newsletter__progress {
+        justify-content: space-between;
+        top: 0;
+        gap: 8px;
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .protip-newsletter__container {
+        padding: 15px;
+    }
+
+    /* Hide image on mobile */
+    .protip-newsletter__image {
+        display: none;
+    }
+
+    .protip-newsletter__title {
+        font-size: 18px;
+    }
+
+    .protip-newsletter__subtitle {
+        font-size: 12px;
+    }
+
+    .protip-newsletter__text {
+        font-size: 13px;
+        max-width: 100%;
+    }
+
+    .protip-newsletter__button,
+    .protip-newsletter__stay-button {
+        font-size: 11px;
+        padding: 8px 16px;
+    }
+
+    .protip-newsletter__progress::before {
+        left: 0;
+        right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .protip-newsletter {
+        padding: 80px 10px;
+    }
+
+    .protip-newsletter__title {
+        font-size: 16px;
+    }
+
+    .protip-newsletter__text {
+        font-size: 12px;
+    }
+
+    .protip-newsletter__button,
+    .protip-newsletter__stay-button {
+        font-size: 10px;
+        padding: 6px 12px;
+    }
+}
