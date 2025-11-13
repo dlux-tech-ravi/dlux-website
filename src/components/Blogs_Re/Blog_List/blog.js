@@ -16,9 +16,7 @@ function Blogs() {
             <FacesAndStories />
             <BlogsList />
             <Newsletter />
-            <Subscription />
-
-        </Bloglayout>
+            </Bloglayout>
     );
 }
 

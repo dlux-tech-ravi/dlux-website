@@ -22,7 +22,7 @@ const Newsletter = () => {
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
                     transition={{ delay: 0.2, duration: 0.8 }}
                 >
-                    <h4 className="protip-newsletter__subtitle">Pro Tip</h4>
+                   
                     <h2 className="protip-newsletter__title">
                         Bookmark this page and check back weekly
                     </h2>
@@ -31,7 +31,7 @@ const Newsletter = () => {
                         and your team work smarter, faster, and with confidence.
                     </p>
                     <div className="protip-newsletter__actions">
-                                  <a href="https://www.dluxtech.com/contact-us" className="blog-hero__link">
+                                  <a href="https://www.linkedin.com/newsletters/martech-basket-6948514756882247680" className="blog-hero__link">
 
                         <motion.button
                             className="protip-newsletter__stay-button"
@@ -41,7 +41,7 @@ const Newsletter = () => {
                             Stay Updated
                         </motion.button>
                         </a>
-                        <Link to="https://www.linkedin.com/newsletters/martech-basket-6948514756882247680">
+                        {/* <Link to="https://www.linkedin.com/newsletters/martech-basket-6948514756882247680">
                             <motion.button
                                 className="protip-newsletter__button"
                                 data-id="subscribe"
@@ -50,7 +50,7 @@ const Newsletter = () => {
                             >
                                 Subscribe To Our Newsletter
                             </motion.button>
-                        </Link>
+                        </Link> */}
                     </div>
                     <div className="protip-newsletter__progress">
                         <span className="protip-newsletter__dot"></span>
