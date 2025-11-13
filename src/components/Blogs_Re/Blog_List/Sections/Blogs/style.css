@@ -5,6 +5,13 @@
     font-family: "Open Sans", sans-serif;
 }
 
+.blogs__image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: none;
+}
+
 /* ====== CONTAINER ====== */
 .blogs__container {
     display: flex;
@@ -97,7 +104,6 @@
 .blogs__filter--seemore {
     font-weight: 600;
     color: #fe3908;
-    border-color: #fe3908;
     background: #fff;
 }
 
@@ -164,12 +170,12 @@
 } */
 
 /* ====== IMAGE ====== */
-.blogs__image {
+/* .blogs__image {
     width: 100%;
     height: 230px;
     object-fit: cover;
     transition: none;
-}
+} */
 
 .blogs__card:hover .blogs__image {
     transform: none;

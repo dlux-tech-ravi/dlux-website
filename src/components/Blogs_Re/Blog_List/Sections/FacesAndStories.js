@@ -59,12 +59,12 @@ export default function FacesAndStories() {
     fetchCards();
   }, []);
 
-  // 🔹 Loop animation when data is loaded
+  // 🔹 Auto-slide animation
   useEffect(() => {
     if (cards.length === 0) return;
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % cards.length);
-    }, 3000);
+    }, 4000);
     return () => clearInterval(interval);
   }, [cards]);
 
@@ -76,7 +76,7 @@ export default function FacesAndStories() {
     );
   }
 
-  // 🔹 Show current + next 3 cards
+  // 🔹 Visible cards (active + next 3)
   const getVisible = () => {
     const list = [];
     for (let i = 0; i < 4; i++) {
@@ -88,7 +88,7 @@ export default function FacesAndStories() {
   const visible = getVisible();
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center gap-8 py-16 px-6 max-w-6xl mx-auto overflow-hidden">
+    <div className="flex flex-col md:flex-row items-stretch justify-center gap-8 py-16 px-6 max-w-[80%] mx-auto overflow-hidden">
       {/* LEFT ACTIVE CARD */}
       <motion.div
         key={visible[0].id}
@@ -109,17 +109,19 @@ export default function FacesAndStories() {
         </div>
       </motion.div>
 
-      {/* RIGHT SIDE SLIDING QUEUE */}
-      <div className="w-full md:w-1/2">
-        <h2 className="text-3xl text-white font-bold mb-2">Dlux Blogs</h2>
-        <p className="text-white mb-3">
-          Your Go–to Hub for Martech expert perspectives, tips, and deep dives
-          into the world of enterprise marketing technology and digital
-          operations. Stay ahead with insights on Adobe Workfront, Fusion,
-          Commerce, DAM, Salesforce, and AI-driven Martech stacks.
-        </p>
+      {/* RIGHT SIDE CONTENT (MATCHING HEIGHT) */}
+      <div className="w-full md:w-1/2 h-[400px] flex flex-col justify-between bg-[#0a0a0a]/50 rounded-2xl p-6 shadow-lg">
+        <div>
+          <h2 className="text-3xl text-white font-bold mb-2">Dlux Blogs</h2>
+          <p className="text-white mb-4">
+            Your Go–to Hub for Martech expert perspectives, tips, and deep dives
+            into the world of enterprise marketing technology and digital
+            operations. Stay ahead with insights on Adobe Workfront, Fusion,
+            Commerce, DAM, Salesforce, and AI-driven Martech stacks.
+          </p>
+        </div>
 
-        <div className="relative overflow-hidden h-[160px] mt-5">
+        <div className="relative overflow-hidden h-[175px]">
           <motion.div
             key={index}
             initial={{ x: 0 }}
@@ -129,13 +131,13 @@ export default function FacesAndStories() {
           >
             {visible.concat(visible[0]).map((card) => (
               <div
-                key={card.id}
-                className="min-w-[180px] bg-white rounded-xl shadow-md overflow-hidden flex-shrink-0"
+                key={card.id} 
+                className="min-w-[180px] bg-white rounded-xl overflow-hidden flex-shrink-0 border border-[#3a3a3a] border-solid"
               >
                 <img
                   src={card.image}
                   alt={card.title}
-                  className="h-28 w-full object-cover"
+                  className="h-32 w-full object-cover"
                 />
                 <div className="p-3 bg-black">
                   <h4 className="font-semibold text-sm text-white">

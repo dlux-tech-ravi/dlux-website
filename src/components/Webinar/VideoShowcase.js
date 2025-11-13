@@ -11,7 +11,7 @@ const videos = [
     date: "4 April 2025",
     time: "12:45",
     url: "https://dluxtech.com/webinar-page-video-01.mp4",
-    thumbnail: "https://img.youtube.com/vi/YE7VzlLtp-4/maxresdefault.jpg",
+    thumbnail: "https://images.ctfassets.net/pj0maraabon4/27kMtuEMdO2yP1iYFwQLXy/79a613e4db9615171b387530ca282190/webinar-thumbnail_Artboard_1-01.jpg",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const videos = [
     date: "4 April 2025",
     time: "12:45",
     url: "https://dluxtech.com/webinar-page-video-02.mp4",
-    thumbnail: "https://img.youtube.com/vi/aqz-KE-bpKQ/maxresdefault.jpg",
+    thumbnail: "https://images.ctfassets.net/pj0maraabon4/1vIieWQ3wq3kJK7wJByTkF/7f7bf3fba6fbc8b2830e236fedc21dbb/webinar-thumbnail-02.jpg",
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ const videos = [
     date: "4 April 2025",
     time: "12:45",
     url: "https://dluxtech.com/webinar-page-video-03.mp4",
-    thumbnail: "https://img.youtube.com/vi/ScMzIvxBSi4/maxresdefault.jpg",
+    thumbnail: "https://images.ctfassets.net/pj0maraabon4/71wrOdcuUlTZ3FqhflIVqY/76e04ca52e30746b92591f5dd833f2d1/webinar-thumbnail-03.jpg",
   },
 ];
 
