@@ -7,7 +7,8 @@ export default {
      "./src/components/pages/WebinarPage.css",
     "./src/components/Webinar/*.{html,js}",
     "./src/components/SuccessStories/*.{html,js}",
-    "./src/components/contents/Resources/Blogs/Blogs_Detail/Blogs_Detail.js"
+    "./src/components/contents/Resources/Blogs/Blogs_Detail/Blogs_Detail.js",
+    "./src/components/Blogs_Re/Blog_List/Sections/*.{html,js}"
 
   ],
 
@@ -15,6 +16,20 @@ export default {
 
   theme: {
     extend: {
+      keyframes: {
+        slideLeft: {
+          "0%": { transform: "translateX(100%)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        slideLeft: "slideLeft 0.7s ease-in-out",
+        marquee: "marquee 15s linear infinite",
+      },
       screens: {
         '2xl': '2000px', // Custom breakpoint for screen widths >= 2000px
         "tablet": { "min": "768px", "max": "1250px" },
