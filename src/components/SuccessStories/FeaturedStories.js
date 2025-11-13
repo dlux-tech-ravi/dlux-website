@@ -134,7 +134,7 @@ export default function FeaturedStories() {
       </div>
 
       {/* Tag Filters */}
-      <div className="flex flex-wrap justify-center gap-3 mb-10">
+      <div className="flex md:flex-row justify-start flex-wrap gap-3 mb-10">
         {tags.map((tag) => (
           <button
             key={tag}
