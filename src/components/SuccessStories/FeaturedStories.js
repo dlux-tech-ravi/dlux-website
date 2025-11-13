@@ -127,7 +127,7 @@ export default function FeaturedStories() {
             placeholder="Search article..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full p-[10px] md:pl-10 box-border border border-[#ccc] rounded-[12px] text-left h-[42px] bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-600"
+            className="w-full p-[10px] pl-10 box-border border border-[#ccc] rounded-[12px] text-left h-[42px] bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-600"
           />
         </div>
 
