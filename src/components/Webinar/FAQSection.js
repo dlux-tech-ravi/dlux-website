@@ -69,7 +69,7 @@ export default function FAQSection() {
       <div className="absolute inset-0 bg-black/60"></div>
 
       {/* 🔹 Left Floating Rocket Image */}
-      <motion.img
+      {/* <motion.img
         src="https://images.ctfassets.net/pj0maraabon4/57uZ36M0h7jeNjBJPfaxin/d6630f4e735b38d1994c6744734784b3/rocket-faq.png"
         alt="Rocket"
         className="absolute left-0 top-10 w-[200px] md:w-[200px] opacity-90"
@@ -84,7 +84,7 @@ export default function FAQSection() {
           transition: { duration: 6, repeat: Infinity, ease: "easeInOut" },
         }}
         viewport={{ once: true }}
-      />
+      /> */}
 
       {/* 🔹 Right Floating Shape Image */}
       <motion.img
