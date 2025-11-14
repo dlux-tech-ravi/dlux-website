@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function ScrollStackBanners() {
+export default function SuccessCTA() {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -55,8 +55,8 @@ export default function ScrollStackBanners() {
           className="relative flex flex-col-reverse md:flex-row items-center justify-between
           bg-[#111] text-white rounded-[32px] shadow-[0_0_40px_rgba(255,255,255,0.1)]
           backdrop-blur-lg border border-white/10 
-          w-[92%] sm:w-[90%] md:w-[85%] h-[82vh] md:h-[80vh] max-w-[1400px]
-          px-6 py-10 sm:p-12 md:p-16 
+          w-[92%] sm:w-[90%] md:w-[85%] h-[82vh] md:h-[66vh] max-w-[1400px]
+          px-6 py-10 sm:p-12 md:p-16  md:mt-24
           transition-transform duration-700 ease-out"
         >
           {/* Text */}
@@ -96,7 +96,7 @@ export default function ScrollStackBanners() {
           className="relative flex flex-col-reverse md:flex-row items-center justify-between
           bg-[#111] text-white rounded-[32px] shadow-[0_0_40px_rgba(255,255,255,0.1)]
           backdrop-blur-lg border border-white/10 
-          w-[92%] sm:w-[90%] md:w-[85%] h-[82vh] md:h-[80vh] max-w-[1400px]
+          w-[92%] sm:w-[90%] md:w-[85%] h-[82vh] md:h-[66vh] max-w-[1400px]
           px-6 py-10 sm:p-12 md:p-16 
           transition-transform duration-700 ease-out"
         >

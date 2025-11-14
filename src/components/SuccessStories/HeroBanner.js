@@ -42,18 +42,37 @@ const HeroBanner = () => {
 
       {/* ===== MOBILE VIEW (SINGLE SLIDER) ===== */}
       {isMobile ? (
-        <div className="w-full h-[400px] relative overflow-hidden rounded-3xl mb-8">
-          <img
-            src={images[index]}
-            alt="Mobile"
-            className={`image-stack ${animating ? "fade-left" : ""}`}
-          />
-          <img
-            src={images[nextIndex]}
-            alt="Mobile Next"
-            className={`image-stack ${animating ? "fade-right" : "opacity-0"}`}
-          />
+        <div className="w-full flex flex-col items-center mb-8">
+          {/* === Slider === */}
+          <div className="w-full h-[400px] relative overflow-hidden rounded-3xl mb-8">
+            <img
+              src={images[index]}
+              alt="Mobile"
+              className={`image-stack ${animating ? "fade-left" : ""}`}
+            />
+            <img
+              src={images[nextIndex]}
+              alt="Mobile Next"
+              className={`image-stack ${animating ? "fade-right" : "opacity-0"}`}
+            />
+          </div>
+
+          {/* === Content below slider === */}
+          <div className="text-center text-white px-6">
+            <h1 className="text-2xl font-bold leading-snug font-opensans mb-4">
+              Real Results. Real Clients. Real Impact.
+            </h1>
+            <p className="text-gray-400 text-sm leading-relaxed max-w-md mx-auto mb-6">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s.
+            </p>
+            <button className="font-opensans bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold px-8 py-3 rounded-full hover:opacity-90 transition">
+              Contact Us
+            </button>
+          </div>
         </div>
+
       ) : (
         <>
           {/* ===== LEFT COLUMN ===== */}

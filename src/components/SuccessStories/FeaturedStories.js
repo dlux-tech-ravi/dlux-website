@@ -108,7 +108,7 @@ export default function FeaturedStories() {
   // 🔹 Render
   // ======================
   return (
-    <section className="min-h-screen bg-black text-white py-20 px-6 md:px-16">
+    <section className="bg-black text-white max-w-7xl mx-auto px-6 py-20">
       <div className="text-center mb-10">
         <h2 className="text-4xl md:text-5xl font-bold mb-4 font-opensans">
           Featured Success Stories
@@ -155,30 +155,58 @@ export default function FeaturedStories() {
           filteredStories.map((story, idx) => (
             <div
               key={idx}
-              onClick={() =>
-                navigate(`/success-stories/${story.slug || slugify(story.title)}`)
-              }
-              className="bg-[#121212] rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform cursor-pointer"
+              onClick={() => navigate(`/success-stories/${story.slug}`)}
+              className="
+    cursor-pointer 
+    bg-[#121212] 
+    rounded-2xl 
+    overflow-hidden 
+    border border-gray-700 
+    hover:scale-[1.02] 
+    transition-transform
+    flex flex-col justify-start
+    w-full 
+    h-[417.53px]
+    p-4
+  "
             >
+
               <img
                 src={story.banner?.url || "/images/default-placeholder.jpg"}
                 alt={story.title}
-                className="h-56 w-full object-cover"
+                className="w-full object-cover"
+                style={{
+                  height: "180px", // fixed image height to maintain equal design
+                }}
               />
-              <div className="p-5 space-y-2">
-                {/* {story.tags && (
-                  <p className="text-gray-400 text-sm">
-                    {Array.isArray(story.tags)
-                      ? story.tags.join(", ")
-                      : story.tags}
-                  </p>
-                )} */}
-                <h3 className="text-lg font-semibold font-opensans">{story.title}</h3>
-                <p className="text-gray-400 text-sm">
-                  {story.shortDescription || story.summary || "Read more..."}
+
+              <div className="flex flex-col p-4" style={{ flexGrow: 1 }}>
+                <h3
+                  className="text-lg font-semibold font-opensans"
+                  style={{
+                    display: "-webkit-box",
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                  }}
+                >
+                  {story.title}
+                </h3>
+
+                <p
+                  className="text-gray-400 text-sm mt-1"
+                  style={{
+                    display: "-webkit-box",
+                    WebkitLineClamp: 3,
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                  }}
+                >
+                  {story.shortDescription }
                 </p>
               </div>
             </div>
+
           ))
         ) : (
           <p className="text-center text-gray-500 col-span-3">
