@@ -54,7 +54,9 @@ export default function FAQSection() {
   };
 
   return (
-    <div className="relative flex items-center justify-center px-4 py-20 overflow-hidden">
+    <div className="relative flex items-center justify-center px-4 py-20 overflow-hidden" style={{
+    backgroundImage: `url("https://images.ctfassets.net/pj0maraabon4/2kIsAzSzxbHWQnhHhIcmmb/57703040088837952ba4afbcd3307f39/faq-bg-galaxy.png")`,
+  }}>
       {/* 🔹 Background Video */}
       {/* <video
         className="absolute top-0 left-0 w-full h-full object-cover"
@@ -69,10 +71,10 @@ export default function FAQSection() {
       <div className="absolute inset-0 bg-black/60"></div>
 
       {/* 🔹 Left Floating Rocket Image */}
-      {/* <motion.img
-        src="https://images.ctfassets.net/pj0maraabon4/57uZ36M0h7jeNjBJPfaxin/d6630f4e735b38d1994c6744734784b3/rocket-faq.png"
+      <motion.img
+        src=""
         alt="Rocket"
-        className="absolute left-0 top-10 w-[200px] md:w-[200px] opacity-90"
+        className="absolute left-0 top-10 opacity-90"
         initial={{ opacity: 0, x: -100, y: 30 }}
         whileInView={{
           opacity: 1,
@@ -84,7 +86,7 @@ export default function FAQSection() {
           transition: { duration: 6, repeat: Infinity, ease: "easeInOut" },
         }}
         viewport={{ once: true }}
-      /> */}
+      />
 
       {/* 🔹 Right Floating Shape Image */}
       <motion.img

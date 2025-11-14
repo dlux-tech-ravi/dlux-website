@@ -40,7 +40,7 @@ const speakers = [
     company: "DLUX TECH",
     image:
       "https://images.ctfassets.net/pj0maraabon4/jX3ZezUkaoABpsXJKi8Ze/1dc4c2acbc10ecd4392734190e8df739/nic.webp",
-    linkedin: "https://www.linkedin.com/in/nicmesker/",
+    linkedin: "https://www.linkedin.com/in/nic-mesker-11b9911b/",
   },
 ];
 

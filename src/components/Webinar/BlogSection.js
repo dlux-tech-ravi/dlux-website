@@ -116,7 +116,7 @@ const BlogSection = () => {
               <motion.img
                 src={post.detailImageCollection.items[0].url}
                 alt={post.detailTitle}
-                className="w-full h-[280px] object-cover"
+                className="w-full h-[220px] object-fill"
               />
             )}
 
