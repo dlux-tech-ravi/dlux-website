@@ -56,14 +56,14 @@ export default function FAQSection() {
   return (
     <div className="relative flex items-center justify-center px-4 py-20 overflow-hidden">
       {/* 🔹 Background Video */}
-      <video
+      {/* <video
         className="absolute top-0 left-0 w-full h-full object-cover"
         src="https://videos.ctfassets.net/pj0maraabon4/ksWod9Se0oIK2JFx65s8i/1ba6ed7102ea840921a4493673062c2e/faq-bg-video.mp4"
         autoPlay
         loop
         muted
         playsInline
-      ></video>
+      ></video> */}
 
       {/* 🔹 Black Overlay */}
       <div className="absolute inset-0 bg-black/60"></div>
