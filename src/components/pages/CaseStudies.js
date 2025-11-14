@@ -13,7 +13,7 @@ export const CaseStudies = () => {
    <HeroBanner/>
    <IconCards/>
    <CaseStudy/>
-   <SuccessCTA/>
+   {/* <SuccessCTA/> */}
    <HomeFooter />
 
    </>
