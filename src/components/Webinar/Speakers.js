@@ -29,7 +29,7 @@ const speakers = [
     company: "DLUX TECH",
     image:
       "https://images.ctfassets.net/pj0maraabon4/6zcanEn3hppAEzniWa6P7a/d9170c15580e56cfdddc86261c172beb/SEAN.webp",
-    linkedin: "https://www.linkedin.com/in/seancampbell/",
+    linkedin: "https://www.linkedin.com/in/campbell/",
   },
   {
     id: 3,

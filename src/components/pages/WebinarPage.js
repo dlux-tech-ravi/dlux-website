@@ -7,6 +7,7 @@ import FAQSection from '../Webinar/FAQSection.js'
 import CommunityCTA from '../Webinar/CommunityCTA.js'
 import BlogSection from '../Webinar/BlogSection.js'
 import Navbar from '../Navbar.js'
+import HomeFooter from '../HomeFooter/HomeFooter.js'
 
 
 
@@ -21,6 +22,7 @@ import Navbar from '../Navbar.js'
   <CommunityCTA/>
   <BlogSection/>  
   <FAQSection/>
+  <HomeFooter/>
  
   </>
   )
