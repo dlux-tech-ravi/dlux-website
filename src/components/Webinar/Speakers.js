@@ -137,6 +137,7 @@ export default function Speakers() {
           >
             {speakers.map((speaker) => (
               <div key={speaker.id} className="mb-8">
+                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-100 transition-opacity duration-500 rounded-[15px]" />
                 <div className="relative group rounded-[15px] overflow-hidden h-[480px] bg-[#111]">
                   <img
                     src={speaker.image}
