@@ -49,7 +49,7 @@ const socialItem = {
 export default function HeroSection() {
   return (
     <section
-      className="relative h-full md:h-screen w-full bg-cover bg-center pt-[150px] md:pt-4"
+      className="relative h-full lg:h-screen w-full bg-cover bg-center pt-[150px] lg:pt-4"
       style={{
         backgroundImage:
           "url('https://images.ctfassets.net/pj0maraabon4/2hm6Mm2p7tipTtFvqVqkqW/84d2f24a63db2c656f5ce11316c222cf/hero-section-image-02.png')",
@@ -59,7 +59,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#000000]  to-transparent"></div>
 
       {/* Content Wrapper */}
-      <div className="relative h-full flex flex-col md:flex-row items-center justify-between px-6 md:px-24">
+      <div className="relative h-full flex flex-col lg:flex-row items-center justify-between px-6 md:px-24">
         {/* Empty Column */}
         <div className="flex-1 hidden md:block"></div>
 
@@ -114,7 +114,7 @@ export default function HeroSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="inline-block relative md:absolute mt-6 md:bottom-8  md:left-[10%] lg:w-[30%] justify-items-center"
+        className="inline-block relative lg:absolute mt-6 lg:bottom-8  lg:left-[10%] lg:w-[30%] justify-items-center"
       >
         <img
           src="/webinar-assets/webinar-hero-section-02.png"
@@ -137,9 +137,9 @@ export default function HeroSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="relative md:absolute md:bottom-8  md:right-16 flex gap-4 text-white text-lg justify-center mt-8"
+        className="relative lg:absolute lg:bottom-8  lg:right-16 flex gap-4 text-white text-lg justify-center mt-8"
       >
-        <motion.a
+        <motion.a 
           variants={socialItem}
           href="https://www.facebook.com/DLUXTech/"
           whileHover={{ scale: 1.2 }}

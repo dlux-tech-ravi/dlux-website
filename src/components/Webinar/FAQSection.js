@@ -56,6 +56,9 @@ export default function FAQSection() {
   return (
     <div className="relative flex items-center justify-center px-4 py-20 overflow-hidden" style={{
     backgroundImage: `url("https://images.ctfassets.net/pj0maraabon4/2kIsAzSzxbHWQnhHhIcmmb/57703040088837952ba4afbcd3307f39/faq-bg-galaxy.png")`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "Cover"
+,
   }}>
       {/* 🔹 Background Video */}
       {/* <video
@@ -89,7 +92,7 @@ export default function FAQSection() {
       />
 
       {/* 🔹 Right Floating Shape Image */}
-      <motion.img
+      {/* <motion.img
         src="https://images.ctfassets.net/pj0maraabon4/67fimos1TQFQ2VymAvI9Xc/ceb160f714ad0d0b85cbe62803aaee42/webinar-page-bg.png"
         alt="Shape"
         className="absolute right-0 bottom-10 w-[220px] md:w-[320px] opacity-90"
@@ -104,7 +107,7 @@ export default function FAQSection() {
           transition: { duration: 7, repeat: Infinity, ease: "easeInOut" },
         }}
         viewport={{ once: true }}
-      />
+      /> */}
 
       {/* 🔹 Main Content */}
       <div className="relative max-w-3xl w-full z-10">

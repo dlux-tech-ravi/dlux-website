@@ -123,7 +123,7 @@ const VideoShowcase = () => {
                 <img
                   src={video.thumbnail}
                   alt={video.title}
-                  className="h-full w-full rounded-2xl object-cover object-top"
+                  className="h-full w-full rounded-2xl object-contain"
                 />
                 {/* Play overlay */}
                 <div className="absolute inset-0 flex items-center justify-center bg-black/30">
