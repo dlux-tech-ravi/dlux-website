@@ -88,17 +88,23 @@ export default function HeroSection() {
           </motion.p>
 
           <motion.a
-            variants={fadeUpVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={3}
-            href="#about"
-            className="inline-flex items-center text-[16px] font-medium text-white no-underline hover:underline transition"
-          >
-            Missed it live? Catch the insights anytime
-            <FiChevronsDown className="ml-2 w-4 h-4" />
-          </motion.a>
+  variants={fadeUpVariant}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  custom={3}
+  onClick={() => {
+    document.getElementById("webinar-vid-section")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }}
+  className="inline-flex items-center text-[16px] font-medium text-white no-underline hover:underline transition cursor-pointer"
+>
+  Missed it live? Catch the insights anytime
+  <FiChevronsDown className="ml-2 w-4 h-4" />
+</motion.a>
+
         </div>
       </div>
 

@@ -27,7 +27,7 @@ const videos = [
     date: "4 April 2025",
     time: "12:45",
     url: "https://dluxtech.com/webinar-page-video-03.mp4",
-    thumbnail: "https://images.ctfassets.net/pj0maraabon4/71wrOdcuUlTZ3FqhflIVqY/76e04ca52e30746b92591f5dd833f2d1/webinar-thumbnail-03.jpg",
+    thumbnail: "https://images.ctfassets.net/pj0maraabon4/zQdF2uBLlJfhTIDzR5T1d/7c971e4cfe949ca96eaa2021e92a04ee/webinar-thumbnail-03_2.jpg",
   },
 ];
 
@@ -86,7 +86,7 @@ const VideoShowcase = () => {
 
   return (
     <motion.section
-      className="w-full px-4 md:px-16 py-16 text-white bg-black"
+      className="w-full px-4 md:px-16 py-16 text-white bg-black" id="webinar-vid-section"
       style={{
         backgroundImage:
           "url('https://images.ctfassets.net/pj0maraabon4/191BOERTELcczZ9QlKGvAi/a473b5e73cc2b491b035ffbb227f1065/video-section-bg-img.png')",
@@ -123,7 +123,7 @@ const VideoShowcase = () => {
                 <img
                   src={video.thumbnail}
                   alt={video.title}
-                  className="h-full w-full rounded-2xl object-cover"
+                  className="h-full w-full rounded-2xl object-cover object-top"
                 />
                 {/* Play overlay */}
                 <div className="absolute inset-0 flex items-center justify-center bg-black/30">
@@ -196,7 +196,7 @@ const VideoShowcase = () => {
                   <img
                     src={video.thumbnail}
                     alt={video.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/30">
                     <div className="w-16 h-16 rounded-full border-4 border-white flex items-center justify-center bg-white/20">

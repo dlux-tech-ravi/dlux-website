@@ -89,7 +89,7 @@ export default function FacesAndStories() {
 
   return (
     <section className="py-[80px]">
-    <div className="flex flex-col md:flex-row items-stretch justify-center gap-8 py-26 px-6 max-w-[80%] mx-auto overflow-hidden ">
+    <div className="flex flex-col md:flex-row items-stretch justify-center gap-8 py-26 px-6 md:max-w-[80%] md:mx-auto overflow-hidden ">
       {/* LEFT ACTIVE CARD */}
       <motion.div
         key={visible[0].id}
@@ -111,7 +111,7 @@ export default function FacesAndStories() {
       </motion.div>
 
       {/* RIGHT SIDE CONTENT (MATCHING HEIGHT) */}
-      <div className="w-full md:w-1/2 h-[400px] flex flex-col justify-between bg-[#0a0a0a]/50 rounded-2xl p-6 shadow-lg">
+      <div className="w-full md:w-1/2 md:h-[400px] flex flex-col-reverse md:flex-col justify-between bg-[#0a0a0a]/50 rounded-2xl p-6 shadow-lg">
         <div>
           <h2 className="text-3xl text-white font-bold mb-2">Dlux Blogs</h2>
           <p className="text-white mb-4">

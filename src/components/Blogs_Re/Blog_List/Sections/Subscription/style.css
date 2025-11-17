@@ -1,11 +1,11 @@
 /* ===== Section Wrapper ===== */
 .newsletter-section {
     width: 100%;
-    padding: 100px 20px;
+    padding: 100px 10px ;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(180deg, #FFFFFF 50%, #000000 50%);
+    background: black;
     position: relative;
     overflow: hidden;
 }

@@ -4,7 +4,6 @@ import Bloglayout from "../Layout";
 import FacesAndStories from "./Sections/Services";
 import BlogsList from "./Sections/Blogs";
 import Subscription from "./Sections/Subscription";
-import Newsletter from "./Sections/Newsletter";
 
 function Blogs() {
     return (
@@ -15,7 +14,8 @@ function Blogs() {
             <Hero />
             <FacesAndStories />
             <BlogsList />
-            <Newsletter />
+           
+            <Subscription/>
             </Bloglayout>
     );
 }
