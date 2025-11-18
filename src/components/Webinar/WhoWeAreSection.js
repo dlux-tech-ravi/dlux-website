@@ -149,7 +149,7 @@ export default function WhoWeAreSection() {
             <div
               key={benefit.id}
               className="flex flex-col md:w-[240px] md:h-[222px] items-center justify-center border
-               border-[#F07800] bg-white p-6 text-center cursor-pointer transition duration-300 hover:bg-gradient-to-r hover:from-[#de8f69] hover:to-[#de8f69] hover:border-transparent"
+               border-[#F07800] bg-white p-6 text-center cursor-pointer transition duration-300 hover:bg-[#ffe0c8] hover:from-[#de8f69] hover:to-[#de8f69] hover:border-transparent"
             >
               <div className="mb-3">
                 <img src={benefit.icon} alt={benefit.title} className="w-20 h-20 md:w-full"/>
