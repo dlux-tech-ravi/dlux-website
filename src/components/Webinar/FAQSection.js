@@ -56,23 +56,23 @@ export default function FAQSection() {
   return (
     <div className="relative flex items-center justify-center px-4 py-20 overflow-hidden">
       {/* 🔹 Background Video */}
-      {/* <video
+      <video
         className="absolute top-0 left-0 w-full h-full object-cover"
-        src="https://videos.ctfassets.net/pj0maraabon4/ksWod9Se0oIK2JFx65s8i/1ba6ed7102ea840921a4493673062c2e/faq-bg-video.mp4"
+        src="https://videos.ctfassets.net/pj0maraabon4/QIOk2y2pUnORGqU9s4vgn/1da130801d2a7e9ffdb641fa46ff8a2f/space-bg-webinar.mp4"
         autoPlay
         loop
         muted
         playsInline
-      ></video> */}
+      ></video>
 
       {/* 🔹 Black Overlay */}
       <div className="absolute inset-0 bg-black/60"></div>
 
       {/* 🔹 Left Floating Rocket Image */}
-      {/* <motion.img
-        src="https://images.ctfassets.net/pj0maraabon4/57uZ36M0h7jeNjBJPfaxin/d6630f4e735b38d1994c6744734784b3/rocket-faq.png"
+      <motion.img
+        src=""
         alt="Rocket"
-        className="absolute left-0 top-10 w-[200px] md:w-[200px] opacity-90"
+        className="absolute left-0 top-10 opacity-90"
         initial={{ opacity: 0, x: -100, y: 30 }}
         whileInView={{
           opacity: 1,
@@ -84,10 +84,10 @@ export default function FAQSection() {
           transition: { duration: 6, repeat: Infinity, ease: "easeInOut" },
         }}
         viewport={{ once: true }}
-      /> */}
+      />
 
       {/* 🔹 Right Floating Shape Image */}
-      <motion.img
+      {/* <motion.img
         src="https://images.ctfassets.net/pj0maraabon4/67fimos1TQFQ2VymAvI9Xc/ceb160f714ad0d0b85cbe62803aaee42/webinar-page-bg.png"
         alt="Shape"
         className="absolute right-0 bottom-10 w-[220px] md:w-[320px] opacity-90"
@@ -102,7 +102,7 @@ export default function FAQSection() {
           transition: { duration: 7, repeat: Infinity, ease: "easeInOut" },
         }}
         viewport={{ once: true }}
-      />
+      /> */}
 
       {/* 🔹 Main Content */}
       <div className="relative max-w-3xl w-full z-10">

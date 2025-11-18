@@ -101,7 +101,7 @@ const BlogSection = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="flex flex-col md:flex-row gap-8 lg:pl-[50px] pt-12"
+        className="flex flex-col lg:flex-row gap-8 lg:pl-[50px] pt-12"
       >
         {blogs.map((post, index) => (
           <motion.div
@@ -116,7 +116,7 @@ const BlogSection = () => {
               <motion.img
                 src={post.detailImageCollection.items[0].url}
                 alt={post.detailTitle}
-                className="w-full h-[280px] object-cover"
+                className="w-full h-full lg:h-[220px] object-fill"
               />
             )}
 
@@ -130,7 +130,7 @@ const BlogSection = () => {
                 })}
               </p>
 
-              <h3 className="text-2xl font-semibold mb-2 text-white">
+              <h3 className="text-lg lg:text-2xl font-semibold mb-2 text-white">
                 <a
                   href={`/blog/${post.detailUrlName}`}
                   className="hover:underline transition"
@@ -139,10 +139,10 @@ const BlogSection = () => {
                 </a>
               </h3>
 
-              {/* Description */}
+              {/* Description
               <p className="line-clamp-4 text-gray-300 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
                 {post.listingTileDescription}
-              </p>
+              </p> */}
             </div>
           </motion.div>
         ))}

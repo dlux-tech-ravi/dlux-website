@@ -40,7 +40,7 @@ const speakers = [
     company: "DLUX TECH",
     image:
       "https://images.ctfassets.net/pj0maraabon4/jX3ZezUkaoABpsXJKi8Ze/1dc4c2acbc10ecd4392734190e8df739/nic.webp",
-    linkedin: "https://www.linkedin.com/in/nicmesker/",
+    linkedin: "https://www.linkedin.com/in/nic-mesker-11b9911b/",
   },
 ];
 
@@ -74,6 +74,8 @@ export default function Speakers() {
               key={speaker.id}
               className="relative w-[340px] h-[440px] group rounded-[15px] overflow-hidden shadow-lg bg-[#111]"
             >
+             <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-100 transition-opacity duration-500 rounded-[15px]" />
+
               {/* Background Image */}
               <img
                 src={speaker.image}
@@ -135,11 +137,12 @@ export default function Speakers() {
           >
             {speakers.map((speaker) => (
               <div key={speaker.id} className="mb-8">
+                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-100 transition-opacity duration-500 rounded-[15px]" />
                 <div className="relative group rounded-[15px] overflow-hidden h-[480px] bg-[#111]">
                   <img
                     src={speaker.image}
                     alt={speaker.name}
-                    className="w-full h-full object-cover rounded-[15px] transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover object-top rounded-[15px] transition-transform duration-500 group-hover:scale-105"
                   />
 
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[15px]" />
