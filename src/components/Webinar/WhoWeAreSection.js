@@ -46,7 +46,7 @@ export default function WhoWeAreSection() {
         transition={{ duration: 1 }}
       >
         <h2 className="text-3xl lg:text-5xl font-bold">WHY ATTEND DLUX WEBINAR  </h2>
-        <p className="leading-relaxed max-w-2xl">
+        <p className="leading-relaxed max-w-2xl text-justify">
           As a Top leading Martech business consulting firm in Sydney,
           Australia, DLUX brings together strategy and technology to help you
           master complex projects, scale your marketing and technology
@@ -59,7 +59,7 @@ export default function WhoWeAreSection() {
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-2 h-2 w-2 rounded-full bg-white flex-shrink-0"></span>
-            <span className="text-white">Case Studies – Real client success in action</span>
+            <span className="text-white">Case Studies – Real client success in action, delivered consistently</span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-2 h-2 w-2 rounded-full bg-white flex-shrink-0"></span>
@@ -67,7 +67,7 @@ export default function WhoWeAreSection() {
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-2 h-2 w-2 rounded-full bg-white flex-shrink-0"></span>
-            <span className="text-white">Live Q&A – Ask, interact, get instant answers</span>
+            <span className="text-white">Live Q&A – Ask anything, interact freely, get instant expert answers</span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-2 h-2 w-2 rounded-full bg-white flex-shrink-0"></span>
