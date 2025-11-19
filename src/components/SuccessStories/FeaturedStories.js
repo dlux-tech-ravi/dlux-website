@@ -166,7 +166,7 @@ export default function FeaturedStories() {
     transition-transform
     flex flex-col justify-start
     w-full 
-    h-[417.53px]
+    h-auto
     p-4
   "
             >
@@ -202,7 +202,7 @@ export default function FeaturedStories() {
                     overflow: "hidden",
                   }}
                 >
-                  {story.shortDescription }
+                  {story.shortDescription}
                 </p>
               </div>
             </div>

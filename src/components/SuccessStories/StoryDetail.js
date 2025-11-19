@@ -106,35 +106,51 @@ export default function StoryDetail() {
     );
   }
 
-  // ======================
-  // 🔹 Render
-  // ======================
   return (
     <section className="bg-black text-white min-h-screen">
-      {/* Hero Section */}
-      <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden">
-        <img
-          src={story.banner?.url || "/images/default-placeholder.jpg"}
-          alt={story.title}
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black"></div>
-        <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-10 h-full flex flex-col justify-center">
-          <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4">
-            {story.title}
+
+      {/* ======================== */}
+      {/* 🔥 HERO SECTION: text inside image (no absolute) */}
+      {/* ======================== */}
+      <div
+        className="w-full h-[320px] md:h-[460px] bg-cover bg-center flex items-end border-b border-gray-800"
+        style={{
+          backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.85)), url('${story.banner?.url || "/images/default-placeholder.jpg"
+            }')`,
+        }}
+      >
+        <div className="px-6 md:px-10 pb-10 max-w-5xl mx-auto">
+ 
+          <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4 font-opensans">
+            {story.banner?.title || story.title}
           </h1>
-          <p className="text-gray-300">{story.industry}</p>
+
+          {story.banner?.description && (
+            <p className="text-gray-200 text-lg md:text-xl max-w-3xl font">
+              {story.banner.description}
+            </p>
+          )}
+
+          {story.industry && (
+            <p className="text-gray-300 mt-4 text-base">
+              {story.industry}
+            </p>
+          )}
+
         </div>
       </div>
 
-      {/* Content Section */}
-      <div className="bg-white text-black max-w-6xl mx-auto -mt-20 rounded-2xl shadow-lg p-6 md:p-10 relative z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-10">
-          {/* Left Column */}
+      {/* ======================== */}
+      {/* 🔥 WHITE CONTENT CARD    */}
+      {/* ======================== */}
+      <div className="bg-white text-black max-w-6xl mx-auto mt-10 rounded-2xl shadow-lg p-6 md:p-10 relative z-20">
+        <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-10 mr-0">
+
+          {/* LEFT CONTENT */}
           <div>
             {story.summary && (
               <>
-                <h2 className="text-xl font-bold text-orange-600 mb-3">
+                <h2 className="text-xl font-bold text-orange-600 mb-3 font-opensans">
                   Executive Summary
                 </h2>
                 <p className="text-gray-700 leading-relaxed mb-6">
@@ -145,7 +161,7 @@ export default function StoryDetail() {
 
             {story.challengesBottlenecks && (
               <>
-                <h2 className="text-xl font-bold text-orange-600 mb-3">
+                <h2 className="text-xl font-bold text-orange-600 mb-3 font-opensans">
                   Challenges & Bottlenecks
                 </h2>
                 <p className="text-gray-700 leading-relaxed mb-6">
@@ -156,7 +172,7 @@ export default function StoryDetail() {
 
             {story.turningPoint && (
               <>
-                <h2 className="text-xl font-bold text-orange-600 mb-3">
+                <h2 className="text-xl font-bold text-orange-600 mb-3 font-opensans">
                   Turning Point
                 </h2>
                 <p className="text-gray-700 leading-relaxed mb-6">
@@ -167,7 +183,7 @@ export default function StoryDetail() {
 
             {story.conclusion && (
               <>
-                <h2 className="text-xl font-bold text-orange-600 mb-3">
+                <h2 className="text-xl font-bold text-orange-600 mb-3 font-opensans">
                   Conclusion
                 </h2>
                 <p className="text-gray-700 leading-relaxed mb-6">
@@ -176,7 +192,45 @@ export default function StoryDetail() {
               </>
             )}
 
-            {/* Highlight Box */}
+          </div>
+
+          {/* RIGHT COMPANY CARD */}
+          <div className="bg-gray-100 rounded-xl p-5 h-fit">
+            <h3 className="text-gray-700 font-semibold mb-4">Company</h3>
+            <div className="space-y-3">
+              <div>
+                <p className="text-lg font-bold">
+                  {story.client || "Unknown Client"}
+                </p>
+                <p className="text-sm text-gray-500">
+                  {story.industry}
+                </p>
+                <p className="text-sm text-gray-500">
+                  {story.location}
+                </p>
+              </div>
+
+              {story.banner?.url && (
+                <img
+                  src={story.banner.url}
+                  alt={story.title}
+                  className="rounded-lg mt-3 w-full object-cover"
+                />
+              )}
+
+              <div className="bg-black text-white rounded-lg text-center p-4 mt-5">
+                <p className="text-sm mb-2">Empowering innovation with Dlux.</p>
+                <button
+                  onClick={() => alert("Opening video...")}
+                  className="text-orange-400 font-medium hover:underline"
+                >
+                  Watch Video
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+          {/* Highlight Box */}
             <div className="bg-orange-500 text-white p-8 rounded-xl text-center my-10">
               <p className="mb-4 text-lg font-medium">
                 {story.banner?.description ||
@@ -189,48 +243,10 @@ export default function StoryDetail() {
                 Download
               </button>
             </div>
-          </div>
-
-          {/* Right Column - Company Info */}
-          <div className="bg-gray-100 rounded-xl p-5 h-fit">
-            <h3 className="text-gray-700 font-semibold mb-4">Company</h3>
-            <div className="space-y-3">
-              <div>
-                <p className="text-lg font-bold">
-                  {story.client || "Unknown Client"}
-                </p>
-                <p className="text-sm text-gray-500">
-                  {story.industry || "Industry Info Unavailable"}
-                </p>
-                <p className="text-sm text-gray-500">
-                  {story.location || ""}
-                </p>
-              </div>
-              {story.banner?.url && (
-                <img
-                  src={story.banner.url}
-                  alt={story.title}
-                  className="rounded-lg mt-3 w-full object-cover"
-                />
-              )}
-              <div className="bg-black text-white rounded-lg text-center p-4 mt-5">
-                <p className="text-sm mb-2">
-                  Empowering innovation with Dlux.
-                </p>
-                <button
-                  onClick={() => alert("Opening video...")}
-                  className="text-orange-400 font-medium hover:underline"
-                >
-                  Watch Video
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Related Stories */}
+        {/* RELATED STORIES */}
         <div className="mt-16">
           <h2 className="text-2xl font-bold mb-6">Featured Case Studies</h2>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {relatedStories.map((item, i) => (
               <div
@@ -255,6 +271,7 @@ export default function StoryDetail() {
             ))}
           </div>
         </div>
+
       </div>
     </section>
   );
