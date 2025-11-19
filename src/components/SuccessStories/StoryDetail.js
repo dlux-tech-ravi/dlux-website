@@ -72,7 +72,9 @@ export default function StoryDetail() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const storyData = await client.request(GET_CASE_STUDY_BY_SLUG, { slug });
+        const storyData = await client.request(GET_CASE_STUDY_BY_SLUG, {
+          slug,
+        });
         const storyItem = storyData.caseStudyCollection.items[0];
         setStory(storyItem);
 
@@ -108,7 +110,6 @@ export default function StoryDetail() {
 
   return (
     <section className="bg-black text-white min-h-screen">
-
       {/* ======================== */}
       {/* 🔥 HERO SECTION: text inside image (no absolute) */}
       {/* ======================== */}
@@ -120,7 +121,6 @@ export default function StoryDetail() {
         }}
       >
         <div className="px-6 md:px-10 pb-10 max-w-5xl mx-auto">
- 
           <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4 font-opensans">
             {story.banner?.title || story.title}
           </h1>
@@ -132,25 +132,21 @@ export default function StoryDetail() {
           )}
 
           {story.industry && (
-            <p className="text-gray-300 mt-4 text-base">
-              {story.industry}
-            </p>
+            <p className="text-gray-300 mt-4 text-base">{story.industry}</p>
           )}
-
         </div>
       </div>
 
       {/* ======================== */}
       {/* 🔥 WHITE CONTENT CARD    */}
       {/* ======================== */}
-      <div className="bg-white text-black max-w-6xl mx-auto mt-10 rounded-2xl shadow-lg p-6 md:p-10 relative z-20">
+      <div className="bg-white text-black max-w-full  mx-[90px] mt-10 rounded-2xl shadow-lg p-6 md:p-10 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-10 mr-0">
-
           {/* LEFT CONTENT */}
           <div>
             {story.summary && (
               <>
-                <h2 className="text-xl font-bold text-orange-600 mb-3 font-opensans">
+                <h2 className="text-[28px] font-bold text-black mb-3 font-opensans">
                   Executive Summary
                 </h2>
                 <p className="text-gray-700 leading-relaxed mb-6">
@@ -161,7 +157,7 @@ export default function StoryDetail() {
 
             {story.challengesBottlenecks && (
               <>
-                <h2 className="text-xl font-bold text-orange-600 mb-3 font-opensans">
+                <h2 className="text-[28px] font-bold text-black mb-3 font-opensans">
                   Challenges & Bottlenecks
                 </h2>
                 <p className="text-gray-700 leading-relaxed mb-6">
@@ -172,7 +168,7 @@ export default function StoryDetail() {
 
             {story.turningPoint && (
               <>
-                <h2 className="text-xl font-bold text-orange-600 mb-3 font-opensans">
+                <h2 className="text-[28px] font-bold text-black mb-3 font-opensans">
                   Turning Point
                 </h2>
                 <p className="text-gray-700 leading-relaxed mb-6">
@@ -183,7 +179,7 @@ export default function StoryDetail() {
 
             {story.conclusion && (
               <>
-                <h2 className="text-xl font-bold text-orange-600 mb-3 font-opensans">
+                <h2 className="text-[28px] font-bold text-black mb-3 font-opensans">
                   Conclusion
                 </h2>
                 <p className="text-gray-700 leading-relaxed mb-6">
@@ -191,87 +187,120 @@ export default function StoryDetail() {
                 </p>
               </>
             )}
-
           </div>
 
           {/* RIGHT COMPANY CARD */}
-          <div className="bg-gray-100 rounded-xl p-5 h-fit">
-            <h3 className="text-gray-700 font-semibold mb-4">Company</h3>
-            <div className="space-y-3">
-              <div>
-                <p className="text-lg font-bold">
-                  {story.client || "Unknown Client"}
-                </p>
-                <p className="text-sm text-gray-500">
-                  {story.industry}
-                </p>
-                <p className="text-sm text-gray-500">
-                  {story.location}
-                </p>
+          <div className="bg-[#D9D9D9] rounded-xl overflow-hidden">
+            {/* TOP DETAILS SECTION */}
+            <div className="p-5">
+              <h3 className="text-black font-semibold text-lg mb-4">Company</h3>
+
+              <div className="space-y-4">
+                {/* CLIENT */}
+                <div>
+                  <p className="text-gray-600 font-medium">Client</p>
+                  <p className="text-black font-semibold">
+                    {story.client || "Unknown Client"}
+                  </p>
+                </div>
+
+                {/* INDUSTRY */}
+                <div>
+                  <p className="text-gray-600 font-medium">Industry</p>
+                  <p className="text-black font-semibold">
+                    {story.industry || "Not Available"}
+                  </p>
+                </div>
+
+                {/* LOCATION */}
+                <div>
+                  <p className="text-gray-600 font-medium">Location</p>
+                  <p className="text-black font-semibold">
+                    {story.location || "Not Available"}
+                  </p>
+                </div>
               </div>
+            </div>
+            {/* IMAGE + CTA OVERLAY SECTION */}
+            <div className="relative w-full h-60 rounded-b-xl overflow-hidden">
+              {/* Background Image */}
+              <img
+                src="https://images.ctfassets.net/pj0maraabon4/6y8wFX0wjfCjpDEnYeVKxF/97fb5d243fdff20a639e6518e19c7035/6a0a6f6f0a80f5c092694b6b99d1d1c7c170574d.jpg"
+                alt={story.title}
+                className="w-full h-full object-cover"
+              />
 
-              {story.banner?.url && (
-                <img
-                  src={story.banner.url}
-                  alt={story.title}
-                  className="rounded-lg mt-3 w-full object-cover"
-                />
-              )}
+              {/* Dark overlay (optional for readability) */}
+              <div className="absolute inset-0 bg-black/60"></div>
 
-              <div className="bg-black text-white rounded-lg text-center p-4 mt-5">
-                <p className="text-sm mb-2">Empowering innovation with Dlux.</p>
+              {/* CTA Content */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4 text-center">
+                <p className="text-lg font-semibold leading-tight">
+                  Watched Our Videos ? <br /> Talk to Our Experts
+                </p>
+
                 <button
-                  onClick={() => alert("Opening video...")}
-                  className="text-orange-400 font-medium hover:underline"
+                  onClick={() => alert("Get Started")}
+                  className="mt-4 border border-white rounded-full px-5 py-2 text-sm hover:bg-white hover:text-black transition"
                 >
-                  Watch Video
+                  Get Started
                 </button>
               </div>
             </div>
           </div>
         </div>
-          {/* Highlight Box */}
-            <div className="bg-orange-500 text-white p-8 rounded-xl text-center my-10">
-              <p className="mb-4 text-lg font-medium">
-                {story.banner?.description ||
-                  "Explore how innovation transformed this client’s success story."}
-              </p>
-              <button
-                onClick={() => alert("Downloading...")}
-                className="bg-black text-white px-6 py-2 rounded-md font-semibold hover:bg-gray-800 transition"
-              >
-                Download
-              </button>
-            </div>
+        {/* Highlight Box */}
+        <div className="bg-[linear-gradient(90deg,#FF3901_0%,#F07800_100%)] h-[268px] flex flex-col items-center justify-center text-white p-8 mx-20 rounded-xl text-center my-10">
+          <p className="mb-4 text-lg font-bold w-[50%]">
+            {story.banner?.description ||
+              "Explore how innovation transformed this client’s success story."}
+          </p>
+          <button
+            onClick={() => alert("Downloading...")}
+            className="bg-black text-white px-6 py-2 rounded-[60px] h-[59px] w-[241px] font-semibold hover:bg-gray-800 transition"
+          >
+            Download
+          </button>
+        </div>
         {/* RELATED STORIES */}
         <div className="mt-16">
-          <h2 className="text-2xl font-bold mb-6">Featured Case Studies</h2>
+          <h2 className="text-[40px] font-bold mb-16">Featured Case Studies</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {relatedStories.map((item, i) => (
               <div
                 key={i}
                 onClick={() => navigate(`/success-stories/${item.slug}`)}
-                className="cursor-pointer rounded-xl overflow-hidden bg-gray-50 shadow-md hover:shadow-lg transition"
+                className="cursor-pointer rounded-xl overflow-hidden bg-gray-50 shadow-md hover:shadow-lg transition
+                 flex flex-col h-full"
               >
-                <img
-                  src={item.banner?.url || "/images/default-placeholder.jpg"}
-                  alt={item.title}
-                  className="w-full h-40 object-cover"
-                />
-                <div className="p-5">
-                  <h3 className="font-semibold text-gray-900 mb-2">
+                {/* FIXED IMAGE HEIGHT */}
+                <div className="h-56 w-full overflow-hidden">
+                  <img
+                    src={
+                      item.banner?.url ||
+                      "https://images.ctfassets.net/pj0maraabon4/6y8wFX0wjfCjpDEnYeVKxF/97fb5d243fdff20a639e6518e19c7035/6a0a6f6f0a80f5c092694b6b99d1d1c7c170574d.jpg"
+                    }
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* CONTENT ALWAYS STRETCHES EVENLY */}
+                <div className="p-5 flex flex-col flex-grow">
+                  <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">
                     {item.title}
                   </h3>
-                  <p className="text-gray-500 text-sm">
-                    {item.shortDescription || "Read more..."}
+
+                  <p className="text-gray-500 text-sm flex-grow line-clamp-3">
+                    {item.shortDescription || "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."}
                   </p>
                 </div>
               </div>
             ))}
           </div>
-        </div>
 
+        </div>
       </div>
     </section>
   );
