@@ -137,6 +137,25 @@ export default function StoryDetail() {
     setFormData({ name: "", email: "", phone: "" });
     setShowPopup(true);
   };
+  const handleZohoSubmit = (e) => {
+  // Allow Zoho form to submit normally
+  setTimeout(() => {
+    const pdfUrl = story?.caseStudyPdf?.url;
+    if (pdfUrl) {
+      // Open PDF in new tab
+      const newTab = window.open(pdfUrl, "_blank");
+
+      // Auto-download trigger
+      const link = document.createElement("a");
+      link.href = pdfUrl;
+      link.download = story?.caseStudyPdf?.fileName || "case-study.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  }, 500); 
+};
+
 
   const handleFormChange = (field, value) => {
     setFormData((p) => ({ ...p, [field]: value }));
@@ -227,18 +246,8 @@ export default function StoryDetail() {
       >
         <div className="px-6 md:px-10 pb-10 max-w-full mx-auto md:mx-[90px]">
           <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4 font-opensans">
-            {story.banner?.title || story.title}
+            {story.banner.description}
           </h1>
-
-          {story.banner?.description && (
-            <p className="text-gray-200 text-lg md:text-xl max-w-3xl font">
-              {story.banner.description}
-            </p>
-          )}
-
-          {story.industry && (
-            <p className="text-gray-300 mt-4 text-base">{story.industry}</p>
-          )}
         </div>
       </div>
 
@@ -267,11 +276,11 @@ export default function StoryDetail() {
 
             {story.challengesBottlenecks && (
               <>
-               <div className="flex items-center gap-3 mb-3">
+                <div className="flex items-center gap-3 mb-3">
                   <div className="w-2 h-7 rounded-sm bg-gradient-to-b from-orange-500 to-red-600"></div>
 
                   <h2 className="text-[28px] font-bold text-black font-opensans">
-                     Challenges & Bottlenecks
+                    Challenges & Bottlenecks
                   </h2>
                 </div>
                 <p className="text-gray-700 leading-relaxed mb-6">
@@ -282,7 +291,7 @@ export default function StoryDetail() {
 
             {story.turningPoint && (
               <>
-               <div className="flex items-center gap-3 mb-3">
+                <div className="flex items-center gap-3 mb-3">
                   <div className="w-2 h-7 rounded-sm bg-gradient-to-b from-orange-500 to-red-600"></div>
 
                   <h2 className="text-[28px] font-bold text-black font-opensans">
@@ -297,7 +306,7 @@ export default function StoryDetail() {
 
             {story.conclusion && (
               <>
-               <div className="flex items-center gap-3 mb-3">
+                <div className="flex items-center gap-3 mb-3">
                   <div className="w-2 h-7 rounded-sm bg-gradient-to-b from-orange-500 to-red-600"></div>
 
                   <h2 className="text-[28px] font-bold text-black font-opensans">
@@ -316,12 +325,12 @@ export default function StoryDetail() {
             {/* TOP DETAILS SECTION */}
             <div className="p-5">
               <div className="flex items-center gap-3 mb-3">
-                  <div className="w-2 h-7 rounded-sm bg-gradient-to-b from-orange-500 to-red-600"></div>
+                <div className="w-2 h-7 rounded-sm bg-gradient-to-b from-orange-500 to-red-600"></div>
 
-                  <h2 className="text-[18px] font-bold text-black font-opensans">
-                    Company
-                  </h2>
-                </div>
+                <h2 className="text-[18px] font-bold text-black font-opensans">
+                  Company
+                </h2>
+              </div>
 
               <div className="space-y-4">
                 {/* CLIENT */}
@@ -436,94 +445,125 @@ export default function StoryDetail() {
       {/* ====================== */}
       {/* 🔥 POPUP: premium glass blur form */}
       {/* ====================== */}
-      {showPopup && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center">
-          {/* backdrop */}
-          <div
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-            onClick={() => {
-              if (!submitting) {
-                setShowPopup(false);
-                setErrorMsg("");
-              }
-            }}
-          ></div>
+     {showPopup && (
+  <div className="fixed inset-0 z-[9999] flex items-center justify-center">
 
-          {/* glass card */}
-          <div className="relative z-50 w-[92%] max-w-md p-6 rounded-3xl bg-white/6 border border-white/20 backdrop-blur-3xl text-white shadow-2xl">
-            {/* close */}
-            <button
-              onClick={() => {
-                if (!submitting) {
-                  setShowPopup(false);
-                  setErrorMsg("");
-                }
-              }}
-              className="absolute right-4 top-4 text-white/90"
-              aria-label="Close"
-            >
-              ✕
-            </button>
+    {/* Backdrop */}
+    <div
+      className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+      onClick={() => !submitting && setShowPopup(false)}
+    ></div>
 
-            <div className="text-center mb-4">
-              <p className="text-sm text-gray-200 mt-2">
-                Fill this quick form to access the case study PDF.
-              </p>
-            </div>
+    {/* Premium Glass Card */}
+    <div className="relative z-50 w-[92%] max-w-md p-7 rounded-3xl 
+      bg-white/10 backdrop-blur-2xl shadow-[0_8px_40px_rgba(0,0,0,0.45)] text-white">
 
-            <form onSubmit={handleFormSubmit} className="space-y-4">
-              <div>
-                <label className="text-xs text-gray-300">Name</label>
-                <input
-                  value={formData.name}
-                  onChange={(e) => handleFormChange("name", e.target.value)}
-                  type="text"
-                  placeholder="Your name"
-                  className="w-full mt-1 px-4 py-3 rounded-xl bg-white/10 placeholder-gray-300 focus:outline-none"
-                />
-              </div>
+      {/* Close Button */}
+      <button
+        onClick={() => !submitting && setShowPopup(false)}
+        className="absolute right-4 top-4 text-white/90 text-xl hover:text-white"
+      >
+        ✕
+      </button>
 
-              <div>
-                <label className="text-xs text-gray-300">Email</label>
-                <input
-                  value={formData.email}
-                  onChange={(e) => handleFormChange("email", e.target.value)}
-                  type="email"
-                  placeholder="you@email.com"
-                  className="w-full mt-1 px-4 py-3 rounded-xl bg-white/10 placeholder-gray-300 focus:outline-none"
-                />
-              </div>
+      <div className="text-center mb-6">
+        <h3 className="text-xl font-semibold tracking-wide">
+          Access the Case Study
+        </h3>
+        <p className="text-sm text-gray-200 mt-2">
+          Fill this quick form to get the PDF.
+        </p>
+      </div>
 
-              <div>
-                <label className="text-xs text-gray-300">Phone</label>
-                <input
-                  value={formData.phone}
-                  onChange={(e) => handleFormChange("phone", e.target.value)}
-                  type="tel"
-                  placeholder="+91 98765 43210"
-                  className="w-full mt-1 px-4 py-3 rounded-xl bg-white/10 placeholder-gray-300 focus:outline-none"
-                />
-              </div>
+      {/* Zoho Form */}
+     <form
+  action="https://forms.zohopublic.in/dluxtech/form/CaseStudy/formperma/0LVpLbO3hslRPlQhT44Z9tQvahSsqj3xJwwmeLn_4Sg/htmlRecords/submit"
+  name="form"
+  id="form"
+  method="POST"
+  acceptCharset="UTF-8"
+  encType="multipart/form-data"
+  className="space-y-5"
+  onSubmit={(e) => handleZohoSubmit(e)}
+>
 
-              {errorMsg && (
-                <p className="text-sm text-red-300 mt-1">{errorMsg}</p>
-              )}
+        {/* Hidden Zoho Fields */}
+        <input type="hidden" name="zf_referrer_name" value="" />
+        <input type="hidden" name="zf_redirect_url" value="" />
+        <input type="hidden" name="zc_gad" value="" />
 
-              <button
-                type="submit"
-                disabled={submitting}
-                className="w-full mt-3 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-red-600 font-semibold disabled:opacity-60"
-              >
-                {submitting ? "Submitting..." : "Download PDF"}
-              </button>
-
-              <p className="text-xs text-gray-300 mt-2 text-center">
-                By submitting you agree to be contacted about this case study.
-              </p>
-            </form>
-          </div>
+        {/* First Name */}
+        <div>
+          <label className="text-xs text-gray-200">First Name</label>
+          <input
+            type="text"
+            name="Name_First"
+            maxLength="255"
+            className="w-full mt-1 px-4 py-3 rounded-xl bg-white/15 
+              focus:bg-white/20 placeholder-gray-300 backdrop-blur-sm 
+              focus:outline-none"
+            required
+          />
         </div>
-      )}
+
+        {/* Last Name */}
+        <div>
+          <label className="text-xs text-gray-200">Last Name</label>
+          <input
+            type="text"
+            name="Name_Last"
+            maxLength="255"
+            className="w-full mt-1 px-4 py-3 rounded-xl bg-white/15 
+              focus:bg-white/20 placeholder-gray-300 backdrop-blur-sm 
+              focus:outline-none"
+          />
+        </div>
+
+        {/* Email */}
+        <div>
+          <label className="text-xs text-gray-200">Email</label>
+          <input
+            type="email"
+            name="Email"
+            maxLength="255"
+            className="w-full mt-1 px-4 py-3 rounded-xl bg-white/15 
+              focus:bg-white/20 placeholder-gray-300 backdrop-blur-sm 
+              focus:outline-none"
+            required
+          />
+        </div>
+
+        {/* Phone */}
+        <div>
+          <label className="text-xs text-gray-200">Phone</label>
+          <input
+            type="text"
+            name="PhoneNumber_countrycode"
+            maxLength="20"
+            className="w-full mt-1 px-4 py-3 rounded-xl bg-white/15 
+              focus:bg-white/20 placeholder-gray-300 backdrop-blur-sm 
+              focus:outline-none"
+            required
+          />
+        </div>
+
+        {/* Submit Button */}
+        <button
+          type="submit"
+          className="w-full mt-3 py-3 rounded-xl bg-gradient-to-br 
+            from-orange-500 via-red-500 to-red-700 
+            font-semibold tracking-wide shadow-md shadow-black/30"
+        >
+          Submit & Download
+        </button>
+
+        <p className="text-xs text-gray-300 mt-2 text-center">
+          By submitting, you agree to be contacted regarding this case study.
+        </p>
+      </form>
+    </div>
+  </div>
+)}
     </section>
   );
 }
