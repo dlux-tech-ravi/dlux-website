@@ -66,7 +66,7 @@ export default function SuccessCTA() {
   return (
     <div
       ref={containerRef}
-      className="relative h-[300vh] bg-black overflow-hidden"
+      className="relative h-[200vh] bg-black overflow-hidden"
     >
       {/* BANNER 1 */}
       <section

@@ -118,7 +118,7 @@ export default function FeaturedStories() {
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 rounded-2xl overflow-hidden">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 rounded-2xl overflow-hidden mr-0">
         {filteredStories.length > 0 ? (
           filteredStories.map((story, i) => (
             <div
