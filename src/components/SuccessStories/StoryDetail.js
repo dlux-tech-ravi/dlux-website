@@ -225,7 +225,7 @@ export default function StoryDetail() {
             }')`,
         }}
       >
-        <div className="px-6 md:px-10 pb-10 max-w-full mx-[90px]">
+        <div className="px-6 md:px-10 pb-10 max-w-full mx-auto md:mx-[90px]">
           <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4 font-opensans">
             {story.banner?.title || story.title}
           </h1>
@@ -245,8 +245,8 @@ export default function StoryDetail() {
       {/* ======================== */}
       {/* 🔥 WHITE CONTENT CARD    */}
       {/* ======================== */}
-      <div className="bg-white text-black max-w-full  mx-[90px] mt-10 rounded-2xl shadow-lg p-6 md:p-10 relative z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-10 mr-0">
+      <div className="bg-white text-black max-w-full md:mx-[90px] mt-10 m-3 rounded-2xl shadow-lg p-6 md:p-10 relative z-20">
+        <div className="md:grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-10 mr-0 flex flex-col items-center">
           {/* LEFT CONTENT */}
           <div>
             {story.summary && (
@@ -379,8 +379,8 @@ export default function StoryDetail() {
         </div>
 
         {/* Highlight Box */}
-        <div className="bg-[linear-gradient(90deg,#FF3901_0%,#F07800_100%)] h-[268px] flex flex-col items-center justify-center text-white p-8 mx-20 rounded-xl text-center my-10">
-          <p className="mb-4 text-lg font-bold w-[50%]">
+        <div className="bg-[linear-gradient(90deg,#FF3901_0%,#F07800_100%)] h-[268px] flex flex-col items-center justify-center text-white p-8 md:mx-20 rounded-xl text-center md:my-10 mt-3" >
+          <p className="mb-4 text-lg font-bold w-full md:w-[50%]">
             {story.banner?.description ||
               "Explore how innovation transformed this client’s success story."}
           </p>
@@ -396,7 +396,7 @@ export default function StoryDetail() {
         <div className="mt-16">
           <h2 className="text-[40px] font-bold mb-16">Featured Case Studies</h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mr-0">
             {relatedStories.map((item, i) => (
               <div
                 key={i}
