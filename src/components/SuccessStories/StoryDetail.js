@@ -120,7 +120,7 @@ export default function StoryDetail() {
             }')`,
         }}
       >
-        <div className="px-6 md:px-10 pb-10 max-w-5xl mx-auto">
+        <div className="px-6 md:px-10 pb-10 max-w-full mx-[90px]">
           <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4 font-opensans">
             {story.banner?.title || story.title}
           </h1>
@@ -146,9 +146,14 @@ export default function StoryDetail() {
           <div>
             {story.summary && (
               <>
-                <h2 className="text-[28px] font-bold text-black mb-3 font-opensans">
-                  Executive Summary
-                </h2>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-2 h-7 rounded-sm bg-gradient-to-b from-orange-500 to-red-600"></div>
+
+                  <h2 className="text-[28px] font-bold text-black font-opensans">
+                    Executive Summary
+                  </h2>
+                </div>
+
                 <p className="text-gray-700 leading-relaxed mb-6">
                   {story.summary}
                 </p>
@@ -157,9 +162,13 @@ export default function StoryDetail() {
 
             {story.challengesBottlenecks && (
               <>
-                <h2 className="text-[28px] font-bold text-black mb-3 font-opensans">
-                  Challenges & Bottlenecks
-                </h2>
+               <div className="flex items-center gap-3 mb-3">
+                  <div className="w-2 h-7 rounded-sm bg-gradient-to-b from-orange-500 to-red-600"></div>
+
+                  <h2 className="text-[28px] font-bold text-black font-opensans">
+                     Challenges & Bottlenecks
+                  </h2>
+                </div>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   {story.challengesBottlenecks}
                 </p>
@@ -168,9 +177,13 @@ export default function StoryDetail() {
 
             {story.turningPoint && (
               <>
-                <h2 className="text-[28px] font-bold text-black mb-3 font-opensans">
-                  Turning Point
-                </h2>
+               <div className="flex items-center gap-3 mb-3">
+                  <div className="w-2 h-7 rounded-sm bg-gradient-to-b from-orange-500 to-red-600"></div>
+
+                  <h2 className="text-[28px] font-bold text-black font-opensans">
+                    Turning Point
+                  </h2>
+                </div>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   {story.turningPoint}
                 </p>
@@ -179,9 +192,13 @@ export default function StoryDetail() {
 
             {story.conclusion && (
               <>
-                <h2 className="text-[28px] font-bold text-black mb-3 font-opensans">
-                  Conclusion
-                </h2>
+               <div className="flex items-center gap-3 mb-3">
+                  <div className="w-2 h-7 rounded-sm bg-gradient-to-b from-orange-500 to-red-600"></div>
+
+                  <h2 className="text-[28px] font-bold text-black font-opensans">
+                    Conclusion
+                  </h2>
+                </div>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   {story.conclusion}
                 </p>
@@ -190,10 +207,16 @@ export default function StoryDetail() {
           </div>
 
           {/* RIGHT COMPANY CARD */}
-          <div className="bg-[#D9D9D9] rounded-xl overflow-hidden">
+          <div className="bg-[#D9D9D9] rounded-xl overflow-hidden w-[346px] md:relative md:top-[-60px]">
             {/* TOP DETAILS SECTION */}
             <div className="p-5">
-              <h3 className="text-black font-semibold text-lg mb-4">Company</h3>
+              <div className="flex items-center gap-3 mb-3">
+                  <div className="w-2 h-7 rounded-sm bg-gradient-to-b from-orange-500 to-red-600"></div>
+
+                  <h2 className="text-[18px] font-bold text-black font-opensans">
+                    Company
+                  </h2>
+                </div>
 
               <div className="space-y-4">
                 {/* CLIENT */}
@@ -271,7 +294,7 @@ export default function StoryDetail() {
               <div
                 key={i}
                 onClick={() => navigate(`/success-stories/${item.slug}`)}
-                className="cursor-pointer rounded-xl overflow-hidden bg-gray-50 shadow-md hover:shadow-lg transition
+                className="cursor-pointer rounded-xl overflow-hidden bg-gray-50 hover:shadow-lg transition
                  flex flex-col h-full"
               >
                 {/* FIXED IMAGE HEIGHT */}
@@ -282,12 +305,12 @@ export default function StoryDetail() {
                       "https://images.ctfassets.net/pj0maraabon4/6y8wFX0wjfCjpDEnYeVKxF/97fb5d243fdff20a639e6518e19c7035/6a0a6f6f0a80f5c092694b6b99d1d1c7c170574d.jpg"
                     }
                     alt={item.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-[16px]"
                   />
                 </div>
 
                 {/* CONTENT ALWAYS STRETCHES EVENLY */}
-                <div className="p-5 flex flex-col flex-grow">
+                <div className="p-5 flex flex-col flex-grow bg-white">
                   <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">
                     {item.title}
                   </h3>
