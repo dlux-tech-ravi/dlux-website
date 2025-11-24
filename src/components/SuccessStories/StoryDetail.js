@@ -17,6 +17,7 @@ const client = new GraphQLClient(
 
 // ======================
 // 🔹 GraphQL Queries
+// - Added caseStudyPdf asset field
 // ======================
 const GET_CASE_STUDY_BY_SLUG = gql`
   query GetCaseStudyBySlug($slug: String!) {
@@ -37,6 +38,10 @@ const GET_CASE_STUDY_BY_SLUG = gql`
           title
           description
         }
+        caseStudyPdf {
+          url
+          fileName
+        }
       }
     }
   }
@@ -44,7 +49,7 @@ const GET_CASE_STUDY_BY_SLUG = gql`
 
 const GET_RELATED_CASE_STUDIES = gql`
   query GetRelatedCaseStudies {
-    caseStudyCollection(limit: 3) {
+    caseStudyCollection(limit: 6) {
       items {
         title
         slug
@@ -58,6 +63,18 @@ const GET_RELATED_CASE_STUDIES = gql`
   }
 `;
 
+// ======================
+// 🔹 Helper: basic client-side email & phone checks
+// ======================
+const isValidEmail = (email) =>
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+
+const isValidPhone = (phone) =>
+  /^[0-9+\-\s()]{6,20}$/.test(phone.trim());
+
+// ======================
+// 🔹 Main Component
+// ======================
 export default function StoryDetail() {
   const { slug } = useParams();
   const navigate = useNavigate();
@@ -66,31 +83,119 @@ export default function StoryDetail() {
   const [relatedStories, setRelatedStories] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // Popup state
+  const [showPopup, setShowPopup] = useState(false);
+
+  // Form state
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
+
+  // UX / submit state
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+
   // ======================
   // 🔹 Fetch Data
   // ======================
   useEffect(() => {
+    let mounted = true;
     const fetchData = async () => {
       try {
         const storyData = await client.request(GET_CASE_STUDY_BY_SLUG, {
           slug,
         });
         const storyItem = storyData.caseStudyCollection.items[0];
-        setStory(storyItem);
+        if (mounted) setStory(storyItem);
 
         const relatedData = await client.request(GET_RELATED_CASE_STUDIES);
         const relatedItems = relatedData.caseStudyCollection.items.filter(
           (item) => item.slug !== slug
         );
-        setRelatedStories(relatedItems.slice(0, 3));
+        if (mounted) setRelatedStories(relatedItems.slice(0, 3));
       } catch (err) {
         console.error("Error fetching story details:", err);
       } finally {
-        setLoading(false);
+        if (mounted) setLoading(false);
       }
     };
     fetchData();
+    return () => {
+      mounted = false;
+    };
   }, [slug]);
+
+  // ======================
+  // 🔹 Handle Download flow
+  // - open popup
+  // - on submit: validate -> optionally send lead -> open PDF in new tab
+  // ======================
+  const handleDownloadClick = () => {
+    setErrorMsg("");
+    setFormData({ name: "", email: "", phone: "" });
+    setShowPopup(true);
+  };
+
+  const handleFormChange = (field, value) => {
+    setFormData((p) => ({ ...p, [field]: value }));
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMsg("");
+
+    // Basic validation
+    if (!formData.name.trim()) {
+      setErrorMsg("Please enter your name.");
+      return;
+    }
+    if (!formData.email.trim() || !isValidEmail(formData.email)) {
+      setErrorMsg("Please enter a valid email.");
+      return;
+    }
+    if (!formData.phone.trim() || !isValidPhone(formData.phone)) {
+      setErrorMsg("Please enter a valid phone number.");
+      return;
+    }
+
+    setSubmitting(true);
+
+    try {
+      // OPTIONAL: send lead to your backend (uncomment and set endpoint)
+      // await fetch("/api/leads", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify({
+      //     name: formData.name,
+      //     email: formData.email,
+      //     phone: formData.phone,
+      //     slug: story?.slug,
+      //     source: "case-study-download",
+      //   }),
+      // });
+
+      // You can also store locally if you want
+      // localStorage.setItem("lastLead", JSON.stringify({...formData, slug: story?.slug}));
+
+      // Open PDF in new tab if available
+      const pdfUrl = story?.caseStudyPdf?.url;
+      if (pdfUrl) {
+        // Close popup first for better UX
+        setShowPopup(false);
+        // open new tab
+        window.open(pdfUrl, "_blank", "noopener,noreferrer");
+      } else {
+        setErrorMsg("PDF not available for this case study.");
+      }
+    } catch (err) {
+      console.error("Submit error:", err);
+      setErrorMsg("Something went wrong. Try again later.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   if (loading) {
     return (
@@ -272,6 +377,7 @@ export default function StoryDetail() {
             </div>
           </div>
         </div>
+
         {/* Highlight Box */}
         <div className="bg-[linear-gradient(90deg,#FF3901_0%,#F07800_100%)] h-[268px] flex flex-col items-center justify-center text-white p-8 mx-20 rounded-xl text-center my-10">
           <p className="mb-4 text-lg font-bold w-[50%]">
@@ -279,12 +385,13 @@ export default function StoryDetail() {
               "Explore how innovation transformed this client’s success story."}
           </p>
           <button
-            onClick={() => alert("Downloading...")}
+            onClick={handleDownloadClick}
             className="bg-black text-white px-6 py-2 rounded-[60px] h-[59px] w-[241px] font-semibold hover:bg-gray-800 transition"
           >
             Download
           </button>
         </div>
+
         {/* RELATED STORIES */}
         <div className="mt-16">
           <h2 className="text-[40px] font-bold mb-16">Featured Case Studies</h2>
@@ -316,15 +423,107 @@ export default function StoryDetail() {
                   </h3>
 
                   <p className="text-gray-500 text-sm flex-grow line-clamp-3">
-                    {item.shortDescription || "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."}
+                    {item.shortDescription ||
+                      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."}
                   </p>
                 </div>
               </div>
             ))}
           </div>
-
         </div>
       </div>
+
+      {/* ====================== */}
+      {/* 🔥 POPUP: premium glass blur form */}
+      {/* ====================== */}
+      {showPopup && (
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center">
+          {/* backdrop */}
+          <div
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            onClick={() => {
+              if (!submitting) {
+                setShowPopup(false);
+                setErrorMsg("");
+              }
+            }}
+          ></div>
+
+          {/* glass card */}
+          <div className="relative z-50 w-[92%] max-w-md p-6 rounded-3xl bg-white/6 border border-white/20 backdrop-blur-3xl text-white shadow-2xl">
+            {/* close */}
+            <button
+              onClick={() => {
+                if (!submitting) {
+                  setShowPopup(false);
+                  setErrorMsg("");
+                }
+              }}
+              className="absolute right-4 top-4 text-white/90"
+              aria-label="Close"
+            >
+              ✕
+            </button>
+
+            <div className="text-center mb-4">
+              <p className="text-sm text-gray-200 mt-2">
+                Fill this quick form to access the case study PDF.
+              </p>
+            </div>
+
+            <form onSubmit={handleFormSubmit} className="space-y-4">
+              <div>
+                <label className="text-xs text-gray-300">Name</label>
+                <input
+                  value={formData.name}
+                  onChange={(e) => handleFormChange("name", e.target.value)}
+                  type="text"
+                  placeholder="Your name"
+                  className="w-full mt-1 px-4 py-3 rounded-xl bg-white/10 placeholder-gray-300 focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="text-xs text-gray-300">Email</label>
+                <input
+                  value={formData.email}
+                  onChange={(e) => handleFormChange("email", e.target.value)}
+                  type="email"
+                  placeholder="you@email.com"
+                  className="w-full mt-1 px-4 py-3 rounded-xl bg-white/10 placeholder-gray-300 focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="text-xs text-gray-300">Phone</label>
+                <input
+                  value={formData.phone}
+                  onChange={(e) => handleFormChange("phone", e.target.value)}
+                  type="tel"
+                  placeholder="+91 98765 43210"
+                  className="w-full mt-1 px-4 py-3 rounded-xl bg-white/10 placeholder-gray-300 focus:outline-none"
+                />
+              </div>
+
+              {errorMsg && (
+                <p className="text-sm text-red-300 mt-1">{errorMsg}</p>
+              )}
+
+              <button
+                type="submit"
+                disabled={submitting}
+                className="w-full mt-3 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-red-600 font-semibold disabled:opacity-60"
+              >
+                {submitting ? "Submitting..." : "Download PDF"}
+              </button>
+
+              <p className="text-xs text-gray-300 mt-2 text-center">
+                By submitting you agree to be contacted about this case study.
+              </p>
+            </form>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
