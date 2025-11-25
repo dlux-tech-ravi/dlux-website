@@ -75,7 +75,7 @@ const IconCards = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mr-0">
 
         {/* Card 1 */}
-        <div className="bg-[#101010] rounded-2xl p-8 hover:scale-[1.02] transition-transform w-[370px] ">
+        <div className="bg-[#101010] rounded-2xl p-8 hover:scale-[1.02] transition-transform w-full md:w-[370px] ">
           <div className="w-[55px] h-[55px] bg-[#FFFFFF14] rounded-lg flex items-center justify-center mb-4">
             <img
               src="https://images.ctfassets.net/pj0maraabon4/1M0hVVkPdoQGdFo3ePn9Y7/e4b7e99bb5c2996bba904369f8c82ec7/healthcare__1__1.svg"
