@@ -122,8 +122,9 @@ export default function HeroSection() {
         />
         <div className="bg-[#0a1631]/60 backdrop-blur-md border border-white/20 p-6 rounded-lg text-white w-[70%] justify-items-center text-center">
           <p className="text-sm uppercase tracking-widest mb-1 font-semibold">
-            9 June 2023 <span className="mx-2">|</span> Limited Seat
+            Limited Seat  
           </p>
+          {/* 9 June 2023 <span className="mx-2">|</span> Limited Seat */}
           <h3 className="text-lg md:text-2xl font-semibold mb-3">LIVE. ON-DEMAND  </h3>
           <button className="px-4 py-2 border border-white rounded-full text-sm font-medium hover:bg-white hover:text-[#0a1631] transition">
             START DIGGING DEEPER

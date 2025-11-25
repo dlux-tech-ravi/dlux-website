@@ -59,19 +59,19 @@ export default function WhoWeAreSection() {
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-2 h-2 w-2 rounded-full bg-white flex-shrink-0"></span>
-            <span className="text-white">Case Studies – Real client success in action, delivered consistently</span>
+            <span className="text-white">Case Studies – Real client success brought vividly to life today</span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-2 h-2 w-2 rounded-full bg-white flex-shrink-0"></span>
-            <span className="text-white">Expert Insights – Tech certified pros & DLUX CoE leaders</span>
+            <span className="text-white">Expert Insights – Tech-certified pros and DLUX CoE leaders share expertise</span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-2 h-2 w-2 rounded-full bg-white flex-shrink-0"></span>
-            <span className="text-white">Live Q&A – Ask anything, interact freely, get instant expert answers</span>
+            <span className="text-white">Live Q&A – Ask, interact, and get instant answers from experts</span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-2 h-2 w-2 rounded-full bg-white flex-shrink-0"></span>
-            <span className="text-white">On-Demand – Replay anytime, anywhere</span>
+            <span className="text-white">On-Demand – Replay anytime, anywhere with ease on your schedule</span>
           </li>
         </ul>
         
