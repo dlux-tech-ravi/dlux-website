@@ -45,6 +45,7 @@ import VideoLibrary from "./components/pages/VideoLibrary";
 import WebinarPage from "./components/pages/WebinarPage";
 import { CaseStudies } from "./components/pages/CaseStudies";
 import StoryDetail from "./components/SuccessStories/StoryDetail";
+import { CompStory } from "./components/SuccessStories/com-story";
 
 const App = () => {
   return (
@@ -131,7 +132,7 @@ const App = () => {
         <Route path="/resources-library" element={<ResourcesLibrary />} />
         <Route path="/video-library" element={<VideoLibrary />} />
        <Route path="/case-studies" element={<CaseStudies />} />
-        <Route path="/success-stories/:slug" element={<StoryDetail />} />
+        <Route path="/success-stories/:slug" element={<CompStory />} />
         {/* <Route path="/video-library1" element={<VideoVault />} /> */}
         {/* <Route path="/video-vault" element={<VideoVault />} /> */}
         <Route path="/webinar-page" element={<WebinarPage />} />
