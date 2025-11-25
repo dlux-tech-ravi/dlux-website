@@ -6,15 +6,12 @@ const IconCards = () => {
       {/* Top Heading */}
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold mb-4 font-opensans">
-          What is Lorem Ipsum?
+          Transforming Success <br/>Beyond Implementation 
         </h2>
         <p className="text-gray-400 max-w-3xl mx-auto leading-relaxed">
-          Success isn’t just about implementations — it’s about business
-          transformation. DLUX success stories showcase how Fortune 500s and
-          fast-scaling teams leverage AI and Martech platforms like Adobe
-          Workfront, Fusion, Commerce, DAM, and Salesforce to streamline
-          workflows, optimize content management, power eCommerce automation,
-          and accelerate growth.
+         Success isn’t just about implementations — it’s about business transformation. DLUX success stories showcase how Fortune 500s and fast-scaling teams leverage AI and Martech platforms like Adobe Workfront, Fusion, Commerce, DAM, and Salesforce to streamline workflows, optimize content management, power eCommerce automation, and accelerate growth.
+
+         Dive in and see how we make extraordinary happen.
         </p>
       </div>
 

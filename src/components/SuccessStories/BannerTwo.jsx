@@ -47,13 +47,13 @@ export default function SuccessCTA() {
         >
           <div className="w-full md:w-1/2 space-y-5 text-center md:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-              Ready to Write Your Success Story?
+               Go Deeper with DLUX Insights 
             </h1>
             <p className="text-gray-300">
-              Whether you're looking to optimize...
+              Want to explore the thinking behind these results? 
             </p>
             <button className="px-6 py-3 bg-white text-black rounded-full">
-              Let’s Connect
+             DLUX Blog
             </button>
           </div>
 

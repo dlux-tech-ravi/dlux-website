@@ -18,8 +18,8 @@ const BannerOne = forwardRef((props, ref) => {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
             Ready to Write Your Success Story?
           </h1>
-          <p className="text-gray-300">Whether you're looking to optimize...</p>
-          <button className="px-6 py-3 bg-white text-black rounded-full">Let’s Connect</button>
+          <p className="text-gray-300">Whether you’re looking to optimize, automate, or scale, DLUX delivers measurable outcomes. </p>
+          <button className="px-6 py-3 bg-white text-black rounded-full">Start Your Journey</button>
         </div>
 
         {/* Image */}

@@ -81,14 +81,14 @@ export default function SuccessCTA() {
           px-6 py-10 sm:p-12 md:p-16"
         >
           <div className="w-full md:w-1/2 space-y-5 text-center md:text-left">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-              Ready to Write Your Success Story?
-            </h1>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+             Go Deeper with DLUX Insights
+            </h2>
             <p className="text-gray-300">
-              Whether you're looking to optimize...
+             Want to explore the thinking behind these results?
             </p>
             <button className="px-6 py-3 bg-white text-black rounded-full">
-              Let’s Connect
+              DLUX Blog
             </button>
           </div>
 
@@ -115,12 +115,12 @@ export default function SuccessCTA() {
           px-6 py-10 sm:p-12 md:p-16"
         >
           <div className="w-full md:w-1/2 space-y-5 text-center md:text-left">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-              Transform Ideas Into Reality.
-            </h1>
-            <p className="text-gray-300">From strategy to execution…</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+               Ready to Write Your Success Story?  
+            </h2>
+            <p className="text-gray-300">Whether you’re looking to optimize, automate, or scale, DLUX delivers measurable outcomes. </p>
             <button className="px-6 py-3 bg-white text-black rounded-full">
-              Get Started
+              Start Your Journey
             </button>
           </div>
 
