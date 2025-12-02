@@ -126,7 +126,7 @@ export default function SuccessCTA() {
 
           <div className="w-full md:w-1/2 flex justify-center">
             <img
-              src="https://images.ctfassets.net/pj0maraabon4/3F8qbhediGsOSUftO4zlhO/120f69c41ffd59ba04d1d30ba9f23adc/Screenshot_2025-11-12_102948.png"
+              src="https://downloads.ctfassets.net/pj0maraabon4/75SYUJoCmL7G5FwQnad9Ab/690130c7c42c011b65db2a52f03f9ee3/humanoid-robot-interacting-with-digital-tablet.png"
               className="w-[260px] md:w-[480px]"
             />
           </div>

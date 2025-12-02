@@ -22,7 +22,16 @@ const GET_CASE_STUDIES = gql`
         slug
         shortDescription
         tags
-        banner { url title description }
+        banner {
+          url
+          title
+          description
+        }
+        clientLogo {
+          url
+          title
+          description
+        }
       }
     }
   }
@@ -82,7 +91,8 @@ export default function FeaturedStories() {
           Featured Success Stories
         </h2>
         <p className="text-gray-400 max-w-4xl mx-auto">
-          Discover our case studies powered by Dlux — real results from real clients.
+          Discover our case studies powered by Dlux — real results from real
+          clients.
         </p>
       </div>
 
@@ -140,7 +150,15 @@ export default function FeaturedStories() {
               <div className="absolute inset-0 bg-black/40 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
               {/* Reveal content */}
-              <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-700 translate-y-3 group-hover:translate-y-0">
+              <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-700 translate-y-3 group-hover:translate-y-0 justify-items-center">
+                {story.clientLogo?.url && (
+                  <img
+                    src={story.clientLogo.url}
+                    alt={story.clientLogo.title || "Client logo"}
+                    className="w-[70%] h-full object-contain mb-3 drop-shadow-lg"
+                  />
+                )}
+
                 <h3 className="text-xl font-semibold mb-2 line-clamp-2">
                   {story.title}
                 </h3>
