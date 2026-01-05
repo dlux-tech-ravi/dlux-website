@@ -244,8 +244,8 @@ export default function StoryDetail() {
             }')`,
         }}
       >
-        <div className=" pb-10 max-w-full mx-auto md:mx-[90px]">
-          <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4 font-opensans lg:w-[95%]">
+        <div className="p-4 pb-10 max-w-full mx-auto md:mx-[90px]">
+          <h1 className="text-2xl md:text-5xl font-bold leading-tight mb-4 font-opensans lg:w-[95%]">
             {story.title}
           </h1>
         </div>

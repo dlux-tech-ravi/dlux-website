@@ -5,7 +5,7 @@ const IconCards = () => {
     <section className="bg-black text-white max-w-7xl mx-auto px-6 py-20">
       {/* Top Heading */}
       <div className="text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 font-opensans">
+        <h2 className="text-3xl md:text-5xl font-bold mb-4 font-opensans">
           Transforming Success <br/>Beyond Implementation 
         </h2>
         <p className="text-gray-400 max-w-3xl mx-auto leading-relaxed">
@@ -30,7 +30,7 @@ const IconCards = () => {
               Proven <br /> Outcomes
             </h3>
             <p className="text-gray-400 text-lg">
-              Efficiency gains, cost savings, <br /> and revenue growth.
+              Efficiency gains, cost savings,and revenue growth.
             </p>
           </div>
         </div>
@@ -53,17 +53,16 @@ const IconCards = () => {
           {/* Popup box */}
           <div className="flex justify-center my-6">
             <div className="bg-[#1a1a1a]/80 backdrop-blur-lg rounded-2xl shadow-lg w-full max-w-[300px] text-center p-6 hover:scale-[1.02] transition">
-              <p className="mb-2">What is Lorem Ipsum?</p>
+              <p className="mb-2">Let's Connect</p>
               <button className="text-[12px] rounded-[12px] border border-[#ffffff14] px-[24px] py-[7.5px] text-white hover:bg-gray-700 transition">
-                DOWNLOAD
+                Contact Us
               </button>
             </div>
           </div>
 
-          <h3 className="text-2xl font-semibold mb-2 font-opensans">Heading</h3>
+          <h3 className="text-2xl font-semibold mb-2 font-opensans">See how brands like yours turn goals into real results.</h3>
           <p className="text-gray-400 text-lg leading-relaxed">
-            Lorem Ipsum is simply dummy text <br /> of the printing and typesetting <br />
-            industry.
+            Explore our client case studies with proven strategies, key metrics, and measurable impact.
           </p>
         </div>
       </div>
@@ -83,12 +82,12 @@ const IconCards = () => {
             Cross <br /> Industry Wins
           </h3>
           <p className="text-gray-400 text-lg leading-relaxed">
-            Retail, healthcare, finance, media, <br /> and beyond.
+            Retail, healthcare, finance, media, and beyond.
           </p>
         </div>
 
         {/* Card 2 */}
-        <div className="bg-[#101010] rounded-2xl p-8 hover:scale-[1.02] transition-transform w-[370px] ">
+        <div className="bg-[#101010] rounded-2xl p-8 hover:scale-[1.02] transition-transform md:w-[370px] ">
           <div className="w-[55px] h-[55px] bg-[#FFFFFF14] rounded-lg flex items-center justify-center mb-4">
             <img
               src="https://images.ctfassets.net/pj0maraabon4/4wIvWbhXfcYa4NXw1CtjB8/635b6de2319a0e7b34fe22c6ac6cefe9/freepik__adjust__35762_2.svg"
@@ -104,7 +103,7 @@ const IconCards = () => {
         </div>
 
         {/* Card 3 */}
-        <div className="bg-[#101010] rounded-2xl p-8 hover:scale-[1.02] transition-transform w-[370px] ">
+        <div className="bg-[#101010] rounded-2xl p-8 hover:scale-[1.02] transition-transform md:w-[370px] ">
           <div className="w-[55px] h-[55px] bg-[#FFFFFF14] rounded-lg flex items-center justify-center mb-4">
             <img
               src="https://images.ctfassets.net/pj0maraabon4/4twrLfRzRAK901DAO6HHx/c50878a597cb87b494cd1fe15db807aa/dlux-dark-logo__2__1.svg"
@@ -115,7 +114,7 @@ const IconCards = () => {
             DLUX CoE <br /> Advantage
           </h3>
           <p className="text-gray-400 text-lg leading-relaxed">
-            Strategies built on playbooks, not <br /> guesswork.
+            Strategies built on playbooks, not guesswork.
           </p>
         </div>
       </div>
