@@ -91,7 +91,7 @@ export default function FeaturedStories() {
           Featured Success Stories
         </h2>
         <p className="text-gray-400 max-w-4xl mx-auto">
-          Discover our case studies powered by Dlux — real results from real
+          Discover our case studies powered by DLUX — real results from real
           clients.
         </p>
       </div>

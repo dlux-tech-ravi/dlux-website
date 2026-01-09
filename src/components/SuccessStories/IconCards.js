@@ -64,7 +64,7 @@ const IconCards = () => {
             </div>
           </div>
 
-          <h3 className="text-2xl font-semibold mb-2 font-opensans">See how brands like yours turn goals into real results.</h3>
+          <h3 className="text-2xl font-semibold mb-2 font-opensans">See how brands like yours turn goals into real results</h3>
           <p className="text-gray-400 text-lg leading-relaxed">
             Explore our client case studies with proven strategies, key metrics, and measurable impact.
           </p>
