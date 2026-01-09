@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 export default function SuccessCTA() {
   const containerRef = useRef(null);
@@ -87,9 +88,12 @@ export default function SuccessCTA() {
             <p className="text-gray-300">
              Want to explore the thinking behind these results?
             </p>
-            <button className="px-6 py-3 bg-white text-black rounded-full">
+             <Link to="/blog" target="_blank"
+  rel="noopener noreferrer">
+            <button className="px-6 py-3 bg-white text-black rounded-full mt-4">
               DLUX Blog
             </button>
+            </Link>
           </div>
 
           <div className="w-full md:w-1/2 flex justify-center">
@@ -119,9 +123,12 @@ export default function SuccessCTA() {
                Ready to Write Your Success Story?  
             </h2>
             <p className="text-gray-300">Whether you’re looking to optimize, automate, or scale, DLUX delivers measurable outcomes. </p>
-            <button className="px-6 py-3 bg-white text-black rounded-full">
+              <Link to="/contact-us" target="_blank"
+  rel="noopener noreferrer">
+            <button className="px-6 py-3 bg-white text-black rounded-full mt-4">
               Start Your Journey
             </button>
+            </Link>
           </div>
 
           <div className="w-full md:w-1/2 flex justify-center">

@@ -66,7 +66,8 @@ const HeroBanner = () => {
             <p className="text-gray-400 text-sm leading-relaxed max-w-md mx-auto mb-6">
              Uncover the truth behind every triumph ,  Where real journeys ignite bold transformation and authentic stories fuel unstoppable success. 
             </p>
-             <Link to="/contact-us">
+             <Link to="/contact-us" target="_blank"
+  rel="noopener noreferrer">
       <button className="font-opensans bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold mt-8 px-8 py-3 rounded-full hover:opacity-90 transition">
         Contact Us
       </button>

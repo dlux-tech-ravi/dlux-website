@@ -43,19 +43,20 @@ const IconCards = () => {
               "url('https://images.ctfassets.net/pj0maraabon4/2zYJ5hEhrvvsOZgLBMsryR/93054debbdabd6c2cbca8b8736b531b3/Clip_path_group.png')",
           }}
         >
-          <div className="w-[55px] h-[55px] bg-[#FFFFFF14] flex items-center justify-center rounded-lg mb-4">
-            <img
+          <div className="w-[55px] h-[55px]  flex items-center justify-center rounded-lg mb-4">
+            {/* <img
               src="https://images.ctfassets.net/pj0maraabon4/4wIvWbhXfcYa4NXw1CtjB8/635b6de2319a0e7b34fe22c6ac6cefe9/freepik__adjust__35762_2.svg"
               alt="icon"
               className="w-[35px] h-[35px]"
-            />
+            /> */}
           </div>
 
           {/* Popup box */}
           <div className="flex justify-center my-6">
             <div className="bg-[#1a1a1a]/80 backdrop-blur-lg rounded-2xl shadow-lg w-full max-w-[300px] text-center p-6 hover:scale-[1.02] transition">
               <h3 className="mb-2 text-2xl">Let's Connect</h3>
-               <Link to="/contact-us">
+               <Link to="/contact-us" target="_blank"
+  rel="noopener noreferrer">
               <button className="text-[16px] rounded-[12px] border border-[#ffffff14] px-[24px] py-[7.5px] text-white hover:bg-gray-700 transition">
                 Contact Us
               </button>
