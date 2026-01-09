@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const IconCards = () => {
   return (
-    <section className="bg-black text-white max-w-7xl mx-auto px-6 py-20">
+    <section className="bg-black text-white max-w-7xl mx-auto px-6 md:py-20 relative">
       {/* Top Heading */}
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-5xl font-bold mb-4 font-opensans">
-          Transforming Success <br/>Beyond Implementation 
+         Driving Success Beyond Implementation
         </h2>
         <p className="text-gray-400 max-w-3xl mx-auto leading-relaxed">
          Success isn’t just about implementations — it’s about business transformation. DLUX success stories showcase how Fortune 500s and fast-scaling teams leverage AI and Martech platforms like Adobe Workfront, Fusion, Commerce, DAM, and Salesforce to streamline workflows, optimize content management, power eCommerce automation, and accelerate growth.
@@ -53,10 +54,12 @@ const IconCards = () => {
           {/* Popup box */}
           <div className="flex justify-center my-6">
             <div className="bg-[#1a1a1a]/80 backdrop-blur-lg rounded-2xl shadow-lg w-full max-w-[300px] text-center p-6 hover:scale-[1.02] transition">
-              <p className="mb-2">Let's Connect</p>
-              <button className="text-[12px] rounded-[12px] border border-[#ffffff14] px-[24px] py-[7.5px] text-white hover:bg-gray-700 transition">
+              <h3 className="mb-2 text-2xl">Let's Connect</h3>
+               <Link to="/contact-us">
+              <button className="text-[16px] rounded-[12px] border border-[#ffffff14] px-[24px] py-[7.5px] text-white hover:bg-gray-700 transition">
                 Contact Us
               </button>
+              </Link>
             </div>
           </div>
 
@@ -74,7 +77,7 @@ const IconCards = () => {
         <div className="bg-[#101010] rounded-2xl p-8 hover:scale-[1.02] transition-transform w-full md:w-[370px] ">
           <div className="w-[55px] h-[55px] bg-[#FFFFFF14] rounded-lg flex items-center justify-center mb-4">
             <img
-              src="https://images.ctfassets.net/pj0maraabon4/1M0hVVkPdoQGdFo3ePn9Y7/e4b7e99bb5c2996bba904369f8c82ec7/healthcare__1__1.svg"
+              src="https://images.ctfassets.net/pj0maraabon4/2jIREOrYeKfOKGIrxf3sc8/85613829eceb9fc4430e5ddfa832d659/Icon--02.png"
               alt="Cross Industry Wins"
             />
           </div>
