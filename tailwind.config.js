@@ -8,7 +8,8 @@ export default {
     "./src/components/Webinar/*.{html,js}",
     "./src/components/SuccessStories/*.{html,js}",
     "./src/components/contents/Resources/Blogs/Blogs_Detail/Blogs_Detail.js",
-    "./src/components/Blogs_Re/Blog_List/Sections/*.{html,js}"
+    "./src/components/Blogs_Re/Blog_List/Sections/*.{html,js}",
+     "./src/components/AEM/*.{html,js,jsx}",
 
   ],
 

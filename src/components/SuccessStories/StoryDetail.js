@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { GraphQLClient, gql } from "graphql-request";
+import { Link } from "react-router-dom";
 
 // ======================
 // 🔹 Contentful Config
@@ -137,7 +138,7 @@ export default function StoryDetail() {
     setFormData({ name: "", email: "", phone: "" });
     setShowPopup(true);
   };
-  const handleZohoSubmit = (e) => {
+const handleZohoSubmit = (e) => {
   // Allow Zoho form to submit normally
   setTimeout(() => {
     const pdfUrl = story?.caseStudyPdf?.url;
@@ -155,6 +156,7 @@ export default function StoryDetail() {
     }
   }, 500); 
 };
+
 
 
   const handleFormChange = (field, value) => {
@@ -375,13 +377,14 @@ export default function StoryDetail() {
                 <p className="text-lg font-semibold leading-tight">
                   Watched Our Videos ? <br /> Talk to Our Experts
                 </p>
-
+               <Link to="/contact-us" target="_blank"
+               rel="noopener noreferrer">
                 <button
-                  onClick={() => alert("Get Started")}
-                  className="mt-4 border border-white rounded-full px-5 py-2 text-sm hover:bg-white hover:text-black transition"
+                 className="mt-4 border border-white rounded-full px-5 py-2 text-sm hover:bg-white hover:text-black transition"
                 >
                   Get Started
                 </button>
+                </Link>
               </div>
             </div>
           </div>

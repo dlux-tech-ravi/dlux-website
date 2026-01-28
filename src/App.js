@@ -44,8 +44,8 @@ import CaseStudyDetails from "./components/contents/Reuse_Components/Global/Test
 import VideoLibrary from "./components/pages/VideoLibrary";
 import WebinarPage from "./components/pages/WebinarPage";
 import { CaseStudies } from "./components/pages/CaseStudies";
-import StoryDetail from "./components/SuccessStories/StoryDetail";
 import { CompStory } from "./components/SuccessStories/com-story";
+import AemPage from "./components/pages/AEM";
 
 const App = () => {
   return (
@@ -128,14 +128,15 @@ const App = () => {
 
         <Route path="/blogs" element={<Blogs_Lisitng />} />
         <Route path="/blog/:detailUrlName" element={<Blogs_Detail />} />
-        <Route path="/success-stories1" element={<SuccessStories />} />
+        {/* <Route path="/success-stories" element={<SuccessStories />} /> */}
         <Route path="/resources-library" element={<ResourcesLibrary />} />
         <Route path="/video-library" element={<VideoLibrary />} />
-       <Route path="/case-studies" element={<CaseStudies />} />
+       <Route path="/success-stories" element={<CaseStudies />} />
         <Route path="/success-stories/:slug" element={<CompStory />} />
         {/* <Route path="/video-library1" element={<VideoVault />} /> */}
         {/* <Route path="/video-vault" element={<VideoVault />} /> */}
         <Route path="/webinar-page" element={<WebinarPage />} />
+         <Route path="/aem" element={<AemPage />} />
 
       </Routes>
     </Router>
@@ -143,3 +144,4 @@ const App = () => {
 };
 
 export default App;
+

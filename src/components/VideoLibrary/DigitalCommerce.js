@@ -58,12 +58,12 @@ const SLIDES = [
   },
   {
     id: 6,
-    title:
-      "See How Adobe Commerce transforms retail!",
+    title: "See How Adobe Commerce transforms retail!",
     cta: "See Details",
     image:
       "https://images.ctfassets.net/pj0maraabon4/6ZuZtHzgQ7dzpsc0kNEsUi/98bdeec08f9f58725cbbbf0295254b98/Digital-commerce-image.jpg",
-    videoUrl: "https://videos.ctfassets.net/pj0maraabon4/4GhoFakw76K1pKZHiB7GRO/560bceb257f44decb9f37d2b4ec75632/Adobe-commerce-new-01.mp4",
+    videoUrl:
+      "https://videos.ctfassets.net/pj0maraabon4/4GhoFakw76K1pKZHiB7GRO/560bceb257f44decb9f37d2b4ec75632/Adobe-commerce-new-01.mp4",
   },
 ];
 
@@ -112,64 +112,65 @@ export default function DigitalCommerce() {
               </span>
             </h2>
             <p className="mt-3 text-gray-300 text-sm lg:text-[16px]">
-              Watch & Learn with Adobe Commerce – From the early days of Magento to the full power of Adobe Commerce today, explore a wide library of expert-led tutorials, data-backed insights, and real-world success stories.
+              Watch & Learn with Adobe Commerce – From the early days of Magento
+              to the full power of Adobe Commerce today, explore a wide library
+              of expert-led tutorials, data-backed insights, and real-world
+              success stories.
             </p>
-            
-            
 
-<Link target="_blank" rel="noopener noreferrer" to="/adobe-commerce">
-
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              whileHover={{ scale: 1.05 }}
-              className="mt-6 bg-gradient-to-r from-[#ff3901] to-[#F07800] px-4 py-3 relative rounded-full font-medium flex items-center gap-2 overflow-hidden text-white"
-             
-              onMouseEnter={() => setHovered(true)}
-              onMouseLeave={() => setHovered(false)}
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              to="/adobe-commerce"
             >
-              {hovered && (
-                <motion.span
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute inset-0 rounded-full backdrop-blur-md bg-white/10 border border-white/40"
-                />
-              )}
+              <motion.button
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                whileHover={{ scale: 1.05 }}
+                className="mt-6 bg-gradient-to-r from-[#ff3901] to-[#F07800] px-4 py-3 relative rounded-full font-medium flex items-center gap-2 overflow-hidden text-white"
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
+              >
+                {hovered && (
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute inset-0 rounded-full backdrop-blur-md bg-white/10 border border-white/40"
+                  />
+                )}
 
-              <span className="relative z-10 text-white">
-                Discover More
-              </span>
-              <div className="relative w-5 h-5 overflow-hidden">
-                <AnimatePresence initial={false} mode="wait">
-                  {hovered ? (
-                    <motion.div
-                      key="arrow-hover"
-                      initial={{ x: -20, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      exit={{ x: 20, opacity: 0 }}
-                      transition={{ duration: 0.4, ease: "easeInOut" }}
-                      className="absolute"
-                    >
-                      <ArrowRight size={18} />
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      key="arrow-normal"
-                      initial={{ x: 0, opacity: 1 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      exit={{ x: 20, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="absolute"
-                    >
-                      <ArrowRight size={18} />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            </motion.button>
+                <span className="relative z-10 text-white">Discover More</span>
+                <div className="relative w-5 h-5 overflow-hidden">
+                  <AnimatePresence initial={false} mode="wait">
+                    {hovered ? (
+                      <motion.div
+                        key="arrow-hover"
+                        initial={{ x: -20, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        exit={{ x: 20, opacity: 0 }}
+                        transition={{ duration: 0.4, ease: "easeInOut" }}
+                        className="absolute"
+                      >
+                        <ArrowRight size={18} />
+                      </motion.div>
+                    ) : (
+                      <motion.div
+                        key="arrow-normal"
+                        initial={{ x: 0, opacity: 1 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        exit={{ x: 20, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="absolute"
+                      >
+                        <ArrowRight size={18} />
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </motion.button>
             </Link>
           </motion.div>
         </div>
@@ -214,10 +215,11 @@ export default function DigitalCommerce() {
                 </div>
 
                 {/* Title Overlay */}
-                <div className="absolute bottom-0 left-0 w-full  h-[35%] content-end pr-[60px] text-sm lg:text-lg text-white font-semibold px-4 py-2 
+                <div
+                  className="absolute bottom-0 left-0 w-full  h-[35%] content-end pr-[60px] text-sm lg:text-lg text-white font-semibold px-4 py-2 
     bg-gradient-to-t from-black/100 via-black/80 to-transparent 
-     rounded-b-lg">
-                
+     rounded-b-lg"
+                >
                   <p className="text-white text-lg font-semibold">
                     {SLIDES[index].title}
                   </p>
@@ -241,9 +243,11 @@ export default function DigitalCommerce() {
                 />
 
                 {/* Title Overlay */}
-                <div className="absolute bottom-0 left-0 w-full  h-[35%] content-end pr-[60px] text-sm lg:text-lg text-white font-semibold px-4 py-2 
+                <div
+                  className="absolute bottom-0 left-0 w-full  h-[35%] content-end pr-[60px] text-sm lg:text-lg text-white font-semibold px-4 py-2 
     bg-gradient-to-t from-black/100 via-black/80 to-transparent 
-     rounded-b-lg">
+     rounded-b-lg"
+                >
                   <p className="text-white text-sm font-medium">
                     {SLIDES[nextIndex].title}
                   </p>
@@ -294,7 +298,7 @@ export default function DigitalCommerce() {
                       ? SLIDES[index].videoUrl.replace("watch?v=", "embed/")
                       : SLIDES[index].videoUrl.replace(
                           "youtu.be/",
-                          "www.youtube.com/embed/"
+                          "www.youtube.com/embed/",
                         )
                   }
                   title="YouTube video player"

@@ -5,7 +5,8 @@ import AboutUsPage from '../contents/AboutUsPage'
 
 
 export default function AboutUs() {
-  return <><Navbar />
+  return <>
+  <Navbar />
  <AboutUsPage/>
   </>
   
